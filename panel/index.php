@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php include_once("includes/head.php"); ?>
+    <?php 
+        $title = "Panel";
+        include_once("includes/head.php"); 
+    ?>
 
     <body>
         <input type="checkbox" id="display-menu">
