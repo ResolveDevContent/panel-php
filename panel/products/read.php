@@ -51,17 +51,12 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Ver Empleado</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        .wrapper{
-            width: 500px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
+
+<?php 
+    $title = "Ver producto";
+    include_once("../includes/head.php"); 
+?>
+
 <body>
     <div class="wrapper">
         <div class="container-fluid">

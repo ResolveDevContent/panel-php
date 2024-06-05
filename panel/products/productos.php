@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php include_once("includes/head.php"); ?>
+    <?php 
+        $title = "Productos";
+        include_once("../includes/head.php"); 
+    ?>
 
     <body>
-        <section style="display: flex">
-            <?php include_once("includes/menu.php"); ?>
+        <section class="d-flex">
+            <?php include_once("../includes/menu.php"); ?>
             <article id="container">
                 <div class="wrapper">
                     <div class="container-fluid">
@@ -17,7 +20,7 @@
                                 </div>
                                 <?php
                                 // Include config file
-                                require_once "config.php";
+                                require_once "../config.php";
                                 
                                 // Attempt select query execution
                                 $sql = "SELECT * FROM products";

@@ -8,6 +8,6 @@
     </script>
     <!-- // ----------------------------------------------------------------------------------------------- -->
 
-    <link rel="stylesheet" href="./css/panel.css">
-    <title>Panel</title>
+    <link rel="stylesheet" href="/panel-php/panel/css/panel.css">
+    <title><?php echo $title; ?> - Panel</title>
 </head>
