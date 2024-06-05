@@ -151,12 +151,12 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                             <span class="help-block"><?php echo $nombre_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
-                            <label>Direccion</label>
+                            <label>Stock</label>
                             <textarea name="stock" class="form-control"><?php echo $stock; ?></textarea>
                             <span class="help-block"><?php echo $stock_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
-                            <label>Sueldo</label>
+                            <label>Precio</label>
                             <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                             <span class="help-block"><?php echo $precio_err;?></span>
                         </div>
