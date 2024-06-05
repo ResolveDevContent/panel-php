@@ -224,9 +224,35 @@ input[type="radio"] {
 
 /* FORMULARIO -----------------------------------------------------------------*/
 
+.form-container {
+    border: 1px solid #000;
+    border-radius: 0.5em;
+    padding: 1em;
+    gap: 1em;
+}
+
 .form {
     width: 100%;
-    padding: 1em;
-    border: 1px solid #000;
     gap: 1em;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+.input > label {
+    font-weight: 500;
+}
+.input > input,
+.input > textarea {
+    margin-top: 1.25em;
+    color: #000;
+    border: 1px solid #9F9F9F;
+    border-radius: .5em;
+    padding: 1.5em 1.75em;
+    outline: none;
+}
+.input > input::placeholder,
+.input > textarea::placeholder {
+    color: #000;
 }

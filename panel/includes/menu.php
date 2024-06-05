@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class='categoria'>
-                <a href="./products/productos.php">
+                <a href="/panel-php/panel/products/productos.php">
                     <span>Productos</span>
                 </a>
             </li>
