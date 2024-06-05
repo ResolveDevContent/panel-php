@@ -47,10 +47,22 @@ span {
     justify-content: center;
 }
 
+.justify-between {
+    justify-content: space-between;
+}
+
 .flex-col {
     flex-direction: column;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .text-center {
     text-align: center;
+}
+
+.text-white {
+    color: #fff;
 }

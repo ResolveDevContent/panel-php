@@ -61,8 +61,16 @@ input[type="radio"] {
     flex-direction: column;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .text-center {
     text-align: center;
+}
+
+.text-white {
+    color: #fff;
 }
 
 /* MENU - INICIO -------------------------------------------------------------------- */

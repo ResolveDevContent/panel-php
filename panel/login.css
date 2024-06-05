@@ -1,35 +1,59 @@
 .background {
     background-image: linear-gradient(120deg, #00fff7 0%, #1e6662 100%); 
     height: 60%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .login {
     height: 100vh;
+    position: relative;
+    z-index: 2;
 }
 
-.login div {
+.login > div {
     background-color: #313131;
     min-width: 25em;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.551);
+    padding: 2em;
+    border-radius: 1em;
+    gap: 1em;
 }
 
-.form li input {
+.login > div > header > h2 {
+    font-weight: bolder;
+}
+
+.login-form li + li {
+    margin-top: 1em;
+}
+.login-form li input {
     outline: none;
     background-color: #222;
 }
 
-.form li button {
+.login-form li label {
+    text-transform: uppercase;
+}
+
+.login-form li button {
     width: max-content;
     background-color: #38ada9;
     cursor: pointer;
     transition: all 0.5s;
+    border: none;
+    padding: .75em 1.5em;
+    border-radius: .5em;
+    text-transform: uppercase;
 }
 
-.form li button:hover {
+.login-form li button:hover {
     background-color: #33c6c1;
 }
 
-.form .visible-btn {
+.login-form .visible-btn {
     border: none;
     background-color: transparent;
     position: absolute;
@@ -39,15 +63,15 @@
     margin-right: 1em;
 }
 
-.form .visible-btn:hover {
+.login-form .visible-btn:hover {
     background-color: transparent;
 }
 
-.form .visible-btn svg {
+.login-form .visible-btn svg {
     fill: white;
 }
 
-.form .password-container {
+.login-form .password-container {
     min-width: unset;
     width: 100%;
     background-color: transparent;
@@ -55,6 +79,27 @@
     position: relative;
 }
 
-.form .password-container input {
+.login-form .password-container input {
     width: 100%;
+    margin-top: 1.25em;
+    color: #000;
+    border: 1px solid #9F9F9F;
+    border-radius: .5em;
+    padding: 1.5em 1.75em;
+    outline: none;
+}
+
+.login-form .password-container input::placeholder {
+    color: #000;
+}
+
+.login > div > footer span {
+    font-size: .9em;
+}
+
+.login > footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: .5em;
 }
