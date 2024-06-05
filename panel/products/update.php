@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config.php";
  
 // Define variables and initialize with empty values
 $nombre = $stock = $precio = "";
@@ -57,7 +57,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                header("location: index.php");
+                header("location: productos.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -125,43 +125,58 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-    $title = "Actualizar producto";
-    include_once("../includes/head.php"); 
-?>
+    <?php 
+        $title = "Actualizar producto";
+        include_once("../includes/head.php"); 
+    ?>
 
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header">
-                        <h2>Actualizar Producto</h2>
+    <body>
+        <section class="d-flex">
+            <?php include_once("../includes/menu.php"); ?>
+            <article id="container">
+                <div class="wrapper">
+                    <div class="form-container d-flex flex-col">
+                        <header class="d-flex flex-col align-center justify-center text-center">
+                            <h2>Editar Producto</h2>
+                            <p>Edite los valores de entrada y envíe para actualizar el registro.</p>
+                        </header>
+                        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post" class="form d-flex flex-col">
+                            <div class="input <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
+                                <label>Nombre</label>
+                                <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
+                                <span class="help-block"><?php echo $nombre_err;?></span>
+                            </div>
+                            <div class="input <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
+                                <label>Stock</label>
+                                <input type="text" name="stock" class="form-control" value="<?php echo $stock; ?>">
+                                <span class="help-block"><?php echo $stock_err;?></span>
+                            </div>
+                            <div class="input <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
+                                <label>Precio</label>
+                                <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
+                                <span class="help-block"><?php echo $precio_err;?></span>
+                            </div>
+                            <!-- <div class="input">
+                                <label>Imagenes</label>
+                                <input type="file" multiple name="imagenes" class="form-control">
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="d-flex flex-col">
+                                <span>Vista previa</span>
+                                <ul class="d-flex align-center flex-wrap">
+                                    <li class="d-flex flex-col align-center">
+                                        <img src="#" alt="" style="width: 10em; height: 10em; background-color: gray">
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <footer class="d-flex justify-end">
+                                <input type="submit" class="btn btn-success" value="Submit">
+                                <a href="productos.php" class="btn btn-error">Cancelar</a>
+                            </footer>
+                        </form>
                     </div>
-                    <p>Edite los valores de entrada y envíe para actualizar el registro.</p>
-                    <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
-                            <span class="help-block"><?php echo $nombre_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
-                            <label>Stock</label>
-                            <textarea name="stock" class="form-control"><?php echo $stock; ?></textarea>
-                            <span class="help-block"><?php echo $stock_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
-                            <label>Precio</label>
-                            <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
-                            <span class="help-block"><?php echo $precio_err;?></span>
-                        </div>
-                        <input type="hidden" name="productId" value="<?php echo $productId; ?>"/>
-                        <input type="submit" class="btn btn-primary" value="Enviar">
-                        <a href="index.php" class="btn btn-default">Cancelar</a>
-                    </form>
                 </div>
-            </div>        
-        </div>
-    </div>
-</body>
+            </article>
+        </section>
+    </body>
 </html>

@@ -46,7 +46,7 @@ input[type="radio"] {
 }
 
 .align-center {
-    align-content: center;
+    align-items: center;
 }
 
 .justify-center {
@@ -55,6 +55,10 @@ input[type="radio"] {
 
 .justify-between {
     justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: end;
 }
 
 .flex-col {
@@ -71,6 +75,28 @@ input[type="radio"] {
 
 .text-white {
     color: #fff;
+}
+
+.btn {
+    width: max-content;
+    padding: 0.5em 1em;
+    background-color: #000000;
+    color: white;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #00e08a;
+}
+
+.btn-error {
+    background-color: #ff3700;
+}
+
+.btn-primary {
+    background-color: #007bff;
 }
 
 /* MENU - INICIO -------------------------------------------------------------------- */
@@ -190,14 +216,6 @@ input[type="radio"] {
 
 /* TABLA -------------------------------------------------------------------- */
 
-.btn {
-    width: max-content;
-    padding: 0.5em 1em;
-    background-color: #000000;
-    color: white;
-    border-radius: 0.5em;
-}
-
 .fl-table {
     border-radius: 0.5em; 
     width: 100%;
@@ -212,6 +230,7 @@ input[type="radio"] {
 }
 
 .fl-table td {
+    max-width: 10em;
     border-right: 1px solid #f8f8f8;
 }
 
@@ -263,4 +282,42 @@ input[type="radio"] {
 .input > input::placeholder,
 .input > textarea::placeholder {
     color: #000;
+}
+
+.form > footer {
+    gap: 1em;
+}
+
+.form > footer input[type="submit"] {
+    outline: none;
+}
+
+/* POPOVER -------------------------------------------------------------------- */
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 40;
+    background-color: #00000052;
+}
+
+.popover-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 41;
+}
+
+.popover {
+    gap: 1em;
+    background-color: #fff;
+    border-radius: 0.5em;
+    padding: 1em;
 }

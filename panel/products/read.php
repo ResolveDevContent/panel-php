@@ -52,35 +52,35 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
 <!DOCTYPE html>
 <html lang="en">
 
-<?php 
-    $title = "Ver producto";
-    include_once("../includes/head.php"); 
-?>
+    <?php 
+        $title = "Ver producto";
+        include_once("../includes/head.php"); 
+    ?>
 
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header">
-                        <h1>Ver Producto</h1>
+    <body>
+        <div class="wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header">
+                            <h1>Ver Producto</h1>
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <p class="form-control-static"><?php echo $row["nombre"]; ?></p>
+                        </div>
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <p class="form-control-static"><?php echo $row["stock"]; ?></p>
+                        </div>
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <p class="form-control-static"><?php echo $row["precio"]; ?></p>
+                        </div>
+                        <p><a href="index.php" class="btn btn-primary">Volver</a></p>
                     </div>
-                    <div class="form-group">
-                        <label>Nombre</label>
-                        <p class="form-control-static"><?php echo $row["nombre"]; ?></p>
-                    </div>
-                    <div class="form-group">
-                        <label>Stock</label>
-                        <p class="form-control-static"><?php echo $row["stock"]; ?></p>
-                    </div>
-                    <div class="form-group">
-                        <label>Precio</label>
-                        <p class="form-control-static"><?php echo $row["precio"]; ?></p>
-                    </div>
-                    <p><a href="index.php" class="btn btn-primary">Volver</a></p>
-                </div>
-            </div>        
+                </div>        
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
