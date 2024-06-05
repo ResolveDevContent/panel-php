@@ -81,36 +81,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <section class="d-flex">
         <?php include_once("../includes/menu.php"); ?>
         <article id="container">
-            <div class="wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="page-header">
-                                <h2>Agregar Producto</h2>
-                            </div>
-                            <p>Favor diligenciar el siguiente formulario, para agregar el producto.</p>
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                <div class="form-group <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
-                                    <label>Nombre</label>
-                                    <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
-                                    <span class="help-block"><?php echo $nombre_err;?></span>
-                                </div>
-                                <div class="form-group <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
-                                    <label>Stock</label>
-                                    <textarea name="stock" class="form-control"><?php echo $stock; ?></textarea>
-                                    <span class="help-block"><?php echo $stock_err;?></span>
-                                </div>
-                                <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
-                                    <label>Precio</label>
-                                    <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
-                                    <span class="help-block"><?php echo $precio_err;?></span>
-                                </div>
-                                <input type="submit" class="btn btn-primary" value="Submit">
-                                <a href="productos.php" class="btn btn-default">Cancelar</a>
-                            </form>
-                        </div>
-                    </div>        
-                </div>
+            <div class="wrapper d-flex flex-col">
+                <header class="d-flex flex-col align-center justify-center text-center">
+                    <h2>Agregar Producto</h2>
+                    <p>Completar el siguiente formulario para agregar un producto</p>
+                </header>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form d-flex flex-col">
+                    <div class="form-group <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
+                        <span class="help-block"><?php echo $nombre_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
+                        <label>Stock</label>
+                        <textarea name="stock" class="form-control"><?php echo $stock; ?></textarea>
+                        <span class="help-block"><?php echo $stock_err;?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
+                        <label>Precio</label>
+                        <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
+                        <span class="help-block"><?php echo $precio_err;?></span>
+                    </div>
+                    <input type="submit" class="btn" value="Submit">
+                    <a href="productos.php" class="btn">Cancelar</a>
+                </form>
             </div>
         </article>
     </section>
