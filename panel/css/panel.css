@@ -4,13 +4,15 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
-ul,
-label {
-    margin: 0;
+
+ul {
+    list-style: none;
 }
+
 a {
-    text-decoration: none!important;
+    text-decoration: none;
 }
+
 span {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -18,6 +20,7 @@ span {
     overflow: hidden;
     overflow-wrap: anywhere;
 }
+
 input[type="radio"] {
     display: none;
 }
@@ -34,7 +37,9 @@ input[type="radio"] {
 	border-radius: 0.5em;
 	background-color: #079992;
 }
-
+#container {
+    flex: 1;
+}
 .menu {
     height: 100vh;
     overflow-y: auto;
@@ -46,7 +51,6 @@ input[type="radio"] {
 }
 .menu > header {
     background-color: #079992;
-    padding: .5em 1em 1em 1em;
 }
 .menu > header > div {
     display: flex;
@@ -59,6 +63,7 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     color: black;
+    padding: .75em;
 }
 .menu > header > div > a:hover,
 .menu > header > div > button:hover {
@@ -67,6 +72,7 @@ input[type="radio"] {
 .menu > header > div > a span {
     font-weight: 600;
     margin-left: .25em;
+    font-size: 1.125em;
 }
 .menu > header > div > a div {
     width: 3em;
@@ -138,4 +144,7 @@ input[type="radio"] {
 }
 .menu .categoria a span {
     font-size: 1.125em;
+}
+.wrapper {
+    padding: 1em;
 }

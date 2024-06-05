@@ -1,5 +1,5 @@
-<aside class='menu w-25 position-sticky top-0'>
-    <div class='d-flex align-items-center display-menu'>
+<aside class='menu'>
+    <div class='d-flex align-center display-menu'>
         <label for="display-menu">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
@@ -7,7 +7,7 @@
         </label>
     </div>
     <header class='text-center'>
-        <div class='d-flex align-items-center'>
+        <div class='d-flex align-center'>
             <a href="" class="user">
                 <div class="user-img"></div>
                 <span>Nombre</span>

@@ -6,7 +6,7 @@
     <body>
         <section style="display: flex">
             <?php include_once("includes/menu.php"); ?>
-            <article>
+            <article id="container">
                 <div class="wrapper">
                     <div class="container-fluid">
                         <div class="row">
