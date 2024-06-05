@@ -102,10 +102,10 @@ input[type="radio"] {
 }
 .menu > div > label > svg  {
     fill: white;
-    width: 3em;
-    min-width: 3em;
-    height: 3em;
-    min-height: 3em;
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
     cursor: pointer;
     margin-left: auto;
 }
