@@ -18,7 +18,7 @@
             <div class='d-flex flex-col flex-wrapalign-center text-white'>
                 <header class='text-center'>
                     <h2>¡Bienvenido/a!</h2>
-                    <strong>Inicia sesion</strong>
+                    <strong>Register</strong>
                 </header>
                 <form method="post">
                     <ul class="login-form d-flex flex-col">
@@ -26,7 +26,7 @@
                             <label for="user">Usuario</label>
                             <input type="text" 
                                 name="email" 
-                                id="user"
+                                id="user" 
                             />
                         </li>
                         <li class='input'>
@@ -36,24 +36,17 @@
                                     name="password" 
                                     id="password"
                                 />
-                                <!-- <button class='visible-btn'>
-                                    {visible ? (
-                                        <Hidden />
-                                    ) : (
-                                        <Show />
-                                    )}
-                                </button> -->
                             </div>
                         </li>
                     </ul>
                     <div class="d-flex justify-center">
-                        <input class="btn btn-primary text-center" name="btnLogin" value="Iniciar sesion">
+                        <input class="btn btn-primary text-center" name="register" value="Iniciar sesion">
                     </div>
                 </form>
                 <span style="height: 2em; color: red">
                     <?php
                         include_once("config.php");
-                        include_once("controllers/loginController.php");
+                        include_once("controllers/registerController.php");
                     ?>
                 </span>
                 <footer>

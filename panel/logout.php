@@ -2,7 +2,6 @@
 
 include_once "../config.php";
 
-if(!empty($_POST["btnLogout"])) {
     session_start();
 
     if(session_destroy()) {

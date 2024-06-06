@@ -9,7 +9,7 @@ if(!empty($_POST["btnChange"])) {
             $newPassword = $_POST["newPassword"];
             $rNewPassword = $_POST["rNewPassword"];
 
-            $sql = "SELECT * FROM `users` WHERE username='$_SESSION[email]' LIMIT 0,1";
+            $sql = "SELECT * FROM users WHERE username='$_SESSION[email]' LIMIT 0,1";
             $result = mysqli_query($con, $sql);
 
             if($result) {

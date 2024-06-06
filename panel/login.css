@@ -15,11 +15,15 @@
 
 .login > div {
     background-color: #313131;
-    min-width: 25em;
+    max-width: 30em;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.551);
     padding: 2em;
     border-radius: 1em;
     gap: 1em;
+}
+
+.login > div > span {
+    -webkit-line-clamp: 2;
 }
 
 .login > div > header > h2 {
@@ -40,18 +44,21 @@
 }
 
 .login-form li input {
-    width: max-content;
-    background-color: #38ada9;
     cursor: pointer;
     transition: all 0.5s;
     border: none;
-    padding: .75em 1.5em;
     border-radius: .5em;
     text-transform: uppercase;
 }
 
-.login-form li input:hover {
-    background-color: #33c6c1;
+.login > div > form > div {
+    margin-top: 1em;
+}
+
+.login > div > form > div > input {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
 }
 
 .login-form .visible-btn {

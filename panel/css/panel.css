@@ -89,14 +89,23 @@ input[type="radio"] {
 
 .btn-success {
     background-color: #00e08a;
+    opacity: .8;
 }
 
 .btn-error {
     background-color: #ff3700;
+    opacity: .8;
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #00fff7;
+    opacity: .8;
+}
+
+.btn-success:hover,
+.btn-error:hover,
+.btn-primary:hover {
+    opacity: 1;
 }
 
 /* MENU - INICIO -------------------------------------------------------------------- */
