@@ -4,7 +4,8 @@ require_once "../config.php";
  
 // Define variables and initialize with empty values
 $nombre = $stock = $precio = "";
-$nombre_err = $stock_err = $precio_err = "";
+$nombre_err = $stock_err = $precio_err = $imagenes_err = "";
+$imagenes = [];
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -35,31 +36,65 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $precio = $input_precio;
     }
+
+    // Validate imagen
+    foreach($_FILES['imagenes']['tmp_name'] as $item => $tmp_name) {
+        if($_FILES["imagenes"]["name"][$item]) {
+			$filename = $_FILES["imagenes"]["name"][$item]; //Obtenemos el nombre original del archivo
+			$source = $_FILES["imagenes"]["tmp_name"][$item]; //Obtenemos un nombre temporal del archivo
+			
+			$directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+			
+			//Validamos si la ruta de destino existe, en caso de no existir la creamos
+			if(!file_exists($directorio)){
+				mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+			}
+			
+			$dir=opendir($directorio); //Abrimos el directorio de destino
+			$target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+			
+			//Movemos y validamos que el archivo se haya cargado correctamente
+			//El primer campo es el origen y el segundo el destino
+			if(move_uploaded_file($source, $target_path)) {	
+				echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+                array_push($imagenes, $target_path);
+            } else {	
+				echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
+			}
+			closedir($dir); //Cerramos el directorio de destino
+		}
+    }
     
     // Check input errors before inserting in database
-    if(empty($nombre_err) && empty($stock_err) && empty($precio_err)){
-        // Prepare an insert statement
-        $sql = "INSERT INTO products (nombre, stock, precio) VALUES (?, ?, ?)";
-         
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_nombre, $param_stock, $param_precio);
-            
-            // Set parameters
-            $param_nombre = $nombre;
-            $param_stock = $stock;
-            $param_precio = $precio;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Records created successfully. Redirect to landing page
-                header("location: productos.php");
-                exit();
-            } else{
-                echo "Something went wrong. Please try again later.";
+    if(empty($nombre_err) && empty($stock_err) && empty($precio_err) && empty($imagenes_err)){
+        $num_imagenes = count($imagenes);
+
+        $sql = "INSERT INTO products (nombre, stock, precio, imagenes) VALUES (?, ?, ?, ?)";
+        
+        for($i = 0; $i < $num_imagenes; $i++) {
+            // Prepare an insert statement     
+            if($stmt = mysqli_prepare($link, $sql)){
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "ssss", $param_nombre, $param_stock, $param_precio, $param_imagenes);
+                
+                // Set parameters
+                $param_nombre = $nombre;
+                $param_stock = $stock;
+                $param_precio = $precio;
+                $param_imagenes = $imagenes[$i];
+                
+                // Attempt to execute the prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    // Records created successfully. Redirect to landing page
+                    // header("location: productos.php");
+                    // exit();
+                    echo "Subido crrectametene";
+                } else{
+                    echo "Something went wrong. Please try again later.";
+                }
             }
+             
         }
-         
         // Close statement
         mysqli_stmt_close($stmt);
     }
@@ -86,7 +121,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <h2>Agregar Producto</h2>
                             <p>Completar el siguiente formulario para agregar un producto</p>
                         </header>
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form d-flex flex-col">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col">
                             <div class="input <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
                                 <label>Nombre</label>
                                 <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
@@ -102,9 +137,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                                 <span class="help-block"><?php echo $precio_err;?></span>
                             </div>
-                            <!-- <div class="input">
-                                <label>Imagenes</label>
-                                <input type="file" multiple name="imagenes" class="form-control">
+                            <div class="input">
+                                <label>imagen</label>
+                                <input type="file" multiple name="imagenes[]" class="form-control" >
                                 <span class="help-block"></span>
                             </div>
                             <div class="d-flex flex-col">
@@ -114,7 +149,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         <img src="#" alt="" class="rounded" style="width: 10em; height: 10em; background-color: gray">
                                     </li>
                                 </ul>
-                            </div> -->
+                            </div>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" value="Confirmar">
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
