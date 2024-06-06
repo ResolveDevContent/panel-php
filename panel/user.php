@@ -16,48 +16,51 @@
 
     <body>
         <section class="d-flex">
-            <?php include_once("../includes/menu.php"); ?>
+            <?php include_once("includes/menu.php"); ?>
             <article id="container">
-                <div class='d-flex flex-col flex-wrapalign-center text-white'>
+                <div class='pass-form d-flex flex-col flex-wrapalign-center text-white'>
                     <header class='text-center'>
-                        <strong>Register</strong>
+                        <strong>Actualizaci&oacute; de contraseña</strong>
                     </header>
                     <form method="post">
                         <ul class="login-form d-flex flex-col">
                             <li class='input'>
-                                <label for="user">Usuario</label>
+                                <label for="currenPassword">Contraseña actual</label>
                                 <input type="text" 
-                                    name="email" 
-                                    id="user" 
+                                    name="currentPassword" 
+                                    id="currentPassword" 
                                 />
                             </li>
                             <li class='input'>
-                                <label for="password">Contraseña</label>
+                                <label for="newPassword">Contraseña nueva</label>
                                 <div class='d-flex password-container'>
                                     <input type="password" 
-                                        name="password" 
-                                        id="password"
+                                        name="newPassword" 
+                                        id="newPassword"
+                                    />
+                                </div>
+                            </li>
+                            <li class='input'>
+                                <label for="rNewPassword">Repetir contraseña nueva</label>
+                                <div class='d-flex password-container'>
+                                    <input type="password" 
+                                        name="rNewPassword" 
+                                        id="rNewPassword"
                                     />
                                 </div>
                             </li>
                         </ul>
                         <div class="d-flex justify-center">
-                            <input type="submit" class="btn btn-primary text-center" name="register" value="Registrarse">
+                            <input type="submit" class="btn btn-primary text-center" name="btnChangePassword" value="Actualizar contraseña">
                         </div>
                     </form>
                     <span class="text-center" style="height: 2em; color: red">
                         <?php
                             include_once("config.php");
-                            include_once("controllers/registerController.php");
+                            include_once("controllers/changePasswordController.php");
                         ?>
                     </span>
-                    <footer>
-                        <span class='text-white text-center'>Ante cualquier inconveniente, comunic&aacute;te con nosotros</span>
-                    </footer>
                 </div>
-                <footer class='d-flex justify-center'>
-                    <span>© Resolve Dev</span>
-                </footer>
             </article>
         </section>
     </body>

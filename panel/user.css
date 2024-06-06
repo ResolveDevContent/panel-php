@@ -1,0 +1,25 @@
+.pass-form {
+    background-color: #313131;
+    padding: 2em;
+    border-radius: 1em;
+    margin: 2em;
+}
+
+.pass-form header strong {
+    text-transform: uppercase;
+}
+
+.pass-form form {
+    margin-top: 2em;
+}
+
+.pass-form > form > div {
+    margin-top: 1em;
+}
+
+.pass-form > form > div > input {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    padding: 1em 2em;
+}
