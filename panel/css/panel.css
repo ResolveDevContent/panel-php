@@ -112,6 +112,10 @@ input[type="radio"] {
 
 #container {
     flex: 1;
+    background-image: url('../../images/resolvedevverde.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25em;
 }
 .menu {
     height: 100vh;
@@ -132,6 +136,18 @@ input[type="radio"] {
 .menu > header > div .user {
     width: 100%;
 }
+.menu > header .user .user-img {
+    background-image: url('../../images/user.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 3em;
+    min-width: 3em;
+    height: 3em;
+    min-height: 3em;
+    border: 2px solid black;
+    border-radius: 50%; 
+}
 .menu > header > div > a {
     display: flex;
     align-items: center;
@@ -144,19 +160,8 @@ input[type="radio"] {
 }
 .menu > header > div > a span {
     font-weight: 600;
-    margin-left: .25em;
+    margin-left: .125em;
     font-size: 1.125em;
-}
-.menu > header > div > a div {
-    width: 3em;
-    min-width: 3em;
-    height: 3em;
-    min-height: 3em;
-    border: 1px solid black;
-    background-image: url('../images/user.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 50%; 
 }
 .menu > header > div > button svg {
     width: 1.5em;

@@ -15,10 +15,10 @@
     ?>
 
     <body>
-        <?php include_once("includes/menu.php"); ?>
-
-        <article id="container">
-            
-        </article>
+        <section class="d-flex">
+            <?php include_once("includes/menu.php"); ?>
+    
+            <article id="container"></article>
+        </section>
     </body>
 </html>
