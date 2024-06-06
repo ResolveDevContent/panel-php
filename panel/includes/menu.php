@@ -1,3 +1,4 @@
+<input type="checkbox" id="display-menu">
 <aside class='menu'>
     <div class='d-flex align-center display-menu'>
         <label for="display-menu">

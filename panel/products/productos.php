@@ -20,8 +20,8 @@
             <article id="container">
                 <div class="wrapper d-flex flex-col">
                     <header class="d-flex justify-between align-center">
-                        <h2>Empleados</h2>
-                        <a href="create.php" class="btn">Agregar nuevo producto</a>
+                        <h2>Productos</h2>
+                        <a href="create.php" class="btn btn-primary">Agregar nuevo producto</a>
                     </header>
                     <div class="table-wrapper">
                         <?php
@@ -45,14 +45,14 @@
                                     echo "<tbody>";
                                     while($row = mysqli_fetch_array($result)){
                                         echo "<tr>";
-                                            echo "<td>" . $row['productId'] . "</td>";
-                                            echo "<td>" . $row['nombre'] . "</td>";
-                                            echo "<td>" . $row['stock'] . "</td>";
-                                            echo "<td>" . $row['precio'] . "</td>";
+                                            echo "<td><span>" . $row['productId'] . "</span></td>";
+                                            echo "<td><span>" . $row['nombre'] . "</span></td>";
+                                            echo "<td><span>" . $row['stock'] . "</span></td>";
+                                            echo "<td><span>" . $row['precio'] . "</span></td>";
                                             echo "<td>";
-                                                echo "<a href='read.php?productId=". $row['productId'] ."' title='Ver' data-toggle='tooltip'><span ></span></a>";
-                                                echo "<a href='update.php?productId=". $row['productId'] ."' title='Actualizar' data-toggle='tooltip'><span ></span></a>";
-                                                echo "<a href='delete.php?productId=". $row['productId'] ."' title='Borrar' data-toggle='tooltip'><span ></span></a>";
+                                                // echo "<a href='read.php?productId=". $row['productId'] ."' title='Ver'><span ></span></a>";
+                                                echo "<a href='update.php?productId=". $row['productId'] ."' title='Actualizar'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'><path d='m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z'></path><path d='M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z'></path></svg></a>";
+                                                echo "<a href='delete.php?productId=". $row['productId'] ."' title='Borrar'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'><path d='M15 2H9c-1.103 0-2 .897-2 2v2H3v2h2v12c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2zM9 4h6v2H9V4zm8 16H7V8h10v12z'></path></svg></a>";
                                             echo "</td>";
                                         echo "</tr>";
                                     }
