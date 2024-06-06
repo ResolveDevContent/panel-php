@@ -22,21 +22,21 @@ if(!empty(&_POST["btnChange"])) {
                     $res = mysqli_query($con, $sql);
     
                     if($res) {
-                        echo "<span>La contraseña se ha actualizado con exito</span>";
+                        echo "La contraseña se ha actualizado con exito";
                     } else {
-                        echo "<span>Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros</span>";
+                        echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
                     }
                 } else {
-                    echo "<span>La contraseña actual no coincide</span>";
+                    echo "La contraseña actual no coincide";
                 }
             } else {
-                echo "<span>Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros</span>";
+                echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         } else {
-            echo "<span>Las nuevas contraseñas no coinciden</span>";
+            echo "Las nuevas contraseñas no coinciden";
         }
     } else {
-        echo "<span>Complete todo los campos</span>";
+        echo "Complete todo los campos";
     }
 }
 

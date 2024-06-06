@@ -12,7 +12,7 @@ if(!empty(&_POST["btnLogout"])) {
     
         header("Location: login.php");
     } else {
-        echo "<span>Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros</span>";
+        echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
     }
 
     die;

@@ -12,7 +12,7 @@ if(!empty(&_POST["btnLogin"])) {
 
         if($result) {
             if(mysqli_num_rows($result) == 0) {
-                echo "<span>Email y/o contraseña incorrectos</span>";
+                echo "Email y/o contraseña incorrectos";
             } else {
                 $row = mysqli_fetch_assoc($res);
       
@@ -23,14 +23,14 @@ if(!empty(&_POST["btnLogin"])) {
                     setcookie("usuarioLogeado", $email, time() + (86400 * 30), "/");
                     header("location: index.php");
                 } else {
-                    echo "<span>Email y/o contraseña incorrectos</span>";
+                    echo "Email y/o contraseña incorrectos";
                 }
             }
         } else {
-            echo "<span>Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros</span>";
+            echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
         }
     } else {
-        echo "<span>Complete todo los campos</span>";
+        echo "Complete todo los campos";
     }
 }
 
