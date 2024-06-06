@@ -39,7 +39,7 @@
     text-transform: uppercase;
 }
 
-.login-form li button {
+.login-form li input {
     width: max-content;
     background-color: #38ada9;
     cursor: pointer;
@@ -50,7 +50,7 @@
     text-transform: uppercase;
 }
 
-.login-form li button:hover {
+.login-form li input:hover {
     background-color: #33c6c1;
 }
 

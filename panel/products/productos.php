@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php 
+    <?php
+        session_start();
+
+        include("../config.php");
+        
         $title = "Productos";
         include_once("../includes/head.php"); 
+        
+        if (!isset($_SESSION['email'])) {
+            header("location:login.php");
+        }
     ?>
 
     <body>

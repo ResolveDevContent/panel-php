@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +20,7 @@
                     <h2>¡Bienvenido/a!</h2>
                     <strong>Inicia sesion</strong>
                 </header>
-                <form onSubmit={handleSubmit}>
+                <form method="post">
                     <ul class="login-form d-flex flex-col">
                         <li class='input'>
                             <label for="user">Usuario</label>
@@ -45,12 +49,15 @@
                             </div>
                         </li>
                         <li class='d-flex justify-center'>
-                            <button type='submit' class='text-white'>Iniciar sesion</button>
+                            <input name="btnLogin" value="Iniciar sesion">
                         </li>
                     </ul>
                 </form>
                 <span style="height: 2em; color: red">
-                    {error}
+                    <?php
+                        include("condig.php")
+                        include("controllers/loginController.php")
+                    ?>
                 </span>
                 <footer>
                     <span class='text-white'>Ante cualquier inconveniente, comunic&aacute;te con nosotros</span>
