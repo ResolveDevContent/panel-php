@@ -8,17 +8,20 @@ if(!empty($_POST["btnLogin"])) {
         $password = $_POST["password"];
 
         $sql = "SELECT * FROM users WHERE email='$email' LIMIT 0,1";
-        $result = mysqli_query($con, $sql);
+        $result = mysqli_query($link, $sql);
 
         if($result) {
             if(mysqli_num_rows($result) == 0) {
                 echo "Email y/o contraseña incorrectos";
             } else {
-                $row = mysqli_fetch_assoc($res);
+                $row = mysqli_fetch_assoc($result);
       
                 $decrypt = password_verify($password, $row['password']);
+
+                echo $decrypt . "  ";
     
                 if ($decrypt) {
+                    echo "bien";
                     $_SESSION['email'] = $row['email'];
                     setcookie("usuarioLogeado", $email, time() + (86400 * 30), "/");
                     header("location: index.php");

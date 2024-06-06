@@ -15,6 +15,5 @@ include_once "../config.php";
     }
 
     die;
-}
 
 ?>

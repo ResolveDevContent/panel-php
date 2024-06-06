@@ -10,7 +10,7 @@ if(!empty($_POST["btnChange"])) {
             $rNewPassword = $_POST["rNewPassword"];
 
             $sql = "SELECT * FROM users WHERE username='$_SESSION[email]' LIMIT 0,1";
-            $result = mysqli_query($con, $sql);
+            $result = mysqli_query($link, $sql);
 
             if($result) {
                 $row = mysqli_fetch_assoc($res);
@@ -19,7 +19,7 @@ if(!empty($_POST["btnChange"])) {
     
                 if ($decrypt) {
                     $sql = "UPDATE users SET password='".md5($password)."'";
-                    $res = mysqli_query($con, $sql);
+                    $res = mysqli_query($link, $sql);
     
                     if($res) {
                         echo "La contraseña se ha actualizado con exito";

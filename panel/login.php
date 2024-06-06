@@ -47,17 +47,17 @@
                         </li>
                     </ul>
                     <div class="d-flex justify-center">
-                        <input class="btn btn-primary text-center" name="btnLogin" value="Iniciar sesion">
+                        <input type="submit" class="btn btn-primary text-center" name="btnLogin" value="Iniciar sesion">
                     </div>
                 </form>
-                <span style="height: 2em; color: red">
+                <span class="text-center" style="height: 2em; color: red">
                     <?php
                         include_once("config.php");
                         include_once("controllers/loginController.php");
                     ?>
                 </span>
                 <footer>
-                    <span class='text-white'>Ante cualquier inconveniente, comunic&aacute;te con nosotros</span>
+                    <span class='text-white text-center'>Ante cualquier inconveniente, comunic&aacute;te con nosotros</span>
                 </footer>
             </div>
             <footer class='d-flex justify-center'>

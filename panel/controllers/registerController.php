@@ -2,20 +2,22 @@
 
 include_once "config.php";
 
-if(!empty($_POST['register']))
+if(!empty($_POST['register'])) {
     if(!empty($_POST['email']) && !empty($_POST['password'])){
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $hpass = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users VALUES('$email', '" . md5($password) . "')";
-        $result = mysqli_query($con, $sql);
+        $sql = "INSERT INTO users (email, password) VALUES('$email', '$hpass')";
+        $result = mysqli_query($link, $sql);
 
         if($result){
+            echo "Se registro correctamente";
+        } else {
             echo "failure";
-        }else{
-            echo "success";   
         }
     } else {
-        echo "no che"
+        echo "Complte todos los campos";
     }
+}
+
 ?>
