@@ -5,9 +5,11 @@ require_once "../config.php";
 // Define variables and initialize with empty values
 $nombre = $stock = $precio = "";
 $nombre_err = $stock_err = $precio_err = "";
+$loading = false;
  
 // Processing form data when form is submitted
 if(isset($_POST["productId"]) && !empty($_POST["productId"])){
+    $loading = true;
     // Get hidden input value
     $productId = $_POST["productId"];
     
@@ -57,6 +59,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
+                $loading = true;
                 header("location: productos.php");
                 exit();
             } else{
@@ -135,6 +138,11 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             <?php include_once("../includes/menu.php"); ?>
             <article id="container">
                 <div class="wrapper">
+                    <?php 
+                        if($loading) {
+                            echo "<label style='font-size: 5em'>CARGANDO...</label>";
+                        }
+                    ?>
                     <div class="form-container d-flex flex-col">
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Editar Producto</h2>
@@ -148,7 +156,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                             </div>
                             <div class="input <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
                                 <label>Stock</label>
-                                <input type="text" name="stock" class="form-control" value="<?php echo $stock; ?>">
+                                <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>">
                                 <span class="help-block"><?php echo $stock_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
@@ -156,6 +164,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                                 <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                                 <span class="help-block"><?php echo $precio_err;?></span>
                             </div>
+                            <input type="hidden" name="productId" value="<?php echo $productId; ?>"/>
                             <!-- <div class="input">
                                 <label>Imagenes</label>
                                 <input type="file" multiple name="imagenes" class="form-control">
@@ -170,7 +179,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                                 </ul>
                             </div> -->
                             <footer class="d-flex justify-end">
-                                <input type="submit" class="btn btn-success" value="Submit">
+                                <input type="submit" class="btn btn-success" value="Confirmar">
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
