@@ -24,7 +24,6 @@
 
 .login > div > span {
     -webkit-line-clamp: 2;
-    max-width: 25em;
 }
 
 .login > div > header > h2 {
@@ -109,4 +108,20 @@
     bottom: 0;
     width: 100%;
     padding-bottom: .5em;
+}
+
+@media screen and (min-width: 960px) {
+    .login > div > span {
+        max-width: 25em;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .login > div {
+        min-width: 24em;
+    }
+    .login > div > span,
+    .login > div > footer span {
+        max-width: 23em;
+    }
 }

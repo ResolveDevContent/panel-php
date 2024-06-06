@@ -15,7 +15,7 @@
     ?>
 
     <body>
-        <section class="d-flex">
+        <section class="d-flex" id="main">
             <?php include_once("includes/menu.php"); ?>
     
             <article id="container"></article>
