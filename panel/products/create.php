@@ -116,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 </ul>
                             </div> -->
                             <footer class="d-flex justify-end">
-                                <input type="submit" class="btn btn-success" value="Submit">
+                                <input type="submit" class="btn btn-success" value="Confirmar">
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
