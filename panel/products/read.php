@@ -2,7 +2,7 @@
 // Check existence of id parameter before processing further
 if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
     // Include config file
-    require_once "config.php";
+    require_once "../config.php";
     
     // Prepare a select statement
     $sql = "SELECT * FROM products WHERE productId = ?";
@@ -51,36 +51,83 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
     <?php 
         $title = "Ver producto";
         include_once("../includes/head.php"); 
     ?>
 
     <body>
-        <div class="wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="page-header">
-                            <h1>Ver Producto</h1>
-                        </div>
-                        <div class="form-group">
+    <section class="d-flex">
+            <?php include_once("../includes/menu.php"); ?>
+            <article id="container">
+                <div class="wrapper">
+                    <div class="form-container d-flex flex-col">
+                        <header class="d-flex flex-col align-center justify-center text-center">
+                            <h2>Ver Producto</h2>
+                        </header>
+                        <div class="input">
                             <label>Nombre</label>
-                            <p class="form-control-static"><?php echo $row["nombre"]; ?></p>
+                            <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
                         </div>
-                        <div class="form-group">
+                        <div class="input">
                             <label>Stock</label>
-                            <p class="form-control-static"><?php echo $row["stock"]; ?></p>
+                            <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>">
                         </div>
-                        <div class="form-group">
+                        <div class="input">
                             <label>Precio</label>
-                            <p class="form-control-static"><?php echo $row["precio"]; ?></p>
+                            <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                         </div>
-                        <p><a href="index.php" class="btn btn-primary">Volver</a></p>
+                        <div class="d-flex flex-col">
+                            <span>Imagenes</span>
+                            <ul class="d-flex align-center flex-wrap">
+                            <?php
+                                // Include config file
+                                require_once "../config.php";
+                                
+                                // Prepare a select statement
+                                $sql2 = "SELECT * FROM products_images WHERE productId = ?";
+                                
+                                if($stmt2 = mysqli_prepare($link, $sql2)){
+                                    // Bind variables to the prepared statement as parameters
+                                    mysqli_stmt_bind_param($stmt2, "i", $param_productId);
+                                    
+                                    // Set parameters
+                                    $param_productId = trim($_GET["productId"]);
+                                    
+                                    // Attempt to execute the prepared statement
+                                    if(mysqli_stmt_execute($stmt2)){
+                                        $result = mysqli_stmt_get_result($stmt2);
+                                
+                                        if(mysqli_num_rows($result) == 1){
+                                            /* Fetch result row as an associative array. Since the result set
+                                            contains only one row, we don't need to use while loop */
+                                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                                            
+                                            echo "<li>";
+                                                // echo "<img src='$row['imagen']'>";
+                                            echo "</li>";
+                                        } else{
+                                            // URL doesn't contain valid id parameter. Redirect to error page
+                                            header("location: error.php");
+                                            exit();
+                                        }
+                                        
+                                    } else{
+                                        echo "Oops! Something went wrong. Please try again later.";
+                                    }
+                                }
+                                
+                                // Close statement
+                                mysqli_stmt_close($stmt2);
+                                
+                                // Close connection
+                                mysqli_close($link);
+                            ?>
+                            </ul>
+                        </div>
                     </div>
-                </div>        
-            </div>
-        </div>
+                </div>
+            </article>
+        </section>
     </body>
 </html>

@@ -66,39 +66,67 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($nombre_err) && empty($stock_err) && empty($precio_err) && empty($imagenes_err)){
-        $num_imagenes = count($imagenes);
+    if(empty($nombre_err) && empty($stock_err) && empty($precio_err)){
 
-        $sql = "INSERT INTO products (nombre, stock, precio, imagenes) VALUES (?, ?, ?, ?)";
-        
-        for($i = 0; $i < $num_imagenes; $i++) {
-            // Prepare an insert statement     
-            if($stmt = mysqli_prepare($link, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "ssss", $param_nombre, $param_stock, $param_precio, $param_imagenes);
-                
-                // Set parameters
-                $param_nombre = $nombre;
-                $param_stock = $stock;
-                $param_precio = $precio;
-                $param_imagenes = $imagenes[$i];
-                
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    // Records created successfully. Redirect to landing page
-                    // header("location: productos.php");
-                    // exit();
-                    echo "Subido crrectametene";
-                } else{
-                    echo "Something went wrong. Please try again later.";
-                }
+        $sql = "INSERT INTO products (nombre, stock, precio) VALUES (?, ?, ?)";
+        $sql2 = "INSERT INTO products_images (productId, imagen) VALUES (?, ?)";
+        $sql3 = "SELECT LAST_INSERT_ID() as productId";
+
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "sss", $param_nombre, $param_stock, $param_precio);
+            
+            // Set parameters
+            $param_nombre = $nombre;
+            $param_stock = $stock;
+            $param_precio = $precio;
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                echo "Subido crrectametene";
+            } else{
+                echo "Something went wrong. Please try again later.";
             }
-             
         }
         // Close statement
         mysqli_stmt_close($stmt);
     }
-    
+
+    $num_imagenes = count($imagenes);
+    // Prepare an insert statement     
+    if($stmt2 = mysqli_prepare($link, $sql3)) {
+        if(mysqli_stmt_execute($stmt2)) {
+            $result = mysqli_stmt_get_result($stmt2);
+            $row = mysqli_fetch_array($result);
+            $productId = $row['productId'];
+            echo $productId;
+            for($i = 0; $i < $num_imagenes; $i++) {
+                if($stmt3 = mysqli_prepare($link, $sql2)){
+
+                    // Bind variables to the prepared statement as parameters
+                    mysqli_stmt_bind_param($stmt3, "ss", $param_productId, $param_imagenes);
+                    
+                    // Set parameters
+                    $param_productId = $productId;
+                    $param_imagenes = $imagenes[$i];
+                    
+                    // Attempt to execute the prepared statement
+                    if(mysqli_stmt_execute($stmt3)){
+                        // Records created successfully. Redirect to landing page
+                        header("location: productos.php");
+                        exit();
+                    } else{
+                        echo "Something went wrong. Please try again later.";
+                    }
+                }
+            }
+        }
+
+        // Close statement
+        mysqli_stmt_close($stmt3); 
+        mysqli_stmt_close($stmt2); 
+    }
+
     // Close connection
     mysqli_close($link);
 }
