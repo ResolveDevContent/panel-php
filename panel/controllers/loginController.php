@@ -1,11 +1,11 @@
 <?php
 
-include "config.php";
+include_once "config.php";
 
-if(!empty(&_POST["btnLogin"])) {
-    if(!empty(&_POST["email"]) and !empty(&_POST["password"])) {
-        $email = &_POST["email"];
-        $password = &_POST["password"];
+if(!empty($_POST["btnLogin"])) {
+    if(!empty($_POST["email"]) and !empty($_POST["password"])) {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
 
         $sql = "SELECT * FROM users WHERE email='$email' LIMIT 0,1";
         $result = mysqli_query($con, $sql);

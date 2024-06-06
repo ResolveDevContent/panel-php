@@ -55,8 +55,8 @@
                 </form>
                 <span style="height: 2em; color: red">
                     <?php
-                        include("condig.php")
-                        include("controllers/loginController.php")
+                        include_once("config.php");
+                        include_once("controllers/loginController.php");
                     ?>
                 </span>
                 <footer>

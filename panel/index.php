@@ -4,14 +4,14 @@
     <?php
         session_start();
 
-        include("config.php");
+        include "config.php";
 
         $title = "Panel";
-        include_once("includes/head.php"); 
+        include_once "includes/head.php"; 
         
-        if (!isset($_SESSION['email'])) {
-            header("location:login.php");
-        }
+        // if (!isset($_SESSION['email'])) {
+        //     header("location:login.php");
+        // }
     ?>
 
     <body>

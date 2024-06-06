@@ -9,9 +9,9 @@
         $title = "Productos";
         include_once("../includes/head.php"); 
         
-        if (!isset($_SESSION['email'])) {
-            header("location:login.php");
-        }
+        // if (!isset($_SESSION['email'])) {
+        //     header("location:login.php");
+        // }
     ?>
 
     <body>

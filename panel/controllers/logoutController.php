@@ -1,8 +1,8 @@
 <?php
 
-include "config.php";
+include_once "../config.php";
 
-if(!empty(&_POST["btnLogout"])) {
+if(!empty($_POST["btnLogout"])) {
     session_start();
 
     if(session_destroy()) {
@@ -18,4 +18,4 @@ if(!empty(&_POST["btnLogout"])) {
     die;
 }
 
->
+?>

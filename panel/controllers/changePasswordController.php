@@ -2,14 +2,14 @@
 
 include "config.php";
 
-if(!empty(&_POST["btnChange"])) {
-    if(!empty(&_POST["oldPassword"]) and !empty(&_POST["newPassword"]) and !empty(&_POST["rNewPassword"])) {
-        if (&_POST["newPassword"]) == (&_POST["rNewPassword"]) {
-            $currentPassword = &_POST["currentPassword"];
-            $newPassword = &_POST["newPassword"];
-            $rNewPassword = &_POST["rNewPassword"];
+if(!empty($_POST["btnChange"])) {
+    if(!empty($_POST["oldPassword"]) and !empty($_POST["newPassword"]) and !empty($_POST["rNewPassword"])) {
+        if (($_POST["newPassword"]) == ($_POST["rNewPassword"])) {
+            $currentPassword = $_POST["currentPassword"];
+            $newPassword = $_POST["newPassword"];
+            $rNewPassword = $_POST["rNewPassword"];
 
-            $sql = "SELECT * FROM `users` WHERE username='$_SESSION['email']' LIMIT 0,1";
+            $sql = "SELECT * FROM `users` WHERE username='$_SESSION[email]' LIMIT 0,1";
             $result = mysqli_query($con, $sql);
 
             if($result) {
@@ -40,4 +40,4 @@ if(!empty(&_POST["btnChange"])) {
     }
 }
 
->
+?>
