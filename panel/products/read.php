@@ -3,26 +3,27 @@
 if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
     // Include config file
     require_once "../config.php";
-    
+
     // Prepare a select statement
     $sql = "SELECT * FROM products WHERE productId = ?";
-    
+    $sql2 = "SELECT * FROM products_images WHERE productId = ?";
+
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "i", $param_productId);
-        
+
         // Set parameters
         $param_productId = trim($_GET["productId"]);
-        
+
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             $result = mysqli_stmt_get_result($stmt);
-    
+
             if(mysqli_num_rows($result) == 1){
                 /* Fetch result row as an associative array. Since the result set
                 contains only one row, we don't need to use while loop */
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                
+
                 // Retrieve individual field value
                 $nombre = $row["nombre"];
                 $stock = $row["stock"];
@@ -32,15 +33,33 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                 header("location: error.php");
                 exit();
             }
-            
+
         } else{
             echo "Oops! Something went wrong. Please try again later.";
         }
     }
-     
+
+    if($stmt2 = mysqli_prepare($link, $sql2)){
+        // Bind variables to the prepared statement as parameters
+        mysqli_stmt_bind_param($stmt2, "i", $param_productId);
+
+        // Set parameters
+        $param_productId = trim($_GET["productId"]);
+
+        // Attempt to execute the prepared statement
+        $imagenes = [];
+        if(mysqli_stmt_execute($stmt2)){
+            $result2 = mysqli_stmt_get_result($stmt2);
+        } else{
+            echo "Oops! Something went wrong. Please try again later.";
+        }
+    }
+
+
     // Close statement
     mysqli_stmt_close($stmt);
-    
+    mysqli_stmt_close($stmt2);
+
     // Close connection
     mysqli_close($link);
 } else{
@@ -51,9 +70,9 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php 
+    <?php
         $title = "Ver producto";
-        include_once("../includes/head.php"); 
+        include_once("../includes/head.php");
     ?>
 
     <body>
@@ -80,49 +99,11 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                         <div class="d-flex flex-col">
                             <span>Imagenes</span>
                             <ul class="d-flex align-center flex-wrap">
-                            <?php
-                                // Include config file
-                                require_once "../config.php";
-                                
-                                // Prepare a select statement
-                                $sql2 = "SELECT * FROM products_images WHERE productId = ?";
-                                
-                                if($stmt2 = mysqli_prepare($link, $sql2)){
-                                    // Bind variables to the prepared statement as parameters
-                                    mysqli_stmt_bind_param($stmt2, "i", $param_productId);
-                                    
-                                    // Set parameters
-                                    $param_productId = trim($_GET["productId"]);
-                                    
-                                    // Attempt to execute the prepared statement
-                                    if(mysqli_stmt_execute($stmt2)){
-                                        $result = mysqli_stmt_get_result($stmt2);
-                                
-                                        if(mysqli_num_rows($result) == 1){
-                                            /* Fetch result row as an associative array. Since the result set
-                                            contains only one row, we don't need to use while loop */
-                                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                                            
-                                            echo "<li>";
-                                                // echo "<img src='$row['imagen']'>";
-                                            echo "</li>";
-                                        } else{
-                                            // URL doesn't contain valid id parameter. Redirect to error page
-                                            header("location: error.php");
-                                            exit();
-                                        }
-                                        
-                                    } else{
-                                        echo "Oops! Something went wrong. Please try again later.";
+                                <?php
+                                    while($row = mysqli_fetch_array($result2)){
+                                        echo "<li><img src='{$row["imagen"]}' alt='' width='200px' height='200px'></li>";
                                     }
-                                }
-                                
-                                // Close statement
-                                mysqli_stmt_close($stmt2);
-                                
-                                // Close connection
-                                mysqli_close($link);
-                            ?>
+                                ?>
                             </ul>
                         </div>
                     </div>

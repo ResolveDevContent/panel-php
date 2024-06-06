@@ -1,6 +1,6 @@
 <?php
 
-include "config.php";
+include_once "config.php";
 
 if(!empty($_POST["btnChangePassword"])) {
     if(!empty($_POST["oldPassword"]) and !empty($_POST["newPassword"]) and !empty($_POST["rNewPassword"])) {
