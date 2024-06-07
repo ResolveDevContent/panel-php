@@ -42,8 +42,11 @@ if(!empty($_POST["btnChangePassword"])) {
                     } else {
                         $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
                     }
+
+                    mysqli_stmt_close($stmt);
                 }  else {
                     $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                    mysqli_stmt_close($stmt);
                 }
             } else {
                 $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
@@ -55,8 +58,6 @@ if(!empty($_POST["btnChangePassword"])) {
         $response = "Complete todo los campos";
     }
 }
-
-mysqli_stmt_close($stmt);
 
 mysqli_close($link);
 
