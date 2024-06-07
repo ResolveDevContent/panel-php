@@ -145,7 +145,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
-                        <a href="productos.php">Volver</a>
+                        <a href="productos.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+                            <span>Volver</span>
+                        </a>
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Agregar Producto</h2>
                             <p>Completar el siguiente formulario para agregar un producto</p>
