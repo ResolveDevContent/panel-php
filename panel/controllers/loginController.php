@@ -49,6 +49,10 @@ if(!empty($_POST["btnLogin"])) {
     }
 }
 
+mysqli_stmt_close($stmt);
+
+mysqli_close($link);
+
 sleep(4);
 
 $response = '';

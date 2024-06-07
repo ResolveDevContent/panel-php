@@ -232,18 +232,30 @@ img {
     font-size: 1.125em;
 }
 .wrapper {
-    padding: 2em;
+    padding: 1em;
     gap: 0.5em;
 }
 
 /* TABLA -------------------------------------------------------------------- */
 
+.table-wrapper {
+    position: relative;
+}
+
+.table-wrapper .loader-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: .5em;
+    z-index: 1;
+}
+
 .fl-table {
-    border-radius: 0.5em; 
     width: 100%;
     max-width: 100%;
-    background-color: white;
-    border: 1px solid #eee;
+    background-color: #000;
+    position: relative;
+    z-index: 5;
 }
 
 .fl-table td, .fl-table th {
@@ -253,7 +265,12 @@ img {
 
 .fl-table td {
     max-width: 5em;
-    border-right: 1px solid #f8f8f8;
+}
+
+.fl-table th,
+.fl-table td span {
+    cursor: default;
+    font-weight: 600;
 }
 
 .fl-table thead th {
@@ -261,14 +278,12 @@ img {
     background-color: #000000;
 }
 
-
-.fl-table thead th:nth-child(odd) {
-    color: #ffffff;
-    background: #000000;
+.fl-table tr {
+    background-color: #a5a5a5;
 }
 
 .fl-table tr:nth-child(even) {
-    background: #F8F8F8;
+    background: gray;
 }
 
 .fl-table td ul {
@@ -279,7 +294,8 @@ img {
 /* FORMULARIO -----------------------------------------------------------------*/
 
 .form-container {
-    background-color: #fff;
+    background-color: #313131;
+    color: white;
     border: 1px solid #000;
     border-radius: 0.5em;
     padding: 1em;
@@ -287,14 +303,22 @@ img {
 }
 
 .form-container > a {
-    color: #000;
+    color: #fff;
     display: flex;
     align-items: center;
+}
+
+.form-container > a svg {
+    fill: #fff;
 }
 
 .form {
     width: 100%;
     gap: 1em;
+}
+
+.form .input > input {
+    background-color: #fff;
 }
 
 .input {

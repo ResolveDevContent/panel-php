@@ -31,7 +31,7 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                 $precio = $row["precio"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
-                header("location: error.php");
+                header("location: ../index.php");
                 exit();
             }
 
@@ -64,7 +64,7 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
     mysqli_close($link);
 } else{
     // URL doesn't contain id parameter. Redirect to error page
-    header("location: error.php");
+    header("location: ../index.php");
     exit();
 }
 ?>
@@ -82,7 +82,9 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
                         <a href="productos.php">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                            </svg>
                             <span>Volver</span>
                         </a>
                         <header class="d-flex flex-col align-center justify-center text-center">

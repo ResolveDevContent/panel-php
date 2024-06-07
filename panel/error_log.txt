@@ -1,0 +1,16 @@
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
+Error: [2] Undefined variable $tiro - C:\xampp\htdocs\nuevoproyecto\panel\index.php:10
