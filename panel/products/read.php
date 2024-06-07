@@ -47,7 +47,6 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
         $param_productId = trim($_GET["productId"]);
 
         // Attempt to execute the prepared statement
-        $imagenes = [];
         if(mysqli_stmt_execute($stmt2)){
             $result2 = mysqli_stmt_get_result($stmt2);
         } else{
@@ -86,15 +85,15 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                         </header>
                         <div class="input">
                             <label>Nombre</label>
-                            <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
+                            <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" readonly>
                         </div>
                         <div class="input">
                             <label>Stock</label>
-                            <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>">
+                            <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>" readonly>
                         </div>
                         <div class="input">
                             <label>Precio</label>
-                            <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
+                            <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>" readonly>
                         </div>
                         <div class="d-flex flex-col">
                             <span>Imagenes</span>
