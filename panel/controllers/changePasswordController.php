@@ -5,6 +5,9 @@ include_once "config.php";
 if(!empty($_POST["btnChangePassword"])) {
     if(!empty($_POST["currentPassword"]) and !empty($_POST["newPassword"]) and !empty($_POST["rNewPassword"])) {
         if ($_POST["newPassword"] == $_POST["rNewPassword"]) {
+            $response = '<div class="loader-container d-flex justify-center">
+                            <div class="loader"></div>    
+                        </div>';
             $currentPassword = $_POST["currentPassword"];
             $newPassword = $_POST["newPassword"];
             $rNewPassword = $_POST["rNewPassword"];
@@ -24,22 +27,26 @@ if(!empty($_POST["btnChangePassword"])) {
                     $res = mysqli_query($link, $sql);
     
                     if($res) {
-                        echo "La contraseña se ha actualizado con exito";
+                        $response = "La contraseña se ha actualizado con exito";
                     } else {
-                        echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                        $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
                     }
                 } else {
-                    echo "La contraseña actual no coincide";
+                    $response = "La contraseña actual no coincide";
                 }
             } else {
-                echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         } else {
-            echo "Las nuevas contraseñas no coinciden";
+            $response = "Las nuevas contraseñas no coinciden";
         }
     } else {
-        echo "Complete todo los campos";
+        $response = "Complete todo los campos";
     }
 }
+
+sleep(4)
+
+$response = ""
 
 ?>

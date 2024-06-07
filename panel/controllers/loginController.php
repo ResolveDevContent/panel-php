@@ -1,7 +1,7 @@
 <?php
 
 include_once "config.php";
-$response = '';
+
 if(!empty($_POST["btnLogin"])) {
     if(!empty($_POST["email"]) and !empty($_POST["password"])) {
         $response = '<div class="loader-container d-flex justify-center">
@@ -37,5 +37,9 @@ if(!empty($_POST["btnLogin"])) {
         $response = "Complete todo los campos";
     }
 }
+
+sleep(4)
+
+$response = '';
 
 ?>

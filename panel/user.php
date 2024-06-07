@@ -46,6 +46,7 @@
                         <?php
                             include_once("config.php");
                             include_once("controllers/changePasswordController.php");
+                            echo $response
                         ?>
                     </span>
                 </div>
