@@ -4,7 +4,8 @@ require_once "../config.php";
  
 // Define variables and initialize with empty values
 $nombre = $stock = $precio = "";
-$nombre_err = $stock_err = $precio_err = "";
+$nombre_err = $stock_err = $precio_err = $imagenes_err = "";
+$imagenes = [];
 $loading = false;
  
 // Processing form data when form is submitted
@@ -40,11 +41,40 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
     } else{
         $precio = $input_precio;
     }
+
+    // Validate imagen
+    foreach($_FILES['imagenes']['tmp_name'] as $item => $tmp_name) {
+        if($_FILES["imagenes"]["name"][$item]) {
+            $filename = $_FILES["imagenes"]["name"][$item]; //Obtenemos el nombre original del archivo
+            $source = $_FILES["imagenes"]["tmp_name"][$item]; //Obtenemos un nombre temporal del archivo
+            
+            $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+            
+            //Validamos si la ruta de destino existe, en caso de no existir la creamos
+            if(!file_exists($directorio)){
+                mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+            }
+            
+            $dir=opendir($directorio); //Abrimos el directorio de destino
+            $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+            
+            //Movemos y validamos que el archivo se haya cargado correctamente
+            //El primer campo es el origen y el segundo el destino
+            if(move_uploaded_file($source, $target_path)) {	
+                echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+                array_push($imagenes, $target_path);
+            } else {	
+                echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
+            }
+            closedir($dir); //Cerramos el directorio de destino
+        }
+    }
     
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($stock_err) && empty($precio_err)){
         // Prepare an update statement
         $sql = "UPDATE products SET nombre=?, stock=?, precio=? WHERE productId=?";
+        $sql_images = "INSERT INTO products_images (productId, imagen) VALUES (?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -59,9 +89,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records updated successfully. Redirect to landing page
-                $loading = true;
-                header("location: productos.php");
-                exit();
+                echo "Subido correctamente";
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -70,6 +98,34 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
         // Close statement
         mysqli_stmt_close($stmt);
     }
+
+    $num_imagenes = count($imagenes);
+    // Prepare an insert statement     
+
+    echo $num_imagenes;
+    $productId = trim($_GET["productId"]);
+    for($i = 0; $i < $num_imagenes; $i++) {
+        if($stmt_images = mysqli_prepare($link, $sql_images)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt_images, "ss", $param_productId, $param_imagenes);
+                
+            // Set parameters
+            $param_productId = $productId;
+            $param_imagenes = $imagenes[$i];
+
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt_images)){
+                // Records created successfully. Redirect to landing page
+                echo "Editado corretamente!";
+            } else{
+                echo "Something went wrong. Please try again later.";
+            }
+        }
+    }
+
+    header("location: productos.php");
+    // Close statement
+    mysqli_stmt_close($stmt_images); 
     
     // Close connection
     mysqli_close($link);
@@ -81,6 +137,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
         
         // Prepare a select statement
         $sql = "SELECT * FROM products WHERE productId = ?";
+        $sql2 = "SELECT * FROM products_images WHERE productId = ?";
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "i", $param_productId);
@@ -107,6 +165,21 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                     exit();
                 }
                 
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+        }
+
+        if($stmt2 = mysqli_prepare($link, $sql2)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt2, "i", $param_productId);
+    
+            // Set parameters
+            $param_productId = trim($_GET["productId"]);
+    
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt2)){
+                $result2 = mysqli_stmt_get_result($stmt2);
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -138,17 +211,12 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             <?php include_once("../includes/menu.php"); ?>
             <article id="container">
                 <div class="wrapper">
-                    <?php 
-                        if($loading) {
-                            echo "<label style='font-size: 5em'>CARGANDO...</label>";
-                        }
-                    ?>
                     <div class="form-container d-flex flex-col">
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Editar Producto</h2>
                             <p>Edite los valores de entrada y envíe para actualizar el registro.</p>
                         </header>
-                        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post" class="form d-flex flex-col">
+                        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col">
                             <div class="input <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
                                 <label>Nombre</label>
                                 <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
@@ -164,20 +232,23 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                                 <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
                                 <span class="help-block"><?php echo $precio_err;?></span>
                             </div>
-                            <input type="hidden" name="productId" value="<?php echo $productId; ?>"/>
-                            <!-- <div class="input">
+                            <div class="input">
                                 <label>Imagenes</label>
-                                <input type="file" multiple name="imagenes" class="form-control">
+                                <input type="file" multiple name="imagenes[]" class="form-control">
                                 <span class="help-block"></span>
                             </div>
                             <div class="d-flex flex-col">
-                                <span>Vista previa</span>
+                                <span>Imagenes</span>
                                 <ul class="d-flex align-center flex-wrap">
-                                    <li class="d-flex flex-col align-center">
-                                        <img src="#" alt="" style="width: 10em; height: 10em; background-color: gray">
-                                    </li>
+                                    <?php
+                                        while($row = mysqli_fetch_array($result2)){
+                                            echo "<li><img src='{$row["imagen"]}' alt='' width='200px' height='200px'></li>";
+                                            echo "<li><a href='deleteImagen.php?imagenId=". $row['imagenId'] ."&productId=". $row['productId'] ."' title='Borrar'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'><path d='M15 2H9c-1.103 0-2 .897-2 2v2H3v2h2v12c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2zM9 4h6v2H9V4zm8 16H7V8h10v12z'></path></svg></a></li>";
+                                        }
+                                    ?>
                                 </ul>
-                            </div> -->
+                            </div>
+                            <input type="hidden" name="productId" value="<?php echo $productId; ?>"/>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" value="Confirmar">
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>

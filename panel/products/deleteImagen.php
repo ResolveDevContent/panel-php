@@ -1,15 +1,18 @@
 <?php
-    $table = "products";
-    $id = "productId";
+    $productId = trim($_GET["productId"]);
+
+    $table = "products_images";
+    $id = "imagenId";
+    // $location = "update.php?productId=$productId";
+    $isInProduct = false;
     $location = "productos.php";
-    $isInProduct = true;
     include_once("../controllers/delete.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
     <?php 
-        $title = "Borrar producto";
+        $title = "Borrar imagen";
         include_once("../includes/head.php"); 
     ?>
 
@@ -26,8 +29,8 @@
                             </header>
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div>
-                                    <input type="hidden" name="productId" value="<?php echo trim($_GET["productId"]); ?>"/>
-                                    <p>Está seguro que deseas borrar el producto con id: <?php echo trim($_GET["productId"]); ?></p><br>
+                                    <input type="hidden" name="imagenId" value="<?php echo trim($_GET["imagenId"]); ?>"/>
+                                    <p>Está seguro que deseas borrar la imagen id: <?php echo trim($_GET["imagenId"]); ?></p><br>
                                     <p>
                                         <input type="submit" value="Si" class="btn btn-error">
                                         <a href="./productos.php" class="btn btn-default">No</a>
