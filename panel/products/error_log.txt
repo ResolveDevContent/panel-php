@@ -1,0 +1,2 @@
+Error: [2] Undefined variable $result2 - D:\Archivos de programa\xampp\htdocs\panel-php\panel\products\update.php:249
+Error: [2] Undefined variable $stmt_images - D:\Archivos de programa\xampp\htdocs\panel-php\panel\products\update.php:129
