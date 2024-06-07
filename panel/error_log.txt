@@ -1,5 +1,0 @@
-Error: [2] Undefined variable $tiro - D:\Archivos de programa\xampp\htdocs\panel-php\panel\index.php:10
-Error: [2] Undefined variable $tiro - D:\Archivos de programa\xampp\htdocs\panel-php\panel\index.php:10
-Error: [2] Undefined variable $tiro - D:\Archivos de programa\xampp\htdocs\panel-php\panel\index.php:10
-Error: [2] Undefined variable $tiro - D:\Archivos de programa\xampp\htdocs\panel-php\panel\index.php:10
-Error: [2] Undefined variable $tiro - D:\Archivos de programa\xampp\htdocs\panel-php\panel\index.php:10

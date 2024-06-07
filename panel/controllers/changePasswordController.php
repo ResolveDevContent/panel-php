@@ -56,6 +56,10 @@ if(!empty($_POST["btnChangePassword"])) {
     }
 }
 
+mysqli_stmt_close($stmt);
+
+mysqli_close($link);
+
 sleep(4);
 
 $response = ""
