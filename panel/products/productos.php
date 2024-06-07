@@ -5,7 +5,7 @@
         session_start();
 
         include("../config.php");
-        require_once "../errors.php";
+        // require_once "../errors.php";
         
         $title = "Productos";
         include_once("../includes/head.php"); 

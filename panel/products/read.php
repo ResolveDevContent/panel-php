@@ -3,7 +3,7 @@
 if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
     // Include config file
     require_once "../config.php";
-    require_once "../errors.php";
+    // require_once "../errors.php";
 
     // Prepare a select statement
     $sql = "SELECT * FROM products WHERE productId = ?";
