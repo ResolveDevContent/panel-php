@@ -237,13 +237,12 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                                 <input type="file" multiple name="imagenes[]" class="form-control">
                                 <span class="help-block"></span>
                             </div>
-                            <div class="d-flex flex-col">
+                            <div class="d-flex flex-col imagenes">
                                 <span>Imagenes</span>
                                 <ul class="d-flex align-center flex-wrap">
                                     <?php
                                         while($row = mysqli_fetch_array($result2)){
-                                            echo "<li><img src='{$row["imagen"]}' alt='' width='200px' height='200px'></li>";
-                                            echo "<li><a href='deleteImagen.php?imagenId=". $row['imagenId'] ."&productId=". $row['productId'] ."' title='Borrar'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'><path d='M15 2H9c-1.103 0-2 .897-2 2v2H3v2h2v12c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2zM9 4h6v2H9V4zm8 16H7V8h10v12z'></path></svg></a></li>";
+                                            echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt='' width='200px' height='200px'></figure><a href='deleteImagen.php?imagenId=". $row['imagenId'] ."&productId=". $row['productId'] ."' title='Borrar'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'><path d='M15 2H9c-1.103 0-2 .897-2 2v2H3v2h2v12c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2zM9 4h6v2H9V4zm8 16H7V8h10v12z'></path></svg></a></li>";
                                         }
                                     ?>
                                 </ul>

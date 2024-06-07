@@ -95,12 +95,12 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                             <label>Precio</label>
                             <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>" readonly>
                         </div>
-                        <div class="d-flex flex-col">
+                        <div class="d-flex flex-col imagenes">
                             <span>Imagenes</span>
                             <ul class="d-flex align-center flex-wrap">
                                 <?php
                                     while($row = mysqli_fetch_array($result2)){
-                                        echo "<li><img src='{$row["imagen"]}' alt='' width='200px' height='200px'></li>";
+                                        echo "<li><figure><img src='{$row["imagen"]}' alt=''></figure></li>";
                                     }
                                 ?>
                             </ul>
