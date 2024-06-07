@@ -4,6 +4,10 @@ include_once "config.php";
 
 if(!empty($_POST["btnLogin"])) {
     if(!empty($_POST["email"]) and !empty($_POST["password"])) {
+        echo '<div class="loader-container d-flex justify-center">
+            <div class="loader"></div>    
+        </div>';
+
         $email = $_POST["email"];
         $password = $_POST["password"];
 
@@ -12,16 +16,14 @@ if(!empty($_POST["btnLogin"])) {
 
         if($result) {
             if(mysqli_num_rows($result) == 0) {
+                echo " ";
                 echo "Email y/o contraseña incorrectos";
             } else {
                 $row = mysqli_fetch_assoc($result);
       
                 $decrypt = password_verify($password, $row['password']);
 
-                echo $decrypt . "  ";
-    
                 if ($decrypt) {
-                    echo "bien";
                     $_SESSION['email'] = $row['email'];
                     setcookie("usuarioLogeado", $email, time() + (86400 * 30), "/");
                     header("location: index.php");

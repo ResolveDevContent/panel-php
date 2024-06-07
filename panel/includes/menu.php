@@ -13,7 +13,7 @@
                 <div class="user-img"></div>
                 <span>
                     <?php
-                        echo $_SESSION['email'];
+                        echo $_COOKIE['usuarioLogeado'];
                     ?>
                 </span>
             </a>

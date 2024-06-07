@@ -9,7 +9,7 @@
         $title = "Productos";
         include_once("../includes/head.php"); 
         
-        // if (!isset($_SESSION['email'])) {
+        // if (!isset($_COOKIE['usuarioLogeado'])) {
         //     header("location:login.php");
         // }
     ?>
