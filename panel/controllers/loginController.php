@@ -1,12 +1,12 @@
 <?php
 
 include_once "config.php";
-
+$response = '';
 if(!empty($_POST["btnLogin"])) {
     if(!empty($_POST["email"]) and !empty($_POST["password"])) {
-        echo '<div class="loader-container d-flex justify-center">
-            <div class="loader"></div>    
-        </div>';
+        $response = '<div class="loader-container d-flex justify-center">
+                        <div class="loader"></div>    
+                    </div>';
 
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -16,8 +16,7 @@ if(!empty($_POST["btnLogin"])) {
 
         if($result) {
             if(mysqli_num_rows($result) == 0) {
-                echo " ";
-                echo "Email y/o contraseña incorrectos";
+                $response = "Email y/o contraseña incorrectos";
             } else {
                 $row = mysqli_fetch_assoc($result);
       
@@ -28,14 +27,14 @@ if(!empty($_POST["btnLogin"])) {
                     setcookie("usuarioLogeado", $email, time() + (86400 * 30), "/");
                     header("location: index.php");
                 } else {
-                    echo "Email y/o contraseña incorrectos";
+                    $response = "Email y/o contraseña incorrectos";
                 }
             }
         } else {
-            echo "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+            $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
         }
     } else {
-        echo "Complete todo los campos";
+        $response = "Complete todo los campos";
     }
 }
 
