@@ -38,7 +38,7 @@ if(!empty($_POST["btnLogin"])) {
     }
 }
 
-sleep(4)
+sleep(4);
 
 $response = '';
 

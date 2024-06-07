@@ -212,6 +212,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
+                        <a href="productos.php">Volver</a>
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Editar Producto</h2>
                             <p>Edite los valores de entrada y envíe para actualizar el registro.</p>

@@ -75,11 +75,12 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
     ?>
 
     <body>
-    <section class="d-flex">
+        <section class="d-flex">
             <?php include_once("../includes/menu.php"); ?>
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
+                        <a href="productos.php">Volver</a>
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Ver Producto</h2>
                         </header>

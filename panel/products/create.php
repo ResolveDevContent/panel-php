@@ -145,6 +145,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
+                        <a href="productos.php">Volver</a>
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Agregar Producto</h2>
                             <p>Completar el siguiente formulario para agregar un producto</p>

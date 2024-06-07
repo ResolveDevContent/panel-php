@@ -45,7 +45,7 @@ if(!empty($_POST["btnChangePassword"])) {
     }
 }
 
-sleep(4)
+sleep(4);
 
 $response = ""
 
