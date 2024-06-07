@@ -26,27 +26,18 @@
                         <ul class="login-form d-flex flex-col">
                             <li class='input'>
                                 <label for="currenPassword">Contraseña actual</label>
-                                <input type="text" 
-                                    name="currentPassword" 
-                                    id="currentPassword" 
-                                />
+                                <input type="password" name="currentPassword" id="currentPassword" requiered/>
                             </li>
                             <li class='input'>
                                 <label for="newPassword">Contraseña nueva</label>
                                 <div class='d-flex password-container'>
-                                    <input type="password" 
-                                        name="newPassword" 
-                                        id="newPassword"
-                                    />
+                                    <input type="password" name="newPassword" id="newPassword" required/>
                                 </div>
                             </li>
                             <li class='input'>
                                 <label for="rNewPassword">Repetir contraseña nueva</label>
                                 <div class='d-flex password-container'>
-                                    <input type="password" 
-                                        name="rNewPassword" 
-                                        id="rNewPassword"
-                                    />
+                                    <input type="password" name="rNewPassword" id="rNewPassword" required/>
                                 </div>
                             </li>
                         </ul>

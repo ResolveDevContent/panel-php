@@ -24,18 +24,12 @@
                     <ul class="login-form d-flex flex-col">
                         <li class='input'>
                             <label for="user">Usuario</label>
-                            <input type="text" 
-                                name="email" 
-                                id="user"
-                            />
+                            <input type="text" name="email" id="user" required/>
                         </li>
                         <li class='input'>
                             <label for="password">Contraseña</label>
                             <div class='d-flex password-container'>
-                                <input type="password" 
-                                    name="password" 
-                                    id="password"
-                                />
+                                <input type="password" name="password" id="password" required/>
                                 <!-- <button class='visible-btn'>
                                     {visible ? (
                                         <Hidden />
