@@ -7,7 +7,7 @@
         include "config.php";
         // require_once "errors.php";
 
-        echo $tiro;
+        // echo $tiro;
 
 
         $title = "Panel";

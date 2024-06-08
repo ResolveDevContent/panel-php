@@ -14,10 +14,12 @@ if(!empty($_POST["btnLogin"])) {
         $sql = "SELECT * FROM users WHERE email = ? LIMIT 0,1";
 
         if($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "i", $email);
+            mysqli_stmt_bind_param($stmt, "i", $param_email);
+
+            $param_email = $email;
 
             if(mysqli_stmt_execute($stmt)) {
-                $result = mysqli_query($link, $sql);
+                $result = mysqli_stmt_get_result($stmt);
 
                 if($result) {
                     if(mysqli_num_rows($result) == 0) {
