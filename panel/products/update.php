@@ -7,11 +7,10 @@ require_once "../config.php";
 $nombre = $stock = $precio = "";
 $nombre_err = $stock_err = $precio_err = $imagenes_err = "";
 $imagenes = [];
-$loading = false;
+$error = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["productId"]) && !empty($_POST["productId"])){
-    $loading = true;
     // Get hidden input value
     $productId = $_POST["productId"];
     
@@ -65,7 +64,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
                 array_push($imagenes, $target_path);
             } else {	
-                echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
+                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
             closedir($dir); //Cerramos el directorio de destino
         }
@@ -92,7 +91,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 // Records updated successfully. Redirect to landing page
                 echo "Subido correctamente";
             } else{
-                echo "Something went wrong. Please try again later.";
+                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         }
          
@@ -119,7 +118,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 // Records created successfully. Redirect to landing page
                 echo "Editado corretamente!";
             } else{
-                echo "Something went wrong. Please try again later.";
+                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         }
     }
@@ -167,7 +166,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 }
                 
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         }
 
@@ -182,7 +181,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             if(mysqli_stmt_execute($stmt2)){
                 $result2 = mysqli_stmt_get_result($stmt2);
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         }
         
@@ -260,6 +259,11 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
+                        <span style="color: red; height: 2em;">
+                            <?php
+                                echo $error;
+                            ?>
+                        </span>
                     </div>
                 </div>
             </article>

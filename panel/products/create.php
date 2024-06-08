@@ -7,6 +7,7 @@ require_once "../config.php";
 $nombre = $stock = $precio = "";
 $nombre_err = $stock_err = $precio_err = $imagenes_err = "";
 $imagenes = [];
+$error = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -86,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_execute($stmt_products)){
                 echo "Subido crrectametene";
             } else{
-                echo "Something went wrong. Please try again later.";
+                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
         }
         // Close statement
@@ -115,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         // Records created successfully. Redirect to landing page
                         echo "Agregado corretamente!";
                     } else{
-                        echo "Something went wrong. Please try again later.";
+                        $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
                     }
                 }
             }
@@ -183,6 +184,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
+                        <span style="color: red; height: 2em;">
+                            <?php
+                                echo $error;
+                            ?>
+                        </span>
                     </div>
                 </div>
             </article>

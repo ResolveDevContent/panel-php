@@ -1,0 +1,25 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    background-color: #000;
+}
+
+.icon.info {
+    mask-image: url("../icons/info.svg");
+    -webkit-mask-image: url("../icons/info.svg");
+}
+
+.icon.ver {
+    mask-image: url("../icons/ver.svg");
+    -webkit-mask-image: url("../icons/ver.svg");
+}
+
+.icon.editar {
+    mask-image: url("../icons/editar.svg");
+    -webkit-mask-image: url("../icons/editar.svg");
+}
+
+.icon.borrar {
+    mask-image: url("../icons/borrar.svg");
+    -webkit-mask-image: url("../icons/borrar.svg");
+}

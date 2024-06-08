@@ -5,6 +5,8 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
     require_once "../config.php";
     // require_once "../errors.php";
 
+    $error = "";
+
     // Prepare a select statement
     $sql = "SELECT * FROM products WHERE productId = ?";
     $sql2 = "SELECT * FROM products_images WHERE productId = ?";
@@ -31,13 +33,15 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                 $precio = $row["precio"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
-                header("location: ../index.php");
+                header("location: error.php");
                 exit();
             }
 
         } else{
-            echo "Oops! Something went wrong. Please try again later.";
+            $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
         }
+    } else{
+        $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
     }
 
     if($stmt2 = mysqli_prepare($link, $sql2)){
@@ -51,8 +55,10 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
         if(mysqli_stmt_execute($stmt2)){
             $result2 = mysqli_stmt_get_result($stmt2);
         } else{
-            echo "Oops! Something went wrong. Please try again later.";
+            $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
         }
+    } else{
+        $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
     }
 
 
@@ -112,6 +118,11 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                                 ?>
                             </ul>
                         </div>
+                        <span style="color: red; height: 2em;">
+                            <?php
+                                echo $error;
+                            ?>
+                        </span>
                     </div>
                 </div>
             </article>
