@@ -1,8 +1,10 @@
 .icon {
+    width: 1.5em;
+    height: 1.5em;
     display: block;
-    width: 1em;
-    height: 1em;
-    background-color: #000;
+    background-color: black;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
 }
 
 .icon.info {
