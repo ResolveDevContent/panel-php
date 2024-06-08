@@ -260,7 +260,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                             </div>
                             <input type="hidden" name="productId" value="<?php echo $productId; ?>"/>
                             <footer class="d-flex justify-end">
-                                <input type="submit" class="btn btn-success" value="Confirmar">
+                                <input type="submit" class="btn btn-success" value="Confirmar" data-btnSubmit>
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
