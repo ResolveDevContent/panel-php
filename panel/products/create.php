@@ -61,7 +61,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
                 array_push($imagenes, $target_path);
             } else {	
-				echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
+                header("location: error.php");
+                exit();
 			}
 			closedir($dir); //Cerramos el directorio de destino
 		}
@@ -87,46 +88,50 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_execute($stmt_products)){
                 echo "Subido crrectametene";
             } else{
-                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                header("location: error.php");
+                exit();
             }
         }
         // Close statement
         mysqli_stmt_close($stmt_products);
-    }
+    
+        $num_imagenes = count($imagenes);
+   
+        // Prepare an insert statement     
+        if($stmt_lastId = mysqli_prepare($link, $sql_lastId)) {
+            if(mysqli_stmt_execute($stmt_lastId)) {
+                $result = mysqli_stmt_get_result($stmt_lastId);
+                $row = mysqli_fetch_array($result);
+                $productId = $row['productId'];
 
-    $num_imagenes = count($imagenes);
-    // Prepare an insert statement     
-    if($stmt_lastId = mysqli_prepare($link, $sql_lastId)) {
-        if(mysqli_stmt_execute($stmt_lastId)) {
-            $result = mysqli_stmt_get_result($stmt_lastId);
-            $row = mysqli_fetch_array($result);
-            $productId = $row['productId'];
+                for($i = 0; $i < $num_imagenes; $i++) {
+                    if($stmt_images = mysqli_prepare($link, $sql_images)){
+                        // Bind variables to the prepared statement as parameters
+                        mysqli_stmt_bind_param($stmt_images, "ss", $param_productId, $param_imagenes);
+                        
+                        // Set parameters
+                        $param_productId = $productId;
+                        $param_imagenes = $imagenes[$i];
 
-            for($i = 0; $i < $num_imagenes; $i++) {
-                if($stmt_images = mysqli_prepare($link, $sql_images)){
-                    // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($stmt_images, "ss", $param_productId, $param_imagenes);
-                    
-                    // Set parameters
-                    $param_productId = $productId;
-                    $param_imagenes = $imagenes[$i];
-
-                    // Attempt to execute the prepared statement
-                    if(mysqli_stmt_execute($stmt_images)){
-                        // Records created successfully. Redirect to landing page
-                        echo "Agregado corretamente!";
-                    } else{
-                        $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                        // Attempt to execute the prepared statement
+                        if(mysqli_stmt_execute($stmt_images)){
+                            // Records created successfully. Redirect to landing page
+                            echo "Agregado corretamente!";
+                        } else{
+                            header("location: error.php");
+                            exit();
+                        }
                     }
                 }
-            }
-            header("location: productos.php");
-            exit();
-        }
 
-        // Close statement
-        mysqli_stmt_close($stmt_images); 
-        mysqli_stmt_close($stmt_lastId); 
+                header("location: productos.php");
+                exit();
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt_images); 
+            mysqli_stmt_close($stmt_lastId); 
+        }
     }
 
     // Close connection
@@ -164,7 +169,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <div class="input <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
                                 <label>Stock</label>
                                 <input type="number" name="stock" class="form-control"><?php echo $stock; ?></input>
-                                <span class="help-block"><?php echo $stock_err;?></span>
+                                <span class="help-block" ><?php echo $stock_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
                                 <label>Precio</label>
@@ -180,7 +185,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <span>Vista previa</span>
                             </div>
                             <footer class="d-flex justify-end">
-                                <input type="submit" class="btn btn-success" value="Confirmar">
+                                <input type="submit" class="btn btn-success" data-btnSubmit value="Confirmar">
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
@@ -191,7 +196,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </span>
                     </div>
                 </div>
+                <div class="background disabled" data-loader>
+                    <div class="loader-container d-flex justify-center">
+                        <div class="loader"></div>    
+                    </div>
+                </div>
             </article>
         </section>
     </body>
+
+    <script>
+        const btnSubmit = document.querySelector("[data-btnSubmit]");
+
+        btnSubmit.addEventListener('click', () => {
+            const loader = document.querySelector("[data-loader]");
+
+            loader.classList.remove('disabled');
+        });
+    </script>
 </html>

@@ -64,7 +64,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
                 array_push($imagenes, $target_path);
             } else {	
-                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                header("location: error.php");
+                exit();
             }
             closedir($dir); //Cerramos el directorio de destino
         }
@@ -91,7 +92,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 // Records updated successfully. Redirect to landing page
                 echo "Subido correctamente";
             } else{
-                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                header("location: error.php");
+                exit();
             }
         }
          
@@ -118,7 +120,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 // Records created successfully. Redirect to landing page
                 echo "Editado corretamente!";
             } else{
-                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                header("location: error.php");
+                exit();
             }
         }
     }
@@ -166,7 +169,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                 }
                 
             } else{
-                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                header("location: error.php");
+                exit();
             }
         }
 
@@ -181,7 +185,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             if(mysqli_stmt_execute($stmt2)){
                 $result2 = mysqli_stmt_get_result($stmt2);
             } else{
-                $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+                header("location: error.php");
+                exit();
             }
         }
         
@@ -266,7 +271,22 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                         </span>
                     </div>
                 </div>
+                <div class="background disabled" data-loader>
+                    <div class="loader-container d-flex justify-center">
+                        <div class="loader"></div>    
+                    </div>
+                </div>
             </article>
         </section>
     </body>
+
+    <script>
+        const btnSubmit = document.querySelector("[data-btnSubmit]");
+
+        btnSubmit.addEventListener('click', () => {
+            const loader = document.querySelector("[data-loader]");
+
+            loader.classList.remove('disabled');
+        });
+    </script>
 </html>

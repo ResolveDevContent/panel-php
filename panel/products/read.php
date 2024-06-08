@@ -38,10 +38,12 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
             }
 
         } else{
-            $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+            header("location: error.php");
+            exit();
         }
     } else{
-        $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+        header("location: error.php");
+        exit();
     }
 
     if($stmt2 = mysqli_prepare($link, $sql2)){
@@ -55,10 +57,12 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
         if(mysqli_stmt_execute($stmt2)){
             $result2 = mysqli_stmt_get_result($stmt2);
         } else{
-            $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+            header("location: error.php");
+            exit();
         }
     } else{
-        $error = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
+        header("location: error.php");
+        exit();
     }
 
 
