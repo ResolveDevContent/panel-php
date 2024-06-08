@@ -41,6 +41,9 @@ if(!empty($_POST["btnLogin"])) {
             } else {
                 $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
             }
+
+            mysqli_stmt_close($stmt);
+
         } else {
             $response = "Ha ocurrido un error, intentelo nuevamente y si el mismo persiste comuniquese con nosotros";
         }
@@ -49,7 +52,6 @@ if(!empty($_POST["btnLogin"])) {
     }
 }
 
-mysqli_stmt_close($stmt);
 
 mysqli_close($link);
 

@@ -66,13 +66,8 @@
     background-color: transparent;
     position: absolute;
     right: 0;
-    bottom: 0;
-    height: 100%;
+    top: 2em;
     margin-right: 1em;
-}
-
-.login-form .visible-btn:hover {
-    background-color: transparent;
 }
 
 .login-form .visible-btn svg {
