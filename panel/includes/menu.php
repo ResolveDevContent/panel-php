@@ -27,7 +27,7 @@
                     <span>Tienda</span>
                 </a>
             </li>
-            <li class='categoria'>
+            <li class='categoria d-flex flex-col'>
                 <a href="/panel-php/panel/products/productos.php">
                     <span>Productos</span>
                 </a>
