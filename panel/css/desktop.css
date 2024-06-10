@@ -1,0 +1,7 @@
+#container {
+    flex: 1;
+}
+
+#display-menu:checked ~ .menu {
+    width: max-content!important;
+}

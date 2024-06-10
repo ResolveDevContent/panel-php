@@ -31,7 +31,7 @@ if(!empty($_POST["btnLogin"])) {
         
                         if ($decrypt) {
                             $_SESSION['email'] = $row['email'];
-                            setcookie("usuarioLogeado", $email, time() + (86400 * 30), "/");
+                            setcookie("usuarioLogeado", $email, time() + 86400, "/");
                             header("location: index.php");
                         } else {
                             $response = "Email y/o contraseña incorrectos";

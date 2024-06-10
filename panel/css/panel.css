@@ -123,7 +123,6 @@ img {
 /* MENU - INICIO -------------------------------------------------------------------- */
 
 #container {
-    flex: 1;
     background-image: url('../../images/resolvedevverde.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -529,31 +528,4 @@ ul.file-list li{
     33% {box-shadow: 20px 0 #000, -20px 0 #0002;background: #0002}
     66% {box-shadow: 20px 0 #0002,-20px 0 #000; background: #0002}
     100%{box-shadow: 20px 0 #0002,-20px 0 #000; background: #000 }
-}
-
-/* ---------------------------------------- */
-
-
-@media screen and (min-width: 960px) {
-    #display-menu:checked ~ .menu {
-        width: max-content!important;
-    }
-}
-
-@media screen and (max-width: 959px) {
-    #main {
-        flex-direction: column;
-    }
-    .menu {
-        height: max-content;
-        width: 100%;
-        position: absolute;
-    }
-    #container {
-        width: 100%;
-        flex: auto;
-    }
-    #container {
-        margin-top: 6em;
-    }
 }
