@@ -1,7 +1,25 @@
+::-webkit-scrollbar-track{
+	background-color: #313131;
+}
+
+::-webkit-scrollbar{
+	width: 0.25em;
+	background-color: #313131;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 0.5em;
+	background-color: #079992;
+}
+
 #container {
     flex: 1;
 }
 
 #display-menu:checked ~ .menu {
     width: max-content!important;
+}
+
+.fl-table td {
+    max-width: 5em;
 }

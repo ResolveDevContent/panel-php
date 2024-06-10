@@ -189,7 +189,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </form>
                     </div>
                 </div>
-                <div class="background disabled" data-loader>
+                <div class="background d-flex align-center justify-center disabled" data-loader>
                     <div class="loader-container d-flex justify-center">
                         <div class="loader"></div>    
                     </div>

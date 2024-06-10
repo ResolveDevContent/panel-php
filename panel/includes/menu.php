@@ -1,13 +1,13 @@
-<input type="checkbox" id="display-menu">
+<input type="checkbox" id="display-menu" checked>
 <aside class='menu'>
     <div class='d-flex align-center display-menu'>
-        <label for="display-menu">
+        <label for="display-menu" class="d-flex">
             <i class="icon h-menu"></i>
         </label>
     </div>
     <header class='text-center'>
         <div class='d-flex align-center'>
-            <a href="/panel-php/panel/user.php" class="user">
+            <a href="/panel-php/panel/user.php" class="user d-flex align-center">
                 <div class="user-img"></div>
                 <span>
                     <?php
@@ -21,8 +21,8 @@
         </div>
     </header>
     <div>
-        <ul>
-            <li class='categoria'>
+        <ul class="d-flex flex-col">
+            <li class='categoria d-flex flex-col'>
                 <a href="tienda.php">
                     <span>Tienda</span>
                 </a>

@@ -89,7 +89,7 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
-                        <a href="productos.php">
+                        <a href="productos.php" class="d-flex align-center">
                             <i class="icon left-arrow"></i>
                             <span>Volver</span>
                         </a>
@@ -113,7 +113,7 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
                             <ul class="d-flex align-center flex-wrap">
                                 <?php
                                     while($row = mysqli_fetch_array($result2)){
-                                        echo "<li><figure><img src='{$row["imagen"]}' alt=''></figure></li>";
+                                        echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt=''></figure></li>";
                                     }
                                 ?>
                             </ul>

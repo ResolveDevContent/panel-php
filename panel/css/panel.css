@@ -40,20 +40,6 @@ img {
     object-fit: cover;
 }
 
-::-webkit-scrollbar-track{
-	background-color: #313131;
-}
-
-::-webkit-scrollbar{
-	width: 0.25em;
-	background-color: #313131;
-}
-
-::-webkit-scrollbar-thumb{
-	border-radius: 0.5em;
-	background-color: #079992;
-}
-
 .d-flex {
     display: flex;
 }
@@ -167,8 +153,6 @@ img {
     border-radius: 50%; 
 }
 .menu > header > div > a {
-    display: flex;
-    align-items: center;
     color: black;
     padding: .75em;
 }
@@ -185,9 +169,6 @@ img {
     background-color: #079992;
     padding: .5em;
     display: block!important;
-}
-.menu > div > label {
-    display: flex;
 }
 .menu > div > label i  {
     background-color: white;
@@ -206,13 +187,7 @@ img {
 .menu > div {
     padding: 1em;
 }
-.menu > div > ul {
-    display: flex;
-    flex-direction: column;
-}
 .menu .categoria {
-    display: flex;
-    flex-direction: column;
     cursor: pointer;
     background-color: #434343;
     color: white;
@@ -266,10 +241,6 @@ img {
     padding: 0.5em;
 }
 
-.fl-table td {
-    max-width: 5em;
-}
-
 .fl-table th,
 .fl-table td span {
     cursor: default;
@@ -313,8 +284,6 @@ img {
 
 .form-container > a {
     color: #000;
-    display: flex;
-    align-items: center;
 }
 
 .form-container > a svg {
@@ -362,14 +331,6 @@ img {
 .imagenes ul {
     gap: 1em;
     margin-top: 1em;
-}
-
-.imagenes ul li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
 }
 
 .imagenes figure{
@@ -427,10 +388,6 @@ ul.file-list li{
 /* ERROR -------------------------------------------------------------------- */
 
 .error-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 70%;
     margin: 4em auto;
     text-align: center;
@@ -462,9 +419,6 @@ ul.file-list li{
 
 #container .background {
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .background {

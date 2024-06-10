@@ -217,7 +217,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
-                        <a href="productos.php">
+                        <a href="productos.php" class="d-flex align-center">
                             <i class="icon left-arrow"></i>
                             <span>Volver</span>
                         </a>
@@ -268,7 +268,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                         </form>
                     </div>
                 </div>
-                <div class="background disabled" data-loader>
+                <div class="background d-flex align-center justify-center disabled" data-loader>
                     <div class="loader-container d-flex justify-center">
                         <div class="loader"></div>    
                     </div>

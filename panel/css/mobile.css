@@ -39,8 +39,8 @@
     overflow-x: auto;
 }
 .fl-table td, .fl-table th {
-    padding: 20px .625em .625em .625em;
-    height: 8em;
+    padding: .625em;
+    height: 5em;
     vertical-align: middle;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -68,10 +68,8 @@
 .fl-table tr td:nth-child(even) {
     border-right: 1px solid #E6E4E4;
 }
-.fl-table tbody td {
-    display: block;
-    text-align: center;
-}
 .fl-table td {
-    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
