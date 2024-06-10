@@ -7,7 +7,6 @@ require_once "../config.php";
 $nombre = $stock = $precio = "";
 $nombre_err = $stock_err = $precio_err = $imagenes_err = "";
 $imagenes = [];
-$error = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -163,22 +162,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col">
                             <div class="input <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
                                 <label>Nombre</label>
-                                <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
+                                <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" required>
                                 <span class="help-block"><?php echo $nombre_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
                                 <label>Stock</label>
-                                <input type="number" name="stock" class="form-control"><?php echo $stock; ?></input>
+                                <input type="number" name="stock" class="form-control"><?php echo $stock; ?></input required>
                                 <span class="help-block" ><?php echo $stock_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
                                 <label>Precio</label>
-                                <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>">
+                                <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>" required>
                                 <span class="help-block"><?php echo $precio_err;?></span>
                             </div>
                             <div class="input">
                                 <label>imagen</label>
-                                <input type="file" multiple name="imagenes[]" class="form-control" >
+                                <input type="file" multiple name="imagenes[]" class="form-control" required>
                                 <span class="help-block"></span>
                             </div>
                             <div class="d-flex flex-col">
@@ -189,11 +188,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
-                        <span style="color: red; height: 2em;">
-                            <?php
-                                echo $error;
-                            ?>
-                        </span>
                     </div>
                 </div>
                 <div class="background disabled" data-loader>
