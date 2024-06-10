@@ -11,11 +11,11 @@
     ?>
 
     <body>
-        <div class="background">
-            <img src="" alt=""/>
+        <div class="login-background">
+            <img src="../images/resolvedevverde.png" alt=""/>
         </div>
         <section class="login d-flex flex-col flex-wrap align-center justify-center">
-            <div class='d-flex flex-col flex-wrapalign-center '>
+            <div class='d-flex flex-col flex-wrap align-center text-white'>
                 <header class='text-center'>
                     <h2>¡Bienvenido/a!</h2>
                     <strong>Inicia sesion</strong>
@@ -40,7 +40,7 @@
                         <input type="submit" class="btn btn-primary text-center" name="btnLogin" value="Iniciar sesion">
                     </div>
                 </form>
-                <span class="text-center" style="height: 2em; color: red">
+                <span class="text-center" style="height: 2em; color: red; width: 100%">
                     <?php
                         include_once("config.php");
                         include_once("controllers/loginController.php");
@@ -67,7 +67,7 @@
 
             if(input.type == "password") {
                 input.type = "text";
-                btnShowPassword.innerHTML ="<i class='icon no-ver></i>'";
+                btnShowPassword.innerHTML ="<i class='icon no-ver'></i>";
                 return;
             }
 

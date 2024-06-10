@@ -43,11 +43,11 @@
                                 </a>
                             </li>
                         </ul>
-                        <span class="text-center" style="height: 2em; color: red">
+                        <span class="text-center" style="height: 2em; color: red; margin-top: 2em">
                             <?php
                                 include_once("config.php");
                                 include_once("controllers/changePasswordController.php");
-                                echo $response
+                                echo $response;
                             ?>
                         </span>
                         <footer class="d-flex justify-end align-center">

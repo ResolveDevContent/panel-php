@@ -2,6 +2,8 @@
 
 include_once "config.php";
 
+$response = "";
+
 if(!empty($_POST["btnLogin"])) {
     if(!empty($_POST["email"]) and !empty($_POST["password"])) {
         $response = '<div class="loader-container d-flex justify-center">
@@ -54,11 +56,6 @@ if(!empty($_POST["btnLogin"])) {
     }
 }
 
-
 mysqli_close($link);
-
-sleep(4);
-
-$response = '';
 
 ?>

@@ -9,14 +9,17 @@
 #container {
     width: 100%;
     min-height: 100vh;
+    background-size: 20em;
 }
 #container .wrapper {
     margin-top: 4em;
 }
+#container .wrapper > header {
+    flex-direction: column;
+}
 #container .wrapper > div > header > p {
     font-size: .9em;
 }
-
 
 /* TABLA ---------------------------------------------------------------------- */
 
@@ -72,4 +75,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* LOGIN ---------------------------------------------------------------------- */
+
+.login > div {
+    min-width: 24em;
+}
+.login > div > span,
+.login > div > footer span {
+    max-width: 23em;
 }

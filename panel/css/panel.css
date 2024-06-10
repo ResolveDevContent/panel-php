@@ -120,7 +120,6 @@ img {
     background-image: url('../../images/resolvedevverde.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 25em;
     position: relative;
 }
 .menu {
@@ -208,6 +207,7 @@ img {
 }
 .menu .categoria a span {
     font-size: 1.125em;
+    margin-left: 1em;
 }
 .wrapper {
     padding: 1em;
@@ -383,6 +383,155 @@ ul.file-list li{
 .remove-list{
     cursor:pointer;
     margin-left:10px;
+}
+
+/* LOGIN -------------------------------------------------------------------- */
+
+.login-background {
+    background-image: linear-gradient(120deg, #00fff7 0%, #1e6662 100%); 
+    height: 60%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.login-background img {
+    width: 12em;
+    height: 7em;
+}
+
+.login {
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.login > div {
+    background-color: #313131;
+    min-width: 30em;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.551);
+    padding: 2em;
+    border-radius: 1em;
+    gap: 1em;
+}
+
+.login > div > span {
+    -webkit-line-clamp: 2;
+}
+
+.login > div > header > h2 {
+    font-weight: bolder;
+}
+
+.login-form li + li {
+    margin-top: 1em;
+}
+.login-form li input {
+    outline: none;
+    background-color: #222;
+    color: white;
+}
+
+.login-form li label {
+    text-transform: uppercase;
+}
+
+.login-form li input {
+    cursor: pointer;
+    transition: all 0.5s;
+    border: none;
+    border-radius: .5em;
+}
+
+.login > div > form {
+    width: 100%;
+}
+
+.login > div > form > div {
+    margin-top: 1em;
+}
+
+.login > div > form > div > input {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1em 2em;
+}
+
+.login-form .visible-btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 2em;
+    margin-right: 1em;
+}
+
+.login-form .visible-btn i {
+    background-color: white;
+}
+
+.login-form .password-container {
+    min-width: unset;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: unset;
+    position: relative;
+}
+
+.login-form .password-container input {
+    width: 100%;
+    margin-top: 1.25em;
+    border-radius: .5em;
+    padding: 1.5em 1.75em;
+    outline: none;
+}
+
+.login-form .password-container input::placeholder {
+    color: #000;
+}
+
+.login > div > footer span {
+    font-size: .9em;
+}
+
+.login > footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: .5em;
+}
+
+/* USER -------------------------------------------------------------------- */
+
+.pass-form {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1em;
+    margin: 2em;
+}
+
+.pass-form > a {
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.pass-form header strong {
+    text-transform: uppercase;
+}
+
+.pass-form form {
+    margin-top: 2em;
+}
+
+.pass-form > form > div,
+.pass-form > span {
+    margin-top: 1em;
+}
+
+.pass-form form > ul {
+    gap: 1em;
 }
 
 /* ERROR -------------------------------------------------------------------- */

@@ -12,14 +12,25 @@
 	background-color: #079992;
 }
 
+/* MENU ---------------------------------------------------------------------- */
+
 #container {
     flex: 1;
+	background-size: 25em;
 }
 
 #display-menu:checked ~ .menu {
     width: max-content!important;
 }
 
+/* TABLA ---------------------------------------------------------------------- */
+
 .fl-table td {
     max-width: 5em;
+}
+
+/* LOGIN ---------------------------------------------------------------------- */
+
+.login > div > span {
+	max-width: 25em;
 }

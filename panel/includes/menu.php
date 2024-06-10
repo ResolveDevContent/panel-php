@@ -22,14 +22,14 @@
     </header>
     <div>
         <ul class="d-flex flex-col">
-            <li class='categoria d-flex flex-col'>
-                <a href="tienda.php">
-                    <span>Tienda</span>
+            <li class='categoria'>
+                <a href="/panel-php/panel/products/productos.php">
+                    <span>Mockups</span>
                 </a>
             </li>
             <li class='categoria'>
-                <a href="/panel-php/panel/products/productos.php">
-                    <span>Productos</span>
+                <a href="#">
+                    <span>Reviews (coming soon)</span>
                 </a>
             </li>
         </ul>
