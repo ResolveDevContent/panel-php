@@ -8,5 +8,12 @@
 }
 #container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
+#container .wrapper {
+    margin-top: 4em;
+}
+#container .wrapper > div > header > p {
+    font-size: .9em;
+}
+
