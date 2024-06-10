@@ -17,6 +17,11 @@
     -webkit-mask-image: url("../icons/ver.svg");
 }
 
+.icon.no-ver {
+    mask-image: url("../icons/no-ver.svg");
+    -webkit-mask-image: url("../icons/no-ver.svg");
+}
+
 .icon.editar {
     mask-image: url("../icons/editar.svg");
     -webkit-mask-image: url("../icons/editar.svg");
@@ -25,4 +30,19 @@
 .icon.borrar {
     mask-image: url("../icons/borrar.svg");
     -webkit-mask-image: url("../icons/borrar.svg");
+}
+
+.icon.left-arrow {
+    mask-image: url("../icons/left-arrow.svg");
+    -webkit-mask-image: url("../icons/left-arrow.svg");
+}
+
+.icon.turn-off {
+    mask-image: url("../icons/turn-off.svg");
+    -webkit-mask-image: url("../icons/turn-off.svg");
+}
+
+.icon.h-menu {
+    mask-image: url("../icons/h-menu.svg");
+    -webkit-mask-image: url("../icons/h-menu.svg");
 }

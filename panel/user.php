@@ -27,18 +27,17 @@
                             </li>
                             <li class='input'>
                                 <label for="newPassword">Contraseña nueva</label>
-                                <div class='d-flex password-container'>
-                                    <input type="password" name="newPassword" id="newPassword" required/>
-                                </div>
+                                <input type="password" name="newPassword" id="newPassword" required/>
                             </li>
                             <li class='input'>
                                 <label for="rNewPassword">Repetir contraseña nueva</label>
-                                <div class='d-flex password-container'>
-                                    <input type="password" name="rNewPassword" id="rNewPassword" required/>
-                                </div>
+                                <input type="password" name="rNewPassword" id="rNewPassword" required/>
                             </li>
                         </ul>
                         <div class="d-flex justify-center">
+                            <a href="#" class='visible-btn' id="show-pass">
+                                Mostrar contraseñas
+                            </a>
                             <input type="submit" class="btn btn-primary text-center" name="btnChangePassword" value="Actualizar contraseña">
                         </div>
                     </form>
@@ -53,4 +52,26 @@
             </article>
         </section>
     </body>
+
+    <script>
+        const btnShowPassword = document.querySelector("#show-pass");
+
+        btnShowPassword.addEventListener("click", function(evt) {
+            evt.preventDefault();
+
+            const inputs = document.querySelectorAll("input[type='password'], input[type='text']");
+
+            inputs.forEach(function(row) {
+                console.log(row.type)
+                if(row.type == "password") {
+                    row.type = "text";
+                    btnShowPassword.textContent = "Ocultar contraseñas";
+                } else {
+                    row.type = "password";
+                    btnShowPassword.textContent = "Mostrar contraseñas";
+                }    
+            })
+
+        })
+    </script>
 </html>
