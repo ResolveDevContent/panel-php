@@ -224,7 +224,6 @@ img {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    padding: 1em;
     background-color: #434343;
     color: white;
     border: 1px solid #00000030;
@@ -240,6 +239,7 @@ img {
 }
 .menu .categoria a {
     color: white;
+    padding: 1em;
 }
 .menu .categoria a span {
     font-size: 1.125em;
