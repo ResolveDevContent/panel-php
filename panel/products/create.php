@@ -159,7 +159,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <h2>Agregar Producto</h2>
                             <p>Completar el siguiente formulario para agregar un producto</p>
                         </header>
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col" id="form-create">
                             <div class="input <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
                                 <label>Nombre</label>
                                 <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" required>
@@ -167,7 +167,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="input <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
                                 <label>Stock</label>
-                                <input type="number" name="stock" class="form-control"><?php echo $stock; ?></input required>
+                                <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>" required>
                                 <span class="help-block" ><?php echo $stock_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
@@ -200,12 +200,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </body>
 
     <script>
-        const btnSubmit = document.querySelector("[data-btnSubmit]");
+        const btnSubmit  = document.querySelector("[data-btnSubmit]");
+        const formCreate = document.querySelector("#form-create");
 
         btnSubmit.addEventListener('click', () => {
             const loader = document.querySelector("[data-loader]");
 
-            loader.classList.remove('disabled');
+            const formData = new FormData(formCreate);
+            
+            let flag = true;
+            for (const value of formData.values()) {
+                if(value == "" || value.size == 0) {
+                    flag = false;
+                }
+            }
+                
+            if(flag) {
+                loader.classList.remove('disabled');
+            }
         });
     </script>
 </html>

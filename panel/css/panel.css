@@ -308,8 +308,8 @@ img {
 /* FORMULARIO -----------------------------------------------------------------*/
 
 .form-container {
-    background-color: #313131;
-    color: white;
+    background-color: #fff;
+    color: #000;
     border: 1px solid #000;
     border-radius: 0.5em;
     padding: 1em;
@@ -317,13 +317,13 @@ img {
 }
 
 .form-container > a {
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: center;
 }
 
 .form-container > a svg {
-    fill: #fff;
+    fill: #000;
 }
 
 .form {
@@ -465,6 +465,13 @@ img {
     background-color: #fff;
     border-radius: 0.5em;
     padding: 1em;
+}
+
+.empty-state {
+    background-color: white;
+    position: relative;
+    z-index: 8;
+    height: 10em;
 }
 
 /* ---------------------------------------- */

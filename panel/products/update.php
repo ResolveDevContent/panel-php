@@ -132,6 +132,8 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
     // Close connection
     mysqli_close($link);
 } else{
+    $result2 = [];
+    
     // Check existence of id parameter before processing further
     if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
         // Get URL parameter
@@ -196,8 +198,9 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
         mysqli_close($link);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: error.php");
-        exit();
+        echo 'tira error aca7!?';
+        // header("location: error.php");
+        // exit();
     }
 }
 ?>
@@ -244,7 +247,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                             </div>
                             <div class="input">
                                 <label>Imagenes</label>
-                                <input type="file" multiple name="imagenes[]" class="form-control" required>
+                                <input type="file" multiple name="imagenes[]" class="form-control">
                                 <span class="help-block"></span>
                             </div>
                             <div class="d-flex flex-col imagenes">
@@ -276,11 +279,23 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
 
     <script>
         const btnSubmit = document.querySelector("[data-btnSubmit]");
+        const formCreate = document.querySelector("#form-create");
 
         btnSubmit.addEventListener('click', () => {
             const loader = document.querySelector("[data-loader]");
 
-            loader.classList.remove('disabled');
+            const formData = new FormData(formCreate);
+            
+            let flag = true;
+            for (const value of formData.values()) {
+                if(value == "") {
+                    flag = false;
+                }
+            }
+                
+            if(flag) {
+                loader.classList.remove('disabled');
+            }
         });
     </script>
 </html>
