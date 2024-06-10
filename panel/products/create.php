@@ -149,7 +149,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
-                        <a href="productos.php">
+                        <a href="productos.php" class="d-flex align-center">
                             <i class="icon left-arrow"></i>
                             <span>Volver</span>
                         </a>

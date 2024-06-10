@@ -1,8 +1,14 @@
 .pass-form {
-    background-color: #313131;
+    background-color: #fff;
     padding: 2em;
     border-radius: 1em;
     margin: 2em;
+}
+
+.pass-form > a {
+    color: #000;
+    display: flex;
+    align-items: center;
 }
 
 .pass-form header strong {
@@ -18,9 +24,6 @@
     margin-top: 1em;
 }
 
-.pass-form > form > div > input {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #000;
-    padding: 1em 2em;
+.pass-form form > ul {
+    gap: 1em;
 }

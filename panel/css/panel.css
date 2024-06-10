@@ -5,6 +5,7 @@
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
@@ -114,9 +115,15 @@ img {
     opacity: .8;
 }
 
+.btn-default {
+    background-color: #353b48;
+    opacity: .8;
+}
+
 .btn-success:hover,
 .btn-error:hover,
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-default:hover {
     opacity: 1;
 }
 
@@ -309,7 +316,6 @@ img {
 .form-container {
     background-color: #fff;
     color: #000;
-    border: 1px solid #000;
     border-radius: 0.5em;
     padding: 1em;
     gap: 1em;

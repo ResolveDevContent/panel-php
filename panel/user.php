@@ -15,12 +15,16 @@
         <section class="d-flex">
             <?php include_once("includes/menu.php"); ?>
             <article id="container">
-                <div class='pass-form d-flex flex-col flex-wrapalign-center text-white'>
+                <div class='pass-form d-flex flex-col flex-wrap '>
+                    <a href="productos.php">
+                        <i class="icon left-arrow"></i>
+                        <span>Volver</span>
+                    </a>
                     <header class='text-center'>
                         <strong>Actualizaci&oacute; de contraseña</strong>
                     </header>
                     <form method="post">
-                        <ul class="login-form d-flex flex-col">
+                        <ul class="d-flex flex-col">
                             <li class='input'>
                                 <label for="currenPassword">Contraseña actual</label>
                                 <input type="password" name="currentPassword" id="currentPassword" requiered/>
@@ -33,21 +37,23 @@
                                 <label for="rNewPassword">Repetir contraseña nueva</label>
                                 <input type="password" name="rNewPassword" id="rNewPassword" required/>
                             </li>
+                            <li>
+                                <a href="#" class='btn btn-default visible-btn' id="show-pass">
+                                    Mostrar contraseñas
+                                </a>
+                            </li>
                         </ul>
-                        <div class="d-flex justify-center">
-                            <a href="#" class='visible-btn' id="show-pass">
-                                Mostrar contraseñas
-                            </a>
-                            <input type="submit" class="btn btn-primary text-center" name="btnChangePassword" value="Actualizar contraseña">
-                        </div>
+                        <span class="text-center" style="height: 2em; color: red">
+                            <?php
+                                include_once("config.php");
+                                include_once("controllers/changePasswordController.php");
+                                echo $response
+                            ?>
+                        </span>
+                        <footer class="d-flex justify-end align-center">
+                            <input type="submit" class="btn btn-success text-center" name="btnChangePassword" value="Actualizar contraseña">
+                        </footer>
                     </form>
-                    <span class="text-center" style="height: 2em; color: red">
-                        <?php
-                            include_once("config.php");
-                            include_once("controllers/changePasswordController.php");
-                            echo $response
-                        ?>
-                    </span>
                 </div>
             </article>
         </section>

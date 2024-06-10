@@ -15,7 +15,7 @@
             <img src="" alt=""/>
         </div>
         <section class="login d-flex flex-col flex-wrap align-center justify-center">
-            <div class='d-flex flex-col flex-wrapalign-center text-white'>
+            <div class='d-flex flex-col flex-wrapalign-center '>
                 <header class='text-center'>
                     <h2>¡Bienvenido/a!</h2>
                     <strong>Inicia sesion</strong>
