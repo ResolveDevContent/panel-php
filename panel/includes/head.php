@@ -20,7 +20,7 @@ if($title != "Login") {
 
     <!-- <link rel="stylesheet" href="/panel-php/panel/css/panel.css"> -->
     <link rel="stylesheet" href="/panel-php/panel/css/icons.css">
-    <link rel="stylesheet" href="../css/panel.css">
+    <link rel="stylesheet" href="css/panel.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="user.css">
     <title><?php echo $title; ?> - Panel</title>
