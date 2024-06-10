@@ -5,7 +5,7 @@
     $id = "imagenId";
     // $location = "update.php?productId=$productId";
     $isInProduct = false;
-    $location = "update.php?productId=". trim($_GET["productId"]) ."";
+    $location = "productos.php";
     include_once("../controllers/delete.php")
 ?>
 <!DOCTYPE html>

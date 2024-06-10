@@ -14,8 +14,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_nombre = trim($_POST["nombre"]);
     if(empty($input_nombre)){
         $nombre_err = "Por favor ingrese el nombre del producto.";
-    } elseif(!filter_var($input_nombre, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $nombre_err = "Por favor ingrese un nombre válido.";
     } else{
         $nombre = $input_nombre;
     }
@@ -175,14 +173,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>" required>
                                 <span class="help-block"><?php echo $precio_err;?></span>
                             </div>
-                            <div class="input">
-                                <label>imagen</label>
-                                <input type="file" multiple name="imagenes[]" class="form-control" required>
-                                <span class="help-block"></span>
+                            <span>Imagenes</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="file">
+                                    <input type="file" multiple name="imagenes[]" id="file" class="form-control" required>
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes o videos</span>
+                                </label>
                             </div>
-                            <div class="d-flex flex-col">
-                                <span>Vista previa</span>
-                            </div>
+                            <ul id="fileList" class="file-list"></ul>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" data-btnSubmit value="Confirmar">
                                 <a href="productos.php" class="btn btn-error">Cancelar</a>
@@ -200,6 +199,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </body>
 
     <script>
+        updateList = function(input, output) {
+            let children = "";
+            for (var i = 0; i < input.files.length; ++i) {
+                children +=  '<li>'+ input.files.item(i).name + '<span class="remove-list" onclick="return this.parentNode.remove()">X</span>' + '</li>'
+            }
+            output.innerHTML = children;
+        }
+
+        // ------------------------------------------------------------------------------
+
+        const input = document.querySelector('#file');
+        const output = document.querySelector('#fileList');
+
+        input.addEventListener("change", function(evt) {
+            updateList(input, output)
+        })
+
         const btnSubmit  = document.querySelector("[data-btnSubmit]");
         const formCreate = document.querySelector("#form-create");
 
@@ -219,5 +235,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 loader.classList.remove('disabled');
             }
         });
+
     </script>
 </html>

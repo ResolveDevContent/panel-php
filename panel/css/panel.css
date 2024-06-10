@@ -344,7 +344,7 @@ img {
 }
 .input > input,
 .input > textarea {
-    margin-top: 1.25em;
+    margin-top: 1em;
     color: #000;
     border: 1px solid #9F9F9F;
     border-radius: .5em;
@@ -390,6 +390,43 @@ img {
     color: red;
     height: 1em;
     margin: .5em 0;
+}
+
+.custom-file{
+    border: 1px dashed #000;
+    border-radius: 0.5em;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: inline-block;
+    padding: 1em;
+}
+
+.custom-file-label {
+    cursor: pointer;
+    gap: 0.5em;
+}
+
+.custom-file input{
+    display: none;
+}
+
+ul.file-list{
+    font-family:arial;
+    list-style: none;
+    padding:0;
+}
+
+ul.file-list li{
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remove-list{
+    cursor:pointer;
+    margin-left:10px;
 }
 
 /* ERROR -------------------------------------------------------------------- */

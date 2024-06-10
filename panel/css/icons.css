@@ -46,3 +46,8 @@
     mask-image: url("../icons/h-menu.svg");
     -webkit-mask-image: url("../icons/h-menu.svg");
 }
+
+.icon.upload {
+    mask-image: url("../icons/upload.svg");
+    -webkit-mask-image: url("../icons/upload.svg");
+}
