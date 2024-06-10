@@ -20,10 +20,10 @@ if($title != "Login") {
 
     <link rel="stylesheet" href="/panel-php/panel/css/panel.css">
     <link rel="stylesheet" href="/panel-php/panel/css/icons.css">
-    <link rel="stylesheet" href="css/panel.css">
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 960px)">
-    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 959px)">
+    <link rel="stylesheet" href="../css/panel.css">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="../css/desktop.css" media="screen and (min-width: 960px)">
+    <link rel="stylesheet" href="../css/mobile.css" media="screen and (max-width: 959px)">
     <link rel="stylesheet" href="/panel-php/panel/css/desktop.css" media="screen and (min-width: 960px)">
     <link rel="stylesheet" href="/panel-php/panel/css/mobile.css" media="screen and (max-width: 959px)">
     <link rel="stylesheet" href="login.css">
