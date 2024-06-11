@@ -1,0 +1,69 @@
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+    background-color: black;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.icon.mail {
+    mask-image: url("../icons/mail.svg");
+    -webkit-mask-image: url("../icons/mail.svg");
+
+    font-size: 1.5em;
+}
+
+.icon.phone {
+    mask-image: url("../icons/phone.svg");
+    -webkit-mask-image: url("../icons/phone.svg");
+
+    font-size: 1.5em;
+}
+
+.icon.redes {
+    mask-image: url("../icons/redes.svg");
+    -webkit-mask-image: url("../icons/redes.svg");
+
+    font-size: 1.5em;
+}
+
+.icon.instagram {
+    mask-image: url("../icons/instagram.svg");
+    -webkit-mask-image: url("../icons/instagram.svg");
+
+    font-size: 2.5em;
+    height: 0.95em;
+    width: 1.25em;
+}
+
+.icon.facebook {
+    mask-image: url("../icons/facebook.svg");
+    -webkit-mask-image: url("../icons/facebook.svg");
+
+    font-size: 2.5em;
+    height: 0.95em;
+}
+
+.icon.linkedin {
+    mask-image: url("../icons/linkedin.svg");
+    -webkit-mask-image: url("../icons/linkedin.svg");
+
+    font-size: 1.75em;
+}
+
+.mexico {
+    background-image: url("../icons/mexico.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+}
+
+.argentina {
+    background-image: url("../icons/argentina.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+}

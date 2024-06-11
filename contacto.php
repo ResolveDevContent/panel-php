@@ -9,7 +9,7 @@
 <body>
     <?php include_once("includes/navbar.php"); ?>
     <section id="contacto" class="d-flex align-center flex-col">
-        <header class="d-flex align-center flex-col text-center">
+        <header class="d-flex align-center flex-col text-center gap-5">
             <h2>Contáctate con nosotros</h2>
             <p>
                 Para obtener más información sobre nuestros productos y servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!
@@ -19,48 +19,53 @@
             <div>
                 <ul>
                     <li class="item d-flex align-start">
-                        <!-- <Location /> -->
-                        <div class="d-flex flex-col">
-                            <em>Correo electrónico</em>
+                        <div class="d-flex flex-col gap-1">
+                            <header class="d-flex align-center gap-5">
+                                <i class="icon mail"></i>
+                                <em>Correo electrónico</em>
+                            </header>
                             <ul class="d-flex align-start gap-1 flex-col">
                                 <li class="d-flex align-center gap-5">
-                                    Icono de mail
                                     <span>contacto@digitalredlimit.com</span>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="item d-flex align-start">
-                        <!-- <Phone /> -->
-                        <div class="d-flex flex-col">
-                            <em>Teléfono</em>
+                        <div class="d-flex flex-col gap-1">
+                            <header class="d-flex align-center gap-5">
+                                <i class="icon phone"></i>
+                                <em>Teléfono</em>
+                            </header>
                             <ul class="d-flex align-start gap-1 flex-col">
                                 <li class="d-flex align-center gap-5">
-                                    Bandera de argentina
+                                    <i class="argentina"></i>
                                     <span>+54 9 261 609 8855</span>
                                 </li>
                                 <li class="d-flex align-center gap-5">
-                                    Bandera de mexico
+                                    <i class="mexico"></i>
                                     <span>+52 1 999 608 0167</span>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="item d-flex align-start">
-                        <!-- <Clock /> -->
-                        <div class="d-flex flex-col">
-                            <em>Redes sociales</em>
+                        <div class="d-flex flex-col gap-1">
+                            <header class="d-flex align-center gap-5">
+                                <i class="icon redes"></i>
+                                <em>Redes sociales</em>
+                            </header>
                             <ul class="d-flex align-start gap-1 flex-col">
                                 <li class="d-flex align-center gap-5">
-                                    Icono instragram
+                                    <i class="icon instagram"></i>
                                     <span>https://www.instagram.com/digital.redlimit/?locale=sl</span>
                                 </li>
                                 <li class="d-flex align-center gap-5">
-                                    Icono Facebook
+                                    <i class="icon facebook"></i>
                                     <span>https://www.facebook.com/people/RED-LIMIT/61552965720510</span>
                                 </li>
                                 <li class="d-flex align-center gap-5">
-                                    Icono Linkedin
+                                    <i class="icon linkedin"></i>
                                     <span>https://www.linkedin.com/company/red-limit</span>
                                 </li>
                             </ul>

@@ -31,6 +31,10 @@ span {
     overflow-wrap: anywhere;
 }
 
+em {
+    font-style: normal;
+}
+
 .d-flex {
     display: flex;
 }
@@ -132,56 +136,4 @@ span {
 .btn > button:hover,
 .btn > a:hover {
     opacity: .7;
-}
-
-/* CONTACTO ---------------------------------------------------------------- */
-
-#contacto {
-    margin: 6em 2em 2em 2em;
-}
-
-#contacto > header {
-    width: 40em;
-}
-
-#contacto > header > h1 {
-    font-size: 2.5em;
-}
-
-#contacto > header > p {
-    color: #9F9F9F;
-    font-weight: 400;
-}
-
-#contacto > article {
-    padding: 2em;
-    width: 100%;
-    margin-top: 4em;
-}
-
-#contacto > article > div {
-    width: 40%;
-}
-
-#contacto .item + .item {
-    margin-top: 2em;
-}
-
-#contacto .item > div {
-    margin-left: 1em;
-    max-width: 80%;
-}
-
-#contacto .item > div > em {
-    font-size: 1.5em;
-    font-weight: 600;
-}
-
-#contacto > article > form {
-    flex: 1;
-    margin: 0 2em;
-}
-
-#contacto .ul-form > li + li {
-    margin-top: 2.25em;
 }
