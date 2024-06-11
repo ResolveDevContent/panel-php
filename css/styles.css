@@ -63,6 +63,10 @@ video {
     justify-content: space-between;
 }
 
+.justify-end {
+    justify-content: end;
+}
+
 .flex-col {
     flex-direction: column;
 }

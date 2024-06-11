@@ -16,7 +16,7 @@
                         <video src="">
                             <source>
                         </video>
-                        <figcaption>
+                        <figcaption class="d-flex align-center justify-end">
                             <article class="home-text">
                                 <span>subtitulo</span>
                                 <div>
@@ -35,8 +35,8 @@
             </ul>
         </section>
 
-        <section id="sobre-nosotros">
-            <aside>
+        <section id="sobre-nosotros" class="d-flex align-start">
+            <aside class="d-flex align-center justify-center">
                 svg animado
             </aside>
             <article>
