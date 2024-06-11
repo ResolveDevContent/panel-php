@@ -1,0 +1,32 @@
+#faq > article > ul {
+    max-width: 38em;
+}
+
+#faq details {
+    background-color: #eee;
+    margin-block: 1em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+#faq details > summary {
+    font-size: 1.25em;
+    padding: 1em;
+    margin-left: .5em;
+    list-style: none;
+}
+    
+#faq details > summary i {
+    transition: all 0.5s;
+}
+
+#faq details[open] > summary i {
+    transform: rotate(90deg);
+}
+
+#faq details > p {
+    padding: 1em;
+    background-color: #fff;
+    border-radius: 0 0 1em 1em;
+    border: 1px solid #eee;
+}

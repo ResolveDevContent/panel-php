@@ -52,6 +52,11 @@
     font-size: 1.75em;
 }
 
+.icon.arrow-right {
+    mask-image: url("../icons/arrow-right.svg");
+    -webkit-mask-image: url("../icons/arrow-right.svg");
+}
+
 .mexico {
     background-image: url("../icons/mexico.svg");
     background-repeat: no-repeat;
