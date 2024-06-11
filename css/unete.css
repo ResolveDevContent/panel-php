@@ -5,3 +5,11 @@
     max-width: 40em;
     margin-top: 2em;
 }
+
+#unete .ul-form > li > ul input[type="radio"] {
+    display: none;
+}
+
+#unete .ul-form > li > ul input[type="radio"]:checked {
+    
+}

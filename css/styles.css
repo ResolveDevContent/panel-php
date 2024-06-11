@@ -67,6 +67,10 @@ video {
     justify-content: end;
 }
 
+.justify-start {
+    justify-content: start;
+}
+
 .flex-col {
     flex-direction: column;
 }

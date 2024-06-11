@@ -64,42 +64,58 @@
                     </li>
                     <li>
                         <label>Seleccioná tu puesto deseado</label>
-                        <ul>
+                        <ul class="d-flex align-center justify-start flex-wrap">
                             <li>
+                                <input type="radio" id="cm" value="Community Manager" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="cm" value="Community Manager" name="puestos-laborales">
                                     Community Manager
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ssm" value="Social Media Manager" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="ssm" value="Social Media Manager" name="puestos-laborales">
                                     Social Media Manager
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="cc" value="Content Creator" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="cc" value="Content Creator" name="puestos-laborales">
                                     Content Creator
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="gd" value="Graphic Designer" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="gd" value="Graphic Designer" name="puestos-laborales">
                                     Graphic Designer
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="ss" value="SEO Specialist" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="ss" value="SEO Specialist" name="puestos-laborales">
                                     SEO Specialist
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="dms" value="Digital Marketing Specialist" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="dms" value="Digital Marketing Specialist" name="puestos-laborales">
                                     Digital Marketing Specialist
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="wd" value="Web Developer" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="wd" value="Web Developer" name="puestos-laborales">
                                     Web Developer
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="css" value="Customer Support Specialist" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="css" value="Customer Support Specialist" name="puestos-laborales">
                                     Customer Support Specialist
                                 </label>
+                            </li>
+                            <li>
+                                <input type="radio" id="otro" value="Otros" name="puestos-laborales">
                                 <label>
-                                    <input type="radio" id="otro" value="Otros" name="puestos-laborales">
                                     Otros
                                 </label>
                             </li>
