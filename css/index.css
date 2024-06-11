@@ -1,0 +1,58 @@
+#inicio {
+    position: relative;
+}
+
+#inicio figure {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#inicio figcaption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#inicio .home-text {
+    margin-right: 3em;
+    margin-top: 5em;
+}
+
+#inicio .home-text > span {
+    font-weight: 600;
+    letter-spacing: .1em;
+}
+
+#inicio .home-text > div > em {
+    font-weight: 700;
+    font-size: 3.25em;
+    line-height: 1.125em;
+}
+
+#inicio .home-text > div > p {
+    font-weight: 500;
+}
+
+#inicio .home-text > footer {
+    margin-top: 2.75em;
+}
+
+#inicio .home-text > footer > button {
+    border: none;
+    padding: 1.5em 4.5em;
+    cursor: pointer;
+    border-radius: 0.5em;
+}
+
+#inicio .home-text > footer > button:hover {
+    opacity: .7;
+}
+
+#inicio .home-text > footer > button > a {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+}

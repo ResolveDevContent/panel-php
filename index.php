@@ -9,8 +9,30 @@
     <body>
         <?php include_once("includes/navbar.php"); ?>
         
-        <section id="banner">
-
+        <section id="inicio">
+            <ul>
+                <li>
+                    <figure>
+                        <video src="">
+                            <source>
+                        </video>
+                        <figcaption>
+                            <article class="home-text">
+                                <span>subtitulo</span>
+                                <div>
+                                    <em>titulo</em>
+                                    <p>
+                                        descripcion
+                                    </p>
+                                </div>
+                                <footer>
+                                    <a href="#">BTN</a>
+                                </footer>
+                            </article>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
         </section>
 
         <section id="sobre-nosotros">

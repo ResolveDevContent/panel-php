@@ -35,6 +35,14 @@ em {
     font-style: normal;
 }
 
+img,
+video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: conver;
+}
+
 .d-flex {
     display: flex;
 }
