@@ -1,15 +1,68 @@
 
+#unete {
+    gap: 2em;
+}
+
+#unete > header {
+    width: 100%;
+    position: relative;
+}
+
+#unete > header > div {
+    width: 50%;
+}
+
+#unete > header > img {
+    flex: 1;
+}
+
+#unete > article {
+    margin-bottom: 8em;
+}
+    
+#unete .beneficios {
+    width: 100%;
+    position: relative;
+    padding: 1em;
+}
+
+#unete .beneficios ul li {
+    padding: 1em;
+    background-color: #eee;
+    border-radius: 0.5em;
+}
 
 #unete form {
     width: 100%;
     max-width: 40em;
-    margin-top: 2em;
+}
+
+#unete .ul-form > li > ul {
+    margin-top: 1em;
+}
+
+#unete .ul-form > li > ul > li {
+    padding: 0.5em;
+}
+
+#unete .ul-form > li > ul > li label {
+    cursor: pointer;
+    padding: 0.5em;
+    color: #515151;
+    transition: all 0.25s;
+    background-color: #eee;
+    border-radius: 1em;
+    font-size: 1.25em;
 }
 
 #unete .ul-form > li > ul input[type="radio"] {
     display: none;
 }
 
-#unete .ul-form > li > ul input[type="radio"]:checked {
-    
+#unete .ul-form > li > ul input[type="radio"]:checked + label {
+    background-color: antiquewhite;
+    color: #000;
 }
+
+/* ANIMATIONS ------------------------------------------------------------------ */
+

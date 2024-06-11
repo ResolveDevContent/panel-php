@@ -8,7 +8,7 @@
 
     <body>
         <?php include_once("includes/navbar.php"); ?>
-        <section id="contacto" class="d-flex align-center flex-col">
+        <section id="contacto" class="d-flex align-center flex-col wrapper">
             <header class="d-flex align-center flex-col text-center gap-5">
                 <h2>Contáctate con nosotros</h2>
                 <p>

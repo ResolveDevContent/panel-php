@@ -95,6 +95,10 @@ video {
     gap: 0.5em;
 }
 
+.wrapper {
+    margin-inline: 5em;
+}
+
 /* INPUT STYLES ------------------------------------------------------------ */
 
 .input {
