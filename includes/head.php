@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/nosotros.css">
     <link rel="stylesheet" href="css/portafolio.css">
     <link rel="stylesheet" href="css/unete.css">
-
+    <link rel="stylesheet" href="css/index.css">
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/icons.css">
