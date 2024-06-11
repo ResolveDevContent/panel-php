@@ -7,10 +7,28 @@
     ?>
 
     <body>
-        <section class="d-flex" id="main">
-            <?php include_once("includes/menu.php"); ?>
-    
-            <article id="container"></article>
+        <?php include_once("includes/footer.php"); ?>
+        
+        <section id="banner">
+
         </section>
+
+        <section id="sobre-nosotros">
+
+        </section>
+
+        <section id="servicios">
+
+        </section>
+
+        <section id="reviews">
+
+        </section>
+
+        <section id="cotizar">
+
+        </section>
+
+        <?php include_once("includes/footer.php"); ?>
     </body>
 </html>
