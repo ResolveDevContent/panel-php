@@ -6,7 +6,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    background-color: blueviolet;
+    background-color: gray;
 }
 
 #inicio figcaption {
@@ -25,12 +25,6 @@
 #inicio .home-text > span {
     font-weight: 600;
     letter-spacing: .1em;
-}
-
-#inicio .home-text > div > em {
-    font-weight: 700;
-    font-size: 3.25em;
-    line-height: 1.125em;
 }
 
 #inicio .home-text > div > p {
