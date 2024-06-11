@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Pagina
-</body>
+
+    <?php
+        $title = "Panel";
+        include_once "includes/head.php";   
+    ?>
+
+    <body>
+        <section class="d-flex" id="main">
+            <?php include_once("includes/menu.php"); ?>
+    
+            <article id="container"></article>
+        </section>
+    </body>
 </html>
