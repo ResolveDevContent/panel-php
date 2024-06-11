@@ -204,7 +204,7 @@
                                         </label>
                                     </li>
                                     <li>
-                                        <input type="radio" id="ssm" value="Redes Sociales" name="motivos-cotizacion">
+                                        <input type="radio" id="rs" value="Redes Sociales" name="motivos-cotizacion">
                                         <label for="rs">
                                             Redes Sociales
                                         </label>
@@ -243,7 +243,7 @@
                             </li>
                             <li>
                                 <div class="btn d-flex justify-center">
-                                    <button>Cotizar</button>
+                                    <button>Cotiza</button>
                                 </div>
                             </li>
                         </ul>

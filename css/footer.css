@@ -1,0 +1,33 @@
+#footer {
+    background-color: blanchedalmond;
+}
+
+#footer > header,
+#footer > ul,
+#footer > div {
+    width: 100%;
+}
+
+#footer > div {
+    margin-top: 2em;
+    padding: .325em;
+    background-color: #000;
+    color: white;
+}
+
+#footer > ul {
+    margin-top: 2em;
+}
+
+#footer > ul > li {
+    max-width: 15em;
+}
+
+#footer > ul > li > span {
+    display: inline;
+    margin-top: 1em;
+}
+
+#footer > ul > li > ul {
+    margin-top: 1em;
+}
