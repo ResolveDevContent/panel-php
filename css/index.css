@@ -1,7 +1,12 @@
 #sobre-nosotros,
 #servicios,
+#reviews,
 #cotizar {
     margin: 4em 2em;
+}
+
+h3 {
+    font-size: 3em;
 }
 
 #inicio {
@@ -63,4 +68,82 @@
 
 #sobre-nosotros article {
     flex: 1;
+}
+
+/* SERVICIOS */
+
+#servicios > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 2em;
+}
+
+#servicios > ul > li {
+    background-color: rgb(202, 202, 202);
+    position: relative;
+    height: 15em;
+    border-radius: .5em;
+}
+
+#servicios > ul > li > a {
+    border-radius: .5em;
+    color: black;
+}
+
+#servicios > ul > li > a > img {
+    border-radius: .5em;
+}
+
+#servicios > ul > li > a > em {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    align-content: center;
+}
+
+/* REVIEWS */
+
+#reviews > ul {
+    width: 100%;
+    margin-top: 2em;
+}
+
+#reviews > ul > li {
+    width: 20em;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+#reviews > ul > li > img {
+    width: 4em;
+    height: 4em;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#reviews > ul > li > div {
+    margin: 1em 0;
+}
+
+#reviews > ul > li > div > i {
+    margin: 0 .125em;
+}
+
+/* COTIZAR */
+
+#cotizar > div {
+    width: 100%;
+    margin-top: 2em;
+}
+
+#cotizar > div > article {
+    flex: 1;
+}
+
+#cotizar > div > aside {
+    width: 35%;
 }
