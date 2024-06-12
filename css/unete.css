@@ -50,7 +50,7 @@
     padding: 0.5em;
     transition: all 0.25s;
     background-color: var(--color7);
-    color: white;
+    color: #a1a1a1;
     border-radius: 1em;
     font-size: 1.25em;
 }
