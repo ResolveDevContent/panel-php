@@ -1,0 +1,46 @@
+#agendar > article{
+    margin-top: 4em;
+}
+
+#agendar .ul-form {
+    width: 50%;
+}
+
+#agendar .ul-form input[type="date"] {
+    margin-top: 0;
+}
+
+#agendar .ul-form .label-cotizacion:not(.not-visible) + .input select {
+    margin-top: 0;
+} 
+
+#agendar .horarios {
+    margin-top: 1em;
+}
+
+#agendar .horarios > li {
+    padding: 0.5em;
+}
+
+#agendar .horarios > li label {
+    cursor: pointer;
+    padding: 0.5em;
+    color: #515151;
+    transition: all 0.25s;
+    background-color: #eee;
+    border-radius: 1em;
+    font-size: 1.25em;
+}
+
+#agendar .horarios input[type="radio"] {
+    display: none;
+}
+
+#agendar .horarios input[type="radio"]:checked + label {
+    background-color: antiquewhite;
+    color: #000;
+}
+
+#agendar form > footer {
+    margin-top: 2em;
+}

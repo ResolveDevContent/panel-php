@@ -101,6 +101,15 @@ video {
 
 .wrapper {
     margin-inline: 5em;
+    margin-block: 5em;
+}
+
+.not-visible {
+    display: none;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 /* INPUT STYLES ------------------------------------------------------------ */
@@ -112,7 +121,8 @@ video {
 }
   
 .input input,
-.input textarea{
+.input textarea,
+.input select{
     margin-top: 1.25em;
     color: #9F9F9F;
     border: 1px solid #9F9F9F;
