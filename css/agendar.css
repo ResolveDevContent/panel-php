@@ -40,3 +40,7 @@
     background-color: antiquewhite;
     color: #000;
 }
+
+#agendar form > footer {
+    margin-top: 2em;
+}
