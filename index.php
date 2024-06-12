@@ -134,7 +134,7 @@
                     <em>Ellos nos recomiendan (cleintes felices)</em>
                     <span>Nuestros clientes nos califican</span>
                 </header>
-                <ul class="d-flex align-center gap-1">
+                <ul class="d-flex align-center justify-center gap-1">
                     <li class="d-flex flex-col align-center justify-center">
                         <img src="" alt="">
                         <div class="d-flex align-center">
