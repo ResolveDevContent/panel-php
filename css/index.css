@@ -124,27 +124,37 @@ h4 {
 
 #reviews > ul > li {
     width: 20em;
+    min-width: 20em;
+    min-height: 14em;
+    height: 14em;
     border: 1px solid black;
     padding: 1em;
+    background-color: #494949;
+    border-radius: .5em;
 }
 
-#reviews > ul > li > article > img {
+#reviews .customer > img {
     width: 4em;
     height: 4em;
     border: 1px solid black;
     border-radius: 50%;
 }
 
-#reviews > ul > li > article > div {
+#reviews .customer > div {
     margin: 1em 0 1em 1em;
 }
 
-#reviews > ul > li > article > div div {
+#reviews .customer > div em {
+    font-weight: 700;
+}
+
+#reviews .customer > div div {
     margin-top: .5em;
 }
 
-#reviews > ul > li > article > div span {
+#reviews .customer > div span {
     margin-top: .25em;
+    font-size: .9em;
 }
 
 #reviews > ul > li div > i {
