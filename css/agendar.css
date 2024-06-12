@@ -25,9 +25,9 @@
 #agendar .horarios > li label {
     cursor: pointer;
     padding: 0.5em;
-    color: #515151;
+    color: white;
     transition: all 0.25s;
-    background-color: #eee;
+    background-color: var(--color7);
     border-radius: 1em;
     font-size: 1.25em;
 }
@@ -37,8 +37,8 @@
 }
 
 #agendar .horarios input[type="radio"]:checked + label {
-    background-color: antiquewhite;
-    color: #000;
+    background-color: var(--color4);
+    color: white;
 }
 
 #agendar form > footer {

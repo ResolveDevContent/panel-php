@@ -160,9 +160,9 @@ h3 {
 #cotiza .ul-form > li > ul > li label {
     cursor: pointer;
     padding: 0.5em;
-    color: #515151;
     transition: all 0.25s;
-    background-color: #eee;
+    background-color: var(--color4);
+    color: white;
     border-radius: 1em;
     font-size: 1.25em;
 }
@@ -172,6 +172,6 @@ h3 {
 }
 
 #cotiza .ul-form > li > ul input[type="radio"]:checked + label {
-    background-color: antiquewhite;
-    color: #000;
+    background-color: var(--color4);
+    color: white;
 }
