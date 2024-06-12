@@ -108,6 +108,8 @@
                 </form>
             </article>
         </section>    
+
+        <?php include_once("includes/footer.php"); ?>
         
         <script src="js/index.js"></script>
     </body>
