@@ -161,7 +161,7 @@
             </ul>
         </section>
 
-        <section id="cotizar" class="d-flex flex-col align-center justify-center">
+        <section id="cotiza" class="d-flex flex-col align-center justify-center">
             <header class="d-flex flex-col align-center justify-center">
                 <h3>Cotiza</h3>
                 <span>Completa el formulario y cotizaremos tu &eacute;xito</span>

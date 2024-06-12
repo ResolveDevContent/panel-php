@@ -1,0 +1,30 @@
+a {
+    color: #000;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    padding: 1em 1.5em;
+    background-color: #ffffff30;
+}
+
+#navbar .logo a {
+    width: 8em;
+    display: block;
+    height: 3em;
+    background-color: #000;
+}
+
+#navbar > div > div {
+    margin-left: 3em;
+}
+
+#navbar > div > div > a {
+    background-color: #00000030;
+    border-radius: .5em;
+    padding: .5em 1em;
+}

@@ -1,7 +1,7 @@
 #sobre-nosotros,
 #servicios,
 #reviews,
-#cotizar {
+#cotiza {
     margin: 4em 2em;
 }
 
@@ -133,17 +133,44 @@ h3 {
     margin: 0 .125em;
 }
 
-/* COTIZAR */
+/* cotiza */
 
-#cotizar > div {
+#cotiza > div {
     width: 100%;
     margin-top: 2em;
 }
 
-#cotizar > div > article {
+#cotiza > div > article {
     flex: 1;
 }
 
-#cotizar > div > aside {
+#cotiza > div > aside {
     width: 35%;
+}
+
+#cotiza .ul-form > li > ul {
+    margin-top: 1em;
+}
+
+#cotiza .ul-form > li > ul > li {
+    padding: 0.5em;
+}
+
+#cotiza .ul-form > li > ul > li label {
+    cursor: pointer;
+    padding: 0.5em;
+    color: #515151;
+    transition: all 0.25s;
+    background-color: #eee;
+    border-radius: 1em;
+    font-size: 1.25em;
+}
+
+#cotiza .ul-form > li > ul input[type="radio"] {
+    display: none;
+}
+
+#cotiza .ul-form > li > ul input[type="radio"]:checked + label {
+    background-color: antiquewhite;
+    color: #000;
 }

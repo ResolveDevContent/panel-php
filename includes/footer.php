@@ -58,7 +58,7 @@
                     <a href="#reviews">Testimonios</a>
                 </li>
                 <li>
-                    <a href="#cotizar">Cotiza</a>
+                    <a href="#cotiza">Cotiza</a>
                 </li>
                 <li>
                     <a href="../agendar.php">Agenda tu Cita</a>
