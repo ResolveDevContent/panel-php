@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    $title = "Trabajá con nosotros";
+    $title = "Trabaj&aacute; con nosotros";
     include_once "includes/head.php";   
 ?>
 
@@ -127,7 +127,7 @@
                 </ul>
             </form>
         </article>
-    </section>       
+    </section>
 
     <?php include_once("includes/footer.php"); ?>
 

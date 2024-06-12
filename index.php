@@ -43,12 +43,18 @@
                 <h3>Sobre nosotros</h3>
                 <span>¿Qui&eacute;nes somos?</span>
                 <div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo laborum quam earum soluta quas dolores neque voluptates optio vitae officia similique id saepe, exercitationem, nostrum dolore porro, rem libero culpa.</p>
+                    <p>
+                        En Red Limit, somos más que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. Desde nuestra fundación, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.
+                    </p>
                     <br>
                     <div class="d-flex align-center gap-1">
-                        <p>Estamos en</p>
+                        <p>Nos encontramos en</p>
                         <i class="argentina"></i>
                         <i class="mexico"></i>
+                    </div>
+                    <div class="d-flex align-center btn">
+                        <a href="/nosotros.php">Conoce m&aacute;s</a>
+                        <a href="/unete.php">Trabaj&aacute; con nosotros</a>
                     </div>
                 </div>
             </article>

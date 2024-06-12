@@ -61,13 +61,13 @@
                     <a href="#cotiza">Cotiza</a>
                 </li>
                 <li>
-                    <a href="../agendar.php">Agenda tu Cita</a>
+                    <a href="../agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
                 </li>
                 <li>
                     <a href="../portafolio.php">Portafolio</a>
                 </li>
                 <li>
-                    <a href="../unete.php">Trabaja con nosotros</a>
+                    <a href="../unete.php">Trabaja con Nosotros</a>
                 </li>
                 <li>
                     <a href="../contacto.php">Contacto</a>
