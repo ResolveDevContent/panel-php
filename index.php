@@ -9,33 +9,33 @@
     <body>
         <?php include_once("includes/navbar.php"); ?>
 
+        <section id="inicio">
+            <ul>
+                <li>
+                    <figure>
+                        <video src="">
+                            <source>
+                        </video>
+                        <figcaption class="d-flex align-center justify-end">
+                            <article class="home-text">
+                                <span>subtitulo</span>
+                                <div>
+                                    <h1>titulo</h1>
+                                    <p>
+                                        descripcion
+                                    </p>
+                                </div>
+                                <footer>
+                                    <a href="#">BTN</a>
+                                </footer>
+                            </article>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
         <main class="wrapper">
-            <section id="inicio">
-                <ul>
-                    <li>
-                        <figure>
-                            <video src="">
-                                <source>
-                            </video>
-                            <figcaption class="d-flex align-center justify-end">
-                                <article class="home-text">
-                                    <span>subtitulo</span>
-                                    <div>
-                                        <h1>titulo</h1>
-                                        <p>
-                                            descripcion
-                                        </p>
-                                    </div>
-                                    <footer>
-                                        <a href="#">BTN</a>
-                                    </footer>
-                                </article>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </section>
-    
             <section id="sobre-nosotros" class="d-flex align-start">
                 <aside class="d-flex align-center justify-center">
                     SVG ANIMADO

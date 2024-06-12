@@ -46,22 +46,13 @@
             </span>
         </li>
         <li class="d-flex flex-col align-center justify-center">
-            <em>Links</em>
+            <em>Empresa</em>
             <ul class="d-flex flex-col align-start justify-center">
                 <li>
                     <a href="../nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li>
-                    <a href="#servicios">Servicios</a>
-                </li>
-                <li>
-                    <a href="#reviews">Testimonios</a>
-                </li>
-                <li>
-                    <a href="#cotiza">Cotiza</a>
-                </li>
-                <li>
-                    <a href="../agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
+                    <a href="../index.php#servicios">Servicios</a>
                 </li>
                 <li>
                     <a href="../portafolio.php">Portafolio</a>
@@ -71,6 +62,25 @@
                 </li>
                 <li>
                     <a href="../contacto.php">Contacto</a>
+                </li>
+            </ul>
+        </li>
+        <li class="d-flex flex-col align-center justify-center">
+            <em>Comencemos</em>
+            <ul class="d-flex flex-col align-start justify-center">
+                <li>
+                    <a href="../index.php#cotiza">Cotiza</a>
+                </li>
+                <li>
+                    <a href="../agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
+                </li>
+            </ul>
+        </li>
+        <li class="d-flex flex-col align-center justify-center">
+            <em>Ayuda</em>
+            <ul class="d-flex flex-col align-start justify-center">
+                <li>
+                    <a href="../index.php#reviews">Testimonios</a>
                 </li>
                 <li>
                     <a href="../faq.php">Preguntas Frecuentes</a>
