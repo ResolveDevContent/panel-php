@@ -16,6 +16,10 @@
     font-family: "Raleway", sans-serif;
 }
 
+body {
+    background-color: var(--color6);
+}
+
 ul {
     list-style: none;
 }
@@ -24,7 +28,7 @@ a {
     text-decoration: none;
 }
 
-span {
+.elipsis {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
