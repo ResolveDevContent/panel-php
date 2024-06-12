@@ -44,9 +44,9 @@
                     <h3>Sobre nosotros</h3>
                     <span>¿Qui&eacute;nes somos?</span>
                     <div>
-                        <p>
-                            En Red Limit, somos más que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. Desde nuestra fundación, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.
-                        </p>
+                        <span>
+                            En <span style="color: var(--color5);">Red Limit</span>, somos más que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. Desde nuestra fundación, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.
+                        </span>
                         <br>
                         <div class="d-flex align-center gap-1">
                             <p>Nos encontramos en</p>
