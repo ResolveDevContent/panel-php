@@ -41,7 +41,7 @@
                     SVG ANIMADO
                 </aside>
                 <article>
-                    <h3>Sobre nosotros</h3>
+                    <h4>Sobre nosotros</h4>
                     <span>¿Qui&eacute;nes somos?</span>
                     <div>
                         <span>
@@ -63,7 +63,7 @@
     
             <section id="servicios" class="d-flex flex-col align-center">
                 <header>
-                    <h3>Servicios</h3>
+                    <h4>Servicios</h4>
                 </header>
                 <ul class="gap-1">
                     <li>
@@ -131,46 +131,70 @@
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex flex-col align-center justify-center">
-                    <em>Ellos nos recomiendan (cleintes felices)</em>
-                    <span>Nuestros clientes nos califican</span>
+                    <h4>Ellos nos recomiendan</h4>
+                    <span>Nuestros clientes satisfechos nos califican</span>
                 </header>
                 <ul class="d-flex align-center justify-center gap-1">
-                    <li class="d-flex flex-col align-center justify-center">
-                        <img src="" alt="">
-                        <div class="d-flex align-center">
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                        </div>
-                        <span>Excelente</span>
+                    <li class="d-flex flex-col justify-center">
+                        <article class="d-flex align-center">
+                            <img src="" alt="">
+                            <div class="d-flex flex-col">
+                                <em>Jose Luis Mbappe</em>
+                                <span>Verdulero</span>
+                                <div class="d-flex align-center">
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <aside>
+                            <span>Excelente servicio que me han brindado</span>
+                        </aside>
                     </li>
-                    <li class="d-flex flex-col align-center justify-center">
-                        <img src="" alt="">
-                        <div class="d-flex align-center">
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                        </div>
-                        <span>Muy bueno</span>
+                    <li class="d-flex flex-col justify-center">
+                        <article class="d-flex align-center">
+                            <img src="" alt="">
+                            <div class="d-flex flex-col">
+                                <em>Pablo Javier Dembele</em>
+                                <span>Kinesiologo</span>
+                                <div class="d-flex align-center">
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <aside>
+                            <span>muy buenos servicio que me han brindado</span>
+                        </aside>
                     </li>
-                    <li class="d-flex flex-col align-center justify-center">
-                        <img src="" alt="">
-                        <div class="d-flex align-center">
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                            <i class="icon star"></i>
-                        </div>
-                        <span>Buenos trabajando</span>
+                    <li class="d-flex flex-col justify-center">
+                        <article class="d-flex align-center">
+                            <img src="" alt="">
+                            <div class="d-flex flex-col">
+                                <em>Carlos Alberto Viatri</em>
+                                <span>Cocinero</span>
+                                <div class="d-flex align-center">
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
+                                </div>
+                            </div>
+                        </article>
+                        <aside>
+                            <span>Buenos servicio</span>
+                        </aside>
                     </li>
                 </ul>
             </section>
     
             <section id="cotiza" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex flex-col align-center justify-center">
-                    <h3>Cotiza</h3>
+                    <h4>Cotiza</h4>
                     <span>Completa el formulario y cotizaremos tu &eacute;xito</span>
                 </header>
                 <div class="d-flex">

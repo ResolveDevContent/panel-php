@@ -2,11 +2,11 @@
 #servicios,
 #reviews,
 #cotiza {
-    margin-top: 3em;
+    margin-top: 10em;
 }
 
-h3 {
-    font-size: 3em;
+h4 {
+    font-size: 2.75em;
     color: var(--color5);
 }
 
@@ -128,19 +128,31 @@ h3 {
     padding: 1em;
 }
 
-#reviews > ul > li > img {
+#reviews > ul > li > article > img {
     width: 4em;
     height: 4em;
     border: 1px solid black;
     border-radius: 50%;
 }
 
-#reviews > ul > li > div {
-    margin: 1em 0;
+#reviews > ul > li > article > div {
+    margin: 1em 0 1em 1em;
 }
 
-#reviews > ul > li > div > i {
+#reviews > ul > li > article > div div {
+    margin-top: .5em;
+}
+
+#reviews > ul > li > article > div span {
+    margin-top: .25em;
+}
+
+#reviews > ul > li div > i {
     margin: 0 .125em;
+}
+
+#reviews > ul > li > aside {
+    margin-top: 1em;
 }
 
 /* cotiza */
