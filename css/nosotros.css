@@ -1,0 +1,27 @@
+#valores, 
+#equipo, 
+#unete {
+    margin-top: 2em;
+}
+
+#valores > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#valores ul li p {
+    margin-top: .5em;
+}
+
+#valores > ul li img {
+    width: 10em;
+    height: 10em;
+}
+
+#valores > ul li em {
+    margin-top: 1em;
+}
+
+#unete .btn {
+    margin-top: 2em;
+}

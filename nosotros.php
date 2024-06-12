@@ -33,15 +33,15 @@
         </section>
 
         <section id="valores">
-            <ul>
-                <li>
+            <ul class="gap-1">
+                <li class="d-flex flex-col align-center text-center">
                     <img src="" alt="">
                     <em>Misi&oacute;n</em>
                     <p>
                         Nuestra misi&oacute;n es empoderar a las empresas a trav&eacute;s de soluciones de marketing digital personalizadas y accesibles, impulsando su crecimiento y &eacute;xito en el mercado digital. Nos esforzamos por proporcionar un servicio excepcional que combine creatividad, tecnolog&iacute;a y estrategias efectivas para maximizar el retorno de inversi&oacute;n de nuestros clientes.
                     </p>
                 </li>
-                <li>
+                <li class="d-flex flex-col align-center text-center">
                     <img src="" alt="">
                     <em>Visi&oacute;n</em>
                     <p>
@@ -49,33 +49,33 @@
 
                     </p>
                 </li>
-                <li>
+                <li class="d-flex flex-col align-center text-center">
                     <img src="" alt="">
                     <em>Valores</em>
                     <ul>
                         <li>
                             <p>
-                                Innovaci&oacute;n: Nos mantenemos al d&iacute;a con las &uacute;ltimas tendencias y tecnolog&iacute;as en marketing digital.
+                                <b>Innovaci&oacute;n:</b> Nos mantenemos al d&iacute;a con las &uacute;ltimas tendencias y tecnolog&iacute;as en marketing digital.
                             </p>
                         </li>
                         <li>
                             <p>
-                                Calidad: Ofrecemos servicios de alta calidad que cumplen con los est&aacute;ndares más exigentes.
+                                <b>Calidad:</b> Ofrecemos servicios de alta calidad que cumplen con los est&aacute;ndares más exigentes.
                             </p>
                         </li>
                         <li>
                             <p>
-                                Resultados: Nos enfocamos en generar resultados medibles que contribuyan al &eacute;xito de nuestros clientes.
+                                <b>Resultados:</b> Nos enfocamos en generar resultados medibles que contribuyan al &eacute;xito de nuestros clientes.
                             </p>
                         </li>
                         <li>
                             <p>
-                                Transparencia: Mantenemos una comunicaci&oacute;n abierta y honesta con nuestros clientes e inversionistas.
+                                <b>Transparencia:</b> Mantenemos una comunicaci&oacute;n abierta y honesta con nuestros clientes e inversionistas.
                             </p>
                         </li>
                         <li>
                             <p>
-                                Pasi&oacute;n: Estamos apasionados por lo que hacemos y comprometidos con el éxito de nuestros clientes.
+                                <b>Pasi&oacute;n:</b> Estamos apasionados por lo que hacemos y comprometidos con el éxito de nuestros clientes.
                             </p>
                         </li>
                     </ul>
