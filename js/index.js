@@ -28,7 +28,8 @@ ds.forEach(elm => {
 
 // AGENDAR ----------------------------------------------------------------------
 
-const   date         = document.querySelector("input#date"),
+const   agendar      = document.querySelectorAll("#agendar"),
+        date         = document.querySelector("input#date"),
         select       = document.querySelector(".ul-form select"),
         labelSelect  = document.querySelector(".label-cotizacion"),
         itemHorarios = document.querySelector(".item-horarios"),
@@ -42,35 +43,37 @@ const   date         = document.querySelector("input#date"),
             { horarios: [ ...horarios  ] }
         ];
 
-date.addEventListener("change", function(e) {
-    const day = new Date(e.target.value).getDay();
-
-    if(dias[day]) {
-        let listHorarios = [];
-        dias[day].horarios.forEach(horario => {
-            listHorarios.push(`<li>                                
-                                <input type="radio" id="${horario}" value="${horario}" name="horarios">
-                                <label for="${horario}">
-                                    ${horario}
-                                </label>
-                            </li>`)
-        })
-
-        itemHorarios.classList.remove("not-visible")
-        ul.innerHTML = listHorarios.join("")
-        listHorarios = []
-        return;
-    }
-
-    itemHorarios.classList.add("not-visible");
-    ul.innerHTML = "";
-})
-
-select.addEventListener("change", function(e) {
-    if(e.target.value) {
-        labelSelect.classList.remove("not-visible");
-        return;
-    }
-
-    labelSelect.classList.add("not-visible");
+agendar.forEach(function(agendar) {
+    date.addEventListener("change", function(e) {
+        const day = new Date(e.target.value).getDay();
+    
+        if(dias[day]) {
+            let listHorarios = [];
+            dias[day].horarios.forEach(horario => {
+                listHorarios.push(`<li>                                
+                                    <input type="radio" id="${horario}" value="${horario}" name="horarios">
+                                    <label for="${horario}">
+                                        ${horario}
+                                    </label>
+                                </li>`)
+            })
+    
+            itemHorarios.classList.remove("not-visible")
+            ul.innerHTML = listHorarios.join("")
+            listHorarios = []
+            return;
+        }
+    
+        itemHorarios.classList.add("not-visible");
+        ul.innerHTML = "";
+    })
+    
+    select.addEventListener("change", function(e) {
+        if(e.target.value) {
+            labelSelect.classList.remove("not-visible");
+            return;
+        }
+    
+        labelSelect.classList.add("not-visible");
+    })
 })
