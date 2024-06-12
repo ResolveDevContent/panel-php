@@ -71,6 +71,15 @@ h3 {
     flex: 1;
 }
 
+#sobre-nosotros article > span {
+    letter-spacing: .2em;
+}
+
+#sobre-nosotros article > div,
+#sobre-nosotros article > div > div {
+    margin-top: 1em;
+}
+
 /* SERVICIOS */
 
 #servicios > ul {

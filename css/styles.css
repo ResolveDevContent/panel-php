@@ -131,12 +131,13 @@ video {
 .input select{
     margin-top: 1.25em;
     color: #9F9F9F;
-    border: 1px solid #9F9F9F;
+    border: 1px solid var(--color5);
     border-radius: .5em;
     padding: 1.5em 1.75em;
     outline: none;
     width: 100%;
     resize: none;
+    background-color: var(--color7);
 }
   
 .input label {
@@ -155,7 +156,7 @@ video {
 .input textarea:focus ~ label,
 .input textarea.input-active ~ label,
 .input input.input-active ~ label{
-    color: #000;
+    color: #a1a1a1;
     font-size: 0.9em;
     transform: translateY(-3em);
     left: 0;

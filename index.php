@@ -53,7 +53,7 @@
                             <i class="argentina"></i>
                             <i class="mexico"></i>
                         </div>
-                        <div class="d-flex align-center btn">
+                        <div class="d-flex align-center btn gap-1">
                             <a href="/nosotros.php">Conoce m&aacute;s</a>
                             <a href="/unete.php">Trabaj&aacute; con nosotros</a>
                         </div>
