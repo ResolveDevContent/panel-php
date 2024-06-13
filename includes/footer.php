@@ -39,15 +39,15 @@
         </div>
     </header>
     <ul class="d-flex align-start justify-around">
-        <li class="d-flex flex-col align-center justifi-center">
+        <li class="d-flex flex-col align-start justifi-center">
             <img src="" alt="">
             <span>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rerum quae explicabo temporibus.
             </span>
         </li>
-        <li class="d-flex flex-col align-center justify-center">
+        <li class="d-flex flex-col align-start justify-center">
             <em>Empresa</em>
-            <ul class="d-flex flex-col align-start justify-center">
+            <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
                     <a href="../nosotros.php">Sobre Nosotros</a>
                 </li>
@@ -65,9 +65,9 @@
                 </li>
             </ul>
         </li>
-        <li class="d-flex flex-col align-center justify-center">
+        <li class="d-flex flex-col align-start justify-center">
             <em>Comencemos</em>
-            <ul class="d-flex flex-col align-start justify-center">
+            <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
                     <a href="../index.php#cotiza">Cotiza</a>
                 </li>
@@ -76,9 +76,9 @@
                 </li>
             </ul>
         </li>
-        <li class="d-flex flex-col align-center justify-center">
+        <li class="d-flex flex-col align-start justify-center">
             <em>Ayuda</em>
-            <ul class="d-flex flex-col align-start justify-center">
+            <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
                     <a href="../index.php#reviews">Testimonios</a>
                 </li>
