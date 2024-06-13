@@ -1,3 +1,8 @@
+h2 {
+    font-size: 2.75em;
+    color: var(--color5);
+}
+
 #sobre-nosotros.nosotros {
     margin-top: 4em;
 }
@@ -5,12 +10,16 @@
 #valores, 
 #equipo, 
 #join {
-    margin-top: 10em;
+    margin-top: 8em;
 }
 
 #equipo > h2, 
 #join > em {
     margin-bottom: 1em;
+}
+
+#valores > ul > li {
+    width: 80%;
 }
 
 #valores > ul > li + li {
@@ -19,6 +28,7 @@
 
 #valores > ul li.right {
     flex-direction: row-reverse;
+    margin-left: auto;
 }
 
 #valores > ul li.right div {
@@ -31,7 +41,7 @@
 }
 
 #valores > ul li.right div span {
-    text-align: end
+    text-align: end;
 }
 
 #valores > ul li div {

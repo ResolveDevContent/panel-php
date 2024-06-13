@@ -84,6 +84,7 @@ h4 {
 
 .tabs-container {
     width: 100%;
+    max-width: 800px;
     display: flex;
     margin: 0.625em;
     overflow: hidden;

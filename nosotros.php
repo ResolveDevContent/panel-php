@@ -33,7 +33,7 @@
         </section>
 
         <section id="valores">
-            <ul class="d-flex flex-col">
+            <ul class="d-flex flex-col w-100">
                 <li class="d-flex align-center">
                     <img src="" alt="">
                     <div class="d-flex flex-col">
