@@ -4,15 +4,13 @@
 const form       = document.querySelectorAll('[data-form]'),
       formInputs = document.querySelectorAll('[data-form] input[type="text"], [data-form] textarea');
 
-form.forEach(function(formElement) {
     Array.from(formInputs).forEach(elm => {
         elm.addEventListener('change', function(evt) {
             if(elm.value || !elm.value) {
                 elm.classList.toggle('input-active');
             }
-        })
-    })
-})
+        });
+});
 
 // FAQS ----------------------------------------------------------------------
 
@@ -88,7 +86,7 @@ const shiftTabs = (linkId) => {
     allTabs.forEach((tab, i) => {
         if(tab.id.includes(linkId)) {
             allTabs.forEach((tabItem) => {
-                tabItem.style = `transform: translateY(-${i*540}px);`
+                tabItem.style = `transform: translateY(-${i*384}px);`
             })
         }
     })
