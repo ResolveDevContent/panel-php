@@ -105,6 +105,10 @@ video {
     gap: 0.5em;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .wrapper {
     margin-inline: 5em;
     margin-block: 5em;
@@ -114,9 +118,11 @@ video {
     display: none;
 }
 
-.w-100 {
-    width: 100%;
+.highlight {
+    color: var(--color5);
+    font-weight: 600;
 }
+
 
 /* INPUT STYLES ------------------------------------------------------------ */
 

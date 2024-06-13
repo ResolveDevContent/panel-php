@@ -1,27 +1,81 @@
+#sobre-nosotros.nosotros {
+    margin-top: 4em;
+}
+
 #valores, 
 #equipo, 
-#unete {
-    margin-top: 2em;
+#join {
+    margin-top: 10em;
 }
 
-#valores > ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+#equipo > h2, 
+#join > em {
+    margin-bottom: 1em;
 }
 
-#valores ul li p {
-    margin-top: .5em;
+#valores > ul > li + li {
+    margin-top: 3em;
 }
 
-#valores > ul li img {
-    width: 10em;
-    height: 10em;
+#valores > ul li.right {
+    flex-direction: row-reverse;
+}
+
+#valores > ul li.right div {
+    margin-right: 1em;
+}
+
+#valores > ul li.right div em{
+    margin-left: auto;
+    text-align: end;
+}
+
+#valores > ul li.right div span {
+    text-align: end
+}
+
+#valores > ul li div {
+    margin-left: 1em;
 }
 
 #valores > ul li em {
-    margin-top: 1em;
+    margin-bottom: .5em;
+    font-weight: 700;
+    font-size: 1.125em;
+    color: var(--color5);
 }
 
-#unete .btn {
+#valores > ul li em::after {
+    content: '';
+    width: 4.5em;
+    height: .01em;
+    background-color: var(--color5);
+    display: block;
+    margin-top: .125em;
+}
+
+#valores > ul li img {
+    width: 8em;
+    min-width: 8em;
+    height: 8em;
+    min-height: 8em;
+}
+
+#valores > ul > li li + li {
+    margin-top: .125em;
+}
+
+
+#valores b {
+    color: var(--color5);
+}
+
+#join .btn {
     margin-top: 2em;
+}
+
+#join em {
+    color: var(--color5);
+    font-size: 1.5em;
+    font-weight: 600;
 }
