@@ -14,6 +14,7 @@
             <p>
                 Para obtener más información sobre nuestros productos y servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!
             </p>
+            <span>CAMBIAR MENSAJE!(La reunión no queda confirmada)</span>
         </header>
         <article class="d-flex align-start justify-between">
             <form data-form class="d-flex flex-col align-center gap-1 w-100">
@@ -44,6 +45,14 @@
                             </div>
                         </li>
                         <li>
+                            <div class="input">
+                                <input type="text" id="pais"/>
+                                <label for="pais">Pais o Estado</label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="ul-form d-flex flex-col gap-1">
+                        <li>
                             <label class="label-cotizacion not-visible">Motivo de cotizaci&oacute;n</label>
                             <div class="input">
                                 <select name="cotizacion" id="cotizacion">
@@ -58,14 +67,6 @@
                                 </select>
                             </div>
                         </li>
-                        <li>
-                            <div class="input">
-                                <input type="text" id="pais"/>
-                                <label for="pais">Pais o Estado</label>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="ul-form d-flex flex-col gap-1">
                         <li>
                             <label>Dia</label>
                             <div class="input">
