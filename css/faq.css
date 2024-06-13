@@ -19,6 +19,7 @@
     
 #faq details > summary i {
     transition: all 0.5s;
+    background-color: white;
 }
 
 #faq details[open] > summary i {
@@ -29,5 +30,4 @@
     padding: 1em;
     background-color: var(--color6);
     border-radius: 0 0 1em 1em;
-    border: 1px solid #eee;
 }
