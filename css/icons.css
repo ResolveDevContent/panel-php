@@ -57,6 +57,11 @@
     -webkit-mask-image: url("../icons/arrow-right.svg");
 }
 
+.icon.arrow-right {
+    mask-image: url("../icons/star.svg");
+    -webkit-mask-image: url("../icons/star.svg");
+}
+
 .mexico {
     background-image: url("../icons/mexico.svg");
     background-repeat: no-repeat;
