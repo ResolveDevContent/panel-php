@@ -155,7 +155,12 @@ h4 {
 }
 
 #servicios .tab-content-wrapper div {
-    margin-top: 3em;
+    margin-top: 2em;
+}
+
+#servicios .tab-content-wrapper img {
+    width: 8em;
+    height: 8em;
 }
 
 #servicios .tab-content-wrapper .tab-content {

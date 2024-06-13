@@ -123,6 +123,7 @@
                             <section id="taba" class="tab-content">
                                 <em>Gestión de redes sociales</em>
                                 <p>Gestión integral, creación de contenido, interacción continua, uso de herramientas de análisis.</p>
+                                <img src="/images/redes-sociales.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -130,6 +131,7 @@
                             <section id="tabb" class="tab-content">
                                 <em>Desarrollo de páginas web</em>
                                 <p> Soluciones adaptadas, tecnologías avanzadas, diseño responsivo, optimización SEO.</p>
+                                <img src="/images/paginas-web.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -137,6 +139,7 @@
                             <section id="tabc" class="tab-content">
                                 <em>Publicidad Digital</em>
                                 <p>Diseño y ejecución de campañas, uso de Google Ads, Facebook Ads e Instagram Ads.</p>
+                                <img src="/images/publicidad.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -144,6 +147,7 @@
                             <section id="tabd" class="tab-content">
                                 <em>SEO y SEM</em>
                                 <p>Técnicas avanzadas de optimización, campañas de marketing en buscadores.</p>
+                                <img src="/images/seo.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -151,6 +155,7 @@
                             <section id="tabe" class="tab-content">
                                 <em>Branding y Diseño Gráfico</em>
                                 <p>Identidades visuales, diseño de logotipos, materiales de marketing.</p>
+                                <img src="/images/diseño.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -158,6 +163,7 @@
                             <section id="tabf" class="tab-content">
                                 <em>Email Marketing</em>
                                 <p>Campañas personalizadas, segmentación, personalización.</p>
+                                <img src="/images/mail.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -165,6 +171,7 @@
                             <section id="tabg" class="tab-content">
                                 <em>Video marketing</em>
                                 <p>Creación de videos impactantes, videos promocionales, tutoriales.</p>
+                                <img src="/images/marketing.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -172,6 +179,7 @@
                             <section id="tabh" class="tab-content">
                                 <em>Aplicaciones M&oacute;viles</em>
                                 <p>Desarrollo de aplicaciones intuitivas para iOS y Android.</p>
+                                <img src="/images/mobile.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -179,6 +187,7 @@
                             <section id="tabi" class="tab-content">
                                 <em>Creaci&oacute;n de Software a Medida</em>
                                 <p>Soluciones personalizadas, sistemas de gestión, aplicaciones específicas.</p>
+                                <img src="/images/software.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
@@ -186,6 +195,7 @@
                             <section id="tabj" class="tab-content">
                                 <em>Logos en Movimiento</em>
                                 <p>Animaciones de logotipos, uso en sitios web, redes sociales, videos promocionales.</p>
+                                <img src="/images/logo-movimiento.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
