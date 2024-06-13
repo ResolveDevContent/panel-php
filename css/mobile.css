@@ -1,0 +1,198 @@
+/* NAVBAR -------------------------------------------------------- */
+
+#navbar > div:nth-child(2) {
+    display: none;
+}
+
+.buttons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1.5em;
+}
+
+.buttons ul li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons ul li svg {
+    width: 2em;
+    height: 2em;
+}
+
+.navbar-responsive {
+    display: flex;
+    padding: 1.5em;
+}
+
+.navbar-responsive ul li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 1em 0;
+}
+
+.navbar-responsive ul li svg {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.navbar-responsive > article{
+    display: none;
+}
+
+.navbar-responsive input {
+    display: none;
+}
+
+.navbar-responsive > label {
+    display: flex;
+}
+
+.navbar-responsive > label svg {
+    width: 2em;
+    height: 2em;
+}
+
+.navbar-responsive input:checked + article {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-responsive > article {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-responsive > article ul {
+    background-color: #FFF3E3;
+    z-index: 1;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    color: black;
+    font-size: 1.25em;
+
+    position: absolute;
+    right: 0;
+    width: 14em;
+    height: 100%;
+    border-radius: 0;
+}
+
+.navbar-responsive input:checked + article ul {
+    transition: all .5s;
+    animation: rightanimation 1s ease-in-out ;
+}
+
+.navbar-responsive > article ul li a {
+    color: black;
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-responsive .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: .5;
+
+    height: 100vh;
+}
+
+.navbar-responsive .menu-close {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.navbar-responsive .menu-close em {
+    font-weight: bolder;
+    font-style: normal;
+    color: var(--muted-dark);
+}
+
+.navbar-responsive .menu-close label{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.navbar-responsive .menu-close label svg {
+    fill: var(--muted-dark);
+}
+
+.navbar-responsive .popup ul li svg {
+    fill: var(--muted-dark);
+}
+
+.navbar-responsive .popup ul li a span{
+    font-weight: bold;
+}
+
+.navbar-responsive ul li a span::after{
+    content: "";
+    width: 0.5em;
+    height: 0.125em;
+    background-color: transparent;
+    transition: all 0.5s;
+    display: block;
+}
+
+.navbar-responsive ul li a span:hover::after{
+    content: "";
+    width: 1.5em;
+    height: 0.125em;
+    background-color: var(--secondary);
+    display: block;
+}
+
+.search .input {
+    right: 0;
+    left: 0;
+    width: 100%;
+    bottom: 4em;
+    padding-inline: 4em;
+}
+
+.search .input input {
+    width: 100%;
+    padding: 1.25em;
+}
+
+.search .input label {
+    padding: 1em;
+}
+
+.search .input button {
+    padding: 1em;
+}
+
+.search input:checked + .input {
+    animation: sube 1s ease;
+}

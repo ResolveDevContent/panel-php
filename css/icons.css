@@ -64,6 +64,16 @@
     -webkit-mask-image: url("../icons/user-voice.svg");
 }
 
+.icon.menu {
+    mask-image: url("../icons/menu.svg");
+    -webkit-mask-image: url("../icons/menu.svg");
+}
+
+.icon.close {
+    mask-image: url("../icons/close.svg");
+    -webkit-mask-image: url("../icons/close.svg");
+}
+
 .mexico {
     background-image: url("../icons/mexico.svg");
     background-repeat: no-repeat;

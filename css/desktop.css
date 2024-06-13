@@ -11,3 +11,9 @@
 	border-radius: 0.5em;
 	background-color: var(--color5);
 }
+
+/* NAVBAR ------------------------------------------- */
+
+#navbar .navbar-responsive {
+    display: none;
+}

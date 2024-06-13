@@ -194,3 +194,14 @@ video {
 .btn > a:hover {
     transform: translateY(-1px);
 }
+
+/* KEYFRAMES ------------------------------------------------------------------------------- */
+
+@keyframes rightanimation {
+    from {
+        transform: translateX(15em);
+    }
+    to {
+        transform: translateX(0em);
+    }
+}
