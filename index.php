@@ -122,11 +122,11 @@
                         <div class="tab-content-wrapper">
                             <section id="taba" class="tab-content">
                                 <h3>Gestión de redes sociales</h3>
-                                <p>Hola</p>
+                                <p>Gestión integral, creación de contenido, interacción continua, uso de herramientas de análisis.</p>
                             </section>
                             <section id="tabb" class="tab-content">
                                 <h3>Desarrollo de páginas web</h3>
-                                <p>Hola</p>
+                                <p> Soluciones adaptadas, tecnologías avanzadas, diseño responsivo, optimización SEO.</p>
                             </section>
                             <section id="tabc" class="tab-content">
                                 <h3>Publicidad Digital</h3>

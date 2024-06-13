@@ -1,6 +1,8 @@
 .icon {
     width: 1.5em;
+    min-width: 1.5em;
     height: 1.5em;
+    min-height: 1.5em;
     display: block;
     background-color: black;
     -webkit-mask-size: contain;
@@ -60,6 +62,21 @@
 .icon.star {
     mask-image: url("../icons/star.svg");
     -webkit-mask-image: url("../icons/star.svg");
+}
+
+.icon.rocket {
+    mask-image: url("../icons/rocket.svg");
+    -webkit-mask-image: url("../icons/rocket.svg");
+}
+
+.icon.world {
+    mask-image: url("../icons/world.svg");
+    -webkit-mask-image: url("../icons/world.svg");
+}
+
+.icon.user-voice {
+    mask-image: url("../icons/user-voice.svg");
+    -webkit-mask-image: url("../icons/user-voice.svg");
 }
 
 .mexico {

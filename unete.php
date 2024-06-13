@@ -9,7 +9,7 @@
 <body>
     <?php include_once("includes/navbar.php"); ?>
     <main class="wrapper">
-        <section id="unete" class="d-flex align-center flex-col wrapper">
+        <section id="unete" class="d-flex align-center flex-col">
             <header class="d-flex align-center text-center gap-5">
                 <div>
                     <h2>Trabajá con nosotros</h2>
@@ -20,16 +20,16 @@
             <div class="beneficios d-flex flex-col align-center gap-1">
                 <strong>Beneficios</strong>
                 <ul class="d-flex align-center justify-center gap-1">
-                    <li>
-                        icono
+                    <li class="d-flex align-center">
+                        <i class="icon user-voice"></i>
                         <span>Ambiente de trabajo dinámico</span>
                     </li>
-                    <li>
-                        icono
+                    <li class="d-flex align-center">
+                        <i class="icon rocket"></i>
                         <span>Oportunidades de crecimiento</span>
                     </li>
-                    <li>
-                        icono
+                    <li class="d-flex align-center">
+                        <i class="icon world"></i>
                         <span>Proyectos internacionales</span>
                     </li>
                 </ul>
