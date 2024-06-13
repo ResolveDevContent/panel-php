@@ -202,10 +202,15 @@ h4 {
 #cotiza > div {
     width: 100%;
     margin-top: 2em;
+    gap: 4em;
 }
 
 #cotiza > div > article {
     flex: 1;
+}
+
+#cotiza > div > article > form {
+    max-width: 40em;
 }
 
 #cotiza > div > aside {
