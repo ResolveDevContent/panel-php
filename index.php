@@ -45,7 +45,7 @@
                     <span>¿Qui&eacute;nes somos?</span>
                     <div>
                         <span>
-                            En <span style="color: var(--color5);">Red Limit</span>, somos más que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. Desde nuestra fundación, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.
+                            En <span class="highlight">Red Limit</span>, somos m&aacute;s que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interact&uacute;an con el mundo digital. Desde nuestra fundaci&oacute;n, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.
                         </span>
                         <br>
                         <div class="d-flex align-center gap-1">
@@ -70,12 +70,12 @@
                         <ul class="tabs">
                             <li>
                                 <a href="#taba" id="taba" title="">
-                                    Gestión de Redes Sociales
+                                    Gesti&oacute;n de Redes Sociales
                                 </a>
                             </li>
                             <li>
                                 <a href="#tabb" id="tabb" title="">
-                                    Desarrollo de Páginas Web
+                                    Desarrollo de P&aacute;ginas Web
                                 </a>
                             </li>
                             <li>
@@ -90,7 +90,7 @@
                             </li>
                             <li>
                                 <a href="#tabe" id="tabe" title="">
-                                    Branding y Diseño Gráfico
+                                    Branding y Diseño Gr&aacute;fico
                                 </a>
                             </li>
                             <li>
@@ -105,12 +105,12 @@
                             </li>
                             <li>
                                 <a href="#tabh" id="tabh" title="">
-                                    Aplicaciones Móviles
+                                    Aplicaciones M&oacute;viles
                                 </a>
                             </li>
                             <li>
                                 <a href="#tabi" id="tabi" title="">
-                                    Creación de Software a Medida
+                                    Creaci&oacute;n de Software a Medida
                                 </a>
                             </li>
                             <li>
@@ -121,16 +121,16 @@
                         </ul>
                         <div class="tab-content-wrapper">
                             <section id="taba" class="tab-content">
-                                <em>Gestión de redes sociales</em>
-                                <p>Gestión integral, creación de contenido, interacción continua, uso de herramientas de análisis.</p>
+                                <em>Gesti&oacute;n de redes sociales</em>
+                                <p>Gesti&oacute;n integral, creaci&oacute;n de contenido, interacci&oacute;n continua, uso de herramientas de an&aacute;lisis.</p>
                                 <img src="/images/redes-sociales.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
                             </section>
                             <section id="tabb" class="tab-content">
-                                <em>Desarrollo de páginas web</em>
-                                <p> Soluciones adaptadas, tecnologías avanzadas, diseño responsivo, optimización SEO.</p>
+                                <em>Desarrollo de p&aacute;ginas web</em>
+                                <p> Soluciones adaptadas, tecnolog&iacute;as avanzadas, diseño responsivo, optimizaci&oacute;n SEO.</p>
                                 <img src="/images/paginas-web.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
@@ -138,7 +138,7 @@
                             </section>
                             <section id="tabc" class="tab-content">
                                 <em>Publicidad Digital</em>
-                                <p>Diseño y ejecución de campañas, uso de Google Ads, Facebook Ads e Instagram Ads.</p>
+                                <p>Diseño y ejecuci&oacute;n de campañas, uso de Google Ads, Facebook Ads e Instagram Ads.</p>
                                 <img src="/images/publicidad.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
@@ -146,14 +146,14 @@
                             </section>
                             <section id="tabd" class="tab-content">
                                 <em>SEO y SEM</em>
-                                <p>Técnicas avanzadas de optimización, campañas de marketing en buscadores.</p>
+                                <p>T&eacute;cnicas avanzadas de optimizaci&oacute;n, campañas de marketing en buscadores.</p>
                                 <img src="/images/seo.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
                                 </div>
                             </section>
                             <section id="tabe" class="tab-content">
-                                <em>Branding y Diseño Gráfico</em>
+                                <em>Branding y Diseño Gr&aacute;fico</em>
                                 <p>Identidades visuales, diseño de logotipos, materiales de marketing.</p>
                                 <img src="/images/diseño.svg" alt="">
                                 <div class="btn">
@@ -162,7 +162,7 @@
                             </section>
                             <section id="tabf" class="tab-content">
                                 <em>Email Marketing</em>
-                                <p>Campañas personalizadas, segmentación, personalización.</p>
+                                <p>Campañas personalizadas, segmentaci&oacute;n, personalizaci&oacute;n.</p>
                                 <img src="/images/mail.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
@@ -170,7 +170,7 @@
                             </section>
                             <section id="tabg" class="tab-content">
                                 <em>Video marketing</em>
-                                <p>Creación de videos impactantes, videos promocionales, tutoriales.</p>
+                                <p>Creaci&oacute;n de videos impactantes, videos promocionales, tutoriales.</p>
                                 <img src="/images/marketing.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
@@ -186,7 +186,7 @@
                             </section>
                             <section id="tabi" class="tab-content">
                                 <em>Creaci&oacute;n de Software a Medida</em>
-                                <p>Soluciones personalizadas, sistemas de gestión, aplicaciones específicas.</p>
+                                <p>Soluciones personalizadas, sistemas de gesti&oacute;n, aplicaciones espec&iacute;ficas.</p>
                                 <img src="/images/software.svg" alt="">
                                 <div class="btn">
                                     <a href="">Ver m&aacute;s</a>
@@ -298,7 +298,7 @@
                                 <li>
                                     <div class="input">
                                         <input type="text" id="desEmpresa"/>
-                                        <label for="desEmpresa">Descipcion de la empresa</label>
+                                        <label for="desEmpresa">Descipcion de la empresa (rubro y otros)</label>
                                     </div>
                                 </li>
                                 <li>
