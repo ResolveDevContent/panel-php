@@ -68,10 +68,14 @@
     background-image: url("../icons/mexico.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    width: 2em;
+    height: 2em;
 }
 
 .argentina {
     background-image: url("../icons/argentina.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    width: 2em;
+    height: 2em;
 }

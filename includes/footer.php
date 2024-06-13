@@ -1,43 +1,4 @@
 <footer id="footer" class="d-flex flex-col align-center justify-center">
-    <header>
-        <div class="d-flex flex-col align-center justify-center">
-            <ul class="redes-sociales d-flex align-center">
-                <li>
-                    <a href="">
-                        <i class="icon facebook" title="Facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="icon instagram" title="Instagram"></i>
-                    </a>    
-                </li>
-                <li>
-                    <a href="">
-                        <i class="icon linkedin" title="LinkedIn"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="contacto d-flex flex-col align-center justify-center">
-                <li class="d-flex align-center">
-                    <i class="icon mail" title="Mail"></i>
-                    <span>email@gmail.com</span>
-                </li>
-                <li>
-                    <div class="d-flex align-center">
-                        <div class="d-flex align-center">
-                            <i class="mexico" title="Telefono Mexico"></i>
-                            <span>+12 12312312313</span>
-                        </div>
-                        <div class="d-flex align-center">
-                            <i class="argentina" title="Telefono Argentina"></i>
-                            <span>+54 131231312312</span>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </header>
     <ul class="d-flex align-start justify-around">
         <li class="d-flex flex-col align-start justifi-center">
             <img src="" alt="">
@@ -88,6 +49,45 @@
             </ul>
         </li>
     </ul>
+    <header>
+        <div class="d-flex align-center justify-between gap-1">
+            <ul class="redes-sociales d-flex align-center gap-5">
+                <li>
+                    <a href="">
+                        <i class="icon facebook" title="Facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon instagram" title="Instagram"></i>
+                    </a>    
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon linkedin" title="LinkedIn"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="contacto d-flex align-center justify-center gap-1">
+                <li class="d-flex align-center gap-5">
+                    <i class="icon mail" title="Mail"></i>
+                    <span>email@gmail.com</span>
+                </li>
+                <li>
+                    <div class="d-flex align-start gap-5">
+                        <div class="d-flex align-center gap-5">
+                            <i class="mexico" title="Telefono Mexico"></i>
+                            <span>+12 12312312313</span>
+                        </div>
+                        <div class="d-flex align-center gap-5">
+                            <i class="argentina" title="Telefono Argentina"></i>
+                            <span>+54 131231312312</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
     <div class="text-center">
         <span>Made by © ResolveDev</span>
     </div>
