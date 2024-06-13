@@ -37,6 +37,8 @@
                             - Logos en Movimiento
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -48,6 +50,8 @@
                             Puedes solicitar una cotización visitando nuestra página web y completando el formulario en la sección "Cotiza tu Éxito". También puedes contactarnos directamente a través de nuestro correo electrónico (contacto@digitalredlimit.com) o teléfono (+54 9 261 609 8855 en Argentina o +52 1 999 608 0167 en México).
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -59,6 +63,8 @@
                             Sí, en Red Limit trabajamos con empresas de todo el mundo. Actualmente, tenemos una fuerte presencia en Argentina y México, pero ofrecemos nuestros servicios a empresas en otros países como Chile, Uruguay y más.
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -70,6 +76,8 @@
                             El tiempo de entrega varía según el tipo y la complejidad del proyecto. Por ejemplo, la creación de un sitio web puede tardar entre 4 a 8 semanas, mientras que una campaña de publicidad digital puede estar lista en 1 a 2 semanas. Siempre trabajamos para cumplir con los plazos acordados y mantenemos una comunicación constante con nuestros clientes durante todo el proceso.
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -81,6 +89,8 @@
                             Aceptamos diversos métodos de pago, incluyendo transferencias bancarias, pagos a través de PayPal, y criptomonedas (USDT) a través de Binance. Los detalles específicos del pago se discutirán y acordarán al iniciar el proyecto. 
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -92,6 +102,8 @@
                             Sí, todos nuestros servicios pueden ser personalizados según las necesidades y objetivos específicos de tu empresa. Nos aseguramos de entender tus requerimientos y adaptamos nuestras estrategias para proporcionarte las mejores soluciones.
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -103,6 +115,8 @@
                             Puedes agendar una reunión completando el formulario en la sección "Agenda tu Reunión" en nuestra página web. Selecciona el día y la hora que te convenga, y nosotros nos pondremos en contacto contigo para confirmar la reunión.
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
@@ -114,6 +128,8 @@
                             En Red Limit, nos destacamos por nuestra relación precio/calidad, nuestro equipo especializado y nuestro modelo de negocio eficiente. Ofrecemos soluciones personalizadas y nos adaptamos rápidamente a las demandas del mercado, asegurando siempre un alto retorno de inversión para nuestros clientes.
                         </p>
                     </details>
+                </li>
+                <li>
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">

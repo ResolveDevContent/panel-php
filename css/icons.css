@@ -57,7 +57,7 @@
     -webkit-mask-image: url("../icons/arrow-right.svg");
 }
 
-.icon.arrow-right {
+.icon.star {
     mask-image: url("../icons/star.svg");
     -webkit-mask-image: url("../icons/star.svg");
 }
