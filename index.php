@@ -65,68 +65,104 @@
                 <header>
                     <h4>Servicios</h4>
                 </header>
-                <ul class="gap-1">
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 1</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 2</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 3</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 4</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 5</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 6</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 7</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 8</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 9</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="" alt="">
-                            <em>servicio 10</em>
-                        </a>
-                    </li>
-                </ul>
+                <article class="d-flex">
+                    <div class="tabs-container">
+                        <ul class="tabs">
+                            <li>
+                                <a href="#taba" id="taba" title="">
+                                    Gestión de Redes Sociales
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabb" id="tabb" title="">
+                                    Desarrollo de Páginas Web
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabc" id="tabc" title="">
+                                    Publicidad Digital
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabd" id="tabd" title="">
+                                    SEO y SEM
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabe" id="tabe" title="">
+                                    Branding y Diseño Gráfico
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabf" id="tabf" title="">
+                                    Email Marketing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabg" id="tabg" title="">
+                                    Video Marketing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabh" id="tabh" title="">
+                                    Aplicaciones Móviles
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabi" id="tabi" title="">
+                                    Creación de Software a Medida
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tabj" id="tabj" title="">
+                                    Logos en Movimiento
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content-wrapper">
+                            <section id="taba" class="tab-content">
+                                <h3>Gestión de redes sociales</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabb" class="tab-content">
+                                <h3>Desarrollo de páginas web</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabc" class="tab-content">
+                                <h3>Publicidad Digital</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabd" class="tab-content">
+                                <h3>SEO y SEM</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabe" class="tab-content">
+                                <h3>Branding y Diseño Gráfico</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabf" class="tab-content">
+                                <h3>email Marketing</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabg" class="tab-content">
+                                <h3>Vidfeo marginketing</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabh" class="tab-content">
+                                <h3>aplicaciones moviles</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabi" class="tab-content">
+                                <h3>creacion de fsfotware a medida</h3>
+                                <p>Hola</p>
+                            </section>
+                            <section id="tabj" class="tab-content">
+                                <h3>logos en movimiento</h3>
+                                <p>Hola</p>
+                            </section>
+                        </div>
+                    </div>
+                </article>
             </section>
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
@@ -288,5 +324,6 @@
         </main>
 
         <?php include_once("includes/footer.php"); ?>
+        <script src="js/index.js"></script>
     </body>
 </html>

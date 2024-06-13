@@ -1,13 +1,13 @@
-/* ::-webkit-scrollbar-track{
-	background-color: #313131;
+::-webkit-scrollbar-track{
+	background-color: var(--color6);
 }
 
 ::-webkit-scrollbar{
 	width: 0.25em;
-	background-color: #313131;
+	background-color: var(--color6);
 }
 
 ::-webkit-scrollbar-thumb{
 	border-radius: 0.5em;
-	background-color: #079992;
-} */
+	background-color: var(--color5);
+}

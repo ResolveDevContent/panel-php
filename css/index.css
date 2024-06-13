@@ -80,42 +80,74 @@ h4 {
     margin-top: 1em;
 }
 
-/* SERVICIOS */
+/* SERVICIOS --------------------------------------------------------------------------*/
 
-#servicios > ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.tabs-container {
     width: 100%;
-    margin-top: 2em;
+    max-width: 800px;
+    display: flex;
+    margin: 0.625em;
+    overflow: hidden;
+    border-radius: 1em;
+    background-color: var(--color7);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-#servicios > ul > li {
-    background-color: rgb(202, 202, 202);
+.tab-content-wrapper {
+    overflow: hidden;
+    height: 34em;
+    min-width: 300px;
+    color: white;
+    transition: all 0.45s ease-in-out;
+    padding: 0.75em 1.5em;
+}
+
+.tab-content{
+    display: block;
+    font-size: 1em;
+    padding: 1.25em 0.5em;
+    width: 400px;
+    height: 540px;
+    transition: all 0.45s ease-in-out;
+}
+
+.tabs {
     position: relative;
-    height: 15em;
-    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+
+    max-height: 34em;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-#servicios > ul > li > a {
-    border-radius: .5em;
-    color: black;
+.tabs a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-size: 1.125em;
+    font-weight: 600;
+    overflow: hidden;
+    color: white;
+    text-align: left;
+    justify-content: start;
+    height: 90px;
+    padding: 0px 1.25em;
+    width: 350px;
+    align-items: center;
+    gap: 1em;
 }
 
-#servicios > ul > li > a > img {
-    border-radius: .5em;
+.tabs .active,
+.tabs a:hover {
+    font-weight: 700;
+    outline: none;
+    color: var(--color5);
+    border-left: 4px solid var(--color5);
 }
 
-#servicios > ul > li > a > em {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    text-align: center;
-    align-content: center;
-}
 
-/* REVIEWS */
+/* REVIEWS ----------------------------------------------------------------------------*/
 
 #reviews > ul {
     width: 100%;
@@ -165,7 +197,7 @@ h4 {
     margin-top: 1em;
 }
 
-/* cotiza */
+/* cotiza -------------------------------------------------------------------------------*/
 
 #cotiza > div {
     width: 100%;

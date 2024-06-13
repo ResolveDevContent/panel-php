@@ -77,3 +77,54 @@ agendar.forEach(function(agendar) {
         labelSelect.classList.add("not-visible");
     })
 })
+
+// INDEX ---------------------------------------------------------------------------------
+
+const allLinks          = document.querySelectorAll(".tabs a"),
+      allTabs           = document.querySelectorAll(".tab-content"),
+      tabContentWrapper = document.querySelector(".tab-content-wrapper");
+
+const shiftTabs = (linkId) => {
+    allTabs.forEach((tab, i) => {
+        if(tab.id.includes(linkId)) {
+            allTabs.forEach((tabItem) => {
+                tabItem.style = `transform: translateY(-${i*540}px);`
+            })
+        }
+    })
+}
+
+allLinks.forEach((elem) => {
+    elem.addEventListener("click", function(e) {
+        e.preventDefault()
+        
+        const linkId = elem.id
+        const hrefLinkClick = elem.href
+        
+        allLinks.forEach((link, i) => {
+            if(link.href == hrefLinkClick) {
+                link.classList.add("active")
+            } else {
+                link.classList.remove("active")
+            }
+        })
+
+        shiftTabs(linkId)
+    })
+})
+
+const currentHash = window.location.hash
+
+let activeLink = document.querySelector(".tabs a")
+
+if(currentHash) {
+    const visibleHash = document.getElementById(`${currentHash.replace('#', '')}`)
+
+    if(visibleHash) {
+        activeLink = visibleHash
+    }
+}
+
+activeLink.classList.toggle("active")
+
+shiftTabs(activeLink.id)
