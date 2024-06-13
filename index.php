@@ -121,44 +121,74 @@
                         </ul>
                         <div class="tab-content-wrapper">
                             <section id="taba" class="tab-content">
-                                <h3>Gestión de redes sociales</h3>
+                                <em>Gestión de redes sociales</em>
                                 <p>Gestión integral, creación de contenido, interacción continua, uso de herramientas de análisis.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabb" class="tab-content">
-                                <h3>Desarrollo de páginas web</h3>
+                                <em>Desarrollo de páginas web</em>
                                 <p> Soluciones adaptadas, tecnologías avanzadas, diseño responsivo, optimización SEO.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabc" class="tab-content">
-                                <h3>Publicidad Digital</h3>
-                                <p>Hola</p>
+                                <em>Publicidad Digital</em>
+                                <p>Diseño y ejecución de campañas, uso de Google Ads, Facebook Ads e Instagram Ads.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabd" class="tab-content">
-                                <h3>SEO y SEM</h3>
-                                <p>Hola</p>
+                                <em>SEO y SEM</em>
+                                <p>Técnicas avanzadas de optimización, campañas de marketing en buscadores.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabe" class="tab-content">
-                                <h3>Branding y Diseño Gráfico</h3>
-                                <p>Hola</p>
+                                <em>Branding y Diseño Gráfico</em>
+                                <p>Identidades visuales, diseño de logotipos, materiales de marketing.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabf" class="tab-content">
-                                <h3>email Marketing</h3>
-                                <p>Hola</p>
+                                <em>Email Marketing</em>
+                                <p>Campañas personalizadas, segmentación, personalización.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabg" class="tab-content">
-                                <h3>Vidfeo marginketing</h3>
-                                <p>Hola</p>
+                                <em>Video marketing</em>
+                                <p>Creación de videos impactantes, videos promocionales, tutoriales.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabh" class="tab-content">
-                                <h3>aplicaciones moviles</h3>
-                                <p>Hola</p>
+                                <em>Aplicaciones M&oacute;viles</em>
+                                <p>Desarrollo de aplicaciones intuitivas para iOS y Android.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabi" class="tab-content">
-                                <h3>creacion de fsfotware a medida</h3>
-                                <p>Hola</p>
+                                <em>Creaci&oacute;n de Software a Medida</em>
+                                <p>Soluciones personalizadas, sistemas de gestión, aplicaciones específicas.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                             <section id="tabj" class="tab-content">
-                                <h3>logos en movimiento</h3>
-                                <p>Hola</p>
+                                <em>Logos en Movimiento</em>
+                                <p>Animaciones de logotipos, uso en sitios web, redes sociales, videos promocionales.</p>
+                                <div class="btn">
+                                    <a href="">Ver m&aacute;s</a>
+                                </div>
                             </section>
                         </div>
                     </div>
