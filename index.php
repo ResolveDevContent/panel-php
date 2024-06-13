@@ -65,7 +65,7 @@
                 <header>
                     <h4>Servicios</h4>
                 </header>
-                <article class="d-flex">
+                <article class="d-flex w-100">
                     <div class="tabs-container">
                         <ul class="tabs">
                             <li>
