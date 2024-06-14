@@ -27,8 +27,9 @@
 
 #servicio > article > div {
     position: relative;
-    min-height: 29em;
-    max-width: 35em;
+    min-height: 33em;
+    height: 33em;
+    max-width: 40em;
 }
 
 #servicio > article > div > img {
