@@ -30,13 +30,13 @@
                         </nav>
                         <ul class="d-flex align-center" data-scrollable>
                             <li>
-                                <img src="/images/resolvedevverde.png" alt="">
+                                <img src="images/resolvedevverde.png" alt="">
                             </li>
                             <li>
-                                <img src="/images/user.png" alt="">
+                                <img src="images/user.png" alt="">
                             </li>
                             <li>
-                                <img src="/images/logo-movimiento.svg" alt="">
+                                <img src="images/logo-movimiento.svg" alt="">
                             </li>
                         </ul>
                     </div>
