@@ -44,6 +44,11 @@
     -webkit-mask-image: url("../icons/arrow-right.svg");
 }
 
+.icon.arrow-left {
+    mask-image: url("../icons/arrow-left.svg");
+    -webkit-mask-image: url("../icons/arrow-left.svg");
+}
+
 .icon.star {
     mask-image: url("../icons/star.svg");
     -webkit-mask-image: url("../icons/star.svg");
