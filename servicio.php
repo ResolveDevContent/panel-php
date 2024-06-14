@@ -20,7 +20,15 @@
                     <strong>Nuestros trabajos</strong>
                     <div>
                         <img src="/images/mockup.png" alt="">
-                        <ul class="d-flex align-center">
+                        <nav class="nav-arrows d-flex align-center justify-between">
+                            <a href="#" data-arrow="-1" class="d-flex">
+                                <i class="icon arrow-left"></i>
+                            </a>
+                            <a href="#" data-arrow="1" class="d-flex">
+                                <i class="icon arrow-right"></i>
+                            </a>
+                        </nav>
+                        <ul class="d-flex align-center" data-scrollable>
                             <li>
                                 <img src="/images/resolvedevverde.png" alt="">
                             </li>
@@ -37,5 +45,7 @@
         </main>
 
         <?php include_once("includes/footer.php"); ?>
+
+        <script src="js/index.js"></script>
     </body>
 </html>
