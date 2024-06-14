@@ -10,7 +10,7 @@
     <?php include_once("includes/navbar.php"); ?>
     <main class="wrapper">
         <section id="unete" class="d-flex align-center flex-col">
-            <header class="d-flex align-center text-center gap-5">
+            <header class="d-flex align-center text-center gap-1">
                 <div>
                     <h2>Trabajá con nosotros</h2>
                     <p>Porque trabajar con nosotros, es lo mejor que te puede pasar. Asi que inscribite a nuestros puestos laborales pedazo de wachin.</p>
@@ -36,7 +36,7 @@
             </div>
             <article class="d-flex align-center justify-center flex-col">
                 <form data-form>
-                    <ul class="ul-form d-flex flex-col gap-1">
+                    <ul class="ul-form">
                         <li>
                             <div class="input">
                                 <input type="text" id="nombre"/>
@@ -61,7 +61,7 @@
                                 <input type="file" id="cv"/>
                             </div>
                         </li>
-                        <li>
+                        <li class="puestos">
                             <label>Seleccioná tu puesto deseado</label>
                             <ul class="d-flex align-start justify-start flex-wrap gap-5">
                                 <li>

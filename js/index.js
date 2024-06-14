@@ -112,7 +112,7 @@ document
             allTabs.forEach((tab, i) => {
                 if(tab.id.includes(linkId)) {
                     allTabs.forEach((tabItem) => {
-                        tabItem.style = `transform: translateY(-${i*384}px);`;
+                        tabItem.style = `transform: translateY(-${i*33.125}em);`;
                     });
                 }
             });

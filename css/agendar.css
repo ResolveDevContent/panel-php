@@ -1,13 +1,9 @@
 #agendar > article{
-    margin-top: 4em;
+    margin-top: 2em;
 }
 
 #agendar .ul-form {
     width: 50%;
-}
-
-#agendar .ul-form input[type="date"] {
-    margin-top: 0;
 }
 
 #agendar .ul-form .label-cotizacion:not(.not-visible) + .input select {

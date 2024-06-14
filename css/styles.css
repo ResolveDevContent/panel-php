@@ -111,7 +111,7 @@ video {
 
 .wrapper {
     margin-inline: 5em;
-    margin-block: 5em;
+    margin-block: 6em;
 }
 
 .not-visible {
@@ -129,13 +129,12 @@ video {
 .input {
     position: relative;
     width: 100%;
-    margin-top: 0.5em;
+    margin-top: 3em;
 }
   
 .input input,
 .input textarea,
 .input select{
-    margin-top: 1.25em;
     color: #9F9F9F;
     border: 1px solid var(--color5);
     border-radius: .5em;
@@ -145,17 +144,23 @@ video {
     resize: none;
     background-color: var(--color7);
 }
+
+.input input[type="file"] {
+    margin-top: 1em;
+}
   
 .input label {
     position: absolute;
     left: 1em;
-    padding: 0.5em 0;
     font-size: 1em;
-    margin: 0.5em 0;
     pointer-events: none;
     transition: 0.5s;
     color: #a1a1a1;
-    top: 1.25em;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
 .input input:focus ~ label,

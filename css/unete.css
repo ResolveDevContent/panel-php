@@ -70,5 +70,13 @@
     color: white;
 }
 
+#unete .ul-form > li:last-child {
+    margin-top: 2em;
+}
+
+#unete .puestos {
+    margin-top: 2em;
+}
+
 /* ANIMATIONS ------------------------------------------------------------------ */
 

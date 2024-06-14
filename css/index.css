@@ -95,7 +95,6 @@ h4 {
 .tab-content-wrapper {
     overflow: hidden;
     height: 24em;
-    flex: 1;
     color: white;
     transition: all 0.45s ease-in-out;
 }

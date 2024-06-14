@@ -12,10 +12,6 @@
     margin-top: 1em;
 }
 
-#footer > header > div {
-    margin-inline: 5em;
-}
-
 #footer > header > div > ul > li > a {
     font-size: 2em;
 }

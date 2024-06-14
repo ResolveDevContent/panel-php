@@ -67,8 +67,7 @@
                                 </select>
                             </div>
                         </li>
-                        <li>
-                            <label>Dia</label>
+                        <li class="input-dia">
                             <div class="input">
                                 <input type="date" id="date">
                             </div>

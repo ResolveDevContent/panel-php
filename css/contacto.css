@@ -37,11 +37,6 @@
     font-weight: 600;
 }
 
-#contacto > article > form {
-    flex: 1;
-    margin: 0 2em;
-}
-
 #contacto .ul-form > li:first-child .input, 
 #contacto .ul-form > li:first-child .input input {
     margin-top: 0;

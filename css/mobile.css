@@ -6,10 +6,14 @@ body {
 
 .wrapper {
     margin-inline: 2em;
-    margin-top: 8em;
+    margin-block: 8em;
 }
 
 /* NAVBAR -------------------------------------------------------- */
+
+#navbar {
+    padding-block: 0;
+}
 
 #navbar > div:nth-child(2) {
     display: none;
@@ -68,9 +72,8 @@ body {
     display: flex;
 }
 
-.navbar-responsive > label svg {
-    width: 2em;
-    height: 2em;
+.navbar-responsive > label i {
+    font-size: 2em;
 }
 
 .navbar-responsive input:checked + article {
@@ -219,10 +222,13 @@ body {
     flex-direction: row;
     overflow-y: hidden;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
 #servicios .tabs > li {
     flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 100%;
 }
 
 #servicios .tabs-container {
@@ -230,8 +236,11 @@ body {
 }
 
 #servicios .tabs-container .tab-content-wrapper {
-    flex: none;
-    height: 32em;
+    height: 33.125em;
+}
+
+#servicios .tabs-container .tab-content-wrapper .tab-content {
+    height: 33.125em;
 }
 
 #reviews {
@@ -272,6 +281,10 @@ body {
 
 /* AGENDAR --------------------------------------------------------------------- */
 
+#agendar {
+    margin-top: 10em;
+}
+
 #agendar > article > form > div {
     flex-direction: column;
 }
@@ -281,6 +294,10 @@ body {
 }
 
 /* CONTACTO --------------------------------------------------------------------- */
+
+#contacto {
+    margin-top: 10em;
+}
 
 #contacto > article {
     flex-direction: column;
@@ -293,12 +310,58 @@ body {
 }
 
 #contacto > article > form {
-    flex: none;
     width: 100%;
-    margin: unset;
+}
+
+/* UNETE -------------------------------------------------------------------  */
+
+#unete > header {
+    flex-direction: column;
+}
+
+#unete > header > div {
+    width: 100%;
+}
+
+#unete .beneficios > ul {
+    flex-direction: column;
+}
+
+#unete .beneficios > ul > li {
+    width: 100%;
+}
+
+#unete .beneficios > ul > li i {
+    background-color: var(--color5);
+}
+
+#unete .ul-form > li > ul > li label {
+    display: block;
+    width: 100%;
+}
+
+/* NOSOTROS -------------------------------------------------------------------- */
+
+#valores > ul,
+#valores > ul > li,
+#valores > ul li.right {
+    flex-direction: column;
+    align-items: center;
+}
+
+#valores > ul > li {
+    width: 100%;
 }
 
 /* FOOTER ---------------------------------------------------------------------- */
+
+#footer,
+#faq,
+#unete,
+#servicios,
+#sobre-nosotros {
+    font-size: 1.25em;
+}
 
 #footer > ul,
 #footer > header > div > ul,
@@ -316,7 +379,6 @@ body {
 }
 
 #footer > header > div {
-    margin-inline: unset;
     flex-direction: column-reverse;
 }
 
