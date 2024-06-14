@@ -1,0 +1,50 @@
+#portafolio {
+    margin-top: 8em;
+}
+
+#portafolio .destacados {
+    background-color: var(--color7);
+    width: 100%;
+    border-radius: 1em;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+#portafolio .destacados em {
+    color: var(--color5);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+#portafolio .listado {
+    margin-top: 2em;
+}
+
+#portafolio .listado ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#portafolio .listado ul li {
+    min-height: 22em;
+    border-radius: .25em;
+    text-align: center;
+    position: relative;
+}
+
+#portafolio .listado ul li img {
+    border-radius: .25em;
+}
+
+#portafolio .listado ul li p {
+    font-size: .75em;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 1em;
+    background-color: var(--color5);
+    color: #000;
+    font-weight: 700;
+    padding: 1em 0;
+}

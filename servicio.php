@@ -2,7 +2,7 @@
 <html lang="en">
 
     <?php
-        $title = "Panel";
+        $title = "Servicio";
         include_once "includes/head.php";   
     ?>
 
