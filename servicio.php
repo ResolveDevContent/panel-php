@@ -19,7 +19,7 @@
                 <article class="d-flex flex-col align-center">
                     <strong>Nuestros trabajos</strong>
                     <div>
-                        <img src="/images/mockup.png" alt="">
+                        <img src="images/mockup.png" alt="">
                         <nav class="nav-arrows d-flex align-center justify-between" data-arrows>
                             <a href="#" data-arrow="-1" class="d-flex">
                                 <i class="icon arrow-left"></i>
