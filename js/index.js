@@ -2,14 +2,6 @@
 
 const scrollable = document.querySelectorAll('[data-scrollable]');
 
-if(scrollable.length == 1) {
-    document
-        .querySelectorAll("[data-arrows]")
-        .forEach(function(row){
-            row.classList.add("disabled");
-    })
-}
-
 document
     .querySelectorAll('[data-arrow]')
     .forEach(function (arrow) {
