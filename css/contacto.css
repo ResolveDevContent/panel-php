@@ -1,11 +1,7 @@
 /* CONTACTO ---------------------------------------------------------------- */
 
-#contacto {
-    margin: 6em 2em 2em 2em;
-}
-
 #contacto > header {
-    width: 40em;
+    max-width: 40em;
 }
 
 #contacto > header > h2 {
