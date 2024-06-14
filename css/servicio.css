@@ -1,0 +1,53 @@
+#servicio {
+    margin-top: 8em;
+}
+
+#servicio > aside {
+    width: 80%;
+}
+
+#servicio > aside em {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--color5);
+}
+
+#servicio > aside span {
+    margin-top: 1em;
+}
+
+#servicio > article {
+    margin-top: 2em;
+}
+
+#servicio > article strong {
+    color: var(--color5);
+    font-size: 1.5em;
+}
+
+#servicio > article > div {
+    position: relative;
+    min-height: 29em;
+    max-width: 35em;
+}
+
+#servicio > article > div > img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#servicio > article > div > ul {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scroll-snap-type: x mandatory;
+}
+
+#servicio > article > div > ul li {
+    min-width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
