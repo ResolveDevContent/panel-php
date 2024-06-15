@@ -16,27 +16,31 @@
     font-weight: 600;
 }
 
-#portafolio .listado {
-    margin-top: 2em;
+.listado {
+    margin: 2em 0 4em 0;
 }
 
-#portafolio .listado ul {
+.listado ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-#portafolio .listado ul li {
+.listado ul li {
     min-height: 22em;
     border-radius: .25em;
     text-align: center;
     position: relative;
 }
 
-#portafolio .listado ul li img {
+.listado ul li:nth-child(2n) {
+    transform: translateY(75px);
+}
+
+.listado ul li img {
     border-radius: .25em;
 }
 
-#portafolio .listado ul li p {
+.listado ul li p {
     font-size: .75em;
     position: absolute;
     right: 0;
@@ -47,4 +51,8 @@
     color: #000;
     font-weight: 700;
     padding: 1em 0;
+}
+
+.loader {
+    
 }

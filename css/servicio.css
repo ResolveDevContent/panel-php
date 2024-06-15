@@ -54,28 +54,3 @@
     scroll-snap-align: center;
     z-index: 1;
 }
-
-.nav-arrows {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 8;
-}
-
-.nav-arrows.disabled {
-    display: none;
-}
-
-.nav-arrows a {
-    border-radius: .2em;
-    padding: 2em 0;
-    visibility: visible;
-    font-size: 2em;
-    z-index: 8;
-}
-
-.nav-arrows a i {
-    background-color: #fff;
-}

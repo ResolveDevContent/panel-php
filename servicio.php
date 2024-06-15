@@ -30,12 +30,15 @@
                         </nav>
                         <ul class="d-flex align-center" data-scrollable>
                             <li>
+                                <span class="loader"></span>
                                 <img src="images/resolvedevverde.png" alt="">
                             </li>
                             <li>
+                                <span class="loader"></span>
                                 <img src="images/user.png" alt="">
                             </li>
                             <li>
+                                <span class="loader"></span>
                                 <img src="images/logo-movimiento.svg" alt="">
                             </li>
                         </ul>

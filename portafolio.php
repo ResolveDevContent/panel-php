@@ -25,20 +25,32 @@
                 <div class="listado">
                     <ul class="gap-1">
                         <li>
-                            <img src="/images/user.png" alt="">
-                            <p>Gesti&oacute;n de redes sociales</p>
+                            <a href="/proyecto.php">
+                                <span class="loader"></span>
+                                <img src="/images/user.png" alt="">
+                                <p>Gesti&oacute;n de redes sociales</p>
+                            </a>
                         </li>
                         <li>
-                            <img src="/images/user.png" alt="">
-                            <p>Gesti&oacute;n de redes sociales</p>
+                            <a href="/proyecto.php">
+                                <span class="loader"></span>
+                                <img src="/images/user.png" alt="">
+                                <p>Video Marketing</p>
+                            </a>
                         </li>
                         <li>
-                            <img src="/images/user.png" alt="">
-                            <p>Gesti&oacute;n de redes sociales</p>
+                            <a href="/proyecto.php">
+                                <span class="loader"></span>
+                                <img src="/images/user.png" alt="">
+                                <p>Logos en movimiento</p>
+                            </a>
                         </li>
                         <li>
-                            <img src="/images/user.png" alt="">
-                            <p>Gesti&oacute;n de redes sociales</p>
+                            <a href="/proyecto.php">
+                                <span class="loader"></span>
+                                <img src="/images/user.png" alt="">
+                                <p>Aplicaciones M&oacute;viles</p>
+                            </a>
                         </li>
                     </ul>
                 </div>

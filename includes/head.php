@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/portafolio.css">
     <link rel="stylesheet" href="css/unete.css">
     <link rel="stylesheet" href="css/servicio.css">
+    <link rel="stylesheet" href="css/proyecto.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/index.css">
