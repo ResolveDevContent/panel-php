@@ -79,6 +79,16 @@
     -webkit-mask-image: url("../icons/close.svg");
 }
 
+.icon.whatsapp {
+    mask-image: url("../icons/whatsapp.svg");
+    -webkit-mask-image: url("../icons/whatsapp.svg");
+}
+
+.icon.agendar {
+    mask-image: url("../icons/agendar.svg");
+    -webkit-mask-image: url("../icons/agendar.svg");
+}
+
 .mexico {
     background-image: url("../icons/mexico.svg");
     background-repeat: no-repeat;

@@ -1,3 +1,74 @@
+#floating-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 .5em 1em 0;
+    z-index: 16;
+}
+
+#floating-footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#floating-footer ul li + li{
+    margin-top: .5em;
+}
+
+#floating-footer ul li a {
+    display: flex;
+    align-items: center;
+    border-radius: 3em;
+    color: transparent;
+    transition: opacity .5s linear, width .5s linear, color .5s linear;
+    opacity: .5;
+    white-space: nowrap;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.5em;
+    width: 4.65em;
+
+    transition: all .5s;
+}
+
+#floating-footer .whatsapp a {
+    background-color: #25d366;
+    border: 0.325em solid #25d366;
+}
+
+#floating-footer .agendar a {
+    background-color: var(--color5);
+    border: 0.325em solid var(--color5);
+}
+
+#floating-footer ul li a i {
+    font-size: 2em;
+    background-color: white;
+}
+
+#floating-footer ul li a span {
+    font-size: 1.125em;
+    font-weight: 600;
+    width: 0;
+    opacity: 0;
+    transition: all 0.25s linear;
+    overflow: hidden;
+}
+
+#floating-footer ul li a:hover {
+    color: white;
+    width: 20em;
+    opacity: 1;
+}
+
+#floating-footer ul li a:hover span {
+    width: auto;
+    opacity: 1;
+    margin-left: 1.125em;
+}
+
+
 #footer {
     background-color: var(--color7);
 }

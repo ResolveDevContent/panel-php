@@ -1,3 +1,19 @@
+<section id='floating-footer'>
+    <ul>
+        <li class="agendar">
+            <a href="#">
+                <span>Agendá una reunión</span>
+                <i class="icon agendar"></i>
+            </a>
+        </li>
+        <li class="whatsapp">
+            <a href="#">
+                <span>Escribinos por Whatsapp</span>
+                <i class="icon whatsapp"></i>
+            </a>
+        </li>
+    </ul>
+</section>
 <footer id="footer" class="d-flex flex-col align-center justify-center">
     <ul class="d-flex align-start justify-around">
         <li class="d-flex flex-col align-start justifi-center">
