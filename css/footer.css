@@ -27,7 +27,7 @@
     justify-content: space-between;
     cursor: pointer;
     padding: 0.5em;
-    width: 4.65em;
+    width: 3.6em;
 
     transition: all .5s;
 }
@@ -43,7 +43,10 @@
 }
 
 #floating-footer ul li a i {
-    font-size: 2em;
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    min-height: 2em;
     background-color: white;
 }
 
@@ -58,16 +61,15 @@
 
 #floating-footer ul li a:hover {
     color: white;
-    width: 20em;
+    width: max-content;
     opacity: 1;
 }
 
 #floating-footer ul li a:hover span {
     width: auto;
     opacity: 1;
-    margin-left: 1.125em;
+    margin: 0 1.125em;
 }
-
 
 #footer {
     background-color: var(--color7);

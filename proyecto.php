@@ -3,7 +3,88 @@
 
     <?php
         $title = "Protafolio";
-        include_once "includes/head.php";   
+        include_once "includes/head.php";  
+        
+        // $proyectoImagenes = '';
+        // $servicio = '<div class="d-flex flex-col align-center justify-center">
+        //                 <i class="icon info"></i>
+        //                 <span>La informaci&oacute;n no se encuntra disponible</span>
+        //             </div>';
+
+        // if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
+            // $query = "SELECT * FROM proyectos WHERE proyectoId = ?";
+    
+            // if($stmt = mysqli_prepare($sql, $query)) {
+            //     mysqli_stmt_bind_param($stmt, "i", $param);
+    
+            //     $param = $_GET["proyectoId"];
+    
+            //     if(mysqli_stmt_execute($stmt)) {
+            //         $result = mysqli_stmt_get_result($stmt);
+    
+            //         if($result) {
+            //             if(mysqli_num_rows($result) > 0) {
+                            // $row = mysqli_fetch_assoc($result);
+
+                            // $proyecto = '<header class="d-flex flex-col text-center">
+                            //                 <h2>'. $row['nombre'] .'</h2>
+                            //                 <span>'. $row['servicio'] .'</span>
+                            //             </header>
+                            //             <div class="d-flex flex-col">
+                            //                 <em>'. $row['descripcion'] .'</em>
+                            //                 <span></span>
+                            //                 <div class="d-flex align-center gap-5">
+                            //                     <i class="icon mail"></i>
+                            //                     <span>'. $row['mail'] .'</span>
+                            //                 </div>
+                            //             </div>';
+
+                            // $proyectoImagenes = "<ul class='d-flex align-center' data-scrollable>
+            //                         <li>
+            //                             <span class='loader'></span>
+            //                             <img src='{$row['portada']}' alt=''>
+            //                         </li>';
+            //             } else {
+                            // header("location: 404page.php");
+                        // }
+            //         } else {
+                        // header("location: 404page.php");
+                    // }
+            //     } else {
+                    // header("location: 404page.php");
+                // }
+            // } else {
+                // header("location: 404page.php");
+            // }
+
+            // $query = "SELECT * FROM imagenesProyuectos WHERE proyectoId = ?";
+
+            // if($stmt = mysqli_prepare($sql, $query)) {
+            //     mysqli_stmt_bind_param($stmt, "i", $param);
+    
+            //     $param = $_GET["proyectoId"];
+    
+            //     if(mysqli_stmt_execute($stmt)) {
+            //         $result = mysqli_stmt_get_result($stmt);
+    
+            //         if($result) {
+            //             if(mysqli_num_rows($result) > 0) {
+        //                     while($row = mysqli_fetch_array($result)){
+        //                         $proyectoImagenes .= '<li>';
+        //                             $proyectoImagenes .= '<span class="loader"></span>';
+        //                             $proyectoImagenes .= "<img src='". $row['portada'] ."' alt=''>";
+        //                         $proyectoImagenes .= '</li>';
+        //                     }
+            //             }
+            //         }
+            //     }
+            // }
+
+            // $proyectoImagenes .= '</ul>';
+
+        // } else {
+            // header("location: 404page.php");
+        // }
     ?>
 
     <body>
@@ -39,33 +120,17 @@
                         <i class="icon arrow-right"></i>
                     </a>
                 </nav>
-                <ul data-scrollable class="d-flex align-center">
-                    <li>
-                        <span class="loader"></span>
-                        <img src="/images/user.png" alt="">
-                    </li>
-                    <li>
-                        <span class="loader"></span>
-                        <img src="/images/resolvedevverde.png" alt="">
-                    </li>
-                </ul>
+                <?php
+                    echo $proyectoImagenes;
+                ?>
             </div>
         </section>
 
         <main class="wrapper">
             <section id="proyecto" class="d-flex flex-col align-center gap-1">
-                <header class="d-flex flex-col text-center">
-                    <h2>XOXO</h2>
-                    <span>Gesti&oacute;n de Redes Sociales</span>
-                </header>
-                <div class="d-flex flex-col">
-                    <em>Descripci&oacute;n</em>
-                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, deserunt? Iste dolorem, recusandae quos quae dignissimos accusantium magnam facere quaerat excepturi nisi vitae quas rerum sint assumenda, hic voluptatem delectus?</span>
-                    <div class="d-flex align-center gap-5">
-                        <i class="icon mail"></i>
-                        <span>xoxo@email.com</span>
-                    </div>
-                </div>
+                <?php
+                    echo $proyecto;
+                ?>
             </section>
         </main>
 

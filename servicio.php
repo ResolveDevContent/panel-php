@@ -3,7 +3,79 @@
 
     <?php
         $title = "Servicio";
-        include_once "includes/head.php";   
+        include_once "includes/head.php";
+
+        // $mockups = '<div class="d-flex flex-col align-center justify-center">
+            //             <i class="icon info"></i>
+            //             <span>No hay proyectos disponibles para este servicio</span>
+            //         </div>';
+
+        // if(isset($_GET["servicioId"]) && !empty(trim($_GET["servicioId"]))){
+            // $query = "SELECT * FROM servicios WHERE servicioId = ?";
+    
+            // if($stmt = mysqli_prepare($sql, $query)) {
+            //     mysqli_stmt_bind_param($stmt, "i", $param);
+    
+            //     $param = $_GET["servicioId"];
+    
+            //     if(mysqli_stmt_execute($stmt)) {
+            //         $result = mysqli_stmt_get_result($stmt);
+    
+            //         if($result) {
+            //             if(mysqli_num_rows($result) > 0) {
+            //                 $row = mysqli_fetch_assoc($result);
+
+            //                 $servicio = '<em>'. $row['nombre'] .'</em>
+            //                             <span>'. $row['descripcion'] .'</span>';
+            //             } else {
+            //                 header("location: 404page.php");
+            //             }
+            //         } else {
+            //             header("location: 404page.php");
+            //         }
+            //     } else {
+            //         header("location: 404page.php");
+            //     }
+            // } else {
+            //     header("location: 404page.php");
+            // }
+
+            // $query = "SELECT * FROM proyectos WHERE servicioId = ?";
+
+            // if($stmt = mysqli_prepare($sql, $query)) {
+            //     mysqli_stmt_bind_param($stmt, "i", $param);
+    
+            //     $param = $_GET["servicioId"];
+    
+            //     if(mysqli_stmt_execute($stmt)) {
+            //         $result = mysqli_stmt_get_result($stmt);
+    
+            //         if($result) {
+            //             if(mysqli_num_rows($result) > 0) {
+            //                 $mockups = '<img src="images/mockup.png" alt="">';
+            //                 $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
+            //                     $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
+            //                         $mockups .= '<i class="icon arrow-left"></i>';
+            //                     $mockups .= '</a>';
+            //                     $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
+            //                         $mockups .= '<i class="icon arrow-right"></i>';
+            //                     $mockups .= '</a>';
+            //                 $mockups .= '</nav>';
+            //                 $mockups .= '<ul class="d-flex align-center" data-scrollable>';
+            //                     while($row = mysqli_fetch_array($result)){
+            //                         $mockups .= '<li>';
+            //                             $mockups .= '<span class="loader"></span>';
+            //                             $mockups .= "<img src='". $row['portada'] ."' alt=''>";
+            //                         $mockups .= '</li>';
+            //                     }
+            //                 $mockups .= '</ul>';
+            //             }
+            //         }
+            //     }
+            // }
+        // } else {
+            // header("location: 404page.php");
+        // }
     ?>
 
     <body>
@@ -12,36 +84,16 @@
         <main class="wrapper">
             <section id="servicio" class="d-flex flex-col align-center">
                 <aside class="d-flex flex-col text-center">
-                    <em>Gesti&oacute;n de Redes Sociales</em>
-                    <span>
-                        En Red Limit, nos especializamos en la gesti&oacute;n integral de redes sociales. Nuestro enfoque abarca desde la creaci&oacute;n de contenido atractivo y relevante hasta la interacci&oacute;n continua con tu audiencia, todo diseñado para aumentar el compromiso y la lealtad de los seguidores. Utilizamos las &uacute;ltimas herramientas de an&aacute;lisis para monitorear el rendimiento y ajustar nuestras estrategias en tiempo real, garantizando as&iacute; una presencia constante y efectiva en plataformas como Facebook, Instagram, Twitter, Tiktok, LinkedIn y Youtube.</span>
+                    <?php
+                        echo $servicio;
+                    ?>
                 </aside>
                 <article class="d-flex flex-col align-center">
                     <strong>Nuestros trabajos</strong>
                     <div>
-                        <img src="images/mockup.png" alt="">
-                        <nav class="nav-arrows d-flex align-center justify-between" data-arrows>
-                            <a href="#" data-arrow="-1" class="d-flex">
-                                <i class="icon arrow-left"></i>
-                            </a>
-                            <a href="#" data-arrow="1" class="d-flex">
-                                <i class="icon arrow-right"></i>
-                            </a>
-                        </nav>
-                        <ul class="d-flex align-center" data-scrollable>
-                            <li>
-                                <span class="loader"></span>
-                                <img src="images/resolvedevverde.png" alt="">
-                            </li>
-                            <li>
-                                <span class="loader"></span>
-                                <img src="images/user.png" alt="">
-                            </li>
-                            <li>
-                                <span class="loader"></span>
-                                <img src="images/logo-movimiento.svg" alt="">
-                            </li>
-                        </ul>
+                        <?php
+                            echo $mockups;
+                        ?>
                     </div>
                 </article>
             </section>
