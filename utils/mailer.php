@@ -17,7 +17,18 @@
         $msg .= "<p>" . $mensaje . "</p><br>";
         $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
     } else if($agendar) {
-
+        $msg = "De: $nombre <a href='mailto:$email'>$email</a><br>";
+        $msg .= "Asunto: Agendar reunion<br><br>";
+        $msg .= "Datos:";
+        $msg .= "<p>Nombre y apellido:" . $nombre . "</p><br>";
+        $msg .= "<p>Teléfono:" . $telefono . "</p><br>";
+        $msg .= "<p>Empresa:" . $empresa . "</p><br>";
+        $msg .= "<p>Descripcion de empresa:" . $descripcion . "</p><br>";
+        $msg .= "<p>Pais:" . $pais . "</p><br>";
+        $msg .= "<p>Cotización:" . $cotizacion . "</p><br>";
+        $msg .= "<p>Dia:" . $dia . "</p><br>";
+        $msg .= "<p>Horario:" . $horario . "</p><br>";
+        $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
     } else if($unete){
         $msg = "De: $nombre <a href='mailto:$email'>$email</a><br>";
         $msg .= "Asunto: Trabajá con nosotros<br><br>";

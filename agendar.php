@@ -1,3 +1,79 @@
+<?php
+    // Define variables and initialize with empty values
+    $nombre = $telefono = $empresa = $descripcion = $pais = $cotizacion = $dia = $horario = "";
+    $nombre_err = $telefono_err = $empresa_err = $descripcion_err = $pais_err = $cotizacion_err = $dia_err = $horario_err = "";
+    $respuestaMsg = "";
+
+    // Processing form data when form is submitted
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $input_nombre = trim($_POST["nombre"]);
+        if(empty($input_nombre)){
+            $nombre_err = "Por favor ingrese el nombre.";
+        } else{
+            $nombre = $input_nombre;
+        }
+        
+        $input_telefono = trim($_POST["telefono"]);
+        if(empty($input_telefono)){
+            $telefono_err = "Por favor ingrese un teléfono.";     
+        } else{
+            $telefono = $input_telefono;
+        }
+
+        $input_empresa = trim($_POST["empresa"]);
+        if(empty($input_empresa)){
+            $empresa_err = "Por favor ingrese la empresa.";     
+        } else{
+            $empresa = $input_empresa;
+        }
+
+        $input_descr = trim($_POST["descripcion"]);
+        if(empty($input_descr)){
+            $descripcion_err = "Por favor ingrese la descripcion de su empresa.";     
+        } else{
+            $descripcion = $input_descr;
+        }
+
+        $input_pais = trim($_POST["pais"]);
+        if(empty($input_pais)){
+            $pais_err = "Por favor ingrese un pais.";     
+        } else{
+            $pais = $input_pais;
+        }
+
+        $input_cotizacion = trim($_POST["cotizacion"]);
+        if(empty($input_cotizacion)){
+            $cotizacion_err = "Por favor seleccione una cotización.";     
+        } else{
+            $cotizacion = $input_cotizacion;
+        }
+
+        $input_dia = trim($_POST["dia"]);
+        if(empty($input_dia)){
+            $dia_err = "Por favor ingrese un dia";     
+        } else{
+            $dia = $input_dia;
+        }
+
+        $input_horario = trim($_POST["horarios"]);
+        if(empty($input_horario)){
+            $horario_err = "Por favor ingrese un horario";     
+        } else{
+            $horario = $input_horario;
+        }
+
+        // Check input errors before inserting in database
+        if(empty($nombre_err) && empty($telefono_err) && empty($empresa_err) && empty($descripcion_err) && empty($pais_err) && empty($cotizacion_err) && empty($dia_err) && empty($horario_err)) {
+            $agendar = true;
+            $cotiza = false;
+            $unete = false;
+            $contacto = false;
+            include_once "../panel-php/utils/mailer.php"; 
+            $respuestaMsg = $respuesta;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +93,12 @@
             <span>CAMBIAR MENSAJE!(La reunión no queda confirmada)</span>
         </header>
         <article class="d-flex align-start justify-between">
-            <form data-form class="d-flex flex-col align-center gap-1 w-100">
+            <form data-form class="d-flex flex-col align-center gap-1 w-100" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="d-flex align-start justify-between w-100 gap-1">
                     <ul class="ul-form d-flex flex-col gap-1">
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre"/>
+                                <input type="text" id="nombre" name="nombre" >
                                 <label for="nombre">Nombre y apellido</label>
                             </div>
                         </li>
@@ -34,19 +110,19 @@
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="telefono"/>
+                                <input type="text" id="telefono" name="telefono">
                                 <label for="telefono">Numero de teléfono</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre-empresa"/>
+                                <input type="text" id="nombre-empresa" name="empresa">
                                 <label for="nombre-empresa">Nombre de la empresa</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="desc-empresa"/>
+                                <input type="text" id="desc-empresa" name="descripcion">
                                 <label for="desc-empresa">Descripción de la empresa (rubro y otros)</label>
                             </div>
                         </li>
@@ -55,7 +131,7 @@
                         <li>
                             <label class="label-cotizacion not-visible">Motivo de cotizaci&oacute;n</label>
                             <div class="input">
-                                <select name="cotizacion" id="cotizacion">
+                                <select name="cotizacion" id="cotizacion" name="cotizacion">
                                     <option value="">Selecciona un motivo de la cotización</option>
                                     <option value="Servicios Personalizados">Servicios Personalizados</option>
                                     <option value="Redes Sociales">Redes Sociales</option>
@@ -69,7 +145,7 @@
                         </li>
                         <li class="input-dia">
                             <div class="input">
-                                <input type="date" id="date">
+                                <input type="date" id="date" name="dia">
                             </div>
                         </li>
                         <li class="item-horarios not-visible">
