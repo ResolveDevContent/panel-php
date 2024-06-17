@@ -44,8 +44,58 @@
                     <em>Proyectos destacados</em>
                     <p>Todos nuestros proyectos son importantes pero aqu&iacute; estan los mas destacados</p>
                     <?php 
-                        echo $destacados;
+                        // echo $destacados;
                     ?>
+                    <ul>
+                        <li>
+                            <article class="d-flex">
+                                <a href="">
+                                    <img src="/images/user.png" alt="">
+                                </a>
+                                <div class="d-flex flex-col align-start">
+                                    <div class="d-flex flex-col align-start">
+                                        <em>Nombre</em>
+                                        <span>Servicio</span>
+                                    </div>
+                                    <ul class="d-flex align-center">
+                                        <li>
+                                            <a href="">F</a>
+                                        </li>
+                                        <li>
+                                            <a href="">I</a>
+                                        </li>
+                                        <li>
+                                            <a href="">P</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="d-flex">
+                                <a href="">
+                                    <img src="/images/user.png" alt="">
+                                </a>
+                                <div class="d-flex flex-col align-start">
+                                    <div class="d-flex flex-col align-start">
+                                        <em>Nombre</em>
+                                        <span>Servicio</span>
+                                    </div>
+                                    <ul class="d-flex align-center">
+                                        <li>
+                                            <a href="">F</a>
+                                        </li>
+                                        <li>
+                                            <a href="">I</a>
+                                        </li>
+                                        <li>
+                                            <a href="">P</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
                 </div>
                 <div class="listado">
                     <?php 

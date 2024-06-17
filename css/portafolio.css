@@ -12,7 +12,37 @@
 
 #portafolio .destacados em {
     color: var(--color5);
-    font-size: 1.5em;
+    font-size: 1.75em;
+    font-weight: 600;
+}
+
+#portafolio .destacados ul {
+    margin-top: 4em;
+}
+
+#portafolio .destacados ul li + li {
+    margin-top: .5em;
+}
+
+#portafolio .destacados ul li:nth-child(2n) article{
+    flex-direction: row-reverse;
+}
+
+#portafolio .destacados ul li a {
+    width: 45%;
+}
+
+#portafolio .destacados ul li a img {
+    border-radius: .25em;
+}
+
+#portafolio .destacados ul li > article > div {
+    flex: 1;
+    padding: 1em;
+}
+
+#portafolio .destacados ul li div span {
+    margin-top: 1em;
     font-weight: 600;
 }
 
