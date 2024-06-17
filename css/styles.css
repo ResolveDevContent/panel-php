@@ -127,6 +127,11 @@ video {
     margin-top: 2em;
 }
 
+.empty-state span {
+    font-weight: 600;
+}
+
+
 /* NAV ARROWS ------------------------------------------------------------ */
 
 .nav-arrows {

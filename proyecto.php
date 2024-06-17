@@ -6,8 +6,7 @@
         include_once "includes/head.php";  
         
         // $proyectoImagenes = '';
-        // $servicio = '<div class="d-flex flex-col align-center justify-center">
-        //                 <i class="icon info"></i>
+        // $servicio = '<div class="d-flex flex-col align-center justify-center empty-state">
         //                 <span>La informaci&oacute;n no se encuntra disponible</span>
         //             </div>';
 

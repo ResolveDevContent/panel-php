@@ -25,7 +25,7 @@
     font-size: 1.5em;
 }
 
-#servicio > article > div {
+#servicio > article .mockups {
     position: relative;
     min-height: 33em;
     height: 33em;

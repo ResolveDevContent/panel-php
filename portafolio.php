@@ -5,8 +5,7 @@
         $title = "Protafolio";
         include_once "includes/head.php";  
         
-        // $destacados = '<div class="d-flex flex-col align-center justify-center">
-            //             <i class="icon info"></i>
+        // $destacados = '<div class="d-flex flex-col align-center justify-center empty-state">
             //             <span>No hay proyectos destacados por el momento</span>
         //              </div>';
 

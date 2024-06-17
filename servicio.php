@@ -7,7 +7,6 @@
         require_once "config.php";
 
         $mockups = '<div class="d-flex flex-col align-center justify-center gap-5 empty-state">
-                        <i class="icon info"></i>
                         <span>No hay proyectos disponibles para este servicio</span>
                     </div>';
 
@@ -53,23 +52,25 @@
     
             //         if($result) {
             //             if(mysqli_num_rows($result) > 0) {
-            //                 $mockups = '<img src="images/mockup.png" alt="">';
-            //                 $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
-            //                     $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
-            //                         $mockups .= '<i class="icon arrow-left"></i>';
-            //                     $mockups .= '</a>';
-            //                     $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
-            //                         $mockups .= '<i class="icon arrow-right"></i>';
-            //                     $mockups .= '</a>';
-            //                 $mockups .= '</nav>';
-            //                 $mockups .= '<ul class="d-flex align-center" data-scrollable>';
-            //                     while($row = mysqli_fetch_array($result)){
-            //                         $mockups .= '<li>';
-            //                             $mockups .= '<span class="loader"></span>';
-            //                             $mockups .= "<img src='". $row['portada'] ."' alt=''>";
-            //                         $mockups .= '</li>';
-            //                     }
-            //                 $mockups .= '</ul>';
+                            // $mockups = '<div class="mockups">';
+                //                 $mockups .= '<img src="images/mockup.png" alt="">';
+                //                 $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
+                //                     $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
+                //                         $mockups .= '<i class="icon arrow-left"></i>';
+                //                     $mockups .= '</a>';
+                //                     $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
+                //                         $mockups .= '<i class="icon arrow-right"></i>';
+                //                     $mockups .= '</a>';
+                //                 $mockups .= '</nav>';
+                //                 $mockups .= '<ul class="d-flex align-center" data-scrollable>';
+                //                     while($row = mysqli_fetch_array($result)){
+                //                         $mockups .= '<li>';
+                //                             $mockups .= '<span class="loader"></span>';
+                //                             $mockups .= "<img src='". $row['portada'] ."' alt=''>";
+                //                         $mockups .= '</li>';
+                //                     }
+                //                 $mockups .= '</ul>';
+                            // $mockups .= '</div>';
             //             }
             //         }
             //     }
@@ -91,11 +92,9 @@
                 </aside>
                 <article class="d-flex flex-col align-center">
                     <strong>Nuestros trabajos</strong>
-                    <div class="mockups">
-                        <?php
-                            echo $mockups;
-                        ?>
-                    </div>
+                    <?php
+                        echo $mockups;
+                    ?>
                 </article>
             </section>
         </main>
