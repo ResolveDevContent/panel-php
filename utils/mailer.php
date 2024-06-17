@@ -20,7 +20,7 @@
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
         $mail->Host = "smtp.hostinger.com";
-        $mail->Port = 465;
+        $mail->Port = 587;
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "tls";
         $mail->Username = "no-reply@digitalredlimit.com";

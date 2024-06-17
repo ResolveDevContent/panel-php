@@ -2,6 +2,7 @@
     // Define variables and initialize with empty values
     $nombre = $email = $asunto = $mensaje = "";
     $nombre_err = $email_err = $asunto_err = $mensaje_err = "";
+    $respuestaMsg = "";
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -36,6 +37,7 @@
         // Check input errors before inserting in database
         if(empty($nombre_err) && empty($email_err) && empty($asunto_err) && empty($mensaje_err)) {
             include_once "../panel-php/utils/mailer.php"; 
+            $respuestaMsg = $respuesta;
         }
     }
 ?>
@@ -146,6 +148,7 @@
                         <li>
                             <div class="btn d-flex justify-center">
                                 <button>Enviar</button>
+                                <?php echo $respuestaMsg ?>
                             </div>
                         </li>
                     </ul>
