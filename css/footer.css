@@ -61,7 +61,7 @@
 
 #floating-footer ul li a:hover {
     color: white;
-    width: max-content;
+    width: 20em;
     opacity: 1;
 }
 

@@ -51,12 +51,12 @@ document
             .querySelectorAll('[data-paises]')
             .forEach(function(row) {
 
-                let selectPaises = `<select name="paises" id="paises" requiered>
+                let selectPaises = `<select name="pais" id="paises" requiered>
                             <option value="">Selecciona un pais</option>`;
 
                 if(paises && paises.length > 0) {
                     paises.forEach(function(pais) {
-                        selectPaises += `<option value="${pais.phone_code}">${pais.nombre}</option>`;
+                        selectPaises += `<option value="+${pais.phone_code}">${pais.nombre}</option>`;
                     })
                 }
                 

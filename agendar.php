@@ -14,10 +14,11 @@
         }
         
         $input_telefono = trim($_POST["telefono"]);
-        if(empty($input_telefono)){
+        $input_codpais = trim($_POST["cod-pais"]);
+        if(empty($input_telefono) && empty($input_codpais)){
             $telefono_err = "Por favor ingrese un teléfono.";     
         } else{
-            $telefono = $input_telefono;
+            $telefono = $input_codpais . $input_telefono;
         }
 
         $input_empresa = trim($_POST["empresa"]);
@@ -108,12 +109,10 @@
                                 <div class="input" data-paises></div>
                             </div>
                         </li>
-                        <li>
-                            <div class="input">
-                                <input type="text" id="codigo-pais" name="codigo pais" readonly placeholder="C&oacute;digo de pa&iacute;s" required>
+                        <li class="d-flex gap-5">
+                            <div class="input cod-pais">
+                                <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
                             </div>
-                        </li>
-                        <li>
                             <div class="input">
                                 <input type="text" id="telefono" name="telefono" required>
                                 <label for="telefono">Numero de teléfono</label>

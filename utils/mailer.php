@@ -9,7 +9,16 @@
     require "../panel-php/PHPMailer/src/SMTP.php";
 
     if($cotiza) {
-
+        $msg = "De: $nombre<br>";
+        $msg .= "Asunto: Cotización<br><br>";
+        $msg .= "Datos:";
+        $msg .= "<p>Nombre y apellido:" . $nombre . "</p><br>";
+        $msg .= "<p>Teléfono:" . $telefono . "</p><br>";
+        $msg .= "<p>Empresa:" . $empresa . "</p><br>";
+        $msg .= "<p>Descripcion de empresa:" . $descripcion . "</p><br>";
+        $msg .= "<p>Pais:" . $pais . "</p><br>";
+        $msg .= "<p>Cotización:" . $cotizacion . "</p><br>";
+        $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
     } else if($contacto) {
         $msg = "De: $nombre <a href='mailto:$email'>$email</a><br>";
         $msg .= "Asunto: $asunto<br><br>";
@@ -36,6 +45,7 @@
         $msg .= "<p>Nombre y apellido:" . $nombre . "</p><br>";
         $msg .= "<p>Correo electrónico:" . $email . "</p><br>";
         $msg .= "<p>Teléfono:" . $telefono . "</p><br>";
+        $msg .= "<p>Pais:" . $pais . "</p><br>";
         $msg .= "<p>Puesto:" . $puesto . "</p><br>";
         $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
     }

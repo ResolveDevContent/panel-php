@@ -1,3 +1,66 @@
+<?php
+    // Define variables and initialize with empty values
+    $nombre = $telefono = $empresa = $descripcion = $pais = $cotizacion = "";
+    $nombre_err = $telefono_err = $empresa_err = $descripcion_err = $pais_err = $cotizacion_err = "";
+    $respuestaMsg = "";
+
+    // Processing form data when form is submitted
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $input_nombre = trim($_POST["nombre"]);
+        if(empty($input_nombre)){
+            $nombre_err = "Por favor ingrese el nombre.";
+        } else{
+            $nombre = $input_nombre;
+        }
+        
+        $input_telefono = trim($_POST["telefono"]);
+        $input_codpais = trim($_POST["cod-pais"]);
+        if(empty($input_telefono) && empty($input_codpais)){
+            $telefono_err = "Por favor ingrese un teléfono.";     
+        } else{
+            $telefono = $input_codpais . $input_telefono;
+        }
+
+        $input_empresa = trim($_POST["empresa"]);
+        if(empty($input_empresa)){
+            $empresa_err = "Por favor ingrese la empresa.";     
+        } else{
+            $empresa = $input_empresa;
+        }
+
+        $input_descr = trim($_POST["descripcion"]);
+        if(empty($input_descr)){
+            $descripcion_err = "Por favor ingrese la descripcion de su empresa.";     
+        } else{
+            $descripcion = $input_descr;
+        }
+
+        $input_pais = trim($_POST["pais"]);
+        if(empty($input_pais)){
+            $pais_err = "Por favor ingrese un pais.";     
+        } else{
+            $pais = $input_pais;
+        }
+
+        $input_cotizacion = trim($_POST["cotizacion"]);
+        if(empty($input_cotizacion)){
+            $cotizacion_err = "Por favor seleccione una cotización.";     
+        } else{
+            $cotizacion = $input_cotizacion;
+        }
+
+        // Check input errors before inserting in database
+        if(empty($nombre_err) && empty($telefono_err) && empty($empresa_err) && empty($descripcion_err) && empty($pais_err) && empty($cotizacion_err)) {
+            $agendar = false;
+            $cotiza = true;
+            $unete = false;
+            $contacto = false;
+            include_once "../panel-php/utils/mailer.php"; 
+            $respuestaMsg = $respuesta;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -174,29 +237,38 @@
                 </header>
                 <div class="d-flex">
                     <article>
-                        <form data-form>
+                        <form data-form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <ul class="ul-form d-flex flex-col gap-1">
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="nombre"/>
+                                        <input type="text" id="nombre" name="nombre" >
                                         <label for="nombre">Nombre y apellido</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="telefono"/>
+                                        <label for="pais">Pais</label>
+                                        <div class="input" data-paises></div>
+                                    </div>
+                                </li>
+                                <li class="d-flex gap-5">
+                                    <div class="input cod-pais">
+                                        <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" id="telefono" name="telefono" >
                                         <label for="telefono">Número de telefono</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="empresa"/>
+                                        <input type="text" id="empresa" name="empresa" >
                                         <label for="empresa">Nombre de la empresa</label>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="desEmpresa"/>
+                                        <input type="text" id="desEmpresa" name="descripcion" >
                                         <label for="desEmpresa">Descipcion de la empresa (rubro y otros)</label>
                                     </div>
                                 </li>
@@ -204,43 +276,43 @@
                                     <label>Seleccioná el motivo de la cotizaci&oacute;n</label>
                                     <ul class="d-flex align-start justify-start flex-wrap gap-5">
                                         <li>
-                                            <input type="radio" id="sp" value="Servicios Personalizados" name="motivos-cotizacion">
+                                            <input type="radio" id="sp" value="Servicios Personalizados" name="cotizacion">
                                             <label for="sp">
                                                 Servicios Personalizados
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="radio" id="rs" value="Redes Sociales" name="motivos-cotizacion">
+                                            <input type="radio" id="rs" value="Redes Sociales" name="cotizacion">
                                             <label for="rs">
                                                 Redes Sociales
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="radio" id="dw" value="Diseño Web" name="motivos-cotizacion">
+                                            <input type="radio" id="dw" value="Diseño Web" name="cotizacion">
                                             <label for="dw">
                                                 Diseño Web
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="radio" id="b" value="Branding" name="motivos-cotizacion">
+                                            <input type="radio" id="b" value="Branding" name="cotizacion">
                                             <label for="b">
                                                 Branding
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="radio" id="dg" value="Diseño Grafico" name="motivos-cotizacion">
+                                            <input type="radio" id="dg" value="Diseño Grafico" name="cotizacion">
                                             <label for="dg">
                                                 Diseño Gr&aacute;fico
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="radio" id="pd" value="Publicidad Digital" name="motivos-cotizacion">
+                                            <input type="radio" id="pd" value="Publicidad Digital" name="cotizacion">
                                             <label for="pd">
                                                 Publicidad Digital
                                             </label>
                                         </li>
                                         <li>
-                                            <input type="radio" id="otro" value="Otros" name="motivos-cotizacion">
+                                            <input type="radio" id="otro" value="Otros" name="cotizacion">
                                             <label for="otro">
                                                 Otros
                                             </label>
@@ -250,6 +322,9 @@
                                 <li>
                                     <div class="btn d-flex justify-center">
                                         <button>Cotiza</button>
+                                    </div>
+                                    <div class="d-flex justify-center align-center">
+                                        <span class="mensaje-success"><?php echo $respuestaMsg ?></span>
                                     </div>
                                 </li>
                             </ul>
@@ -263,6 +338,6 @@
         </main>
 
         <?php include_once("includes/footer.php"); ?>
-        <script src="js/index.js"></script>
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>

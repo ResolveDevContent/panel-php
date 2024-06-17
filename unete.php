@@ -21,10 +21,11 @@
         }
         
         $input_telefono = trim($_POST["telefono"]);
-        if(empty($input_telefono)){
+        $input_codpais = trim($_POST["cod-pais"]);
+        if(empty($input_telefono) && empty($input_codpais)){
             $telefono_err = "Por favor ingrese un teléfono.";     
         } else{
-            $telefono = $input_telefono;
+            $telefono = $input_codpais . $input_telefono;
         }
 
         // Validate imagen
@@ -125,6 +126,15 @@
                         </li>
                         <li>
                             <div class="input">
+                                <label for="pais">Pais</label>
+                                <div class="input" data-paises></div>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-5">
+                            <div class="input cod-pais">
+                                <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
+                            </div>
+                            <div class="input">
                                 <input type="text" id="telefono" name="telefono"/>
                                 <label for="telefono">Número de telefono</label>
                             </div>
@@ -210,6 +220,6 @@
 
     <?php include_once("includes/footer.php"); ?>
 
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>

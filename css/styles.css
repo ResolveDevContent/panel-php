@@ -234,6 +234,10 @@ video {
     left: 0;
 }
 
+.input.cod-pais {
+    width: max-content;
+}
+
 /* BUTTONS STYLES ---------------------------------------------------------- */
 
 .btn > button,
