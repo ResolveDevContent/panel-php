@@ -135,7 +135,7 @@
                                 <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
                             </div>
                             <div class="input">
-                                <input type="text" id="telefono" name="telefono"/>
+                                <input type="number" id="telefono" name="telefono"/>
                                 <label for="telefono">Número de telefono</label>
                             </div>
                         </li>
