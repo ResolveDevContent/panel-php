@@ -140,8 +140,7 @@
                         </li>
                         <li>
                             <div class="input">
-                                <textarea id="mensaje" cols="4" rows="6" name="mensaje" value="<?php echo $mensaje; ?>"></textarea>
-                                <label for="mensaje">Mensaje</label>
+                                <textarea placeholder="Mensaje..." id="mensaje" cols="4" rows="6" name="mensaje" value="<?php echo $mensaje; ?>"></textarea>
                             </div>
                         </li>
                         <li>

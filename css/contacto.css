@@ -1,5 +1,14 @@
 /* CONTACTO ---------------------------------------------------------------- */
 
+#contacto i {
+    background-color: var(--color4);
+}
+
+#contacto i.argentina,
+#contacto i.mexico {
+    background-color: transparent;
+}
+
 #contacto > header {
     max-width: 40em;
 }
@@ -36,11 +45,12 @@
     font-weight: 600;
 }
 
-#contacto .item > div > ul i {
-    width: 2.5em;
-    min-width: 2.5em;
-    height: 2.5em;
-    min-height: 2.5em;
+#contacto .item > div > ul a {
+    font-size: 2em;
+}
+
+#contacto .item > div > ul > li > a > i {
+    background-color: var(--color5);
 }
 
 #contacto .ul-form > li:first-child .input, 
