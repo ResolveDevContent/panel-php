@@ -4,34 +4,36 @@
     <?php
         $title = "Panel";
         include_once "includes/head.php";
+        require_once "config.php";
 
-        // $servicios = '';
-        // $query = "SELECT * FROM servicios";
-        // if($result = mysqli_query($sql, $query)){
-        //     if(mysqli_num_rows($result) > 0){
-        //         $servicios = '<div class="tabs-container">';
-        //             $servicios .= '<ul class="tabs">';
-        //             while($row = mysqli_fetch_array($result)) {
-        //                 $servicios .= '<li>';
-        //                     $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
-        //                 $servicios .= '</li>';
-        //             }
-        //             $servicios .= '</ul>';
-        //             $servicios .= '<div class="tab-content-wrapper">';
-        //             while($row = mysqli_fetch_array($result)) {
-        //                 $servicios .= "<section id='". $row['nombre'] ."' class='tab-content'>";
-        //                     $servicios .= '<em>' .$row['nombre'] .'</em>';
-        //                     $servicios .= '<p>' .$row['descrpcionCorta'] .'</p>';
-        //                     $servicios .= '<img src="' .$row['imagen'] .'" alt="">';
-        //                     $servicios .= '<div class="btn">';
-        //                         $servicios .= "<a href='/servicio.php?servicioId=". $row['servicioId'] ."'>Ver m&aacute;s</a>";
-        //                     $servicios .= '</div>';
-        //                 $servicios .= '</section>';
-        //             }
-        //             $servicios .= '</div>';
-        //         $servicios .= '</div>';
-        //     }
-        // }
+        $servicios = '';
+        $query = "SELECT * FROM servicios";
+        if($result = mysqli_query($sql, $query)){
+            if(mysqli_num_rows($result) > 0){
+                $introduccion = '';
+                $servicios = '<div class="tabs-container">';
+                    $servicios .= '<ul class="tabs">';
+                    while($row = mysqli_fetch_array($result)) {
+                        $servicios .= '<li>';
+                            $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
+                        $servicios .= '</li>';
+                        
+                        $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content'>";
+                            $introduccion .= '<em>' .$row['nombre'] .'</em>';
+                            $introduccion .= '<p>' .$row['introduccion'] .'</p>';
+                            $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
+                            $introduccion .= '<div class="btn">';
+                                $introduccion .= "<a href='/servicio.php?servicioId=". $row['servicioId'] ."'>Ver m&aacute;s</a>";
+                            $introduccion .= '</div>';
+                        $introduccion .= '</section>';
+                    }
+                    $servicios .= '</ul>';
+                    $servicios .= '<div class="tab-content-wrapper">';
+                    $servicios .= $introduccion;
+                    $servicios .= '</div>';
+                $servicios .= '</div>';
+            }
+        }
     ?>
 
     <body>

@@ -4,41 +4,42 @@
     <?php
         $title = "Servicio";
         include_once "includes/head.php";
+        require_once "config.php";
 
-        // $mockups = '<div class="d-flex flex-col align-center justify-center">
-            //             <i class="icon info"></i>
-            //             <span>No hay proyectos disponibles para este servicio</span>
-            //         </div>';
+        $mockups = '<div class="d-flex flex-col align-center justify-center gap-5 empty-state">
+                        <i class="icon info"></i>
+                        <span>No hay proyectos disponibles para este servicio</span>
+                    </div>';
 
-        // if(isset($_GET["servicioId"]) && !empty(trim($_GET["servicioId"]))){
-            // $query = "SELECT * FROM servicios WHERE servicioId = ?";
+        if(isset($_GET["servicioId"]) && !empty(trim($_GET["servicioId"]))){
+            $query = "SELECT * FROM servicios WHERE servicioId = ?";
     
-            // if($stmt = mysqli_prepare($sql, $query)) {
-            //     mysqli_stmt_bind_param($stmt, "i", $param);
+            if($stmt = mysqli_prepare($sql, $query)) {
+                mysqli_stmt_bind_param($stmt, "i", $param);
     
-            //     $param = $_GET["servicioId"];
+                $param = $_GET["servicioId"];
     
-            //     if(mysqli_stmt_execute($stmt)) {
-            //         $result = mysqli_stmt_get_result($stmt);
+                if(mysqli_stmt_execute($stmt)) {
+                    $result = mysqli_stmt_get_result($stmt);
     
-            //         if($result) {
-            //             if(mysqli_num_rows($result) > 0) {
-            //                 $row = mysqli_fetch_assoc($result);
+                    if($result) {
+                        if(mysqli_num_rows($result) > 0) {
+                            $row = mysqli_fetch_assoc($result);
 
-            //                 $servicio = '<em>'. $row['nombre'] .'</em>
-            //                             <span>'. $row['descripcion'] .'</span>';
-            //             } else {
-            //                 header("location: 404page.php");
-            //             }
-            //         } else {
-            //             header("location: 404page.php");
-            //         }
-            //     } else {
-            //         header("location: 404page.php");
-            //     }
-            // } else {
-            //     header("location: 404page.php");
-            // }
+                            $servicio = '<em>'. $row['nombre'] .'</em>
+                                        <span>'. $row['descripcion'] .'</span>';
+                        } else {
+                            header("location: 404page.php");
+                        }
+                    } else {
+                        header("location: 404page.php");
+                    }
+                } else {
+                    header("location: 404page.php");
+                }
+            } else {
+                header("location: 404page.php");
+            }
 
             // $query = "SELECT * FROM proyectos WHERE servicioId = ?";
 
@@ -73,9 +74,9 @@
             //         }
             //     }
             // }
-        // } else {
-            // header("location: 404page.php");
-        // }
+        } else {
+            header("location: 404page.php");
+        }
     ?>
 
     <body>
@@ -90,7 +91,7 @@
                 </aside>
                 <article class="d-flex flex-col align-center">
                     <strong>Nuestros trabajos</strong>
-                    <div>
+                    <div class="mockups">
                         <?php
                             echo $mockups;
                         ?>
