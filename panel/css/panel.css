@@ -609,6 +609,25 @@ ul.file-list li{
     height: 10em;
 }
 
+/* 404 ERROR ---------------------------------------- */
+
+.error-404 {
+    height: 100vh;
+}
+
+.error-404 .error-msg strong {
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.error-404 .error-msg span {
+    font-weight: 600;
+}
+
+.error-404 .btn {
+    margin-top: 2em;
+}
+
 /* ---------------------------------------- */
 
 .loader-container {

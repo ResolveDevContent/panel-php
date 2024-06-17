@@ -9,11 +9,12 @@
     ?>
 
     <body>
-        <section class="error-404 d-flex align-center justify-center flex-col">
-            <div id="container"></div>
+    <section class="error-404 d-flex align-center justify-center flex-col">
             <div class="error-msg d-flex align-center justify-center flex-col">
                 <strong>404 ERROR</strong>
-                <span>Oh! Parece que te perdiste, volve a inicio.</span>
+                <span>La p&aacute;gina a la que deseas acceder no existe.</span>
+            </div>
+            <div class="btn bt-error">
                 <a href="/panel-php/panel/index.php">Volver</a>
             </div>
         </section>
