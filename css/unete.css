@@ -19,7 +19,7 @@
 #unete .beneficios {
     width: 100%;
     position: relative;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 #unete .beneficios strong {
@@ -28,7 +28,7 @@
 }
 
 #unete .beneficios ul li {
-    padding: 1em;
+    padding: 1.5em;
     background-color: var(--color7);
     border-radius: 0.5em;
 }
