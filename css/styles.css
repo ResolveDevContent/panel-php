@@ -131,6 +131,15 @@ video {
     font-weight: 600;
 }
 
+.mensaje-error {
+    color: red;
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.mensaje-success {
+    color: greenyellow;
+}
 
 /* NAV ARROWS ------------------------------------------------------------ */
 

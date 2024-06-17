@@ -21,7 +21,8 @@ document
 // FORMS ----------------------------------------------------------------------
 
 const form       = document.querySelectorAll('[data-form]'),
-      formInputs = document.querySelectorAll('[data-form] input[type="text"], [data-form] textarea');
+      formInputs = document.querySelectorAll('[data-form] input[type="text"], [data-form] textarea'),
+      button     = document.querySelectorAll('[data-form] button');
 
 Array.from(formInputs).forEach(elm => {
     elm.addEventListener('change', function(evt) {
@@ -30,6 +31,14 @@ Array.from(formInputs).forEach(elm => {
         }
     });
 });
+
+button.forEach(function (btn) {
+    btn.addEventListener("click", function(evt) {
+        // formInputs.forEach(function (input) {
+        //     input.value = "";
+        // })
+    })
+})
 
 // FAQS ----------------------------------------------------------------------
 

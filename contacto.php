@@ -36,6 +36,10 @@
 
         // Check input errors before inserting in database
         if(empty($nombre_err) && empty($email_err) && empty($asunto_err) && empty($mensaje_err)) {
+            $agendar = false;
+            $cotiza = false;
+            $unete = false;
+            $contacto = true;
             include_once "../panel-php/utils/mailer.php"; 
             $respuestaMsg = $respuesta;
         }
@@ -124,31 +128,37 @@
                     <ul class="ul-form">
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>"/>
+                                <input type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>" >
                                 <label for="nombre">Nombre y apellido</label>
                             </div>
+                            <span class="mensaje-error"><?php echo $nombre_err;?></span>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="email" name="email" value="<?php echo $email; ?>"/>
+                                <input type="text" id="email" name="email" value="<?php echo $email; ?>" >
                                 <label for="email">Correo electrónico</label>
                             </div>
+                            <span class="mensaje-error"><?php echo $email_err;?></span>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="asunto" name="asunto" value="<?php echo $asunto; ?>"/>
+                                <input type="text" id="asunto" name="asunto" value="<?php echo $asunto; ?>" >
                                 <label for="asunto">Asunto</label>
                             </div>
+                            <span class="mensaje-error"><?php echo $asunto_err;?></span>
                         </li>
                         <li>
                             <div class="input">
                                 <textarea placeholder="Mensaje..." id="mensaje" cols="4" rows="6" name="mensaje" value="<?php echo $mensaje; ?>"></textarea>
                             </div>
+                            <span class="mensaje-error"><?php echo $mensaje_err;?></span>
                         </li>
                         <li>
                             <div class="btn d-flex justify-center">
                                 <button>Enviar</button>
-                                <?php echo $respuestaMsg ?>
+                            </div>
+                            <div class="d-flex justify-center align-center">
+                                <span class="mensaje-success"><?php echo $respuestaMsg ?></span>
                             </div>
                         </li>
                     </ul>

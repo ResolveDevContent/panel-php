@@ -33,6 +33,10 @@
     border-radius: 0.5em;
 }
 
+#unete .beneficios ul li i {
+    background-color: var(--color5);
+}
+
 #unete .beneficios ul li span {
     margin-left: .5em;
     font-weight: 700;
