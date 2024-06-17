@@ -9,6 +9,19 @@ body {
     margin-block: 8em;
 }
 
+.btn > button,
+.btn > a {
+    font-size: 1.125em;
+}
+
+.input label {
+    font-size: 1.25em;
+}
+
+.input select {
+    font-size: 1.125em;
+}
+
 /* NAVBAR -------------------------------------------------------- */
 
 #navbar {
@@ -213,9 +226,37 @@ body {
 
 /* INDEX ----------------------------------------------------------------------- */
 
+section > header > span {
+    font-size: 1.2em;
+}
+
 #sobre-nosotros {
     flex-direction: column;
     align-items: center;
+}
+
+#sobre-nosotros article > div > div {
+    flex-direction: column;
+}
+
+#valores > ul li div em,
+#join em {
+    font-size: 1.75em;
+}
+
+#sobre-nosotros article div span,
+#sobre-nosotros article div div span,
+#valores > ul li div span,
+#equipo span,
+#join span {
+    font-size: 1.2em;
+}
+
+#sobre-nosotros article div span.highlight,
+#sobre-nosotros article div div span.highlight,
+#valores > ul li div span.highlight,
+#equipo span.highlight {
+    font-size: 1em;
 }
 
 #servicios .tabs {
@@ -251,19 +292,11 @@ body {
     text-align: center;
 }
 
-#reviews > ul {
-    flex-direction: column;
-} 
-
 #reviews > ul > li {
     width: 100%;
     height: 100%;
     min-width: 100%;
     min-height: 100%;
-}
-
-#reviews > ul > li > article {
-    flex-direction: column;
 }
 
 #cotiza > div {
@@ -283,6 +316,10 @@ body {
 
 #agendar {
     margin-top: 10em;
+}
+
+#agendar header p {
+    font-size: 1.25em;
 }
 
 #agendar > article > form > div {
@@ -313,6 +350,24 @@ body {
     width: 100%;
 }
 
+#contacto .item > div > ul i {
+    width: 3.5em;
+    min-width: 3.5em;
+    height: 3.5em;
+    min-height: 3.5em;
+}
+
+#contacto .item > div > header i {
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+}
+
+#contacto .item > div > ul > li {
+    font-size: 1.25em;
+}
+
 /* UNETE -------------------------------------------------------------------  */
 
 #unete > header {
@@ -325,6 +380,7 @@ body {
 
 #unete .beneficios > ul {
     flex-direction: column;
+    width: 100%;
 }
 
 #unete .beneficios > ul > li {
@@ -353,15 +409,21 @@ body {
     width: 100%;
 }
 
+/* FAQ ---------------------------------------------------------------------- */
+
+#faq details > summary {
+    font-size: 1em;
+}
+
 /* FOOTER ---------------------------------------------------------------------- */
 
-#footer,
+/* #footer,
 #faq,
 #unete,
 #servicios,
 #sobre-nosotros {
     font-size: 1.25em;
-}
+} */
 
 #footer > ul,
 #footer > header > div > ul,
@@ -391,4 +453,23 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+#footer > ul > li > em {
+    font-size: 2em;
+}
+
+#footer > ul > li a {
+    font-size: 1.25em;
+}
+
+#footer .contacto li i {
+    width: 3em;
+    min-width: 3em;
+    height: 3em;
+    min-height: 3em;
+}
+
+#footer .contacto li span {
+    font-size: 1.325em;
 }

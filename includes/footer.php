@@ -87,7 +87,7 @@
             <ul class="contacto d-flex align-center justify-center gap-1">
                 <li class="d-flex align-center gap-5">
                     <i class="icon mail" title="Mail"></i>
-                    <span>email@gmail.com</span>
+                    <span>contacto@digitalredlimit.com</span>
                 </li>
                 <li>
                     <div class="d-flex align-start gap-5">

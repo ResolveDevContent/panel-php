@@ -78,8 +78,10 @@
                         <br>
                         <div class="d-flex align-center gap-1">
                             <p>Nos encontramos en</p>
-                            <i class="argentina"></i>
-                            <i class="mexico"></i>
+                            <div class="d-flex align-center justifi-center gap-1">
+                                <i class="argentina"></i>
+                                <i class="mexico"></i>
+                            </div>
                         </div>
                         <div class="d-flex align-center btn gap-1">
                             <a href="/nosotros.php">Conoce m&aacute;s</a>

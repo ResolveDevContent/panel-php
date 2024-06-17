@@ -38,11 +38,11 @@
 
         <main class="wrapper">
             <section id="portafolio" class="d-flex flex-col align-center gap-1">
-                <header class="d-flex flex-col align-center">
+                <header class="d-flex flex-col align-center justify-center">
                     <h2>Protafolio</h2>
                     <p>Aqu&iacute; podra encontrar todos nuestros trabajos</p>
                 </header>
-                <div class="destacados d-flex flex-col align-center">
+                <div class="destacados d-flex flex-col align-center text-center">
                     <em>Proyectos destacados</em>
                     <p>Todos nuestros proyectos son importantes pero aqu&iacute; estan los mas destacados</p>
                     <ul>

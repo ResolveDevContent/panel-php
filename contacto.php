@@ -55,18 +55,21 @@
                                     <i class="icon redes"></i>
                                     <em>Redes sociales</em>
                                 </header>
-                                <ul class="d-flex align-start gap-1 flex-col">
+                                <ul class="d-flex align-start justify-center gap-1">
                                     <li class="d-flex align-center gap-5">
-                                        <i class="icon instagram"></i>
-                                        <span>https://www.instagram.com/digital.redlimit/?locale=sl</span>
+                                        <a href="https://www.instagram.com/digital.redlimit/?locale=sl" target="_blank">
+                                            <i class="icon instagram"></i>
+                                        </a>
                                     </li>
                                     <li class="d-flex align-center gap-5">
-                                        <i class="icon facebook"></i>
-                                        <span>https://www.facebook.com/people/RED-LIMIT/61552965720510</span>
+                                        <a href="https://www.facebook.com/people/RED-LIMIT/61552965720510" target="_blank">
+                                            <i class="icon facebook"></i>
+                                        </a>
                                     </li>
                                     <li class="d-flex align-center gap-5">
-                                        <i class="icon linkedin"></i>
-                                        <span>https://www.linkedin.com/company/red-limit</span>
+                                        <a href="https://www.linkedin.com/company/red-limit" target="_blank">
+                                            <i class="icon linkedin"></i>
+                                        </a>    
                                     </li>
                                 </ul>
                             </div>

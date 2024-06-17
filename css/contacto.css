@@ -14,7 +14,6 @@
 }
 
 #contacto > article {
-    padding: 2em;
     width: 100%;
     margin-top: 4em;
 }
@@ -35,6 +34,13 @@
 #contacto .item > div > header em {
     font-size: 1.5em;
     font-weight: 600;
+}
+
+#contacto .item > div > ul i {
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
 }
 
 #contacto .ul-form > li:first-child .input, 

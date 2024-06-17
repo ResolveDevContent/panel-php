@@ -19,7 +19,6 @@
 #unete .beneficios {
     width: 100%;
     position: relative;
-    padding: 1em;
     margin-top: 1em;
 }
 
@@ -36,6 +35,7 @@
 
 #unete .beneficios ul li span {
     margin-left: .5em;
+    font-weight: 700;
 }
 
 #unete form {
