@@ -1,3 +1,45 @@
+<?php
+    // Define variables and initialize with empty values
+    $nombre = $email = $asunto = $mensaje = "";
+    $nombre_err = $email_err = $asunto_err = $mensaje_err = "";
+
+    // Processing form data when form is submitted
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $input_nombre = trim($_POST["nombre"]);
+        if(empty($input_nombre)){
+            $nombre_err = "Por favor ingrese el nombre.";
+        } else{
+            $nombre = $input_nombre;
+        }
+        
+        $input_email = trim($_POST["email"]);
+        if(empty($input_email)){
+            $email_err = "Por favor ingrese una dirección de correo electrónico.";     
+        } else{
+            $email = $input_email;
+        }
+        
+        $input_asunto = trim($_POST["asunto"]);
+        if(empty($input_asunto)){
+            $asunto_err = "Por favor ingrese un asunto.";     
+        } else{
+            $asunto = $input_asunto;
+        }
+
+        $input_mensaje = trim($_POST["mensaje"]);
+        if(empty($input_mensaje)){
+            $mensaje_err = "Por favor ingrese un mensaje.";     
+        } else{
+            $mensaje = $input_mensaje;
+        }
+
+        // Check input errors before inserting in database
+        if(empty($nombre_err) && empty($email_err) && empty($asunto_err) && empty($mensaje_err)) {
+            include_once "../panel-php/utils/mailer.php"; 
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,29 +115,29 @@
                         </li>
                     </ul>
                 </div>
-                <form data-form>
+                <form data-form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <ul class="ul-form">
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre"/>
+                                <input type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>"/>
                                 <label for="nombre">Nombre y apellido</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="email"/>
+                                <input type="text" id="email" name="email" value="<?php echo $email; ?>"/>
                                 <label for="email">Correo electrónico</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="asunto"/>
+                                <input type="text" id="asunto" name="asunto" value="<?php echo $asunto; ?>"/>
                                 <label for="asunto">Asunto</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <textarea id="mensaje" cols="4" rows="6"></textarea>
+                                <textarea id="mensaje" cols="4" rows="6" name="mensaje" value="<?php echo $mensaje; ?>"></textarea>
                                 <label for="mensaje">Mensaje</label>
                             </div>
                         </li>
