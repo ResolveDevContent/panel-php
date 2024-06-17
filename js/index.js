@@ -1,3 +1,5 @@
+import paises from '../paises.json' with { type: 'json' };
+
 // SCROLL ----------------------------------------------------------------------
 
 const scrollable = document.querySelectorAll('[data-scrollable]');
@@ -39,6 +41,43 @@ button.forEach(function (btn) {
         // })
     })
 })
+
+// PAISES ----------------------------------------------------------------------
+
+document
+    .querySelectorAll('#unete, #agendar, #cotiza')
+    .forEach(function(root) {
+        root
+            .querySelectorAll('[data-paises]')
+            .forEach(function(row) {
+
+                let selectPaises = `<select name="paises" id="paises" requiered>
+                            <option value="">Selecciona un pais</option>`;
+
+                if(paises && paises.length > 0) {
+                    paises.forEach(function(pais) {
+                        selectPaises += `<option value="${pais.phone_code}">${pais.nombre}</option>`;
+                    })
+                }
+                
+                selectPaises += '</select>';
+
+                row.innerHTML = selectPaises;
+            });
+
+        root
+            .querySelectorAll('#paises')
+            .forEach(function(row) {
+                row.addEventListener('change', function() {
+                    console.log("entra", row)
+                    root
+                        .querySelectorAll('#codigo-pais')
+                        .forEach(function(input) {
+                            input.value = row.value;
+                    });
+                });
+            });
+});
 
 // FAQS ----------------------------------------------------------------------
 
@@ -153,6 +192,8 @@ document
         const currentHash = window.location.hash;
 
         let activeLink = document.querySelector(".tabs a");
+
+        if(!activeLink) return;
 
         if(currentHash) {
             const visibleHash = document.getElementById(`${currentHash.replace('#', '')}`);

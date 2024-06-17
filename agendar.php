@@ -98,7 +98,7 @@
                     <ul class="ul-form d-flex flex-col gap-1">
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre" name="nombre" >
+                                <input type="text" id="nombre" name="nombre" required>
                                 <label for="nombre">Nombre y apellido</label>
                             </div>
                         </li>
@@ -110,28 +110,32 @@
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="telefono" name="telefono">
+                                <input type="text" id="codigo-pais" name="codigo pais" readonly placeholder="C&oacute;digo de pa&iacute;s" required>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input">
+                                <input type="text" id="telefono" name="telefono" required>
                                 <label for="telefono">Numero de teléfono</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre-empresa" name="empresa">
+                                <input type="text" id="nombre-empresa" name="empresa" required>
                                 <label for="nombre-empresa">Nombre de la empresa</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="text" id="desc-empresa" name="descripcion">
+                                <input type="text" id="desc-empresa" name="descripcion" required>
                                 <label for="desc-empresa">Descripción de la empresa (rubro y otros)</label>
                             </div>
                         </li>
                     </ul>
                     <ul class="ul-form d-flex flex-col gap-1">
                         <li>
-                            <label class="label-cotizacion not-visible">Motivo de cotizaci&oacute;n</label>
                             <div class="input">
-                                <select name="cotizacion" id="cotizacion" name="cotizacion">
+                                <select name="cotizacion" id="cotizacion" name="cotizacion" required>
                                     <option value="">Selecciona un motivo de la cotización</option>
                                     <option value="Servicios Personalizados">Servicios Personalizados</option>
                                     <option value="Redes Sociales">Redes Sociales</option>
@@ -145,7 +149,7 @@
                         </li>
                         <li class="input-dia">
                             <div class="input">
-                                <input type="date" id="date" name="dia">
+                                <input type="date" id="date" name="dia" required>
                             </div>
                         </li>
                         <li class="item-horarios not-visible">
@@ -164,6 +168,6 @@
     </section>
     <?php include_once("includes/footer.php"); ?>
 
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>

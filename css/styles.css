@@ -219,8 +219,10 @@ video {
     margin: auto;
 }
 
-.input textarea::placeholder {
+.input textarea::placeholder,
+.input input::placeholder {
     font-size: 1.25em;
+    color: #a1a1a1;
 }
   
 .input input:focus ~ label,
