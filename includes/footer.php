@@ -1,7 +1,7 @@
 <section id='floating-footer'>
     <ul>
         <li class="agendar">
-            <a href="#">
+            <a href="../agendar.php">
                 <span>Agendá una reunión</span>
                 <i class="icon agendar"></i>
             </a>
