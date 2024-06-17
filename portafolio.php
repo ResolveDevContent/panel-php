@@ -5,14 +5,13 @@
         $title = "Protafolio";
         include_once "includes/head.php";  
         
-        // $destacados = '<div class="d-flex flex-col align-center justify-center empty-state">
-            //             <span>No hay proyectos destacados por el momento</span>
-        //              </div>';
+        $destacados = '<div class="d-flex flex-col align-center justify-center empty-state">
+                        <span>No hay proyectos destacados por el momento</span>
+                     </div>';
 
-        // $proyectos = '<div class="d-flex flex-col align-center justify-center">
-            //             <i class="icon info"></i>
-            //             <span>No hay proyectos disponibles por el momento</span>
-        //              </div>';
+        $proyectos = '<div class="d-flex flex-col align-center justify-center empty-state">
+                        <span>No hay proyectos disponibles por el momento</span>
+                     </div>';
 
         // $query = "SELECT * FROM proyectos";
         // if($result = mysqli_query($sql, $query)){
@@ -44,9 +43,9 @@
                 <div class="destacados d-flex flex-col align-center text-center">
                     <em>Proyectos destacados</em>
                     <p>Todos nuestros proyectos son importantes pero aqu&iacute; estan los mas destacados</p>
-                    <ul>
-                        <li></li>
-                    </ul>
+                    <?php 
+                        echo $destacados;
+                    ?>
                 </div>
                 <div class="listado">
                     <?php 

@@ -28,6 +28,12 @@
                         </li>
                         <li>
                             <div class="input">
+                                <label for="pais">Pais</label>
+                                <div class="input" data-paises></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input">
                                 <input type="text" id="telefono"/>
                                 <label for="telefono">Numero de teléfono</label>
                             </div>
@@ -42,12 +48,6 @@
                             <div class="input">
                                 <input type="text" id="desc-empresa"/>
                                 <label for="desc-empresa">Descripción de la empresa (rubro y otros)</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="input">
-                                <input type="text" id="pais"/>
-                                <label for="pais">Pais o Estado</label>
                             </div>
                         </li>
                     </ul>
