@@ -1,7 +1,7 @@
 <?php
     // Define variables and initialize with empty values
-    $nombre = $email = $telefono = $cv = $puesto = "";
-    $nombre_err = $email_err = $telefono_err = $cv_err = $puesto_err = "";
+    $nombre = $email = $telefono = $pais = $cv = $puesto = "";
+    $nombre_err = $email_err = $telefono_err = $pais_err = $cv_err = $puesto_err = "";
     $respuestaMsg = "";
 
     // Processing form data when form is submitted
@@ -26,6 +26,13 @@
             $telefono_err = "Por favor ingrese un teléfono.";     
         } else{
             $telefono = $input_codpais . $input_telefono;
+        }
+
+        $input_pais = trim($_POST["pais"]);
+        if(empty($input_pais)){
+            $pais_err = "Por favor ingrese una dirección de correo electrónico.";     
+        } else{
+            $pais = $input_pais;
         }
 
         // Validate imagen
@@ -114,13 +121,13 @@
                     <ul class="ul-form">
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre" name="nombre"/>
+                                <input type="text" id="nombre" name="nombre">
                                 <label for="nombre">Nombre y apellido</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="email" id="email" name="email"/>
+                                <input type="email" id="email" name="email">
                                 <label for="email">Correo electrónico</label>
                             </div>
                         </li>
@@ -132,17 +139,17 @@
                         </li>
                         <li class="d-flex gap-5">
                             <div class="input cod-pais">
-                                <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
+                                <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" >
                             </div>
                             <div class="input">
-                                <input type="number" id="telefono" name="telefono"/>
+                                <input type="number" id="telefono" name="telefono">
                                 <label for="telefono">Número de telefono</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
                                 <span>Adjuntar CV</span>
-                                <input type="file" id="cv" name="cv"/>
+                                <input type="file" id="cv" name="cv">
                             </div>
                         </li>
                         <li class="puestos">
