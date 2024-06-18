@@ -136,6 +136,9 @@
                                 <label for="pais">Pais</label>
                                 <div class="input" data-paises></div>
                             </div>
+                            <div class="input not-visible">
+                                <input type="hidden" id="pais" name="pais" required>
+                            </div>
                         </li>
                         <li class="d-flex gap-5">
                             <div class="input cod-pais">

@@ -9,45 +9,44 @@
     require "../panel-php/PHPMailer/src/SMTP.php";
 
     if($cotiza) {
-        $msg = "De: $nombre<br>";
-        $msg .= "Asunto: Cotización<br><br>";
-        $msg .= "Datos:";
-        $msg .= "<p>Nombre y apellido: " . $nombre . "</p><br>";
-        $msg .= "<p>Teléfono: " . $telefono . "</p><br>";
-        $msg .= "<p>Empresa: " . $empresa . "</p><br>";
-        $msg .= "<p>Descripcion de empresa: " . $descripcion . "</p><br>";
-        $msg .= "<p>Pais: " . $pais . "</p><br>";
-        $msg .= "<p>Cotización: " . $cotizacion . "</p><br>";
-        $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
+        $msg = `De: $nombre
+                Asunto: Cotización
+                Datos:"
+                Nombre y apellido: $nombre 
+                Teléfono: $telefono
+                Empresa: $empresa
+                Descripcion de empresa: $descripcion
+                Pais: $pais
+                Cotización: $cotizacion
+        `;
     } else if($contacto) {
-        $msg = "De: $nombre <a href='mailto:$email'>$email</a><br>";
-        $msg .= "Asunto: $asunto<br><br>";
-        $msg .= "Mensaje:";
-        $msg .= "<p>" . $mensaje . "</p><br>";
-        $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
+        $msg = `De: $nombre $email
+                Asunto: $asunto
+                "Mensaje: $mensaje 
+        `;
     } else if($agendar) {
-        $msg = "De: $nombre <a href='mailto:$email'>$email</a><br>";
-        $msg .= "Asunto: Agendar reunion<br><br>";
-        $msg .= "Datos:";
-        $msg .= "<p>Nombre y apellido: " . $nombre . "</p><br>";
-        $msg .= "<p>Teléfono: " . $telefono . "</p><br>";
-        $msg .= "<p>Empresa: " . $empresa . "</p><br>";
-        $msg .= "<p>Descripcion de empresa: " . $descripcion . "</p><br>";
-        $msg .= "<p>Pais: " . $pais . "</p><br>";
-        $msg .= "<p>Cotización: " . $cotizacion . "</p><br>";
-        $msg .= "<p>Dia: " . $dia . "</p><br>";
-        $msg .= "<p>Horario: " . $horario . "</p><br>";
-        $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
+        $msg = `De: $nombre $email
+                Asunto: Agendar reunion
+                Datos:
+                Nombre y apellido: $nombre
+                Teléfono: $telefono
+                Empresa: " . $empresa
+                Descripcion de empresa: $descripcion
+                Pais: $pais
+                Cotización: $cotizacion
+                Dia: $dia
+                Horario: $horario
+        `;
     } else if($unete){
-        $msg = "De: $nombre <a href='mailto:$email'>$email</a><br>";
-        $msg .= "Asunto: Trabajá con nosotros<br><br>";
-        $msg .= "Datos:";
-        $msg .= "<p>Nombre y apellido: " . $nombre . "</p><br>";
-        $msg .= "<p>Correo electrónico: " . $email . "</p><br>";
-        $msg .= "<p>Teléfono: " . $telefono . "</p><br>";
-        $msg .= "<p>Pais: " . $pais . "</p><br>";
-        $msg .= "<p>Puesto: " . $puesto . "</p><br>";
-        $msg .= "--<p>Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.</p>--";
+        $msg = `De: $nombre $email
+                Asunto: Trabajá con nosotros
+                Datos:
+                Nombre y apellido: $nombre
+                Correo electrónico: $email
+                Teléfono: $telefono
+                Pais: $pais
+                Puesto: $puesto
+        `;
     }
 
     $mail = new PHPMailer(true);
@@ -69,10 +68,8 @@
         $mail->setFrom("no-reply@digitalredlimit.com", "Contacto");
         $mail->addAddress("contacto@digitalredlimit.com");
 
-        $mail->isHTML(true);
         $mail->Subject = "Formulario de contacto";
         $mail->Body = $msg;
-        $mail->CharSet = 'UTF-8';
     
         $mail-> send();
     
