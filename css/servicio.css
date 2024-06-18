@@ -17,7 +17,7 @@
 }
 
 #servicio > article {
-    margin-top: 2em;
+    margin-top: 4em;
 }
 
 #servicio > article strong {
@@ -43,6 +43,7 @@
     height: 100%;
     overflow-y: auto;
     scroll-snap-type: x mandatory;
+    padding: .2em;
 }
 
 #servicio > article > div > ul li {
@@ -88,5 +89,6 @@
     #servicio > article .mockups {
         min-height: 37em;
         height: 37em;
+        margin-top: 2em;
     }
 }
