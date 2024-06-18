@@ -149,8 +149,8 @@
                             </div>
                         </div>
                         <div class="d-flex align-center btn gap-1">
-                            <a href="/nosotros.php">Conoce m&aacute;s</a>
-                            <a href="/unete.php">Trabaj&aacute; con nosotros</a>
+                            <a href="/panel-php/nosotros.php">Conoce m&aacute;s</a>
+                            <a href="/panel-php/unete.php">Trabaj&aacute; con nosotros</a>
                         </div>
                     </div>
                 </article>
