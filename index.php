@@ -156,16 +156,18 @@
                 </article>
             </section>
     
-            <section id="servicios" class="d-flex flex-col align-center">
-                <header>
-                    <h4>Servicios</h4>
-                </header>
-                <article class="d-flex w-100">
-                    <?php
-                        echo $servicios;
-                    ?>
-                </article>
-            </section>
+            <?php if($servicios) : ?>
+                <section id="servicios" class="d-flex flex-col align-center">
+                    <header>
+                        <h4>Servicios</h4>
+                    </header>
+                    <article class="d-flex w-100">
+                        <?php
+                            echo $servicios;
+                        ?>
+                    </article>
+                </section>
+            <?php endif ?>
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex flex-col align-center justify-center">
