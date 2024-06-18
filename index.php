@@ -129,9 +129,9 @@
         </section>
 
         <main class="wrapper">
-            <section id="sobre-nosotros" class="d-flex align-start">
+            <section id="sobre-nosotros" class="d-flex align-center">
                 <aside class="d-flex align-center justify-center">
-                    
+                    <img src="/panel-php/gifs/about.gif" alt="">
                 </aside>
                 <article>
                     <h4>Sobre nosotros</h4>
@@ -170,9 +170,14 @@
             <?php endif ?>
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
-                <header class="d-flex flex-col align-center justify-center">
-                    <h4>Ellos nos recomiendan</h4>
-                    <span>Nuestros clientes satisfechos nos califican</span>
+                <header class="d-flex align-center justify-center">
+                    <div class="d-flex align-center justify-center flex-col">
+                        <h4>Ellos nos recomiendan</h4>
+                        <span>Nuestros clientes satisfechos nos califican</span>
+                    </div>
+                    <aside>
+                        <img src="/panel-php/gifs/reviews.gif" alt="">
+                    </aside>
                 </header>
                 <ul class="d-flex align-center justify-center gap-1">
                     <li class="d-flex flex-col justify-center">
@@ -237,7 +242,7 @@
                     <h4>Cotiza</h4>
                     <span>Completa el formulario y cotizaremos tu &eacute;xito</span>
                 </header>
-                <div class="d-flex">
+                <div class="d-flex align-start ">
                     <article>
                         <form data-form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <ul class="ul-form d-flex flex-col gap-1">
@@ -336,7 +341,7 @@
                         </form>
                     </article>
                     <aside>
-                        SVG ANIMADO
+                        <img src="/panel-php/gifs/contacto.gif" alt="">
                     </aside>
                 </div>
             </section>

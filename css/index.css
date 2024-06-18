@@ -2,7 +2,7 @@
 #servicios,
 #reviews,
 #cotiza {
-    margin-top: 10em;
+    margin-top: 8em;
 }
 
 h4 {
@@ -228,16 +228,17 @@ h4 {
     gap: 4em;
 }
 
-#cotiza > div > article {
+#cotiza > div > aside {
     flex: 1;
+    height: 40em;
 }
 
 #cotiza > div > article > form {
     max-width: 40em;
 }
 
-#cotiza > div > aside {
-    width: 35%;
+#cotiza > div > article {
+    width: 60%;
 }
 
 #cotiza .ul-form > li > ul {

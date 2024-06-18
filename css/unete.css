@@ -12,7 +12,7 @@
     width: 60%;
 }
 
-#unete > header > img {
+#unete > header > aside{
     flex: 1;
 }
     

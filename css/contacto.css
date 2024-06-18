@@ -13,11 +13,11 @@
     max-width: 40em;
 }
 
-#contacto > header > h2 {
+#contacto > header h2 {
     font-size: 2.5em;
 }
 
-#contacto > header > p {
+#contacto > header p {
     color: #9F9F9F;
     font-weight: 400;
 }

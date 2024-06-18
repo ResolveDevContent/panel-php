@@ -65,10 +65,10 @@ h2 {
 }
 
 #valores > ul li img {
-    width: 8em;
-    min-width: 8em;
-    height: 8em;
-    min-height: 8em;
+    width: 12em;
+    min-width: 12em;
+    height: 12em;
+    min-height: 12em;
 }
 
 #valores > ul > li li + li {
@@ -88,4 +88,12 @@ h2 {
     color: var(--color5);
     font-size: 1.5em;
     font-weight: 600;
+}
+
+.nosotros > aside {
+    flex: 1;
+}
+
+.nosotros > article {
+    width: 50%;
 }

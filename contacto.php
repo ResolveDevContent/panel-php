@@ -57,7 +57,7 @@
     <body>
         <?php include_once("includes/navbar.php"); ?>
         <section id="contacto" class="d-flex align-center flex-col wrapper">
-            <header class="d-flex align-center flex-col text-center gap-5">
+            <header class="d-flex align-center text-center flex-col gap-1">
                 <h2>Contáctate con nosotros</h2>
                 <p>
                     Para obtener más información sobre nuestros productos y servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!

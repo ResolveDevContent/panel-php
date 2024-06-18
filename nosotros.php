@@ -10,7 +10,7 @@
     <?php include_once("includes/navbar.php"); ?>
     
     <main class="wrapper d-flex flex-col">
-        <section id="sobre-nosotros" class="d-flex nosotros">
+        <section class="d-flex align-center nosotros">
             <article>
                 <h2>Sobre nosotros</h2>
                 <span>¿Qui&eacute;nes somos?</span>
@@ -28,14 +28,14 @@
                 </div>
             </article>
             <aside class="d-flex align-center justify-center">
-                SVG ANIMADO
+                <img src="/panel-php/gifs/nosotros.gif" alt="">
             </aside>
         </section>
 
         <section id="valores">
             <ul class="d-flex flex-col w-100">
                 <li class="d-flex align-center">
-                    <img src="" alt="">
+                    <img src="/panel-php/images/mision.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Misi&oacute;n</em>
                         <span>
@@ -44,7 +44,7 @@
                     </div>
                 </li>
                 <li class="d-flex align-center right">
-                    <img src="" alt="">
+                    <img src="/panel-php/images/vision.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Visi&oacute;n</em>
                         <span>
@@ -53,7 +53,7 @@
                     </div>
                 </li>
                 <li class="d-flex align-center">
-                    <img src="" alt="">
+                    <img src="/panel-php/images/valores.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Valores</em>
                         <ul>
