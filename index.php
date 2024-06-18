@@ -131,7 +131,7 @@
         <main class="wrapper">
             <section id="sobre-nosotros" class="d-flex align-start">
                 <aside class="d-flex align-center justify-center">
-                    SVG ANIMADO
+                    
                 </aside>
                 <article>
                     <h4>Sobre nosotros</h4>

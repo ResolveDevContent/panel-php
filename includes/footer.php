@@ -84,7 +84,7 @@
                     </a>
                 </li>
             </ul>
-            <ul class="contacto d-flex align-center justify-center gap-1">
+            <ul class="contacto d-flex align-start justify-center gap-1 flex-col">
                 <li class="d-flex align-center gap-5">
                     <i class="icon mail" title="Mail"></i>
                     <span>contacto@digitalredlimit.com</span>

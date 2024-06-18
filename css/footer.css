@@ -154,3 +154,7 @@
 #footer .contacto {
     color: #a1a1a1;
 }
+
+#footer .contacto > li > i {
+    background-color: white;
+}
