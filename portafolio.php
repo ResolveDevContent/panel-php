@@ -16,17 +16,65 @@
         // $query = "SELECT * FROM proyectos";
         // if($result = mysqli_query($sql, $query)){
         //     if(mysqli_num_rows($result) > 0){
-        //         $proyectos = '<ul class="gap-1">';
-        //             while($row = mysqli_fetch_array($result)){
-        //                 $proyectos .= '<li>';
-        //                     $proyectos .= "<a href='/proyecto.php?proyectoId=". $row['proyectoId'] ."'>";
-        //                         $proyectos .= '<span class="loader"></span>';
-        //                         $proyectos .= "<img src='". $row['portada']."' alt=''>";
-        //                         $proyectos .= "<p>'". $row['servicio']. "'</p>";
-        //                     $proyectos .= '</a>';
-        //                 $proyectos .= '</li>';
-        //             }
-        //         $proyectos .= '</ul>';
+                // $pDestacados = array_filter($result, function($var) { return ($var == true); });
+                // $pNoDestacados = array_filter($result, function($var) { return ($var == false); });
+
+                // if($pNoDestacados && count($pNoDestacados) > 0) {
+                    //         $proyectos = '<ul class="gap-1">';
+                                //  foreach($pNoDestacados as $row) {
+                    //                 $proyectos .= '<li>';
+                    //                     $proyectos .= "<a href='/proyecto.php?proyectoId=". $row['proyectoId'] ."'>";
+                    //                         $proyectos .= '<span class="loader"></span>';
+                    //                         $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
+                    //                         $proyectos .= "<p>'". $row['servicio']. "'</p>";
+                    //                     $proyectos .= '</a>';
+                    //                 $proyectos .= '</li>';
+                    //             }
+                    //         $proyectos .= '</ul>';
+                // }
+
+                // if($pDestacados && count($pDestacados) > 0) {
+                //     $destacados = '<ul>';
+                //     foreach($pNoDestacados as $row) {
+                //         $destacados .= '<li>';
+                //             $destacados .= '<article class="d-flex proyecto">';
+                //                 $destacados .= "<a href='/proyecto.php?proyectoId=". $row['proyectoId'] ."'>"
+                //                     $destacados .= "<img src='". $row['portada'] ."' alt=''>";
+                //                 $destacados .= '</a>';
+                //                 $destacados .= '<div class="d-flex flex-col align-start">';
+                //                     $destacados .= '<div class="d-flex flex-col align-start">';
+                //                         $destacados .= "<em>'". $row['nombre'] ."'</em>";
+                //                         $destacados .= "<span>'". $row['servicio'] ."'</span>";
+                //                     $destacados .= '</div>';
+                //                     $destacados .= '<ul class="d-flex align-center gap-5">';
+                //                         $destacados .= '<li>';
+                //                             $destacados .= '<div class="btn">';
+                //                                 $destacados .= "<a href='". $row['facebook']."' target='_blank'>";
+                //                                     $destacados .= '<i class="icon facebook"></i>';
+                //                                 $destacados .= '</a>';
+                //                             $destacados .= '</div>';
+                //                         $destacados .= '</li>';
+                //                         $destacados .= '<li>';
+                //                             $destacados .= '<div class="btn">';
+                //                                 $destacados .= "<a href='". $row['instagram']."' target='_blank'>";
+                //                                     $destacados .= '<i class="icon instagram"></i>';
+                //                                 $destacados .= '</a>';
+                //                             $destacados .= '</div>';
+                //                         $destacados .= '</li>';
+                //                         $destacados .= '<li>';
+                //                             $destacados .= '<div class="btn">';
+                //                                 $destacados .= "<a href='". $row['website']."' target='_blank'>";
+                //                                     $destacados .= '<i class="icon world"></i>';
+                //                                 $destacados .= '</a>';
+                //                             $destacados .= '</div>';
+                //                         $destacados .= '</li>';
+                //                     $destacados .= '</ul>';
+                //                 $destacados .= '</div>';
+                //             $destacados .= '</article>';
+                //         $destacados .= '</li>';
+                //     }
+                //     $destacados .= '</ul>';
+                // }
         //     }
         // }
     ?>
