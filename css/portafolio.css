@@ -4,8 +4,6 @@
 
 #portafolio .destacados {
     width: 100%;
-    border-radius: 1em;
-    padding: 2em;
     margin-top: 1em;
 }
 
@@ -76,6 +74,17 @@
 #portafolio .destacados .proyecto > div {
     cursor: default;
     border-radius: 0 .25em .25em 0;
+    flex: 1;
+    padding: 1.5em;
+}
+
+#portafolio .destacados .proyecto > div > div{
+    text-align: start;
+}
+
+#portafolio .destacados > ul > li:nth-child(2n) .proyecto > div > div {
+    text-align: end;
+    align-items: end;
 }
 
 #portafolio .destacados .proyecto em {
@@ -87,11 +96,6 @@
     overflow-wrap: anywhere;
     line-height: 1em;
     height: max-content;
-}
-
-#portafolio .destacados .proyecto > div {
-    flex: 1;
-    padding: 1.5em;
 }
 
 #portafolio .destacados .proyecto > div ul {
@@ -121,20 +125,17 @@
 .listado ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 2em;
+    margin-top: 3em;
 }
 
 .listado ul li {
-    min-height: 22em;
+    min-height: 25em;
+    height: 25em;
     border-radius: .25em;
     text-align: center;
     position: relative;
     display: flex;
     overflow: hidden;
-}
-
-.listado ul li:nth-child(2n) {
-    transform: translateY(75px);
 }
 
 .listado ul li a {
@@ -214,21 +215,47 @@
     #portafolio .destacados ul li:nth-child(2n) article{
         flex-direction: row-reverse;
     }
+
+    .listado ul li:nth-child(2n) {
+        transform: translateY(75px);
+    }
+    
 }
 
 @media screen and (max-width: 959px) {
     .listado ul {
         grid-template-columns: 1fr;
     }
+
     .destacados .proyecto {
         flex-direction: column;
     }
+
     #portafolio .destacados .proyecto > a {
         width: 100%;
+        min-height: 10em;
+        max-height: 20em;
     }
 
-    #portafolio .destacados > ul > li + li {
-        border-top: 2px solid red;
-        padding-top: 4em;
+    #portafolio .destacados .proyecto em {
+        font-size: 2.25em;
+        -webkit-line-clamp: 3;
+    }
+
+    #portafolio em {
+        font-size: 2.5em;
+    }
+
+    #portafolio p {
+        font-size: 1.25em;
+    }
+
+    .listado ul li {
+        min-height: 22em;
+        height: 22em;
+    }
+
+    .listado ul li + li {
+        margin-top: 1em;
     }
 }

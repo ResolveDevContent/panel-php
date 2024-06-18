@@ -108,13 +108,12 @@ body {
 }
 
 .navbar-responsive > article ul {
-    background-color: #FFF3E3;
+    background-color: var(--color7);
     z-index: 1;
     padding: 1em;
     display: flex;
     flex-direction: column;
     border-radius: 1em;
-    color: black;
     font-size: 1.25em;
 
     position: absolute;
@@ -130,7 +129,7 @@ body {
 }
 
 .navbar-responsive > article ul li a {
-    color: black;
+    color: #fff;
     text-transform: uppercase;
     width: 100%;
     display: flex;
@@ -161,7 +160,8 @@ body {
 .navbar-responsive .menu-close em {
     font-weight: bolder;
     font-style: normal;
-    color: var(--muted-dark);
+    color: var(--color5);
+    font-size: 1.5em;
 }
 
 .navbar-responsive .menu-close label{
@@ -417,14 +417,6 @@ section > header > span {
 
 /* FOOTER ---------------------------------------------------------------------- */
 
-/* #footer,
-#faq,
-#unete,
-#servicios,
-#sobre-nosotros {
-    font-size: 1.25em;
-} */
-
 #footer > ul,
 #footer > header > div > ul,
 #footer > header > div > ul > li > div {
@@ -459,6 +451,7 @@ section > header > span {
     font-size: 2em;
 }
 
+#footer > ul > li > span,
 #footer > ul > li a {
     font-size: 1.25em;
 }
