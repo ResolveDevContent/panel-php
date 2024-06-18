@@ -38,7 +38,6 @@
             <section id="portafolio" class="d-flex flex-col align-center gap-1">
                 <header class="d-flex flex-col align-center justify-center">
                     <h2>Protafolio</h2>
-                    <p>Aqu&iacute; podra encontrar todos nuestros trabajos</p>
                 </header>
                 <div class="destacados d-flex flex-col align-center text-center">
                     <em>Proyectos destacados</em>
@@ -48,31 +47,37 @@
                     ?>
                     <ul>
                         <li>
-                            <article class="d-flex">
+                            <article class="d-flex proyecto">
                                 <a href="">
                                     <img src="/images/user.png" alt="">
                                 </a>
                                 <div class="d-flex flex-col align-start">
                                     <div class="d-flex flex-col align-start">
-                                        <em>Nombre</em>
-                                        <span>Servicio</span>
+                                        <em>XOXO</em>
+                                        <span>Gesti&oacute;n de Redes Sociales</span>
                                     </div>
-                                    <ul class="d-flex align-center">
+                                    <ul class="d-flex align-center gap-5">
                                         <li>
-                                            <a href="">F</a>
+                                            <div class="btn">
+                                                <a href="" target="_blank">F</a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="">I</a>
+                                            <div class="btn">
+                                                <a href="" target="_blank">I</a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="">P</a>
+                                            <div class="btn">
+                                                <a href="" target="_blank">P</a>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
                             </article>
                         </li>
                         <li>
-                            <article class="d-flex">
+                            <article class="d-flex proyecto">
                                 <a href="">
                                     <img src="/images/user.png" alt="">
                                 </a>
@@ -83,13 +88,19 @@
                                     </div>
                                     <ul class="d-flex align-center">
                                         <li>
-                                            <a href="">F</a>
+                                            <div class="btn">
+                                                <a href="" target="_blank">F</a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="">I</a>
+                                            <div class="btn">
+                                                <a href="" target="_blank">I</a>
+                                            </div>
                                         </li>
                                         <li>
-                                            <a href="">P</a>
+                                            <div class="btn">
+                                                <a href="" target="_blank">P</a>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -98,6 +109,10 @@
                     </ul>
                 </div>
                 <div class="listado">
+                    <header class="text-center">
+                        <em>Proyectos</em>
+                        <p>Aqu&iacute; podra encontrar todos nuestros trabajos</p>
+                    </header>
                     <?php 
                         echo $proyectos;
                     ?>

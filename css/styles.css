@@ -35,6 +35,7 @@ a {
     -webkit-line-clamp: 1;
     overflow: hidden;
     overflow-wrap: anywhere;
+    line-height: 1em;
 }
 
 em {
@@ -235,7 +236,7 @@ video {
 }
 
 .input.cod-pais {
-    width: 5em;
+    width: 7em;
 }
 
 /* BUTTONS STYLES ---------------------------------------------------------- */
