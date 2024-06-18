@@ -177,7 +177,7 @@
                 <ul class="d-flex align-center justify-center gap-1">
                     <li class="d-flex flex-col justify-center">
                         <article class="d-flex align-center customer">
-                            <img src="/images/user.png" alt="">
+                            <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
                                 <em>Jose Luis Mbappe</em>
                                 <span>Verdulero</span>
@@ -196,7 +196,7 @@
                     </li>
                     <li class="d-flex flex-col justify-center">
                         <article class="d-flex align-center customer">
-                            <img src="/images/user.png" alt="">
+                            <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
                                 <em>Pablo Javier Dembele</em>
                                 <span>Kinesiologo</span>
@@ -214,7 +214,7 @@
                     </li>
                     <li class="d-flex flex-col justify-center">
                         <article class="d-flex align-center customer">
-                            <img src="/images/user.png" alt="">
+                            <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
                                 <em>Carlos Alberto Viatri</em>
                                 <span>Cocinero</span>

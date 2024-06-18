@@ -101,7 +101,7 @@
                 Estamos en constante b&uacute;squeda de nuevos talentos para unirse a nuestro equipo. Si est&aacute;s interesado en formar parte de Red Limit, visita nuestra sección "Trabaja con Nosotros" y env&iacute;anos tu CV junto con una carta de presentaci&oacute;n.
             </span>
             <div class="btn">
-                <a href="/unete.php">Trabaja con Nosotros</a>
+                <a href="/panel-php/unete.php">Trabaja con Nosotros</a>
             </div>
         </section>
     </main>
