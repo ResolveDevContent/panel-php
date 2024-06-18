@@ -10,12 +10,14 @@
 
     <?php include_once("includes/navbar.php"); ?>
     <section id="faq" class="wrapper d-flex flex-col align-center">
-        <header class="d-flex align-center text-center flex-col">
-            <h2>Preguntas más frecuentes</h2>
-            <p>Estas son las preguntas que mas nos suelen hacer, si tenes alguna otra no dudes en contactarnos perreque.</p>
+        <header class="d-flex align-center text-center">
             <div>
-                <img src="/panel-php/gifs/faq.gif" alt="">
+                <h2>Preguntas más frecuentes</h2>
+                <p>Estas son las preguntas que mas nos suelen hacer, si tenes alguna otra no dudes en contactarnos perreque.</p>
             </div>
+            <aside>
+                <img src="/panel-php/gifs/faq.gif" alt="">
+            </aside>
         </header>
         <article>
             <ul>

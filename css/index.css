@@ -171,6 +171,14 @@ h4 {
 
 /* REVIEWS ----------------------------------------------------------------------------*/
 
+#reviews {
+    margin-top: 2em;
+}
+
+#reviews > header > aside {
+    height: 20em;
+}
+
 #reviews > ul {
     width: 100%;
     margin-top: 2em;
@@ -238,7 +246,7 @@ h4 {
 }
 
 #cotiza > div > article {
-    width: 60%;
+    width: 50%;
 }
 
 #cotiza .ul-form > li > ul {

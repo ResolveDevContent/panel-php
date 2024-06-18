@@ -92,7 +92,8 @@
     <?php include_once("includes/navbar.php"); ?>
     <main class="wrapper">
         <section id="unete" class="d-flex align-center flex-col">
-            <header class="d-flex align-center text-center gap-1 flex-col">
+            <div class="gradient"></div>
+            <header class="d-flex align-center text-center gap-1">
                 <div>
                     <h2>Trabajá con nosotros</h2>
                     <p>Porque trabajar con nosotros, es lo mejor que te puede pasar. Asi que inscribite a nuestros puestos laborales pedazo de wachin.</p>
