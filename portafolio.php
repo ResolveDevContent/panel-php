@@ -91,70 +91,8 @@
                     <em>Proyectos destacados</em>
                     <p>Todos nuestros proyectos son importantes pero aqu&iacute; estan los mas destacados</p>
                     <?php 
-                        // echo $destacados;
+                        echo $destacados;
                     ?>
-                    <ul>
-                        <li>
-                            <article class="d-flex proyecto">
-                                <a href="">
-                                    <img src="/images/user.png" alt="">
-                                </a>
-                                <div class="d-flex flex-col align-start">
-                                    <div class="d-flex flex-col align-start">
-                                        <em>XOXO</em>
-                                        <span>Gesti&oacute;n de Redes Sociales</span>
-                                    </div>
-                                    <ul class="d-flex align-center gap-5">
-                                        <li>
-                                            <div class="btn">
-                                                <a href="" target="_blank">F</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="btn">
-                                                <a href="" target="_blank">I</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="btn">
-                                                <a href="" target="_blank">P</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="d-flex proyecto">
-                                <a href="">
-                                    <img src="/images/user.png" alt="">
-                                </a>
-                                <div class="d-flex flex-col align-start">
-                                    <div class="d-flex flex-col align-start">
-                                        <em>Nombre</em>
-                                        <span>Servicio</span>
-                                    </div>
-                                    <ul class="d-flex align-center">
-                                        <li>
-                                            <div class="btn">
-                                                <a href="" target="_blank">F</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="btn">
-                                                <a href="" target="_blank">I</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="btn">
-                                                <a href="" target="_blank">P</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
                 </div>
                 <div class="listado">
                     <header class="text-center">

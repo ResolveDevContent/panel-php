@@ -24,8 +24,9 @@
     margin-top: 4em;
 }
 
-#portafolio .destacados > ul > li {
-    border-radius: .25em;
+#portafolio .destacados > ul > li,
+#portafolio .destacados ul li a img {
+    border-radius: .25em 0 0 .25em;
 }
 
 #portafolio .destacados > ul > li + li {
@@ -53,14 +54,19 @@
 
 #portafolio .destacados .proyecto > a {
     width: 45%;
+    max-height: 25em;
+    min-height: 20em;
+    border-radius: .25em 0 0 .25em;
+}
+
+#portafolio .destacados > ul > li:nth-child(2n),
+#portafolio .destacados ul li:nth-child(2n) .proyecto > a,
+#portafolio .destacados ul li:nth-child(2n) a img {
+    border-radius: 0 .25em .25em 0;
 }
 
 #portafolio .destacados .proyecto > div {
     cursor: default;
-}
-
-#portafolio .destacados ul li a img {
-    border-radius: .25em;
 }
 
 #portafolio .destacados .proyecto em {
@@ -76,7 +82,7 @@
 
 #portafolio .destacados .proyecto > div {
     flex: 1;
-    padding: 1em;
+    padding: 1.5em;
 }
 
 #portafolio .destacados .proyecto > div ul {
