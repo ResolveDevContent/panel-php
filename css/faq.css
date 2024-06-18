@@ -1,3 +1,12 @@
+#faq > header{
+    position: relative;
+}
+
+#faq > article {
+    position: relative;
+    margin-top: 6em;
+}
+
 #faq > article > ul {
     max-width: 38em;
 }

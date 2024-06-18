@@ -10,6 +10,7 @@
 
     <?php include_once("includes/navbar.php"); ?>
     <section id="faq" class="wrapper d-flex flex-col align-center">
+        <div class="gradient"></div>
         <header class="d-flex align-center text-center">
             <div>
                 <h2>Preguntas más frecuentes</h2>

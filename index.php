@@ -184,8 +184,8 @@
                         <article class="d-flex align-center customer">
                             <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
-                                <em>Jose Luis Mbappe</em>
-                                <span>Verdulero</span>
+                                <em>Ejemplo usuario 1</em>
+                                <span>Ejemplo empresa</span>
                                 <div class="d-flex align-center">
                                     <i class="icon star"></i>
                                     <i class="icon star"></i>
@@ -196,15 +196,15 @@
                             </div>
                         </article>
                         <aside>
-                            <span>Excelente servicio que me han brindado</span>
+                            <span>Ejemplo de reseña</span>
                         </aside>
                     </li>
                     <li class="d-flex flex-col justify-center">
                         <article class="d-flex align-center customer">
                             <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
-                                <em>Pablo Javier Dembele</em>
-                                <span>Kinesiologo</span>
+                                <em>Ejemplo usuario 2</em>
+                                <span>Ejemplo empresa</span>
                                 <div class="d-flex align-center">
                                     <i class="icon star"></i>
                                     <i class="icon star"></i>
@@ -214,15 +214,15 @@
                             </div>
                         </article>
                         <aside>
-                            <span>muy buenos servicio que me han brindado</span>
+                            <span>Ejemplo de reseña</span>
                         </aside>
                     </li>
                     <li class="d-flex flex-col justify-center">
                         <article class="d-flex align-center customer">
                             <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
-                                <em>Carlos Alberto Viatri</em>
-                                <span>Cocinero</span>
+                                <em>Ejemplo usuario 3</em>
+                                <span>Ejemplo empresa</span>
                                 <div class="d-flex align-center">
                                     <i class="icon star"></i>
                                     <i class="icon star"></i>
@@ -231,7 +231,7 @@
                             </div>
                         </article>
                         <aside>
-                            <span>Buenos servicio</span>
+                            <span>Ejemplo de reseña</span>
                         </aside>
                     </li>
                 </ul>

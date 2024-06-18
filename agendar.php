@@ -89,7 +89,7 @@
         <header class="d-flex align-center flex-col text-center gap-5">
             <h2>Agendá una reunión con nosotros</h2>
             <p>
-                Para obtener más información sobre nuestros productos y servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!
+                TEXTO PARA AGENDAR REUNION
             </p>
             <span>CAMBIAR MENSAJE!(La reunión no queda confirmada)</span>
         </header>

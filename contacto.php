@@ -60,7 +60,7 @@
             <header class="d-flex align-center text-center flex-col gap-1">
                 <h2>Contáctate con nosotros</h2>
                 <p>
-                    Para obtener más información sobre nuestros productos y servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!
+                    Para obtener más información sobre nuestros servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!
                 </p>
             </header>
             <article class="d-flex align-start justify-between">
