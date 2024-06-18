@@ -9,44 +9,45 @@
     require "../panel-php/PHPMailer/src/SMTP.php";
 
     if($cotiza) {
-        $msg = `De: $nombre
-                Asunto: Cotización
-                Datos:"
-                Nombre y apellido: $nombre 
-                Teléfono: $telefono
-                Empresa: $empresa
-                Descripcion de empresa: $descripcion
-                Pais: $pais
-                Cotización: $cotizacion
-        `;
+        $msg = "De: $nombre";
+        $msg .= "Asunto: Cotización";
+        $msg .= "Datos:";
+        $msg .= "Nombre y apellido: " . $nombre . "";
+        $msg .= "Teléfono: " . $telefono . "";
+        $msg .= "Empresa: " . $empresa . "";
+        $msg .= "Descripcion de empresa: " . $descripcion . "";
+        $msg .= "Pais: " . $pais . "";
+        $msg .= "Cotización: " . $cotizacion . "";
+        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
     } else if($contacto) {
-        $msg = `De: $nombre $email
-                Asunto: $asunto
-                "Mensaje: $mensaje 
-        `;
+        $msg = "De: $nombre $email";
+        $msg .= "Asunto: $asunto";
+        $msg .= "Mensaje:";
+        $msg .= " . $mensaje . ";
+        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
     } else if($agendar) {
-        $msg = `De: $nombre $email
-                Asunto: Agendar reunion
-                Datos:
-                Nombre y apellido: $nombre
-                Teléfono: $telefono
-                Empresa: " . $empresa
-                Descripcion de empresa: $descripcion
-                Pais: $pais
-                Cotización: $cotizacion
-                Dia: $dia
-                Horario: $horario
-        `;
+        $msg = "De: $nombre $email";
+        $msg .= "Asunto: Agendar reunion";
+        $msg .= "Datos:";
+        $msg .= "Nombre y apellido: " . $nombre . "";
+        $msg .= "Teléfono: " . $telefono . "";
+        $msg .= "Empresa: " . $empresa . "";
+        $msg .= "Descripcion de empresa: " . $descripcion . "";
+        $msg .= "Pais: " . $pais . "";
+        $msg .= "Cotización: " . $cotizacion . "";
+        $msg .= "Dia: " . $dia . "";
+        $msg .= "Horario: " . $horario . "";
+        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
     } else if($unete){
-        $msg = `De: $nombre $email
-                Asunto: Trabajá con nosotros
-                Datos:
-                Nombre y apellido: $nombre
-                Correo electrónico: $email
-                Teléfono: $telefono
-                Pais: $pais
-                Puesto: $puesto
-        `;
+        $msg = "De: $nombre $email";
+        $msg .= "Asunto: Trabajá con nosotros";
+        $msg .= "Datos:";
+        $msg .= "Nombre y apellido: " . $nombre . "";
+        $msg .= "Correo electrónico: " . $email . "";
+        $msg .= "Teléfono: " . $telefono . "";
+        $msg .= "Pais: " . $pais . "";
+        $msg .= "Puesto: " . $puesto . "";
+        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
     }
 
     $mail = new PHPMailer(true);
