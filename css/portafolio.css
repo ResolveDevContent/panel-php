@@ -48,10 +48,6 @@
     transition: all .3s;
 }
 
-#portafolio .destacados ul li:nth-child(2n) article{
-    flex-direction: row-reverse;
-}
-
 #portafolio .destacados .proyecto > a {
     width: 45%;
     max-height: 25em;
@@ -99,7 +95,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 .5em;
 }
 
 #portafolio .destacados ul li:nth-child(2n) .proyecto div {
@@ -155,6 +150,10 @@
     padding: 1em 0;
 }
 
+.listado > div > span {
+    font-size: 1.125em;
+}
+
 .loader {
     width: 3em;
     height: 3em;
@@ -179,5 +178,28 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #portafolio .destacados ul li:nth-child(2n) article{
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .listado ul {
+        grid-template-columns: 1fr;
+    }
+    .destacados .proyecto {
+        flex-direction: column;
+    }
+    #portafolio .destacados .proyecto > a {
+        width: 100%;
+    }
+
+    #portafolio .destacados > ul > li + li {
+        border-top: 2px solid red;
+        padding-top: 4em;
     }
 }
