@@ -38,7 +38,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 2;
+    z-index: 4;
 }
 
 #servicio > article > div > ul {
@@ -52,5 +52,9 @@
     min-width: 100%;
     height: 100%;
     scroll-snap-align: center;
-    z-index: 1;
+}
+
+#servicio > article > div > ul li img {
+    z-index: 2;
+    position: relative;
 }

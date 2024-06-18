@@ -14,7 +14,7 @@
                         <span>No hay proyectos disponibles por el momento</span>
                      </div>';
 
-        $query = "SELECT * FROM proyectos WHERE destacado = 0";
+        $query = "SELECT * FROM proyectos WHERE destacado = 1";
         if($result = mysqli_query($sql, $query)) {
             if(mysqli_num_rows($result) > 0) {
                 $proyectos = '<ul class="gap-1 w-100">';
@@ -23,7 +23,7 @@
                         $proyectos .= "<a href='/proyecto.php?proyectoId=". $row['proyectoId'] ."'>";
                             $proyectos .= '<span class="loader"></span>';
                             $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
-                            $proyectos .= "<p>'". $row['servicio']. "'</p>";
+                            $proyectos .= '<p>'. $row['servicio']. '</p>';
                         $proyectos .= '</a>';
                     $proyectos .= '</li>';
                 }
@@ -44,31 +44,37 @@
                             $destacados .= '</a>';
                             $destacados .= '<div class="d-flex flex-col align-start">';
                                 $destacados .= '<div class="d-flex flex-col align-start">';
-                                    $destacados .= "<em>'". $aRow['nombre'] ."'</em>";
-                                    $destacados .= "<span>'". $aRow['servicio'] ."'</span>";
+                                    $destacados .= '<em>'. $aRow['nombre'] .'</em>';
+                                    $destacados .= '<span>'. $aRow['servicio'] .'</span>';
                                 $destacados .= '</div>';
                                 $destacados .= '<ul class="d-flex align-center gap-5">';
-                                    $destacados .= '<li>';
-                                        $destacados .= '<div class="btn">';
-                                            $destacados .= "<a href='". $aRow['facebook'] ."' target='_blank'>";
-                                                $destacados .= '<i class="icon facebook"></i>';
-                                            $destacados .= '</a>';
-                                        $destacados .= '</div>';
-                                    $destacados .= '</li>';
-                                    $destacados .= '<li>';
-                                        $destacados .= '<div class="btn">';
-                                            $destacados .= "<a href='". $aRow['instagram'] ."' target='_blank'>";
-                                                $destacados .= '<i class="icon instagram"></i>';
-                                            $destacados .= '</a>';
-                                        $destacados .= '</div>';
-                                    $destacados .= '</li>';
-                                    $destacados .= '<li>';
-                                        $destacados .= '<div class="btn">';
-                                            $destacados .= "<a href='". $aRow['website'] ."' target='_blank'>";
-                                                $destacados .= '<i class="icon world"></i>';
-                                            $destacados .= '</a>';
-                                        $destacados .= '</div>';
-                                    $destacados .= '</li>';
+                                    if($aRow['facebook']) {
+                                        $destacados .= '<li>';
+                                            $destacados .= '<div class="btn">';
+                                                $destacados .= "<a href='". $aRow['facebook'] ."' target='_blank'>";
+                                                    $destacados .= '<i class="icon facebook"></i>';
+                                                $destacados .= '</a>';
+                                            $destacados .= '</div>';
+                                        $destacados .= '</li>';
+                                    }
+                                    if($aRow['instagram']) {
+                                        $destacados .= '<li>';
+                                            $destacados .= '<div class="btn">';
+                                                $destacados .= "<a href='". $aRow['instagram'] ."' target='_blank'>";
+                                                    $destacados .= '<i class="icon instagram"></i>';
+                                                $destacados .= '</a>';
+                                            $destacados .= '</div>';
+                                        $destacados .= '</li>';
+                                    }
+                                    if($aRow['website']) {
+                                        $destacados .= '<li>';
+                                            $destacados .= '<div class="btn">';
+                                                $destacados .= "<a href='". $aRow['website'] ."' target='_blank'>";
+                                                    $destacados .= '<i class="icon world"></i>';
+                                                $destacados .= '</a>';
+                                            $destacados .= '</div>';
+                                        $destacados .= '</li>';
+                                    }
                                 $destacados .= '</ul>';
                             $destacados .= '</div>';
                         $destacados .= '</article>';

@@ -119,18 +119,25 @@
         <?php include_once("includes/navbar.php"); ?>
 
         <section id="banner">
-            <div>
+            <div class="d-flex align-center">
                 <aside class="d-flex align-center flex-col justify-around">
                     <?php 
                         echo $redes;
                     ?>
                 </aside>
-                <nav class="nav-arrows d-flex align-center justify-between" data-arrows>
-                    
-                </nav>
-                <?php
-                    echo $proyectoImagenes;
-                ?>
+                <article>
+                    <nav class="nav-arrows d-flex align-center justify-between" data-arrows>
+                    <a href="#" data-arrow="-1" class="d-flex">
+                            <i class="icon arrow-left"></i>
+                        </a>
+                        <a href="#" data-arrow="1" class="d-flex">
+                            <i class="icon arrow-right"></i>
+                        </a>
+                    </nav>
+                    <?php
+                        echo $proyectoImagenes;
+                    ?>
+                </article>
             </div>
         </section>
 
@@ -144,6 +151,6 @@
 
         <?php include_once("includes/footer.php"); ?>
 
-        <script src="js/index.js"></script>
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>

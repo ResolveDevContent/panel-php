@@ -3,7 +3,6 @@
 }
 
 #portafolio .destacados {
-    background-color: var(--color7);
     width: 100%;
     border-radius: 1em;
     padding: 2em;
@@ -21,10 +20,14 @@
 }
 
 #portafolio .destacados > ul {
-    margin-top: 4em;
+    margin-top: 2em;
 }
 
-#portafolio .destacados > ul > li,
+#portafolio .destacados > ul > li {
+    border-radius: .25em;
+    background-color: var(--color7);
+}
+
 #portafolio .destacados ul li a img {
     border-radius: .25em 0 0 .25em;
 }
@@ -34,7 +37,6 @@
 }
 
 #portafolio .destacados > ul > li:hover {
-    background-color: #424242;
     box-shadow: 0px 0px 10px 3px #ffffff30;
     transition: all .3s;
 }
@@ -45,6 +47,7 @@
 
 #portafolio img {
     z-index: 2;
+    position: relative;
 }
 
 #portafolio .destacados > ul > li:hover .proyecto img {
@@ -60,14 +63,19 @@
     position: relative;
 }
 
-#portafolio .destacados > ul > li:nth-child(2n),
 #portafolio .destacados ul li:nth-child(2n) .proyecto > a,
 #portafolio .destacados ul li:nth-child(2n) a img {
     border-radius: 0 .25em .25em 0;
 }
 
+#portafolio .destacados > ul > li:nth-child(2n) .proyecto > div {
+    border-radius: .25em 0 0 .25em;
+    align-items: end;
+}
+
 #portafolio .destacados .proyecto > div {
     cursor: default;
+    border-radius: 0 .25em .25em 0;
 }
 
 #portafolio .destacados .proyecto em {
@@ -102,11 +110,6 @@
     justify-content: center;
 }
 
-#portafolio .destacados ul li:nth-child(2n) .proyecto div {
-    align-items: end;
-}
-
-
 #portafolio .destacados ul li div span {
     margin-top: 1em;
 }
@@ -118,6 +121,7 @@
 .listado ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 2em;
 }
 
 .listado ul li {
@@ -126,6 +130,7 @@
     text-align: center;
     position: relative;
     display: flex;
+    overflow: hidden;
 }
 
 .listado ul li:nth-child(2n) {
@@ -137,6 +142,8 @@
     flex: 1;
     aspect-ratio: auto;
     position: relative;
+    background-color: var(--color7);
+    border-radius: .25em;
 }
 
 .listado ul li img {
@@ -144,16 +151,32 @@
 }
 
 .listado ul li p {
-    font-size: .75em;
+    font-size: 1.25em;
     position: absolute;
     right: 0;
     left: 0;
     bottom: 0;
-    margin-bottom: 1em;
-    background-color: var(--color5);
-    color: #000;
+    top: 0;
+    color: #fff;
     font-weight: 700;
-    padding: 1em 0;
+    background-color: #31313190;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listado ul li:hover img {
+    transform: scale(1.125);
+    transition: all .3s;
+}
+
+.listado ul li:hover p {
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s;
+    z-index: 4;
 }
 
 .listado > div > span {

@@ -40,41 +40,41 @@
                 header("location: 404page.php");
             }
 
-            // $query = "SELECT * FROM proyectos WHERE servicioId = ?";
+            $query = "SELECT * FROM proyectos WHERE servicioId = ?";
 
-            // if($stmt = mysqli_prepare($sql, $query)) {
-            //     mysqli_stmt_bind_param($stmt, "i", $param);
+            if($stmt = mysqli_prepare($sql, $query)) {
+                mysqli_stmt_bind_param($stmt, "i", $param);
     
-            //     $param = $_GET["servicioId"];
+                $param = $_GET["servicioId"];
     
-            //     if(mysqli_stmt_execute($stmt)) {
-            //         $result = mysqli_stmt_get_result($stmt);
+                if(mysqli_stmt_execute($stmt)) {
+                    $result = mysqli_stmt_get_result($stmt);
     
-            //         if($result) {
-            //             if(mysqli_num_rows($result) > 0) {
-                            // $mockups = '<div class="mockups">';
-                //                 $mockups .= '<img src="images/mockup.png" alt="">';
-                //                 $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
-                //                     $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
-                //                         $mockups .= '<i class="icon arrow-left"></i>';
-                //                     $mockups .= '</a>';
-                //                     $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
-                //                         $mockups .= '<i class="icon arrow-right"></i>';
-                //                     $mockups .= '</a>';
-                //                 $mockups .= '</nav>';
-                //                 $mockups .= '<ul class="d-flex align-center" data-scrollable>';
-                //                     while($row = mysqli_fetch_array($result)){
-                //                         $mockups .= '<li>';
-                //                             $mockups .= '<span class="loader"></span>';
-                //                             $mockups .= "<img src='". $row['portada'] ."' alt=''>";
-                //                         $mockups .= '</li>';
-                //                     }
-                //                 $mockups .= '</ul>';
-                            // $mockups .= '</div>';
-            //             }
-            //         }
-            //     }
-            // }
+                    if($result) {
+                        if(mysqli_num_rows($result) > 0) {
+                            $mockups = '<div class="mockups">';
+                                $mockups .= '<img src="images/mockup.png" alt="">';
+                                $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
+                                    $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
+                                        $mockups .= '<i class="icon arrow-left"></i>';
+                                    $mockups .= '</a>';
+                                    $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
+                                        $mockups .= '<i class="icon arrow-right"></i>';
+                                    $mockups .= '</a>';
+                                $mockups .= '</nav>';
+                                $mockups .= '<ul class="d-flex align-center" data-scrollable>';
+                                    while($row = mysqli_fetch_array($result)){
+                                        $mockups .= '<li>';
+                                            $mockups .= '<span class="loader"></span>';
+                                            $mockups .= "<img src='". $row['portada'] ."' alt=''>";
+                                        $mockups .= '</li>';
+                                    }
+                                $mockups .= '</ul>';
+                            $mockups .= '</div>';
+                        }
+                    }
+                }
+            }
         } else {
             header("location: 404page.php");
         }
@@ -101,6 +101,6 @@
 
         <?php include_once("includes/footer.php"); ?>
 
-        <script src="js/index.js"></script>
+        <script type="module" src="js/index.js"></script>
     </body>
 </html>
