@@ -43,6 +43,10 @@
     overflow: hidden;
 }
 
+#portafolio img {
+    z-index: 2;
+}
+
 #portafolio .destacados > ul > li:hover .proyecto img {
     transform: scale(1.125);
     transition: all .3s;
@@ -53,6 +57,7 @@
     max-height: 25em;
     min-height: 20em;
     border-radius: .25em 0 0 .25em;
+    position: relative;
 }
 
 #portafolio .destacados > ul > li:nth-child(2n),
@@ -131,6 +136,7 @@
     overflow: hidden;
     flex: 1;
     aspect-ratio: auto;
+    position: relative;
 }
 
 .listado ul li img {
@@ -163,7 +169,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    z-index: -1;
+    z-index: 1;
     border: .3125em solid #C4C0B5;
     border-bottom-color: transparent;
     border-radius: 50%;
