@@ -53,7 +53,8 @@
                     if($result) {
                         if(mysqli_num_rows($result) > 0) {
                             $mockups = '<div class="mockups">';
-                                $mockups .= '<img src="images/mockup.png" alt="">';
+                                $mockups .= '<img class="tablet" src="images/mockup.png" alt="">';
+                                $mockups .= '<img class="phone" src="images/mockup-phone.png" alt="">';
                                 $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
                                     $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
                                         $mockups .= '<i class="icon arrow-left"></i>';

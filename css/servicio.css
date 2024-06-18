@@ -27,9 +27,6 @@
 
 #servicio > article .mockups {
     position: relative;
-    min-height: 33em;
-    height: 33em;
-    max-width: 40em;
 }
 
 #servicio > article > div > img {
@@ -57,4 +54,39 @@
 #servicio > article > div > ul li img {
     z-index: 2;
     position: relative;
+}
+
+@media screen and (min-width: 960px) {
+    #servicio .mockups .phone {
+        display: none;
+    }
+
+    #servicio > article .mockups {
+        min-height: 33em;
+        height: 33em;
+        max-width: 40em;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    #servicio > aside {
+        width: 100%;
+    }
+
+    #servicio > aside span {
+        font-size: 1.25em;
+    }
+
+    #servicio > article strong {
+        font-size: 2em;
+    }
+
+    #servicio .mockups .tablet {
+        display: none;
+    }
+
+    #servicio > article .mockups {
+        min-height: 37em;
+        height: 37em;
+    }
 }

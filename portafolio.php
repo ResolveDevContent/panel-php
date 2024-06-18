@@ -42,7 +42,7 @@
                                 $destacados .= "<span class='loader'></span>";
                                 $destacados .= "<img src='". $aRow['portada'] ."' alt=''>";
                             $destacados .= '</a>';
-                            $destacados .= '<div class="d-flex flex-col align-start">';
+                            $destacados .= '<div class="d-flex flex-col align-start justify-between">';
                                 $destacados .= '<div class="d-flex flex-col align-start">';
                                     $destacados .= '<em>'. $aRow['nombre'] .'</em>';
                                     $destacados .= '<span>'. $aRow['servicio'] .'</span>';
@@ -93,14 +93,14 @@
                 <header class="d-flex flex-col align-center justify-center">
                     <h2>Protafolio</h2>
                 </header>
-                <div class="destacados d-flex flex-col align-center text-center">
+                <div class="destacados d-flex flex-col align-center text-center w-100">
                     <em>Proyectos destacados</em>
                     <p>Todos nuestros proyectos son importantes pero aqu&iacute; estan los mas destacados</p>
                     <?php 
                         echo $destacados;
                     ?>
                 </div>
-                <div class="listado">
+                <div class="listado w-100">
                     <header class="text-center">
                         <em>Proyectos</em>
                         <p>Aqu&iacute; podra encontrar todos nuestros trabajos</p>
