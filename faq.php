@@ -17,7 +17,7 @@
                 <span>Estas son las preguntas que mas nos suelen hacer, si tenes alguna otra no dudes en contactarnos perreque.</span>
             </div>
             <aside>
-                <img src="/panel-php/gifs/faq.gif" alt="">
+                <img src="/gifs/faq.gif" alt="">
             </aside>
         </header>
         <article>

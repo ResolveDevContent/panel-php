@@ -74,7 +74,7 @@
             $cotiza = false;
             $unete = true;
             $contacto = false;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "../utils/mailer.php"; 
             $respuestaMsg = $respuesta;
         }
     }
@@ -99,7 +99,7 @@
                     <span>Porque trabajar con nosotros, es lo mejor que te puede pasar. Asi que inscribite a nuestros puestos laborales pedazo de wachin.</span>
                 </div>
                 <aside>
-                    <img src="/panel-php/gifs/unete.gif" alt="">
+                    <img src="/gifs/unete.gif" alt="">
                 </aside>
             </header>
             <div class="beneficios d-flex flex-col align-center gap-1">

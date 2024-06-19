@@ -1,17 +1,17 @@
 <nav id="navbar" class="d-flex align-center justify-between">
     <div class="logo">
-        <a href="/panel-php/index.php">
+        <a href="/index.php">
             <img src="" alt="">
         </a>
     </div>
     <div class="d-flex align-center">
         <ul class="navbar-list d-flex align-center gap-1">
-            <li class="navbar-items"><a href="/panel-php/nosotros.php">Sobre Nosotros</a></li>
-            <li class="navbar-items"><a href="/panel-php/index.php#servicios">Servicios</a></li>
-            <li class="navbar-items"><a href="/panel-php/portafolio.php">Portafolio</a></li>
+            <li class="navbar-items"><a href="/nosotros.php">Sobre Nosotros</a></li>
+            <li class="navbar-items"><a href="/index.php#servicios">Servicios</a></li>
+            <li class="navbar-items"><a href="/portafolio.php">Portafolio</a></li>
         </ul>
         <div class='buttons'>
-            <a href="/panel-php/contacto.php">Contacto</a>
+            <a href="/contacto.php">Contacto</a>
         </div>
     </div>
 
@@ -30,19 +30,19 @@
                     </label>
                 </li>
                 <li>
-                    <a href="/panel-php/index.php">Inicio</a>
+                    <a href="/index.php">Inicio</a>
                 </li>
                 <li>
-                    <a href="/panel-php/nosotros.php">Sobre Nosotros</a>
+                    <a href="/nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li>
-                    <a href="/panel-php/index.php#servicios">Servicios</a>
+                    <a href="/index.php#servicios">Servicios</a>
                 </li>
                 <li>
-                    <a href="/panel-php/portafolio.php">Portafolio</a>
+                    <a href="/portafolio.php">Portafolio</a>
                 </li>
                 <li>
-                    <a href="/panel-php/contacto.php">Contacto</a>
+                    <a href="/contacto.php">Contacto</a>
                 </li>
             </ul>
         </article>

@@ -40,7 +40,7 @@
             $cotiza = false;
             $unete = false;
             $contacto = true;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "../utils/mailer.php"; 
             $respuestaMsg = $respuesta;
         }
     }

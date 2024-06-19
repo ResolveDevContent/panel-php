@@ -1,7 +1,7 @@
 <section id='floating-footer'>
     <ul>
         <li class="agendar">
-            <a href="/panel-php/agendar.php">
+            <a href="/agendar.php">
                 <span>Agendá una reunión</span>
                 <i class="icon agendar"></i>
             </a>
@@ -67,19 +67,19 @@
             <em>Empresa</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/panel-php/nosotros.php">Sobre Nosotros</a>
+                    <a href="/nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li>
-                    <a href="/panel-php/index.php#servicios">Servicios</a>
+                    <a href="/index.php#servicios">Servicios</a>
                 </li>
                 <li>
-                    <a href="/panel-php/portafolio.php">Portafolio</a>
+                    <a href="/portafolio.php">Portafolio</a>
                 </li>
                 <li>
-                    <a href="/panel-php/unete.php">Trabaja con Nosotros</a>
+                    <a href="/unete.php">Trabaja con Nosotros</a>
                 </li>
                 <li>
-                    <a href="/panel-php/contacto.php">Contacto</a>
+                    <a href="/contacto.php">Contacto</a>
                 </li>
             </ul>
         </li>
@@ -87,10 +87,10 @@
             <em>Comencemos</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/panel-php/index.php#cotiza">Cotiza</a>
+                    <a href="/index.php#cotiza">Cotiza</a>
                 </li>
                 <li>
-                    <a href="/panel-php/agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
+                    <a href="/agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
                 </li>
             </ul>
         </li>
@@ -98,10 +98,10 @@
             <em>Ayuda</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/panel-php/index.php#reviews">Testimonios</a>
+                    <a href="/index.php#reviews">Testimonios</a>
                 </li>
                 <li>
-                    <a href="/panel-php/faq.php">Preguntas Frecuentes</a>
+                    <a href="/faq.php">Preguntas Frecuentes</a>
                 </li>
             </ul>
         </li>

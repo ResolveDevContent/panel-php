@@ -69,7 +69,7 @@
             $cotiza = false;
             $unete = false;
             $contacto = false;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "../utils/mailer.php"; 
             $respuestaMsg = $respuesta;
         }
     }
