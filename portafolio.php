@@ -23,7 +23,8 @@
                         $proyectos .= "<a href='/proyecto.php?proyectoId=". $row['proyectoId'] ."'>";
                             $proyectos .= '<span class="loader"></span>';
                             $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
-                            $proyectos .= '<p>'. $row['servicio']. '</p>';
+                            $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
+                            $proyectos .= $row['servicio']. '</span>';
                         $proyectos .= '</a>';
                     $proyectos .= '</li>';
                 }

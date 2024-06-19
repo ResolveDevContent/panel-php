@@ -54,9 +54,6 @@
 }
 
 #portafolio .destacados .proyecto > a {
-    width: 45%;
-    max-height: 25em;
-    min-height: 20em;
     border-radius: .25em 0 0 .25em;
     position: relative;
 }
@@ -151,21 +148,25 @@
     border-radius: .25em;
 }
 
-.listado ul li p {
-    font-size: 1.25em;
+.listado ul li .prod {
     position: absolute;
     right: 0;
     left: 0;
-    bottom: 0;
     top: 0;
+    bottom: 0;
     color: #fff;
     font-weight: 700;
-    background-color: #31313190;
-    opacity: 0;
-    visibility: hidden;
+    background-color: #31313180;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.listado ul li .prod span {
+    font-size: 1.325em;
+    color: var(--color5);
 }
 
 .listado ul li:hover img {
@@ -173,7 +174,7 @@
     transition: all .3s;
 }
 
-.listado ul li:hover p {
+.listado ul li:hover .prod {
     opacity: 1;
     visibility: visible;
     transition: all .3s;
@@ -220,6 +221,16 @@
         transform: translateY(75px);
     }
     
+    #portafolio .destacados .proyecto > a {
+        width: 45%;
+        height: 25em;
+        min-height: 25em;
+    }
+
+    .listado ul li .prod {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 @media screen and (max-width: 959px) {
@@ -233,8 +244,8 @@
 
     #portafolio .destacados .proyecto > a {
         width: 100%;
-        min-height: 10em;
-        max-height: 20em;
+        min-height: 15em;
+        height: 25em;
     }
 
     #portafolio .destacados .proyecto em {
@@ -257,5 +268,9 @@
 
     .listado ul li + li {
         margin-top: 1em;
+    }
+
+    .listado ul li .prod {
+        font-size: 1.125em;
     }
 }
