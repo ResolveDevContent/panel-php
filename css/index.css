@@ -182,22 +182,24 @@ h4 {
 #reviews > ul {
     width: 100%;
     margin-top: 2em;
+    overflow-y: auto;
+    scroll-snap-type: x mandatory;
 }
 
 #reviews > ul > li {
-    width: 20em;
-    min-width: 20em;
+    width: 23em;
+    min-width: 23em;
     min-height: 14em;
     height: 14em;
-    border: 1px solid black;
     padding: 1em;
     background-color: #494949;
     border-radius: .5em;
+    scroll-snap-align: center;
 }
 
 #reviews .customer > img {
-    width: 4em;
-    height: 4em;
+    width: 5em;
+    height: 5em;
     border: 1px solid black;
     border-radius: 50%;
 }
@@ -208,6 +210,12 @@ h4 {
 
 #reviews .customer > div em {
     font-weight: 700;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    line-height: 1em;
 }
 
 #reviews .customer > div div {

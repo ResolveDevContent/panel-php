@@ -7,6 +7,7 @@
         require_once "config.php";
         
         $proyectoImagenes = '';
+        $arrows = '';
         $redes = '<em class="vertical-text">Resultados del proyecto</em>';
         $servicio = '<div class="d-flex flex-col align-center justify-center empty-state">
                         <span>La informaci&oacute;n no se encuntra disponible</span>
@@ -33,7 +34,6 @@
                                         </header>
                                         <div class="d-flex flex-col align-center text-center">
                                             <em>'. $row['descripcion'] .'</em>
-                                            <span></span>
                                             <div class="d-flex align-center gap-5">
                                                 <i class="icon mail"></i>
                                                 <span>'. $row['email'] .'</span>
@@ -85,7 +85,7 @@
                 header("location: 404page.php");
             }
 
-            // $query = "SELECT * FROM imagenesProyuectos WHERE proyectoId = ?";
+            // $query = "SELECT * FROM imagenesProyectos WHERE proyectoId = ?";
 
             // if($stmt = mysqli_prepare($sql, $query)) {
             //     mysqli_stmt_bind_param($stmt, "i", $param);
@@ -97,6 +97,16 @@
     
             //         if($result) {
             //             if(mysqli_num_rows($result) > 0) {
+                        // $arrows = `<nav class="nav-arrows d-flex align-center justify-between" data-arrows>
+                        //                 <a href="#" data-arrow="-1" class="d-flex">
+                        //                     <i class="icon arrow-left"></i>
+                        //                 </a>
+                        //                 <a href="#" data-arrow="1" class="d-flex">
+                        //                     <i class="icon arrow-right"></i>
+                        //                 </a>
+                        //             </nav>`;
+                        // $arrows .= $proyectoImagenes;
+                        // $proyectoImagenes = $arrows;
             //                 while($row = mysqli_fetch_array($result)){
             //                     $proyectoImagenes .= '<li>';
             //                         $proyectoImagenes .= '<span class="loader"></span>';
@@ -126,14 +136,6 @@
                     ?>
                 </aside>
                 <article>
-                    <nav class="nav-arrows d-flex align-center justify-between" data-arrows>
-                    <a href="#" data-arrow="-1" class="d-flex">
-                            <i class="icon arrow-left"></i>
-                        </a>
-                        <a href="#" data-arrow="1" class="d-flex">
-                            <i class="icon arrow-right"></i>
-                        </a>
-                    </nav>
                     <?php
                         echo $proyectoImagenes;
                     ?>

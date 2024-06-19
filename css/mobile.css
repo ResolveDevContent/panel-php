@@ -4,6 +4,10 @@ body {
     font-size: 3.5vw;
 }
 
+span {
+    font-size: 1.25em!important;
+}
+
 .wrapper {
     margin-inline: 2em;
     margin-block: 8em;
@@ -226,10 +230,6 @@ body {
 
 /* INDEX ----------------------------------------------------------------------- */
 
-section > header > span {
-    font-size: 1.2em;
-}
-
 #sobre-nosotros {
     flex-direction: column;
     align-items: center;
@@ -244,14 +244,6 @@ section > header > span {
     font-size: 1.75em;
 }
 
-#sobre-nosotros article div span,
-#sobre-nosotros article div div span,
-#valores > ul li div span,
-#equipo span,
-#join span {
-    font-size: 1.2em;
-}
-
 #sobre-nosotros article div span.highlight,
 #sobre-nosotros article div div span.highlight,
 #valores > ul li div span.highlight,
@@ -264,6 +256,11 @@ section > header > span {
     overflow-y: hidden;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+}
+
+.tabs .active {
+    border: none;
+    border-bottom: 4px solid var(--color5);
 }
 
 #servicios .tabs > li {
@@ -286,17 +283,29 @@ section > header > span {
 
 #reviews {
     width: 100%;
+    margin-top: 5em;
 }
 
 #reviews > header {
     text-align: center;
+    flex-direction: column;
+}
+
+#reviews > header > aside {
+    height: 100%;
+    width: 100%;
+    margin-top: 1em;
 }
 
 #reviews > ul > li {
     width: 100%;
-    height: 100%;
+    height: 17em;
     min-width: 100%;
-    min-height: 100%;
+    min-height: 17em;
+}
+
+#reviews .customer > div em {
+    font-size: 1.5em;
 }
 
 #cotiza > div {
@@ -309,6 +318,10 @@ section > header > span {
 
 #cotiza .ul-form > li > ul > li label {
     display: block;
+    width: 100%;
+}
+
+#cotiza > div > article {
     width: 100%;
 }
 
@@ -415,7 +428,57 @@ section > header > span {
     font-size: 1em;
 }
 
+/* PROYECTO ---------------------------------------------------------------------- */
+
+#banner div {
+    flex-direction: column-reverse;
+}
+
+#banner div aside {
+    flex-direction: row;
+    height: max-content;
+    width: 100%;
+    padding: 2em;
+    justify-content: space-between;
+}
+
+#banner .vertical-text {
+    transform: rotate(0deg);
+    writing-mode: unset;
+    font-size: 1.25em;
+}
+
+#banner div aside a i {
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+}
+
+#banner div aside ul {
+    flex-direction: row;
+}
+
+#banner > div article > ul {
+    height: 90vh;
+}
+
+#proyecto em {
+    font-size: 1.75em;
+}
+
+#proyecto div div i {
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+}
+
 /* FOOTER ---------------------------------------------------------------------- */
+
+#footer svg {
+    top: -6em;
+}
 
 #footer > ul,
 #footer > header > div > ul,
@@ -451,7 +514,6 @@ section > header > span {
     font-size: 2em;
 }
 
-#footer > ul > li > span,
 #footer > ul > li a {
     font-size: 1.25em;
 }
@@ -461,8 +523,4 @@ section > header > span {
     min-width: 3em;
     height: 3em;
     min-height: 3em;
-}
-
-#footer .contacto li span {
-    font-size: 1.325em;
 }

@@ -170,7 +170,7 @@
             <?php endif ?>
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
-                <header class="d-flex align-center justify-center">
+                <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col">
                         <h4>Ellos nos recomiendan</h4>
                         <span>Nuestros clientes satisfechos nos califican</span>
@@ -179,8 +179,8 @@
                         <img src="/panel-php/gifs/reviews.gif" alt="">
                     </aside>
                 </header>
-                <ul class="d-flex align-center justify-center gap-1">
-                    <li class="d-flex flex-col justify-center">
+                <ul class="d-flex align-center justify-start gap-1">
+                    <li class="d-flex flex-col justify-start">
                         <article class="d-flex align-center customer">
                             <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
@@ -199,7 +199,7 @@
                             <span>Ejemplo de reseña</span>
                         </aside>
                     </li>
-                    <li class="d-flex flex-col justify-center">
+                    <li class="d-flex flex-col justify-start">
                         <article class="d-flex align-center customer">
                             <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
@@ -217,7 +217,7 @@
                             <span>Ejemplo de reseña</span>
                         </aside>
                     </li>
-                    <li class="d-flex flex-col justify-center">
+                    <li class="d-flex flex-col justify-start">
                         <article class="d-flex align-center customer">
                             <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">

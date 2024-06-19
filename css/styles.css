@@ -126,6 +126,11 @@ video {
 
 .empty-state {
     margin-top: 2em;
+    width: 100%;
+    border-radius: .5em;
+    background-color: var(--color7);
+    padding: 2em;
+    text-align: center;
 }
 
 .empty-state span {
