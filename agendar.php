@@ -88,7 +88,8 @@
     <section id="agendar" class="wrapper">
         <header class="d-flex align-center flex-col text-center gap-5">
             <h2>Agendá una reunión con nosotros</h2>
-            <span>CAMBIAR MENSAJE!(La reunión no queda confirmada)</span>
+            <span>¡Nos encantaría conocerte! Selecciona una fecha y hora que te convengan para agendar una reunión con nuestro equipo. Estamos aquí para escuchar tus necesidades y ofrecerte las mejores soluciones. ¡Esperamos conversar contigo pronto!</span>
+            <span>(Cabe aclarar que al enviar el formulario la reuni&oacute;n no queda confirmada. Pronto se le confirmar&aacute; mediante WhatsApp.)</span>
         </header>
         <article class="d-flex align-start justify-between">
             <form data-form class="d-flex flex-col align-center gap-1 w-100" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

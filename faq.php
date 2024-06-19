@@ -14,7 +14,7 @@
         <header class="d-flex align-center text-center">
             <div>
                 <h2>Preguntas más frecuentes</h2>
-                <span>Estas son las preguntas que mas nos suelen hacer, si tenes alguna otra no dudes en contactarnos perreque.</span>
+                <span>Aquí encontrarás respuestas a las consultas más comunes sobre nuestros servicios y políticas. Si no encuentras lo que buscas, no dudes en contactarnos. ¡Estamos aquí para ayudarte!</span>
             </div>
             <aside>
                 <img src="/gifs/faq.gif" alt="">
