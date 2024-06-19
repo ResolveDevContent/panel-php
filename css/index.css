@@ -76,6 +76,11 @@ h4 {
     margin-top: 1em;
 }
 
+#sobre-nosotros > article > div > div svg {
+    width: 2em;
+    height: 2em;
+}
+
 /* SERVICIOS --------------------------------------------------------------------------*/
 
 .tabs-container {
@@ -225,9 +230,14 @@ h4 {
     font-size: .9em;
 }
 
-#reviews > ul > li div > i {
+/* #reviews > ul > li div > i {
     margin: 0 .125em;
     background-color: yellow;
+} */
+
+#reviews > ul > li div > svg {
+    margin: 0 .125em;
+    fill: yellow;
 }
 
 #reviews > ul > li > aside {

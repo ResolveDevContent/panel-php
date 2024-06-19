@@ -26,7 +26,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Qué servicios ofrece Red Limit?
                         </summary>
@@ -48,7 +49,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Cómo puedo solicitar una cotización?
                         </summary>
@@ -61,7 +63,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Trabajan con empresas internacionales?
                         </summary>
@@ -74,7 +77,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Cuál es el tiempo de entrega promedio para un proyecto?
                         </summary>
@@ -87,7 +91,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Cómo se gestionan los pagos?
                         </summary>
@@ -100,7 +105,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Ofrecen servicios personalizados?
                         </summary>
@@ -113,7 +119,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Cómo puedo agendar una reunión?
                         </summary>
@@ -126,7 +133,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Qué diferencia a Red Limit de otras agencias de marketing digital?
                         </summary>
@@ -139,7 +147,8 @@
                     <details>
                         <summary class="d-flex align-center justify-start gap-5">
                             <div class="summary-arrow">
-                                <i class="icon arrow-right"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+                                <!-- <i class="icon arrow-right"></i> -->
                             </div>
                             ¿Puedo ver ejemplos de trabajos anteriores?
                         </summary>

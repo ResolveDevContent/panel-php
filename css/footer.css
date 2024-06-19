@@ -42,12 +42,20 @@
     border: 0.325em solid var(--color5);
 }
 
-#floating-footer ul li a i {
+/* #floating-footer ul li a i {
     width: 2em;
     min-width: 2em;
     height: 2em;
     min-height: 2em;
     background-color: white;
+} */
+
+#floating-footer ul li a svg {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    min-height: 2em;
+    fill: white;
 }
 
 #floating-footer ul li a span {
@@ -100,8 +108,14 @@
     font-size: 2em;
 }
 
-#footer > header > div > ul > li > a i {
+/* #footer > header > div > ul > li > a i {
     background-color: #fff;
+} */
+
+#footer > header > div > ul > li > a svg {
+    fill: #fff;
+    width: 2em;
+    height: 2em;
 }
 
 #footer > div {
@@ -170,8 +184,12 @@
     color: #fff;
 }
 
-#footer .contacto > li > i {
+/* #footer .contacto > li > i {
     background-color: white;
+} */
+
+#footer .contacto > li > svg{
+    fill: white;
 }
 
 #footer > svg {
