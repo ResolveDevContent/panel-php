@@ -1,5 +1,9 @@
-#faq > header{
+#faq > header {
     position: relative;
+}
+
+#faq > header span{
+    color: #9f9f9f;
 }
 
 #faq > article {

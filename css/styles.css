@@ -297,7 +297,6 @@ video {
     position: absolute;
     top: 0;
 	width: 100%;
-	height: 100vh;
 	background: linear-gradient(334deg, var(--color5), var(--color6), var(--color4));
 	background-size: 180% 180%;
 	animation: gradient-animation 6s ease infinite;
@@ -328,4 +327,11 @@ video {
     to {
         transform: translateX(0em);
     }
+}
+
+@media screen and (min-width: 960px) {
+
+.gradient {
+	height: 100vh;
+}
 }

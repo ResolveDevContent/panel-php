@@ -88,9 +88,6 @@
     <section id="agendar" class="wrapper">
         <header class="d-flex align-center flex-col text-center gap-5">
             <h2>Agendá una reunión con nosotros</h2>
-            <p>
-                TEXTO PARA AGENDAR REUNION
-            </p>
             <span>CAMBIAR MENSAJE!(La reunión no queda confirmada)</span>
         </header>
         <article class="d-flex align-start justify-between">

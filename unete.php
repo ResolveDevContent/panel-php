@@ -96,7 +96,7 @@
             <header class="d-flex align-center text-center gap-1">
                 <div>
                     <h2>Trabajá con nosotros</h2>
-                    <p>Porque trabajar con nosotros, es lo mejor que te puede pasar. Asi que inscribite a nuestros puestos laborales pedazo de wachin.</p>
+                    <span>Porque trabajar con nosotros, es lo mejor que te puede pasar. Asi que inscribite a nuestros puestos laborales pedazo de wachin.</span>
                 </div>
                 <aside>
                     <img src="/panel-php/gifs/unete.gif" alt="">

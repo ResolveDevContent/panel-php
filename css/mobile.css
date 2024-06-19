@@ -5,7 +5,11 @@ body {
 }
 
 span {
-    font-size: 1.25em!important;
+    font-size: 1.325em!important;
+}
+
+h2 {
+    font-size: 3.25em;
 }
 
 .wrapper {
@@ -14,16 +18,18 @@ span {
 }
 
 .btn > button,
-.btn > a {
+.btn > a,
+textarea,
+.input select {
     font-size: 1.125em;
 }
 
 .input label {
-    font-size: 1.25em;
+    font-size: 1.325em;
 }
 
-.input select {
-    font-size: 1.125em;
+.gradient {
+    height: 40vh;
 }
 
 /* NAVBAR -------------------------------------------------------- */
@@ -231,24 +237,39 @@ span {
 /* INDEX ----------------------------------------------------------------------- */
 
 #sobre-nosotros {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
+}
+
+#sobre-nosotros aside {
+    width: 100%;
+}
+
+#sobre-nosotros article {
+    margin-top: 2em;
 }
 
 #sobre-nosotros article > div > div {
     flex-direction: column;
 }
 
+#sobre-nosotros article > div > div i {
+    width: 3em;
+    min-width: 3em;
+    height: 3em;
+    min-height: 3em;
+}
+
 #valores > ul li div em,
 #join em {
-    font-size: 1.75em;
+    font-size: 2em;
 }
 
 #sobre-nosotros article div span.highlight,
 #sobre-nosotros article div div span.highlight,
 #valores > ul li div span.highlight,
 #equipo span.highlight {
-    font-size: 1em;
+    font-size: 1em!important;
 }
 
 #servicios .tabs {
@@ -258,9 +279,11 @@ span {
     scroll-snap-type: x mandatory;
 }
 
-.tabs .active {
+.tabs .active,
+.tabs .active:hover {
     border: none;
     border-bottom: 4px solid var(--color5);
+    font-size: 1.325em;
 }
 
 #servicios .tabs > li {
@@ -277,8 +300,19 @@ span {
     height: 33.125em;
 }
 
+#servicios .tab-content-wrapper em {
+    font-size: 1.75em;
+}
+
 #servicios .tabs-container .tab-content-wrapper .tab-content {
     height: 33.125em;
+}
+
+#servicios .tab-content-wrapper img {
+    width: 14em;
+    min-width: 14em;
+    height: 14em;
+    min-height: 14em;
 }
 
 #reviews {
@@ -363,6 +397,10 @@ span {
     width: 100%;
 }
 
+#contacto > header p {
+    font-size: 1.325em;
+}
+
 #contacto .item > div > ul i {
     width: 3.5em;
     min-width: 3.5em;
@@ -391,6 +429,10 @@ span {
     width: 100%;
 }
 
+#unete .beneficios strong {
+    font-size: 2em;
+}
+
 #unete .beneficios > ul {
     flex-direction: column;
     width: 100%;
@@ -412,20 +454,32 @@ span {
 /* NOSOTROS -------------------------------------------------------------------- */
 
 #valores > ul,
-#valores > ul > li,
+#valores > ul > li {
+    flex-direction: column;
+    align-items: start;
+}
+
 #valores > ul li.right {
     flex-direction: column;
-    align-items: center;
+    align-items: end;
+}
+
+#valores > ul li div {
+    margin-top: 1em;
 }
 
 #valores > ul > li {
     width: 100%;
 }
 
+.nosotros > article {
+    width: 100%;
+}
+
 /* FAQ ---------------------------------------------------------------------- */
 
-#faq details > summary {
-    font-size: 1em;
+#faq > article {
+    margin-top: 5em;
 }
 
 /* PROYECTO ---------------------------------------------------------------------- */

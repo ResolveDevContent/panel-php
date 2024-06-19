@@ -81,9 +81,9 @@
                             $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
                         $servicios .= '</li>';
                         
-                        $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content'>";
+                        $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content text-center'>";
                             $introduccion .= '<em>' .$row['nombre'] .'</em>';
-                            $introduccion .= '<p>' .$row['introduccion'] .'</p>';
+                            $introduccion .= '<span>' .$row['introduccion'] .'</span>';
                             $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
                             $introduccion .= '<div class="btn">';
                                 $introduccion .= "<a href='/servicio.php?servicioId=". $row['servicioId'] ."'>Ver m&aacute;s</a>";
@@ -142,7 +142,7 @@
                         </span>
                         <br>
                         <div class="d-flex align-center gap-1">
-                            <p>Nos encontramos en</p>
+                            <span>Nos encontramos en</span>
                             <div class="d-flex align-center justifi-center gap-1">
                                 <i class="argentina"></i>
                                 <i class="mexico"></i>
@@ -157,9 +157,10 @@
             </section>
     
             <?php if($servicios) : ?>
-                <section id="servicios" class="d-flex flex-col align-center">
+                <section id="servicios" class="d-flex flex-col align-center text-center">
                     <header>
                         <h4>Servicios</h4>
+                        <span>Desliz&aacute; para ver todos nuestros servicios</span>
                     </header>
                     <article class="d-flex w-100">
                         <?php

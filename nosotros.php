@@ -10,7 +10,7 @@
     <?php include_once("includes/navbar.php"); ?>
     
     <main class="wrapper d-flex flex-col">
-        <section class="d-flex align-center nosotros">
+        <section id="sobre-nosotros" class="d-flex align-center nosotros">
             <article>
                 <h2>Sobre nosotros</h2>
                 <span>¿Qui&eacute;nes somos?</span>
@@ -22,8 +22,10 @@
                     <br>
                     <div class="d-flex align-center gap-1">
                         <span>Nos encontramos en</span>
-                        <i class="argentina"></i>
-                        <i class="mexico"></i>
+                        <div class="d-flex align-center justifi-center gap-1">
+                            <i class="argentina"></i>
+                            <i class="mexico"></i>
+                        </div>
                     </div>
                 </div>
             </article>

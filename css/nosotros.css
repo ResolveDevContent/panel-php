@@ -31,10 +31,6 @@ h2 {
     margin-left: auto;
 }
 
-#valores > ul li.right div {
-    margin-right: 1em;
-}
-
 #valores > ul li.right div em{
     margin-left: auto;
     text-align: end;
@@ -42,10 +38,6 @@ h2 {
 
 #valores > ul li.right div span {
     text-align: end;
-}
-
-#valores > ul li div {
-    margin-left: 1em;
 }
 
 #valores > ul li em {
@@ -75,7 +67,6 @@ h2 {
     margin-top: .125em;
 }
 
-
 #valores b {
     color: var(--color5);
 }
@@ -94,6 +85,16 @@ h2 {
     flex: 1;
 }
 
-.nosotros > article {
-    width: 50%;
+@media screen and (min-width: 960px) {
+    .nosotros > article {
+        width: 50%;
+    }
+
+    #valores > ul li div {
+        margin-left: 1em;
+    }
+
+    #valores > ul li.right div {
+        margin-right: 1em;
+    }
 }

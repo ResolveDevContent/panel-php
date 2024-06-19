@@ -63,10 +63,6 @@ h4 {
 
 /* SOBRE-NOSTROS */
 
-#sobre-nosotros aside {
-    width: 40%;
-}
-
 #sobre-nosotros article {
     flex: 1;
 }
@@ -159,7 +155,9 @@ h4 {
 
 #servicios .tab-content-wrapper img {
     width: 8em;
+    min-width: 8em;
     height: 8em;
+    min-height: 8em;
 }
 
 #servicios .tab-content-wrapper .tab-content {
@@ -282,4 +280,14 @@ h4 {
 #cotiza .ul-form > li > ul input[type="radio"]:checked + label {
     background-color: var(--color4);
     color: white;
+}
+
+@media screen and (min-width: 960px) {
+    #sobre-nosotros aside {
+        width: 40%;
+    }
+
+    #servicios > header > span {
+        display: none;
+    }
 }

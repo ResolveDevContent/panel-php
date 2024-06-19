@@ -2,6 +2,10 @@
     margin-top: 2em;
 }
 
+#agendar > header > span {
+    color: #9F9F9F;
+}
+
 #agendar .ul-form {
     width: 50%;
 }

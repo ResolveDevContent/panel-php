@@ -8,6 +8,10 @@
     position: relative;
 }
 
+#unete > header span {
+    color: #9f9f9f;
+}
+
 #unete > header > div {
     width: 60%;
 }
