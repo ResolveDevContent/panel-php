@@ -3,7 +3,7 @@
     bottom: 0;
     right: 0;
     margin: 0 .5em 1em 0;
-    z-index: 16;
+    z-index: 64;
 }
 
 #floating-footer ul {
@@ -72,8 +72,9 @@
 }
 
 #footer {
-    background-color: var(--color7);
+    background-color: var(--color4);
     position: relative;
+    margin-top: 14em;
 }
 
 #footer > header,
@@ -113,14 +114,15 @@
 }
 
 #footer > ul > li > em {
-    color: var(--color5);
+    color: black;
+    font-weight: bold;
     font-size: 1.35em;
 }
 
 #footer > ul > li > span {
     display: inline;
     margin-top: 1em;
-    color: #a1a1a1;
+    color: #fff;
 }
 
 #footer > ul > li > ul {
@@ -128,7 +130,7 @@
 }
 
 #footer > ul > li a {
-    color: #a1a1a1;
+    color: #fff;
     transition: all 0.5s;
 }
 
@@ -168,6 +170,7 @@ svg {
     overflow:visible;
     position: absolute;
     z-index: 16;
+    top: -14em;
 }
   
 .wave {
@@ -179,7 +182,7 @@ svg {
     fill: var(--color5);
     xfill: green;
     animation: drop 3.2s linear infinite normal;
-    stroke: orange;
+    stroke: var(--color4);
     stroke-width:0.5;
     transform: translateY(25px) ;
     transform-box: fill-box;
