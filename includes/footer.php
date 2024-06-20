@@ -146,7 +146,7 @@
                     <span>contacto@digitalredlimit.com</span>
                 </li>
                 <li>
-                    <div class="d-flex align-start gap-5">
+                    <div class="d-flex align-center gap-5">
                         <div class="d-flex align-center gap-5">
                             <!-- <i class="mexico" title="Telefono Mexico"></i> -->
                             <span>+12 12312312313</span>

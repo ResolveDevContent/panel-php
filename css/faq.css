@@ -11,49 +11,22 @@
     margin-top: 6em;
 }
 
-#faq > article > ul {
-    max-width: 38em;
-}
-
-#faq details {
-    background-color: var(--color7);
-    border: 1px solid var(--color5);
-    margin-block: 1em;
-    border-radius: 1em;
-    cursor: pointer;
-}
-
-#faq details > summary {
-    font-size: 1.25em;
-    padding: 1em;
-    margin-left: .5em;
-    list-style: none;
-}
-    
-/* #faq details > summary i {
-    transition: all 0.5s;
-    background-color: white;
-}
-
-#faq details[open] > summary i {
-    transform: rotate(90deg);
-} */
-
-#faq details > summary svg {
-    transition: all 0.5s;
-    fill: white;
-    
-    width: 100%;
-    height: 100%;
+#faq .item {
     display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 80vh;
 }
 
-#faq details[open] > summary svg {
-    transform: rotate(90deg);
+#faq .item:nth-child(2n) {
+    flex-direction: row-reverse;
+    justify-content: end;
 }
 
-#faq details > p {
-    padding: 1em;
-    background-color: var(--color6);
-    border-radius: 0 0 1em 1em;
+#faq .item .image {
+    width: 40%;
+}
+
+#faq .item .text {
+    flex: 1;
 }

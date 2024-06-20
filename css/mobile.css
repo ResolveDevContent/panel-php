@@ -277,13 +277,13 @@ textarea,
     overflow-y: hidden;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    font-size: 1.325em;
 }
 
 .tabs .active,
 .tabs .active:hover {
     border: none;
     border-bottom: 4px solid var(--color5);
-    font-size: 1.325em;
 }
 
 #servicios .tabs > li {
