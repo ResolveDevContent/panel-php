@@ -82,6 +82,24 @@ document
 
 });
 
+// AGENDAR ----------------------------------------------------------------------
+
+document
+    .querySelectorAll('#agendar')
+    .forEach(function(root) {
+        const btnEnviar = root.querySelectorAll('[data-enviar]');
+
+        btnEnviar.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const input = root.querySelectorAll('#background-popup');
+
+                input.forEach(function(row) {
+                    row.checked = false;
+                })
+            })
+        })
+    });
+
 // FAQS ----------------------------------------------------------------------
 
 document

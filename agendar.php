@@ -165,12 +165,34 @@
                         <span>
                             <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
                         </span>
-                        <button>Enviar</button>
+                        <button data-enviar>Enviar</button>
                     </div>
                 </footer>
             </form>
         </article>
     </section>
+
+    <input type="radio" id="background-popup" checked>
+    <label class="background-popup" for="background-popup"></label>
+    <div class="popup d-flex flex-col justify-between align-center">
+        <div>
+            <label for="background-popup" class="d-flex">
+                <i class="icon close"></i>
+            </label>
+        </div>
+        <ul>
+            <li>
+                Mockups
+            </li>
+        </ul>
+        <div class="btn d-flex justify-center flex-col align-center text-center gap-1">
+            <span>
+                <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
+            </span>
+            <button>Enviar</button>
+        </div>
+    </div>
+
     <?php include_once("includes/footer.php"); ?>
 
     <script type="module" src="js/index.js"></script>
