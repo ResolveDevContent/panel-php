@@ -6,17 +6,17 @@
     z-index: 64;
 }
 
-#floating-footer ul {
+#floating-footer > ul {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-#floating-footer ul li + li{
+#floating-footer > ul > li + li{
     margin-top: .5em;
 }
 
-#floating-footer ul li a {
+#floating-footer > ul > li > a {
     display: flex;
     align-items: center;
     border-radius: 3em;
@@ -32,7 +32,7 @@
     transition: all .5s;
 }
 
-#floating-footer .whatsapp a {
+#floating-footer .whatsapp label {
     background-color: #25d366;
     border: 0.325em solid #25d366;
 }
@@ -50,7 +50,7 @@
     background-color: white;
 } */
 
-#floating-footer ul li a svg {
+#floating-footer > ul > li > a svg {
     width: 2em;
     min-width: 2em;
     height: 2em;
@@ -58,7 +58,7 @@
     fill: white;
 }
 
-#floating-footer ul li a span {
+#floating-footer > ul > li > a span {
     font-size: 1.125em;
     font-weight: 600;
     width: 0;
@@ -67,25 +67,107 @@
     overflow: hidden;
 }
 
-#floating-footer ul li a:hover {
+#floating-footer > ul > li > a:hover {
     color: white;
     opacity: 1;
 }
 
-#floating-footer ul .whatsapp a:hover {
+/* #floating-footer > ul .whatsapp a:hover {
     width: 20em;
-}
+} */
 
-#floating-footer ul .agendar a:hover {
+#floating-footer > ul .agendar a:hover {
     width: 17em;
 }
 
 
-#floating-footer ul li a:hover span {
+#floating-footer > ul > li > a:hover span {
     width: auto;
     opacity: 1;
     margin: 0 1.125em;
 }
+
+#floating-footer > ul .whatsapp:hover > .chat {
+    display: flex;
+}
+
+/* WHATSAPP ------------------------- */
+
+#floating-footer .whatsapp label {
+    position: relative;
+    height: 100%;
+    display: flex;
+    border-radius: 50%;
+    padding: 0.5em;
+}
+
+#floating-footer .whatsapp label:hover > .chat-box {
+    display: block;
+    right: 8%;
+}
+
+/*===============================*/
+
+.chat-box{ 
+    position: absolute;
+    transition: all .5s;
+    display: none;
+    top: -15em;
+    width: 13em;
+    height: 15em;
+}
+
+.chat-top {
+    width:100%;
+    line-height:2;
+    background-color: #128c7e;
+    color:white;
+    text-align:center;
+    border-radius:5px 5px 0 0;
+    padding:0 10px;
+}
+
+.chat-text { 
+    background:#ece5dd;
+    border-radius:0 0 5px 5px;
+    padding: 2em;
+    height: 100%;
+}
+
+.chat-text a {
+    font-size:14px;
+    padding:5px;
+    background:white;
+    border-radius:0 50px 50px 50px;
+    margin-bottom:10px;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.chat-text a i {
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+}
+
+.chat-text a.right {
+    justify-content: end;
+    border-radius: 50px 50px 0px 50px;
+    width: max-content;
+    margin-left: auto;
+    background-color: #128c7e;
+    color: white;
+}
+
+.chat-text a.left {
+    justify-content: start;
+    width: max-content;
+    margin-right: auto;
+}
+
+/* WHATSAPP ------------------------- */
 
 #footer {
     background-color: var(--color4);
