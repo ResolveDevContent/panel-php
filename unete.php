@@ -96,7 +96,9 @@
             <header class="d-flex align-center text-center gap-1">
                 <div>
                     <h2>Trabajá con nosotros</h2>
-                    <span>¡Únete a nuestro equipo! Buscamos personas apasionadas, innovadoras y con ganas de crecer. Ofrecemos un ambiente de trabajo dinámico, oportunidades de desarrollo profesional y un entorno colaborativo. Si quieres formar parte de una empresa en constante evolución y contribuir con tus ideas, ¡te estamos esperando!</span>
+                    <span>
+                        Únete a <span class="highlight">Red Limit</span> y sé parte de un equipo <span class="highlight">dinámico y en crecimiento</span>. Buscamos profesionales apasionados por el marketing digital que deseen desarrollar su carrera en un entorno innovador y colaborativo. Ofrecemos <span class="highlight">oportunidades de crecimiento , proyectos internacionales y un ambiente de trabajo flexible.</span>
+                    </span>
                 </div>
                 <aside>
                     <img src="/gifs/unete.gif" alt="">

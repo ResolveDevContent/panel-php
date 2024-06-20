@@ -120,7 +120,7 @@ video {
 }
 
 .highlight {
-    color: var(--color5);
+    color: var(--color5)!important;
     font-weight: 600;
 }
 
