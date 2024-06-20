@@ -88,8 +88,10 @@
     <section id="agendar" class="wrapper">
         <header class="d-flex align-center flex-col text-center gap-5">
             <h2>Agendá una reunión con nosotros</h2>
-            <span>¡Nos encantaría conocerte! Selecciona una fecha y hora que te convengan para agendar una reunión con nuestro equipo. Estamos aquí para escuchar tus necesidades y ofrecerte las mejores soluciones. ¡Esperamos conversar contigo pronto!</span>
-            <span>(Cabe aclarar que al enviar el formulario la reuni&oacute;n no queda confirmada. Pronto se le confirmar&aacute; mediante WhatsApp.)</span>
+            <span>
+                En Red Limit, queremos que agendar una reunión con nosotros sea un proceso simple y conveniente. A    través del formulario a continuación, puedes seleccionar un día y una hora aproximados que te resulten cómodos para tener una reunión con nuestro equipo.
+                Una vez que hayas enviado tus preferencias, nos pondremos en contacto contigo para confirmar la reunión y ofrecerte un horario personalizado que se ajuste mejor a tus necesidades.
+            </span>
         </header>
         <article class="d-flex align-start justify-between">
             <form data-form class="d-flex flex-col align-center gap-1 w-100" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -159,7 +161,10 @@
                     </ul>
                 </div>
                 <footer>
-                    <div class="btn d-flex justify-center">
+                    <div class="btn d-flex justify-center flex-col align-center text-center gap-1">
+                        <span>
+                            <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
+                        </span>
                         <button>Enviar</button>
                     </div>
                 </footer>
