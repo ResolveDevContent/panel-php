@@ -4,7 +4,7 @@ h2 {
 }
 
 #sobre-nosotros.nosotros {
-    margin-top: 4em;
+    margin-top: 0;
 }
 
 #valores, 
@@ -57,10 +57,10 @@ h2 {
 }
 
 #valores > ul li img {
-    width: 12em;
-    min-width: 12em;
-    height: 12em;
-    min-height: 12em;
+    width: 14em;
+    min-width: 14em;
+    height: 14em;
+    min-height: 14em;
 }
 
 #valores > ul > li li + li {
