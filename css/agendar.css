@@ -50,7 +50,7 @@
     color: #a1a1a1;
 }
 
-.background-popup {
+#agendar  .background-popup {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -62,7 +62,7 @@
     z-index: 32;
 }
 
-.popup {
+#agendar  .popup {
     background-color: white;
     border-radius: .5em;
     padding: 2em;
@@ -77,21 +77,21 @@
     left: 0;
 }    
 
-.popup > div {
+#agendar  .popup > div {
     margin-top: 1em;
     width: 100%;
 }
 
-.popup ul li,
-.popup span {
+#agendar  .popup ul li,
+#agendar  .popup span {
     color: #000;
 }
 
-.popup div label {
+#agendar  .popup div label {
     cursor: pointer;
 }
 
-.popup div label i {
+#agendar  .popup div label i {
     margin-left: auto;
     width: 2em;
     min-width: 2em;
@@ -99,9 +99,9 @@
     min-height: 2em;
 }
 
-#background-popup,
-#background-popup:checked + .background-popup,
-#background-popup:checked ~ .popup {
+#agendar #background-popup,
+#agendar #background-popup:checked + .background-popup,
+#agendar #background-popup:checked ~ .popup {
     display: none;
 }
 

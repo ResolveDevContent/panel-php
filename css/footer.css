@@ -22,19 +22,14 @@
     border-radius: 3em;
     color: transparent;
     transition: opacity .5s linear, width .5s linear, color .5s linear;
-    opacity: .5;
+    opacity: .6;
     white-space: nowrap;
     justify-content: space-between;
     cursor: pointer;
     padding: 0.5em;
     width: 3.6em;
 
-    transition: all .5s;
-}
-
-#floating-footer .whatsapp label {
-    background-color: #25d366;
-    border: 0.325em solid #25d366;
+    transition: all .5s; 
 }
 
 #floating-footer .agendar a {
@@ -99,12 +94,18 @@
     display: flex;
     border-radius: 50%;
     padding: 0.5em;
-    
+    background-color: #25d366;
+    border: 0.325em solid #25d366;
+    opacity: .6;
+}
+
+#floating-footer .whatsapp label:hover {
+    opacity: 1;
 }
 
 #floating-footer .whatsapp label:hover > .chat-box {
     display: block;
-    right: -8%;
+    right: -.5em;
 }
 
 /*===============================*/
@@ -113,8 +114,6 @@
     position: absolute;
     display: none;
     top: -15em;
-    width: 13em;
-    height: 15em;
     right: 0; 
 
     animation: ease-in;
@@ -129,26 +128,27 @@
     color:white;
     text-align:center;
     border-radius:5px 5px 0 0;
-    padding:0 10px;
+    padding:0 .75em;
+    font-weight: 600;
 }
 
 .chat-text { 
     background:#ece5dd;
     border-radius:0 0 5px 5px;
-    padding: 2em;
+    padding: 1em;
     height: 100%;
 }
 
 .chat-text a {
-    font-size:14px;
-    padding:5px;
-    background:white;
-    border-radius:0 50px 50px 50px;
-    margin-bottom:10px;
+    padding: 0.5em;
+    background: white;
+    border-radius: 0 50px 50px 50px;
+    margin-bottom: .75em;
     color: black;
     display: flex;
     align-items: center;
     gap: 0.5em;
+    font-weight: 600;
 }
 
 .chat-text a i {
@@ -370,4 +370,14 @@
       right: -8%;  
       opacity: 1;  
     }
-  }
+}
+@media screen and (min-width: 960px) {
+    .chat-box { 
+        width: 15em;
+        height: 17em;
+    }
+
+    #floating-footer .whatsapp label:hover > .chat-box {
+        top: -17.5em;
+    }
+}

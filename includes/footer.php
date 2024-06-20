@@ -8,11 +8,11 @@
                     <div class="chat-text">
                         <a href="#" class="left">
                             <i class="argentina"></i>
-                            +54210404104
+                            +54 210404104
                         </a>
                         <a href="#" class="right">
                             <i class="mexico"></i>
-                            +52121313123
+                            +52 121313123
                         </a>
                     </div>
                 </div>

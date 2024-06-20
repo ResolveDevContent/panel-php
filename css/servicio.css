@@ -25,11 +25,15 @@
     font-size: 1.5em;
 }
 
-#servicio > article .mockups {
+#servicio .mockups {
+    margin-top: 2em;
+}
+
+#servicio .tablet {
     position: relative;
 }
 
-#servicio > article > div > img {
+#servicio .tablet > img {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -38,34 +42,32 @@
     z-index: 4;
 }
 
-#servicio > article > div > ul {
+#servicio .tablet > ul {
     overflow-y: auto;
     scroll-snap-type: x mandatory;
 }
 
-#servicio > article > div > ul li {
+#servicio .tablet > ul li {
     min-width: 100%;
     height: 100%;
     scroll-snap-align: center;
 }
 
-#servicio > article > div > ul li img {
+#servicio .tablet > ul li img {
     z-index: 2;
     position: relative;
 }
 
 @media screen and (min-width: 960px) {
-    #servicio .mockups .phone {
-        display: none;
-    }
 
-    #servicio > article .mockups {
-        min-height: 33em;
-        height: 33em;
+    #servicio .phone,
+    #servicio .tablet {
+        min-height: 31em;
+        height: 31em;
         max-width: 40em;
     }
 
-    #servicio > article > div > ul {
+    #servicio .tablet > ul {
         width: 100%;
         height: 100%;
     }
@@ -80,20 +82,26 @@
         font-size: 2em;
     }
 
-    #servicio .mockups .tablet {
-        display: none;
+    #servicio .mockups {
+        flex-direction: column;
     }
 
-    #servicio > article .mockups {
-        min-height: 37em;
-        height: 37em;
+    #servicio .tablet {
+        min-height: 10em;
+        width: 24em;
+        height: 22em;
         margin-top: 2em;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    #servicio > article > div > ul {
+    #servicio .phone {
+        min-height: 37em;
+        height: 37em;
+    }
+
+    #servicio .tablet > ul {
         width: 90%;
         height: 98%;
     }

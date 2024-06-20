@@ -52,27 +52,31 @@
     
                     if($result) {
                         if(mysqli_num_rows($result) > 0) {
-                            $mockups = '<div class="mockups">';
-                                $mockups .= '<img class="tablet" src="images/mockup.png" alt="">';
-                                $mockups .= '<img class="phone" src="images/mockup-phone.png" alt="">';
-                                $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
-                                    $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
-                                        $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>';
-                                        // $mockups .= '<i class="icon arrow-left"></i>';
-                                    $mockups .= '</a>';
-                                    $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
-                                        $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>';
-                                        // $mockups .= '<i class="icon arrow-right"></i>';
-                                    $mockups .= '</a>';
-                                $mockups .= '</nav>';
-                                $mockups .= '<ul class="d-flex align-center" data-scrollable>';
-                                    while($row = mysqli_fetch_array($result)){
-                                        $mockups .= '<li>';
-                                            $mockups .= '<span class="loader"></span>';
-                                            $mockups .= "<img src='". $row['portada'] ."' alt=''>";
-                                        $mockups .= '</li>';
-                                    }
-                                $mockups .= '</ul>';
+                            $mockups = '<div class="mockups d-flex align-center justify-around w-100">';
+                                $mockups .= '<div class="phone">';
+                                    $mockups .= '<img src="images/mockup-phone.png" alt="">';
+                                $mockups .= '</div>';
+                                $mockups .= '<div class="tablet">';
+                                    $mockups .= '<img src="images/mockup.png" alt="">';
+                                    $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
+                                        $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
+                                            $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>';
+                                            // $mockups .= '<i class="icon arrow-left"></i>';
+                                        $mockups .= '</a>';
+                                        $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
+                                            $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>';
+                                            // $mockups .= '<i class="icon arrow-right"></i>';
+                                        $mockups .= '</a>';
+                                    $mockups .= '</nav>';
+                                    $mockups .= '<ul class="d-flex align-center" data-scrollable>';
+                                        while($row = mysqli_fetch_array($result)){
+                                            $mockups .= '<li>';
+                                                $mockups .= '<span class="loader"></span>';
+                                                $mockups .= "<img src='". $row['portada'] ."' alt=''>";
+                                            $mockups .= '</li>';
+                                        }
+                                    $mockups .= '</ul>';
+                                $mockups .= '</div>';
                             $mockups .= '</div>';
                         }
                     }
@@ -93,7 +97,7 @@
                         echo $servicio;
                     ?>
                 </aside>
-                <article class="d-flex flex-col align-center">
+                <article class="d-flex flex-col align-center w-100">
                     <strong>Nuestros trabajos</strong>
                     <?php
                         echo $mockups;
