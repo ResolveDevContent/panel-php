@@ -11,7 +11,7 @@
     <?php include_once("includes/navbar.php"); ?>
     <section id="faq" class="d-flex flex-col align-center">
         <div class="gradient"></div>
-        <header class="d-flex align-center text-center">
+        <header class="d-flex align-center justify-center text-center">
             <div>
                 <h2>Preguntas más frecuentes</h2>
                 <span>Aquí encontrarás respuestas a las consultas más comunes sobre nuestros servicios y políticas. Si no encuentras lo que buscas, no dudes en contactarnos. ¡Estamos aquí para ayudarte!</span>
