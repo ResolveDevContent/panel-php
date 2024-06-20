@@ -106,8 +106,8 @@
             <ul>
                 <li>
                     <figure>
-                        <video src="">
-                            <source>
+                        <video autoplay loop muted>
+                            <source src="videos/banner.MP4" type="video/mp4">
                         </video>
                         <figcaption class="d-flex align-center justify-end">
                             <article class="home-text">
@@ -131,7 +131,7 @@
         <main class="wrapper">
             <section id="sobre-nosotros" class="d-flex align-center">
                 <aside class="d-flex align-center justify-center">
-                    <img src="/gifs/about.gif" alt="">
+                    <img src="/panel-php/gifs/about.gif" alt="">
                 </aside>
                 <article>
                     <h4>Sobre nosotros</h4>
@@ -150,8 +150,8 @@
                             </div>
                         </div>
                         <div class="d-flex align-center btn gap-1">
-                            <a href="/nosotros.php">Conoce m&aacute;s</a>
-                            <a href="/unete.php">Trabaj&aacute; con nosotros</a>
+                            <a href="/panel-php/nosotros.php">Conoce m&aacute;s</a>
+                            <a href="/panel-php/unete.php">Trabaj&aacute; con nosotros</a>
                         </div>
                     </div>
                 </article>
@@ -178,13 +178,13 @@
                         <span>Nuestros clientes satisfechos nos califican</span>
                     </div>
                     <aside>
-                        <img src="/gifs/reviews.gif" alt="">
+                        <img src="/panel-php/gifs/reviews.gif" alt="">
                     </aside>
                 </header>
                 <ul class="d-flex align-center justify-start gap-1">
                     <li class="d-flex flex-col justify-start">
                         <article class="d-flex align-center customer">
-                            <img src="/images/user.png" alt="">
+                            <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
                                 <em>Ejemplo usuario 1</em>
                                 <span>Ejemplo empresa</span>
@@ -218,7 +218,7 @@
                     </li>
                     <li class="d-flex flex-col justify-start">
                         <article class="d-flex align-center customer">
-                            <img src="/images/user.png" alt="">
+                            <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
                                 <em>Ejemplo usuario 2</em>
                                 <span>Ejemplo empresa</span>
@@ -248,7 +248,7 @@
                     </li>
                     <li class="d-flex flex-col justify-start">
                         <article class="d-flex align-center customer">
-                            <img src="/images/user.png" alt="">
+                            <img src="/panel-php/images/user.png" alt="">
                             <div class="d-flex flex-col">
                                 <em>Ejemplo usuario 3</em>
                                 <span>Ejemplo empresa</span>
@@ -379,7 +379,7 @@
                         </form>
                     </article>
                     <aside>
-                        <img src="/gifs/contacto.gif" alt="">
+                        <img src="/panel-php/gifs/contacto.gif" alt="">
                     </aside>
                 </div>
             </section>
