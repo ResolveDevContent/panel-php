@@ -99,22 +99,27 @@
     display: flex;
     border-radius: 50%;
     padding: 0.5em;
+    
 }
 
 #floating-footer .whatsapp label:hover > .chat-box {
     display: block;
-    right: 8%;
+    right: -8%;
 }
 
 /*===============================*/
 
 .chat-box{ 
     position: absolute;
-    transition: all .5s;
     display: none;
     top: -15em;
     width: 13em;
     height: 15em;
+    right: 0; 
+
+    animation: ease-in;
+    animation-name: run;
+    animation-duration: 0.25s;
 }
 
 .chat-top {
@@ -355,3 +360,14 @@
 @keyframes wave {
     to {transform: translateX(-100%);}
 }
+
+@keyframes run {
+    0% {
+      right: -10em;
+      opacity: .5;
+    }
+    100% {
+      right: -8%;  
+      opacity: 1;  
+    }
+  }

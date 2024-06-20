@@ -3,6 +3,7 @@
     $nombre = $email = $asunto = $mensaje = "";
     $nombre_err = $email_err = $asunto_err = $mensaje_err = "";
     $respuestaMsg = "";
+    $isSend = false;
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -40,8 +41,9 @@
             $cotiza = false;
             $unete = false;
             $contacto = true;
-            include_once "../utils/mailer.php"; 
+            include_once "../panel-php/utils/mailer.php"; 
             $respuestaMsg = $respuesta;
+            $isSend = $send;
         }
     }
 ?>
@@ -177,14 +179,21 @@
                             <div class="btn d-flex justify-center">
                                 <button>Enviar</button>
                             </div>
-                            <div class="d-flex justify-center align-center">
-                                <span class="mensaje-success"><?php echo $respuestaMsg ?></span>
-                            </div>
                         </li>
                     </ul>
                 </form>
             </article>
         </section>    
+
+        <?php if($isSend) : ?>
+            <div class="notification_card">
+                <div class="notification_body">
+                    <i class="icon notification"></i>
+                    <?php echo $respuestaMsg; ?>
+                </div>
+                <div class="notification_progress"></div>
+            </div>
+        <?php endif ?>
 
         <?php include_once("includes/footer.php"); ?>
         

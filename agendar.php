@@ -3,6 +3,7 @@
     $nombre = $telefono = $empresa = $descripcion = $pais = $cotizacion = $dia = $horario = "";
     $nombre_err = $telefono_err = $empresa_err = $descripcion_err = $pais_err = $cotizacion_err = $dia_err = $horario_err = "";
     $respuestaMsg = "";
+    $isSend = false;
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -69,8 +70,9 @@
             $cotiza = false;
             $unete = false;
             $contacto = false;
-            include_once "../utils/mailer.php"; 
+            include_once "../panel-php/utils/mailer.php"; 
             $respuestaMsg = $respuesta;
+            $isSend = $send;
         }
     }
 ?>
@@ -165,33 +167,47 @@
                         <span>
                             <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
                         </span>
-                        <button data-enviar>Enviar</button>
+                        <label data-enviar>Enviar</label>
                     </div>
                 </footer>
+
+                <!-- POPUP -->
+
+                <input type="radio" id="background-popup" checked>
+                <label class="background-popup" for="background-popup"></label>
+                <div class="popup d-flex flex-col justify-between align-center">
+                    <div>
+                        <label for="background-popup" class="d-flex">
+                            <i class="icon close"></i>
+                        </label>
+                    </div>
+                    <ul>
+                        <li>
+                            Mockups
+                        </li>
+                    </ul>
+                    <div class="btn d-flex justify-center flex-col align-center text-center gap-1">
+                        <span>
+                            <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
+                        </span>
+                        <button>Enviar</button>
+                    </div>
+                </div>
+
+                <!-- POPUP -->
             </form>
         </article>
     </section>
-
-    <input type="radio" id="background-popup" checked>
-    <label class="background-popup" for="background-popup"></label>
-    <div class="popup d-flex flex-col justify-between align-center">
-        <div>
-            <label for="background-popup" class="d-flex">
-                <i class="icon close"></i>
-            </label>
+    
+    <?php if($isSend) : ?>
+        <div class="notification_card">
+            <div class="notification_body">
+                <i class="icon notification"></i>
+                <?php echo $respuestaMsg; ?>
+            </div>
+            <div class="notification_progress"></div>
         </div>
-        <ul>
-            <li>
-                Mockups
-            </li>
-        </ul>
-        <div class="btn d-flex justify-center flex-col align-center text-center gap-1">
-            <span>
-                <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
-            </span>
-            <button>Enviar</button>
-        </div>
-    </div>
+    <?php endif ?>
 
     <?php include_once("includes/footer.php"); ?>
 

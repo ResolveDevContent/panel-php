@@ -91,6 +91,7 @@ document
 
         btnEnviar.forEach(function(btn) {
             btn.addEventListener('click', function() {
+                scrollTo(0,0);
                 const input = root.querySelectorAll('#background-popup');
 
                 input.forEach(function(row) {
@@ -157,15 +158,6 @@ document
         
             itemHorarios.classList.add("not-visible");
             ul.innerHTML = "";
-        })
-        
-        select.addEventListener("change", function(e) {
-            if(e.target.value) {
-                labelSelect.classList.remove("not-visible");
-                return;
-            }
-        
-            labelSelect.classList.add("not-visible");
         })
 });
 

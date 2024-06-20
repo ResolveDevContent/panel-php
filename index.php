@@ -3,6 +3,7 @@
     $nombre = $telefono = $empresa = $descripcion = $pais = $cotizacion = "";
     $nombre_err = $telefono_err = $empresa_err = $descripcion_err = $pais_err = $cotizacion_err = "";
     $respuestaMsg = "";
+    $isSend = false;
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -55,8 +56,9 @@
             $cotiza = true;
             $unete = false;
             $contacto = false;
-            include_once "../utils/mailer.php"; 
+            include_once "../panel-php/utils/mailer.php"; 
             $respuestaMsg = $respuesta;
+            $isSend = $send;
         }
     }
 ?>
@@ -371,9 +373,6 @@
                                     <div class="btn d-flex justify-center">
                                         <button>Cotiza</button>
                                     </div>
-                                    <div class="d-flex justify-center align-center">
-                                        <span class="mensaje-success"><?php echo $respuestaMsg ?></span>
-                                    </div>
                                 </li>
                             </ul>
                         </form>
@@ -383,6 +382,17 @@
                     </aside>
                 </div>
             </section>
+
+            <?php if($isSend) : ?>
+                <div class="notification_card">
+                    <div class="notification_body">
+                        <i class="icon notification"></i>
+                        <?php echo $respuestaMsg; ?>
+                    </div>
+                    <div class="notification_progress"></div>
+                </div>
+            <?php endif ?>
+
         </main>
 
         <?php include_once("includes/footer.php"); ?>

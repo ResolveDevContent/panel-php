@@ -26,7 +26,7 @@
         $msg .= " . $mensaje . ";
         $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
     } else if($agendar) {
-        $msg = "De: $nombre $email";
+        $msg = "De: $nombre";
         $msg .= "Asunto: Agendar reunion";
         $msg .= "Datos:";
         $msg .= "Nombre y apellido: " . $nombre . "";
@@ -75,7 +75,16 @@
         $mail-> send();
     
         $respuesta = 'Se ha enviado correctamente!';
+
+        if($agendar) {
+            $respuesta = '¡Gracias por agendar tu reunión con Red Limit! 📅
+                          Hemos recibido tus preferencias de día y hora. Nuestro equipo se pondrá en contacto contigo pronto para confirmar los detalles de la reunión y ofrecerte un horario personalizado.
+                          Estamos ansiosos por conocerte y explorar cómo podemos ayudarte a alcanzar tus objetivos de marketing digital. 🚀';
+        }
+        
+        $send = true;
     } catch (Exception $e) {
         $respuesta = "Mensaje " . $mail->ErrorInfo;
+        $send = true;
     }
 ?>

@@ -89,6 +89,11 @@
     -webkit-mask-image: url("../icons/agendar.svg");
 }
 
+.icon.notification {
+    mask-image: url("../icons/notification.svg");
+    -webkit-mask-image: url("../icons/notification.svg");
+}
+
 .mexico {
     background-image: url("../icons/mexico.svg");
     background-repeat: no-repeat;
