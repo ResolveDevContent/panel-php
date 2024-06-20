@@ -9,7 +9,7 @@
 <body>
 
     <?php include_once("includes/navbar.php"); ?>
-    <section id="faq" class="wrapper d-flex flex-col align-center">
+    <section id="faq" class="d-flex flex-col align-center">
         <div class="gradient"></div>
         <header class="d-flex align-center text-center">
             <div>
@@ -30,7 +30,7 @@
                         <em>
                             ¿Qué servicios ofrece Red Limit?
                         </em>
-                        <ul>
+                        <ul class="d-flex flex-col gap-5">
                             <li>
                                 <span>En Red Limit ofrecemos una amplia gama de servicios de marketing digital, incluyendo:</span>
                             </li>
@@ -38,30 +38,48 @@
                                 <span>
                                     - Gestión de Redes Sociales
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Desarrollo de Páginas Web
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Publicidad Digital (Facebook Ads, Google Ads, etc.)
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - SEO y SEM
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Branding y Diseño Gráfico
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Email Marketing
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Video Marketing
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Desarrollo de Aplicaciones Móviles
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Creación de Software a Medida
                                 </span>
+                            </li>
+                            <li>
                                 <span>
                                     - Logos en Movimiento
                                 </span>

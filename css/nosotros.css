@@ -41,16 +41,16 @@ h2 {
 }
 
 #valores > ul li em {
-    margin-bottom: .5em;
+    margin-bottom: .25em;
     font-weight: 700;
-    font-size: 1.125em;
+    font-size: 3em;
     color: var(--color5);
 }
 
 #valores > ul li em::after {
     content: '';
     width: 4.5em;
-    height: .01em;
+    height: .08em;
     background-color: var(--color5);
     display: block;
     margin-top: .125em;

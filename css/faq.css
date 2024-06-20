@@ -1,5 +1,7 @@
 #faq > header {
     position: relative;
+    height: 100vh;
+    margin: 0 2em;
 }
 
 #faq > header span{
@@ -8,7 +10,6 @@
 
 #faq > article {
     position: relative;
-    margin-top: 6em;
 }
 
 #faq .item {
@@ -16,11 +17,18 @@
     align-items: center;
     justify-content: start;
     height: 80vh;
+    gap: 1em;
+    background-color: var(--color1);
 }
 
 #faq .item:nth-child(2n) {
     flex-direction: row-reverse;
     justify-content: end;
+    background-color: var(--color2);
+}
+
+#faq .item:nth-child(3n) {
+    background-color: var(--color3);
 }
 
 #faq .item .image {
@@ -29,4 +37,13 @@
 
 #faq .item .text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#faq .item .text em {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--color5);
 }
