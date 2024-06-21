@@ -87,7 +87,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 4;
+    z-index: 10;
     height: 30em;
 }
 
@@ -103,32 +103,78 @@
     scroll-snap-align: center;
 }
 
-#contacto .phone > ul > li > img {
-    z-index: 2;
-    position: relative;
+#contacto .bg-gradient {
+    height: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#contacto div.instagram {
+#contacto .bg-gradient.instagram {
     background: #833ab4;
     background: linear-gradient(
       to right,
       #833ab4,#fd1d1d,#fcb045
     );
-    height: 30em;
+}
+
+#contacto .bg-gradient.facebook {
+    background: #00c6ff;
+    background: linear-gradient(
+      to right,
+      #00c6ff,#0072ff
+    );
+}
+
+#contacto .bg-gradient.linkedin {
+    background: #0A66C2;
+    background: linear-gradient(
+        to right,
+        #0A66C2, #044d95
+    );
+}
+
+#contacto .bg-gradient.mail {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 8;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.9em;
+    transform: skewY(10deg);
+    gap: 3em;
 }
 
-#contacto div.instagram i {
+#contacto .bg-gradient.mail > div > ul > li {
+    font-size: 0.8em;
+}
+
+#contacto .bg-gradient.mail i.icon {
+    transform: none;
+    margin-left: unset;
+}
+
+#contacto .bg-gradient.mail i.argentina,
+#contacto .bg-gradient.mail i.mexico {
+    font-size: 1.25em;
+}
+
+#contacto .bg-gradient.mail > div {
+    margin-left: 2em;
+}
+
+#contacto .bg-gradient.mail .correo {
+    font-size: 0.7em;
+}
+
+#contacto .bg-gradient i.icon {
     font-size: 3em;
     margin-left: 0.5em;
     transform: skewY(10deg);
     background: white;
 }
 
-#contacto div.instagram a {
+#contacto .bg-gradient a {
     z-index: 16;
     position: relative;
 }
