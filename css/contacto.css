@@ -71,3 +71,75 @@
 #contacto .ul-form > li + li {
     margin-top: 2.25em;
 }
+
+#contacto .phone {
+    position: relative;
+
+    animation: bounce 1s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+}
+
+#contacto .phone > img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 4;
+    height: 30em;
+}
+
+#contacto .phone > ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+}
+
+#contacto .phone > ul > li {
+    min-width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+}
+
+#contacto .phone > ul > li > img {
+    z-index: 2;
+    position: relative;
+}
+
+#contacto div.instagram {
+    background: #833ab4;
+    background: linear-gradient(
+      to right,
+      #833ab4,#fd1d1d,#fcb045
+    );
+    height: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+}
+
+#contacto div.instagram i {
+    font-size: 3em;
+    margin-left: 0.5em;
+    transform: skewY(10deg);
+    background: white;
+}
+
+#contacto div.instagram a {
+    z-index: 16;
+    position: relative;
+}
+
+/* ANIMATION ----------------------------------------------------------------- */
+
+@keyframes bounce { 
+    from { 
+        transform: translate3d(0, 0, 0); 
+    } 
+    to { 
+        transform: translate3d(0, 3em, 0); 
+    } 
+} 

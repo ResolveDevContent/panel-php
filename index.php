@@ -290,12 +290,14 @@
                                     <div class="input">
                                         <input type="text" id="nombre" name="nombre" >
                                         <label for="nombre">Nombre y apellido</label>
+                                        <span><?php echo $nombre_err ?></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
                                         <label for="pais">Pais</label>
                                         <div class="input" data-paises></div>
+                                        <span><?php echo $pais_err ?></span>
                                     </div>
                                     <div class="input not-visible">
                                         <input type="hidden" id="pais" name="pais" required>
@@ -308,18 +310,21 @@
                                     <div class="input">
                                         <input type="text" id="telefono" name="telefono" >
                                         <label for="telefono">Número de telefono</label>
+                                        <span><?php echo $telefono_err ?></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
                                         <input type="text" id="empresa" name="empresa" >
                                         <label for="empresa">Nombre de la empresa</label>
+                                        <span><?php echo $empresa_err ?></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
                                         <input type="text" id="desEmpresa" name="descripcion" >
                                         <label for="desEmpresa">Descipcion de la empresa (rubro y otros)</label>
+                                        <span><?php echo $descripcion_err ?></span>
                                     </div>
                                 </li>
                                 <li>
@@ -368,6 +373,7 @@
                                             </label>
                                         </li>
                                     </ul>
+                                    <span><?php echo $cotizacion_err ?></span>
                                 </li>
                                 <li>
                                     <div class="btn d-flex justify-center">

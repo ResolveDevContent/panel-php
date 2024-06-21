@@ -2,23 +2,66 @@ import paises from '../paises.json' with { type: 'json' };
 
 // SCROLL ----------------------------------------------------------------------
 
-const scrollable = document.querySelectorAll('[data-scrollable]');
+document.querySelectorAll('[data-scroll]').forEach(function(root) {
+    console.log(root)
 
-document
-    .querySelectorAll('[data-arrow]')
-    .forEach(function (arrow) {
-        arrow.addEventListener('click', function (evt) {
-            evt.preventDefault();
+    const scrollable = root.querySelectorAll('[data-scrollable]');
+    
+    root
+        .querySelectorAll('[data-arrow]')
+        .forEach(function (arrow) {
+            arrow.addEventListener('click', function (evt) {
+                evt.preventDefault();
+    
+                const direction = Number(arrow.dataset.arrow);
+                scrollable.forEach(function (_scrollable) {
+                    const _child = _scrollable.querySelector(':first-child');
+                    if (!_child) { return; }
+    
+                    _scrollable.scrollLeft += _child.clientWidth * direction;
+                });
+            });
+        });
+        console.log("HOLA")
 
-            const direction = Number(arrow.dataset.arrow);
+    if (root.dataset.scroll == 'auto') {
+        const AUTO_DELAY = 5000;
+    
+        var scroll_in_reverse = false;
+    
+        setInterval(function () {
+            // if (root.matches(':hover')) {
+            //     return;
+            // }
+    
             scrollable.forEach(function (_scrollable) {
+                console.log("HOLA")
                 const _child = _scrollable.querySelector(':first-child');
                 if (!_child) { return; }
 
                 _scrollable.scrollLeft += _child.clientWidth * direction;
+
+                var direction = 1;
+
+                if (_scrollable.scrollWidth - _scrollable.scrollLeft - _scrollable.clientWidth < 1) {
+                    scroll_in_reverse = true;
+                }
+
+                if (_scrollable.scrollLeft == 0) {
+                    direction = 1;
+                    scroll_in_reverse = false;
+                }
+
+                if (scroll_in_reverse) {
+                    direction = direction * -1;
+                }
+
+                _scrollable.scrollLeft += _child.clientWidth * direction;
             });
-        });
-    });
+
+        }, AUTO_DELAY);
+    }
+})
 
 // FORMS ----------------------------------------------------------------------
 

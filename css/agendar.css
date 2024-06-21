@@ -1,3 +1,8 @@
+#agendar {
+    z-index: 64;
+    position: relative;
+}
+
 #agendar > article{
     margin-top: 2em;
 }
@@ -63,7 +68,8 @@
 }
 
 #agendar  .popup {
-    background-color: white;
+    background-color: var(--color2);
+    opacity: .9;
     border-radius: .5em;
     padding: 2em;
     width: 80%;
@@ -84,7 +90,7 @@
 
 #agendar  .popup ul li,
 #agendar  .popup span {
-    color: #000;
+    color: white;
 }
 
 #agendar  .popup div label {
