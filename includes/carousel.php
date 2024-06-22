@@ -1,7 +1,7 @@
 <?php
     require_once "config.php";
     
-    if($verTemaVariablesVacias) {
+    if($tabla) {
         $imagenes = '';
         $result = '';
 

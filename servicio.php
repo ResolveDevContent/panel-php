@@ -53,11 +53,11 @@
                     if($result) {
                         if(mysqli_num_rows($result) > 0) {
                             $mockups = '<div class="mockups d-flex align-center justify-around w-100">';
-                                $mockups .= '<div class="phone">';
-                                    $mockups .= '<img src="images/phone-3D.png" alt="">';
-                                $mockups .= '</div>';
                                 $mockups .= '<div class="tablet">';
-                                    $mockups .= '<img src="images/mockup.png" alt="">';
+                                    $mockups .= '<div class="phone">';
+                                        $mockups .= '<img src="images/phone-3D.png" alt="">';
+                                        $mockups .= '<img src="images/mockup.png" alt="">';
+                                    $mockups .= '</div>';
                                     $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
                                         $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
                                             $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>';
@@ -97,7 +97,7 @@
                         echo $servicio;
                     ?>
                 </aside>
-                <article class="d-flex flex-col align-center w-100">
+                <article class="d-flex flex-col align-center w-100" data-scroll>
                     <strong>Nuestros trabajos</strong>
                     <?php
                         echo $mockups;

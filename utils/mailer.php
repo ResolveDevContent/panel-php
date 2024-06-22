@@ -8,6 +8,7 @@
     require "../panel-php/PHPMailer/src/Exception.php";
     require "../panel-php/PHPMailer/src/SMTP.php";
 
+    $msg = '';
     if($cotiza) {
         $msg = "De: $nombre";
         $msg .= "Asunto: Cotización";
