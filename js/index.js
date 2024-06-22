@@ -133,7 +133,6 @@ document
 
         btnEnviar.forEach(function(btn) {
             btn.addEventListener('click', function() {
-                scrollTo(0,0);
                 const input = root.querySelectorAll('#background-popup');
 
                 input.forEach(function(row) {

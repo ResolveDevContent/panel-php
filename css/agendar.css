@@ -1,5 +1,4 @@
 #agendar {
-    z-index: 64;
     position: relative;
 }
 
@@ -69,14 +68,13 @@
 
 #agendar  .popup {
     background-color: var(--color2);
-    opacity: .9;
     border-radius: .5em;
     padding: 2em;
     width: 80%;
     height: 80%;
     margin: auto;
     z-index: 33;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
