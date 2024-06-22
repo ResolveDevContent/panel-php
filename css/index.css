@@ -1,9 +1,14 @@
 #sobre-nosotros,
-#servicios,
 #metricas,
 #reviews,
 #cotiza {
     margin-top: 8em;
+}
+
+
+#proyectos,
+#servicios {
+    margin-top: 4em;
 }
 
 h4 {
@@ -61,7 +66,6 @@ h4 {
     font-weight: 700;
 }
 
-
 /* SOBRE-NOSTROS */
 
 #sobre-nosotros article {
@@ -80,6 +84,13 @@ h4 {
 #sobre-nosotros > article > div > div svg {
     width: 2em;
     height: 2em;
+}
+
+/* SERVICIOS --------------------------------------------------------------------------*/
+
+#proyectos {
+    height: 80vh;
+    position: relative;
 }
 
 /* SERVICIOS --------------------------------------------------------------------------*/

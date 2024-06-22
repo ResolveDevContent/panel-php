@@ -75,6 +75,19 @@
             $isSend = $send;
         }
     }
+
+    require_once "config.php";
+
+    $arrayImg = [];
+    $query = "SELECT * FROM proyectos";
+    if($result = mysqli_query($sql, $query)){
+        if(mysqli_num_rows($result) > 0) {
+            $arrayImg = $result;
+        }
+    }
+    
+    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    $proyectosImg = $imagenes;
 ?>
 
 <!DOCTYPE html>
@@ -183,11 +196,13 @@
                                 <i class="icon close"></i>
                             </label>
                         </div>
-                        <ul>
-                            <li>
-                                Mockups
-                            </li>
-                        </ul>
+                        <?php if($proyectosImg) : ?>
+                            <div class="imagenes" data-scroll="auto">
+                                <?php
+                                    echo $proyectosImg;
+                                ?>
+                            </div>
+                        <?php endif ?>
                         <div class="btn d-flex justify-center flex-col align-center text-center gap-1">
                             <span>
                                 <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.

@@ -61,6 +61,19 @@
             $isSend = $send;
         }
     }
+
+    require_once "config.php";
+
+    $arrayImg = [];
+    $query = "SELECT * FROM proyectos";
+    if($result = mysqli_query($sql, $query)){
+        if(mysqli_num_rows($result) > 0) {
+            $arrayImg = $result;
+        }
+    }
+    
+    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    $proyectosImg = $imagenes;
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +82,6 @@
     <?php
         $title = "Panel";
         include_once "includes/head.php";
-        require_once "config.php";
 
         $servicios = '';
         $query = "SELECT * FROM servicios";
@@ -162,7 +174,17 @@
                     </div>
                 </article>
             </section>
-    
+        </main>
+
+        <?php if($proyectosImg) : ?>
+            <section id="proyectos" data-scroll="auto">
+                <?php
+                    echo $proyectosImg;
+                ?>
+            </section>
+        <?php endif ?>
+
+        <main class="wrapper">
             <?php if($servicios) : ?>
                 <section id="servicios" class="d-flex flex-col align-center text-center">
                     <header>
