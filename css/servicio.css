@@ -33,18 +33,35 @@
     position: relative;
 }
 
-#servicio .tablet > img {
+/* #servicio .tablet > img {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 4;
+} */
+
+#servicio .phone {
+    display: flex;
+    flex-direction: column;
+}
+
+#servicio .phone > img {
+    position: relative;
+    z-index: 5;
+}
+
+#servicio .tablet ul {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 #servicio .tablet > ul {
     overflow-y: auto;
-    scroll-snap-type: x mandatory;
 }
 
 #servicio .tablet > ul li {
@@ -53,10 +70,10 @@
     scroll-snap-align: center;
 }
 
-#servicio .tablet > ul li img {
+/* #servicio .tablet > ul li img {
     z-index: 2;
     position: relative;
-}
+} */
 
 @media screen and (min-width: 960px) {
 
@@ -71,15 +88,6 @@
 
     #servicio .phone > img {
         width: 50%;
-        position: relative;
-        z-index: 5;
-    }
-    #servicio .tablet ul {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
     }
 
     #servicio .tablet ul li {
@@ -97,6 +105,10 @@
         width: 100%;
         height: 100%;
     } */
+
+    #servicio .tablet > ul {
+        scroll-snap-type: x mandatory;
+    }
 }
 
 @media screen and (max-width: 959px) {
@@ -112,7 +124,7 @@
         flex-direction: column;
     }
 
-    #servicio .tablet {
+    /* #servicio .tablet {
         min-height: 10em;
         width: 24em;
         height: 22em;
@@ -125,10 +137,20 @@
     #servicio .phone {
         min-height: 37em;
         height: 37em;
+    } */
+
+    #servicio .tablet > ul {
+        width: 100%;
+        height: 100%;
+    }
+
+    #servicio .tablet ul li {
+        height: 50%;
+        min-height: 50%;
     }
 
     #servicio .tablet > ul {
-        width: 90%;
-        height: 98%;
+        scroll-snap-type: y mandatory;
+        flex-direction: column;
     }
 }

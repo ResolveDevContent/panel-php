@@ -101,7 +101,11 @@
         }
     ?>
 
-    <body>
+    <body class="is-loading">
+        <div id="preloader">
+            <img src="/images/resolvedevverde.png" alt="logo">
+        </div>
+        
         <?php include_once("includes/navbar.php"); ?>
 
         <section id="inicio">
@@ -175,7 +179,7 @@
 
             <section id="metricas" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex align-center justify-center w-100">
-                    <div class="d-flex align-center justify-center flex-col">
+                    <div class="d-flex align-center justify-center flex-col text-center">
                         <h4>Nuestras m&eacute;tricas</h4>
                         <span>Aqu&iacute; estan los resultados de nuestros servicios</span>
                     </div>
