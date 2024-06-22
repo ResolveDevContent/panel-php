@@ -111,6 +111,9 @@
             <em>Ayuda</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
+                    <a href="/index.php#metricas">M&eacute;tricas</a>
+                </li>
+                <li>
                     <a href="/index.php#reviews">Testimonios</a>
                 </li>
                 <li>

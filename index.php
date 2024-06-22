@@ -88,7 +88,7 @@
                             $introduccion .= '<span>' .$row['introduccion'] .'</span>';
                             $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
                             $introduccion .= '<div class="btn">';
-                                $introduccion .= "<a href='/servicio.php?servicioId=". $row['servicioId'] ."'>Ver m&aacute;s</a>";
+                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] ."'>Ver m&aacute;s</a>";
                             $introduccion .= '</div>';
                         $introduccion .= '</section>';
                     }
@@ -172,6 +172,29 @@
                     </article>
                 </section>
             <?php endif ?>
+
+            <section id="metricas" class="d-flex flex-col align-center justify-center">
+                <header class="d-flex align-center justify-center w-100">
+                    <div class="d-flex align-center justify-center flex-col">
+                        <h4>Nuestras m&eacute;tricas</h4>
+                        <span>Aqu&iacute; estan los resultados de nuestros servicios</span>
+                    </div>
+                </header>
+                <ul class="d-flex align-center justify-start gap-1">
+                    <li>
+                        <span class="loader"></span>
+                        <img src="/images/Attitours.jpg" alt="">
+                    </li>
+                    <li>
+                        <span class="loader"></span>
+                        <img src="/images/Attitours.jpg" alt="">
+                    </li>
+                    <li>
+                        <span class="loader"></span>
+                        <img src="/images/Attitours.jpg" alt="">
+                    </li>
+                </ul>
+            </section>
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex align-center justify-center w-100">

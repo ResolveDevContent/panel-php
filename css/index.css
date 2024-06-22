@@ -172,6 +172,32 @@ h4 {
     justify-content: center;
 }
 
+/* METRICAS ----------------------------------------------------------------------------*/
+
+#metricas > ul {
+    width: 100%;
+    margin-top: 2em;
+    overflow-y: auto;
+    scroll-snap-type: x mandatory;
+}
+
+#metricas > ul > li {
+    width: 25em;
+    min-width: 25em;
+    min-height: 30em;
+    height: 30em;
+    background-color: #494949;
+    border-radius: .5em;
+    scroll-snap-align: center;
+    position: relative;
+}
+
+#metricas > ul > li img {
+    border-radius: .5em;
+    position: relative;
+    z-index: 2;
+}
+
 /* REVIEWS ----------------------------------------------------------------------------*/
 
 #reviews {

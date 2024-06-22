@@ -147,6 +147,24 @@ video {
     color: greenyellow;
 }
 
+.loader {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    border: .3125em solid #C4C0B5;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: loader 1s linear infinite;
+}
+
 /* NAV ARROWS ------------------------------------------------------------ */
 
 .nav-arrows {
@@ -392,8 +410,16 @@ video {
     }
 }
 
-@media screen and (min-width: 960px) {
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
+@media screen and (min-width: 960px) {
     .gradient {
         height: 100vh;
     }
