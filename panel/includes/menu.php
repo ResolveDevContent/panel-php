@@ -23,8 +23,8 @@
     <div>
         <ul class="d-flex flex-col">
             <li class='categoria'>
-                <a href="/panel-php/panel/products/productos.php">
-                    <span>Mockups</span>
+                <a href="/panel-php/panel/proyectos/proyectos.php">
+                    <span>Proyectos</span>
                 </a>
             </li>
             <li class='categoria'>

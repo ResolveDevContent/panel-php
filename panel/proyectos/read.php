@@ -1,20 +1,20 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
+if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
     // Include config file
     require_once "../config.php";
     // require_once "../errors.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM products WHERE productId = ?";
-    $sql2 = "SELECT * FROM products_images WHERE productId = ?";
+    $sql = "SELECT * FROM proyectos WHERE proyectoId = ?";
+    $sql2 = "SELECT * FROM proyectos_images WHERE proyectoId = ?";
 
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "i", $param_productId);
+        mysqli_stmt_bind_param($stmt, "i", $param_proyectoId);
 
         // Set parameters
-        $param_productId = trim($_GET["productId"]);
+        $param_proyectoId = trim($_GET["proyectoId"]);
 
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -46,10 +46,10 @@ if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
 
     if($stmt2 = mysqli_prepare($link, $sql2)){
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt2, "i", $param_productId);
+        mysqli_stmt_bind_param($stmt2, "i", $param_proyectoId);
 
         // Set parameters
-        $param_productId = trim($_GET["productId"]);
+        $param_proyectoId = trim($_GET["proyectoId"]);
 
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt2)){

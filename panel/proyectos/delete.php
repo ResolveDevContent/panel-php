@@ -1,7 +1,7 @@
 <?php
-    $table = "products";
-    $id = "productId";
-    $location = "productos.php";
+    $table = "proyectos";
+    $id = "proyectoId";
+    $location = "proyectos.php";
     $isInProduct = true;
     include_once("../controllers/delete.php")
 ?>
@@ -26,11 +26,11 @@
                             </header>
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div>
-                                    <input type="hidden" name="productId" value="<?php echo trim($_GET["productId"]); ?>"/>
-                                    <p>Está seguro que deseas borrar el producto con id: <?php echo trim($_GET["productId"]); ?></p><br>
+                                    <input type="hidden" name="proyectoId" value="<?php echo trim($_GET["proyectoId"]); ?>"/>
+                                    <p>Está seguro que deseas borrar el producto con id: <?php echo trim($_GET["proyectoId"]); ?></p><br>
                                     <p>
                                         <input type="submit" value="Si" class="btn btn-error">
-                                        <a href="./productos.php" class="btn btn-default">No</a>
+                                        <a href="./proyectos.php" class="btn btn-default">No</a>
                                     </p>
                                 </div>
                             </form>
