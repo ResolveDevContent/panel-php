@@ -8,9 +8,9 @@
             $response = "<table class='fl-table'>";
                 $response .= "<thead>";
                     $response .= "<tr>";
-                        $array = mysqli_fetch_assoc($result);
-                        foreach($array as $key => $value) {
-                            $response .= "<th>" . $key . "</th>";
+                        $val = mysqli_fetch_fields($result);
+                        for ($i=0; $i < count($val); $i++) {
+                            $response .= "<th>" . $val[$i]->name . "</th>";
                         }
                         $response .= "<th>Acciones</th>";
                     $response .= "</tr>";
@@ -37,7 +37,7 @@
         } else{
             $response = '<div class="empty-state d-flex flex-col justify-center align-center">
                             <i class="icon info"></i>
-                            <span>No se encontraron proyectos</span>
+                            <span>No se encontraron datos</span>
                         </div>';
         }
     } else{
