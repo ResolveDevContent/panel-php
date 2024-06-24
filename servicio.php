@@ -7,6 +7,7 @@
         require_once "config.php";
 
         $mockups = '<div class="d-flex flex-col align-center justify-center gap-5 empty-state">
+                        <img src="gifs/empty-state.gif" alt="empty-state">
                         <span>No hay proyectos disponibles para este servicio</span>
                     </div>';
         $row = '';
