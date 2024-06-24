@@ -27,83 +27,49 @@
 
 #servicio .mockups {
     margin-top: 2em;
+    height: 60vh;
 }
 
-#servicio .tablet {
+#servicio .tablet,
+#servicio .phone {
     position: relative;
+    width: 50%;
+    height: 100%;
 }
 
-/* #servicio .tablet > img {
+#servicio .phone > img,
+#servicio .tablet > img {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 4;
-} */
-
-#servicio .phone > img {
-    position: relative;
-    z-index: 5;
 }
 
+#servicio .phone ul,
 #servicio .tablet ul {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: 1;
 }
 
-#servicio .tablet > ul {
-    overflow-y: auto;
-}
-
+#servicio .phone > ul li,
 #servicio .tablet > ul li {
     min-width: 100%;
     height: 100%;
     scroll-snap-align: center;
 }
+#servicio .phone > ul li img {
+    transform: skewy(10deg);
+}
 
-/* #servicio .tablet > ul li img {
-    z-index: 2;
-    position: relative;
-} */
 
 @media screen and (min-width: 960px) {
 
-    #servicio .tablet {
-        width: 100%;
-    }
-
-    #servicio .phone {
-        display: flex;
-        align-items: center;
-    }
-
-    #servicio .phone > img {
-        width: 50%;
-    }
-
-    #servicio .tablet ul li {
-        width: 50%;
-        min-width: 50%;
-    }
-    /* #servicio .phone,
-    #servicio .tablet {
-        min-height: 31em;
-        height: 31em;
-        max-width: 40em;
-    }
-
-    #servicio .tablet > ul {
-        width: 100%;
-        height: 100%;
-    } */
-
-    #servicio .tablet > ul {
-        scroll-snap-type: x mandatory;
-    }
 }
 
 @media screen and (max-width: 959px) {

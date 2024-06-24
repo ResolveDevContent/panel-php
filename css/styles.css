@@ -138,6 +138,10 @@ video {
     font-weight: 600;
 }
 
+.empty-state img {
+    width: 40%;
+}
+
 .mensaje-error {
     color: red;
     margin-top: 1em;

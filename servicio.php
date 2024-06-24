@@ -6,19 +6,21 @@
         include_once "includes/head.php";
         require_once "config.php";
 
-        $mockups = '<div class="d-flex flex-col align-center justify-center gap-5 empty-state">
-                        <img src="gifs/empty-state.gif" alt="empty-state">
-                        <span>No hay proyectos disponibles para este servicio</span>
-                    </div>';
         $row = '';
+        $proyectosImg = '';
 
         if(isset($_GET["servicio"]) && !empty(trim($_GET["servicio"]))){
-            $query = "SELECT * FROM servicios WHERE slug = ?";
+            $query = "SELECT * FROM servicios WHERE servicioId = ?";
     
             if($stmt = mysqli_prepare($sql, $query)) {
                 mysqli_stmt_bind_param($stmt, "i", $param);
     
-                $param = $_GET["servicio"];
+                // $slice = explode("-", $_GET["servicio"]);
+                // $length = count($slice);
+                // $param = implode(array_slice($slice, 0, ($length - 1)));
+                $slice = explode("-", $_GET["servicio"]);
+                $length = count($slice);
+                $param = $slice[$length - 1];
     
                 if(mysqli_stmt_execute($stmt)) {
                     $result = mysqli_stmt_get_result($stmt);
@@ -43,6 +45,7 @@
             }
 
             if($row) {
+                $arrayImg = [];
                 $query = "SELECT * FROM proyectos WHERE servicioId = ?";
 
                 if($stmt = mysqli_prepare($sql, $query)) {
@@ -56,34 +59,9 @@
                         $result = mysqli_stmt_get_result($stmt);
         
                         if($result) {
-                            if(mysqli_num_rows($result) > 0) {
-                                $mockups = '<div class="mockups d-flex align-center justify-around w-100">';
-                                    $mockups .= '<div class="tablet">';
-                                        $mockups .= '<div class="phone d-flex">';
-                                            $mockups .= '<img src="images/phone-3D.png" alt="">';
-                                            $mockups .= '<img src="images/mockup.png" alt="">';
-                                        $mockups .= '</div>';
-                                        $mockups .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>';
-                                            $mockups .= '<a href="#" data-arrow="-1" class="d-flex">';
-                                                $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>';
-                                                // $mockups .= '<i class="icon arrow-left"></i>';
-                                            $mockups .= '</a>';
-                                            $mockups .= '<a href="#" data-arrow="1" class="d-flex">';
-                                                $mockups .= '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>';
-                                                // $mockups .= '<i class="icon arrow-right"></i>';
-                                            $mockups .= '</a>';
-                                        $mockups .= '</nav>';
-                                        $mockups .= '<ul class="d-flex align-center" data-scrollable>';
-                                            while($pRow = mysqli_fetch_array($result)){
-                                                $mockups .= '<li>';
-                                                    $mockups .= '<span class="loader"></span>';
-                                                    $mockups .= "<img src='". $pRow['portada'] ."' alt=''>";
-                                                $mockups .= '</li>';
-                                            }
-                                        $mockups .= '</ul>';
-                                    $mockups .= '</div>';
-                                $mockups .= '</div>';
-                            }
+                            $arrayImg = $result; 
+                            include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+                            $proyectosImg = $imagenes;
                         }
                     }
                 }
@@ -103,11 +81,29 @@
                         echo $servicio;
                     ?>
                 </aside>
-                <article class="d-flex flex-col align-center w-100" data-scroll>
+                <article class="d-flex flex-col align-center w-100">
                     <strong>Nuestros trabajos</strong>
-                    <?php
-                        echo $mockups;
-                    ?>
+                    <?php if($proyectosImg) : ?>
+                        <div class="mockups d-flex align-center justify-around w-100">
+                            <div class="phone" data-scroll="auto">
+                                <img src="images/phone-3D.png" alt="">
+                                <?php
+                                    echo $proyectosImg;
+                                ?>
+                            </div>
+                            <div class="tablet" data-scroll>
+                                <img src="images/mockup.png" alt="">
+                                <?php
+                                    echo $proyectosImg;
+                                ?>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <div class="d-flex flex-col align-center justify-center gap-5 empty-state">
+                            <img src="gifs/empty-state.gif" alt="empty-state">
+                            <span>No hay proyectos disponibles para este servicio</span>
+                        </div>
+                    <?php endif ?>
                 </article>
             </section>
         </main>

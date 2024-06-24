@@ -22,18 +22,31 @@
     font-weight: 600;
     letter-spacing: .2em;
     color: var(--color5);
+    cursor: default;
 }
 
 #banner div aside a {
     cursor: pointer;
-    background-color: black;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(2700deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
 }
 
-#banner div aside a i {
-    width: 2em;
-    min-width: 2em;
-    height: 2em;
-    min-height: 2em;
+#banner div aside a i,
+#banner div aside a svg {
+    width: 1.75em;
+    min-width: 1.75em;
+    height: 1.75em;
+    min-height: 1.75em;
+    fill: var(--color5);
+}
+
+#banner div aside a:hover i,
+#banner div aside a:hover svg {
+    opacity: .5;
 }
 
 #banner > div article {

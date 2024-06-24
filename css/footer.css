@@ -191,6 +191,10 @@
     z-index: 32;
 }
 
+#footer .redes-sociales li a:hover svg {
+    fill: rgb(179, 179, 179);
+}
+
 #footer > header > div > ul > li > a {
     font-size: 2em;
 }

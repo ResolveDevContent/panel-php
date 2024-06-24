@@ -9,17 +9,16 @@
         $proyectoImagenes = '';
         $arrows = '';
         $redes = '<em class="vertical-text">Resultados del proyecto</em>';
-        $servicio = '<div class="d-flex flex-col align-center justify-center empty-state">
-                        <span>La informaci&oacute;n no se encuntra disponible</span>
-                    </div>';
 
-        if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
+        if(isset($_GET["proyecto"]) && !empty(trim($_GET["proyecto"]))){
             $query = "SELECT * FROM proyectos WHERE proyectoId = ?";
     
             if($stmt = mysqli_prepare($sql, $query)) {
                 mysqli_stmt_bind_param($stmt, "i", $param);
     
-                $param = $_GET["proyectoId"];
+                $slice = explode("-", $_GET["proyecto"]);
+                $length = count($slice);
+                $param = $slice[$length - 1];
     
                 if(mysqli_stmt_execute($stmt)) {
                     $result = mysqli_stmt_get_result($stmt);
@@ -28,23 +27,23 @@
                         if(mysqli_num_rows($result) > 0) {
                             $row = mysqli_fetch_assoc($result);
 
-                            $proyecto = '<header class="d-flex flex-col text-center">
-                                            <h2>'. $row['nombre'] .'</h2>
-                                            <span>'. $row['servicio'] .'</span>
-                                        </header>
-                                        <div class="d-flex flex-col align-center text-center">
-                                            <em>'. $row['descripcion'] .'</em>
-                                            <div class="d-flex align-center gap-5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                                    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7-8 5.334L4 8.7V6.297l8 5.333 8-5.333V8.7z"></path>
-                                                </svg>
-                                                <span>'. $row['email'] .'</span>
-                                            </div>
-                                        </div>';
+                            $proyecto = '<header class="d-flex flex-col text-center">';
+                                       $proyecto .= '<h2>'. $row['nombre'] .'</h2>';
+                                            $proyecto .= '<span>'. $row['servicio'] .'</span>';
+                                        $proyecto .= '</header>';
+                                        $proyecto .= '<div class="d-flex flex-col align-center text-center">';
+                                            $proyecto .= '<em>'. $row['descripcion'] .'</em>';
+                                            if($row['email']) {
+                                                $proyecto .= '<div class="d-flex align-center gap-5">';
+                                                    $proyecto .= '<i class="icon mail"></i>';
+                                                    $proyecto .= '<span>'. $row['email'] .'</span>';
+                                                $proyecto .= '</div>';
+                                            }      
+                                        $proyecto .= '</div>';
 
                             if($row['facebook'] || $row['instagram'] || $row['website']) {
                                 $redes = '<em class="vertical-text">Redes Sociales</em>';
-                                $redes .= '<ul class="d-flex aling-center flex-col gap-5">';
+                                $redes .= '<ul class="d-flex aling-center flex-col gap-1">';
                                 if($row['facebook']) {
                                     $redes .= '<li>';
                                         $redes .= "<a href='". $row['facebook'] ."' class='d-flex align-center' target='_blank' title='Facebook'>";
@@ -95,7 +94,9 @@
             // if($stmt = mysqli_prepare($sql, $query)) {
             //     mysqli_stmt_bind_param($stmt, "i", $param);
     
-            //     $param = $_GET["proyectoId"];
+            //     $slice = explode("-", $_GET["proyecto"]);
+                // $length = count($slice);
+                // $param = $slice[$length - 1];
     
             //     if(mysqli_stmt_execute($stmt)) {
             //         $result = mysqli_stmt_get_result($stmt);
