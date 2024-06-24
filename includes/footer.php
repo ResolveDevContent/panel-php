@@ -71,7 +71,7 @@
     </svg>
     <ul class="d-flex align-start justify-around">
         <li class="d-flex flex-col align-start justifi-center">
-            <img src="" alt="">
+            <img src="/panel-php/images/Red limit PNG (2).png" alt="">
             <span>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam rerum quae explicabo temporibus.
             </span>

@@ -64,16 +64,16 @@
 
     require_once "config.php";
 
-    $arrayImg = [];
-    $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
-    if($result = mysqli_query($sql, $query)){
-        if(mysqli_num_rows($result) > 0) {
-            $arrayImg = $result;
-        }
-    }
+    // $arrayImg = [];
+    // $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
+    // if($result = mysqli_query($sql, $query)){
+    //     if(mysqli_num_rows($result) > 0) {
+    //         $arrayImg = $result;
+    //     }
+    // }
     
-    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
-    $proyectosImg = $imagenes;
+    // include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    // $proyectosImg = $imagenes;
 ?>
 
 <!DOCTYPE html>
@@ -175,13 +175,13 @@
             </section>
         </main>
 
-        <?php if($proyectosImg) : ?>
+        <!-- <?php if($proyectosImg) : ?>
             <section id="proyectos" data-scroll="auto">
                 <?php
                     echo $proyectosImg;
                 ?>
             </section>
-        <?php endif ?>
+        <?php endif ?> -->
 
         <main class="wrapper">
             <?php if($servicios) : ?>

@@ -13,10 +13,8 @@ a {
 }
 
 #navbar .logo a {
-    width: 8em;
+    width: 6em;
     display: block;
-    height: 3em; 
-    background-color: #000;
 }
 
 #navbar > div ul li a::after {
