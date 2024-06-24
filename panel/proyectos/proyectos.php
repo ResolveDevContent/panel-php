@@ -32,10 +32,8 @@
                             require_once "../config.php";
 
                             $tabla = "proyectos";
+                            $columns = "proyectoId, nombre, descripcion, website";
                             include_once("../controllers/tabla.php");
-
-
-                            echo $response;
                         ?>
                     </div>
                 </div>

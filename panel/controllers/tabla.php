@@ -1,32 +1,35 @@
 <?php
 
     // Attempt select query execution
-    $sql = "SELECT * FROM $tabla";
+    $sql = "SELECT $columns FROM $tabla";
     if($result = mysqli_query($link, $sql)){
         if(mysqli_num_rows($result) > 0){
-            $array = mysqli_fetch_array($result);
 
             $response = "<table class='fl-table'>";
                 $response .= "<thead>";
                     $response .= "<tr>";
-                        foreach( $array as $key => $value ){
+                        $array = mysqli_fetch_assoc($result);
+                        foreach($array as $key => $value) {
                             $response .= "<th>" . $key . "</th>";
                         }
+                        $response .= "<th>Acciones</th>";
                     $response .= "</tr>";
                 $response .= "</thead>";
                 $response .= "<tbody>";
-                    $response .= "<tr>";
-                    foreach( $array as $key => $value ){
-                            $response .= "<td><span>" . $value . "</span></td>";
-                            // $response .= "<td>";
-                            //     $response .= "<ul class='d-flex align-center'>";
-                            //         $response .= "<li><a href='read.php?proyectoId=". $row['proyectoId'] ."' title='Ver'><i class='icon ver'></i></a></li>";
-                            //         $response .= "<li><a href='update.php?proyectoId=". $row['proyectoId'] ."' title='Actualizar'><i class='icon editar'></i></a></li>";
-                            //         $response .= "<li><a href='delete.php?proyectoId=". $row['proyectoId'] ."' title='Borrar'><i class='icon borrar'></i></a></li>";
-                            //     $response .= "</ul>";
-                            // $response .= "</td>";
-                        }
+                    while($row = mysqli_fetch_assoc($result)) {
+                        $response .= "<tr>";
+                            foreach($row as $key => $value) {
+                                $response .= "<td>" . $value . "</td>";
+                            }
+                            $response .= "<td>";
+                                $response .= "<ul class='d-flex align-center'>";
+                                    $response .= "<li><a href='read.php?proyectoId=". $row['proyectoId'] ."' title='Ver'><i class='icon ver'></i></a></li>";
+                                    $response .= "<li><a href='update.php?proyectoId=". $row['proyectoId'] ."' title='Actualizar'><i class='icon editar'></i></a></li>";
+                                    $response .= "<li><a href='delete.php?proyectoId=". $row['proyectoId'] ."' title='Borrar'><i class='icon borrar'></i></a></li>";
+                                $response .= "</ul>";
+                            $response .= "</td>";
                         $response .= "</tr>";
+                    }
                 $response .= "</tbody>";                            
             $response .= "</table>";
             // Free result set
