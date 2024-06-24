@@ -65,7 +65,7 @@
     require_once "config.php";
 
     $arrayImg = [];
-    $query = "SELECT * FROM proyectos";
+    $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
     if($result = mysqli_query($sql, $query)){
         if(mysqli_num_rows($result) > 0) {
             $arrayImg = $result;
