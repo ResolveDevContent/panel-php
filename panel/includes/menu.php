@@ -28,8 +28,8 @@
                 </a>
             </li>
             <li class='categoria'>
-                <a href="#">
-                    <span>Reviews (coming soon)</span>
+                <a href="/panel-php/panel/reviews/reviews.php">
+                    <span>Reviews</span>
                 </a>
             </li>
         </ul>
