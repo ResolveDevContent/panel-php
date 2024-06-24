@@ -42,11 +42,6 @@
     z-index: 4;
 } */
 
-#servicio .phone {
-    display: flex;
-    flex-direction: column;
-}
-
 #servicio .phone > img {
     position: relative;
     z-index: 5;
@@ -118,6 +113,10 @@
 
     #servicio > article strong {
         font-size: 2em;
+    }
+
+    #servicio .phone {
+        flex-direction: column;
     }
 
     #servicio .mockups {

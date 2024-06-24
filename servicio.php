@@ -47,7 +47,9 @@
                 if($stmt = mysqli_prepare($sql, $query)) {
                     mysqli_stmt_bind_param($stmt, "i", $param);
         
-                    $param = $row['servicioId'];
+                    $slice = explode("-", $_GET["servicio"]);
+                    $length = count($slice);
+                    $param = $slice[$length - 1];
         
                     if(mysqli_stmt_execute($stmt)) {
                         $result = mysqli_stmt_get_result($stmt);
@@ -56,7 +58,7 @@
                             if(mysqli_num_rows($result) > 0) {
                                 $mockups = '<div class="mockups d-flex align-center justify-around w-100">';
                                     $mockups .= '<div class="tablet">';
-                                        $mockups .= '<div class="phone">';
+                                        $mockups .= '<div class="phone d-flex">';
                                             $mockups .= '<img src="images/phone-3D.png" alt="">';
                                             $mockups .= '<img src="images/mockup.png" alt="">';
                                         $mockups .= '</div>';

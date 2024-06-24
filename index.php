@@ -100,7 +100,7 @@
                             $introduccion .= '<span>' .$row['introduccion'] .'</span>';
                             $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
                             $introduccion .= '<div class="btn">';
-                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] ."'>Ver m&aacute;s</a>";
+                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['servicioId'] ."'>Ver m&aacute;s</a>";
                             $introduccion .= '</div>';
                         $introduccion .= '</section>';
                     }
