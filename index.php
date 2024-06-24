@@ -124,7 +124,7 @@
             <ul>
                 <li>
                     <figure>
-                        <video autoplay loop muted>
+                        <video autoplay loop muted poster="/panel-php/images/imgbanner.png">
                             <source src="videos/banner.MP4" type="video/mp4">
                         </video>
                         <figcaption class="d-flex align-center justify-end">
