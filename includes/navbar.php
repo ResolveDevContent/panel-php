@@ -1,7 +1,7 @@
 <nav id="navbar" class="d-flex align-center justify-between">
     <div class="logo">
         <a href="/index.php">
-            <img src="/panel-php/images/Red limit PNG (2).png" alt="">
+            <img src="/panel-php/images/logo.png" alt="">
         </a>
     </div>
     <div class="d-flex align-center">

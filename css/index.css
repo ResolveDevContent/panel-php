@@ -267,18 +267,17 @@ h4 {
     font-size: .9em;
 }
 
-/* #reviews > ul > li div > i {
+#reviews > ul > li div > i {
     margin: 0 .125em;
     background-color: yellow;
-} */
-
-#reviews > ul > li div > svg {
-    margin: 0 .125em;
-    fill: yellow;
 }
 
 #reviews > ul > li > aside {
     margin-top: 1em;
+}
+
+#reviews > footer {
+    margin-top: 2em;
 }
 
 /* cotiza -------------------------------------------------------------------------------*/
