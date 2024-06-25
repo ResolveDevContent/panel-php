@@ -61,13 +61,18 @@
 
 
 @media screen and (min-width: 960px) {
-    #servicio .tablet,
     #servicio .phone {
-        width: 50%;
+        height: 30em;
+        min-height: 30em;
+        width: 20em;
+        min-width: 20em;
     }
 
-    #servicio .mockups {
-        height: 60vh;
+    #servicio .tablet {
+        width: 30em;
+        min-width: 30em;
+        height: 28em;
+        min-height: 28em;
     }
 }
 
@@ -87,10 +92,6 @@
     #servicio .tablet, 
     #servicio .phone {
         width: 100%;
-    }
-
-    #servicio .tablet {
-        height: 60%;
     }
 
     #servicio .mockups {

@@ -30,7 +30,7 @@ textarea,
 }
 
 .gradient {
-    height: 40vh;
+    height: 100vh;
 }
 
 /* NAVBAR -------------------------------------------------------- */
@@ -255,13 +255,17 @@ textarea,
 }
 
 #sobre-nosotros article > div > div i {
-    width: 3em;
-    min-width: 3em;
-    height: 3em;
-    min-height: 3em;
+    width: 3.5em;
+    min-width: 3.5em;
+    height: 3.5em;
+    min-height: 3.5em;
 }
 
-#valores > ul li div em,
+#sobre-nosotros > article > div > div svg {
+    width: 3.5em;
+    height: 3.5em;
+}
+
 #join em {
     font-size: 2em;
 }
@@ -494,14 +498,20 @@ span.highlight {
 
 #faq .item {
     flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+#faq .item:nth-child(2n) {
+    align-items: end;
 }
 
 #faq .item .image {
-    width: 100%;
+    width: 70%;
 }
 
-#faq .item {
-    justify-content: center;
+#faq > article + div {
+    display: none;
 }
 
 /* PROYECTO ---------------------------------------------------------------------- */

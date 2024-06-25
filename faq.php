@@ -24,7 +24,7 @@
             <ul class="d-flex flex-col w-100">
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/servicios.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -88,8 +88,8 @@
                     </div>
                 </li>
                 <li class="item">
-                    <div class="image">
-                        <img src="" alt="">
+                    <div class="image" style="width: 30%;">
+                        <img src="/images/presupuesto.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -102,7 +102,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/mision.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -115,7 +115,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/tiempo.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -128,7 +128,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/payment.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -141,7 +141,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/marketing.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -154,7 +154,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/agendar.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -167,7 +167,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images//diferencia.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -180,7 +180,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="" alt="">
+                        <img src="/images/diseño.svg" alt="">
                     </div>
                     <div class="text" class="text">
                         <em>
@@ -193,6 +193,7 @@
                 </li>
             </ul>
         </article>
+        <div></div>
     </section>
 
     <?php include_once("includes/footer.php"); ?>
