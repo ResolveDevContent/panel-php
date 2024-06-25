@@ -205,20 +205,21 @@
                         <span>Aqu&iacute; estan los resultados de nuestros servicios</span>
                     </div>
                 </header>
-                <ul class="d-flex align-center justify-start gap-1">
-                    <li>
-                        <span class="loader"></span>
-                        <img src="/images/Attitours.jpg" alt="">
-                    </li>
-                    <li>
-                        <span class="loader"></span>
-                        <img src="/images/Attitours.jpg" alt="">
-                    </li>
-                    <li>
-                        <span class="loader"></span>
-                        <img src="/images/Attitours.jpg" alt="">
-                    </li>
-                </ul>
+                <?php 
+                    $query = "SELECT * FROM metricas";
+                    if($result = mysqli_query($sql, $query)){
+                        if(mysqli_num_rows($result) > 0) {
+                            echo '<ul class="d-flex align-center justify-start gap-1">';
+                                while($row = mysqli_fetch_assoc($result)) {
+                                        echo '<li>';
+                                            echo '<span class="loader"></span>';
+                                            echo '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
+                                        echo '</li>';
+                                    }
+                            echo '</ul>';
+                        }
+                    }
+                ?>
             </section>
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
