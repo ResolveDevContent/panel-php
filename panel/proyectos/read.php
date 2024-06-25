@@ -1,20 +1,20 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
     require_once "../config.php";
     // require_once "../errors.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM proyectos WHERE proyectoId = ?";
+    $sql = "SELECT * FROM proyectos WHERE id = ?";
     $sql2 = "SELECT * FROM proyectos_images WHERE proyectoId = ?";
 
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "i", $param_proyectoId);
+        mysqli_stmt_bind_param($stmt, "i", $param_id);
 
         // Set parameters
-        $param_proyectoId = trim($_GET["proyectoId"]);
+        $param_id = trim($_GET["id"]);
 
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -27,8 +27,13 @@ if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
 
                 // Retrieve individual field value
                 $nombre = $row["nombre"];
-                $stock = $row["stock"];
-                $precio = $row["precio"];
+                $descripcion = $row["descripcion"];
+                $servicios = json_decode($row["servicios"]);
+                $instagram = $row["instagram"];
+                $facebook = $row["facebook"];
+                $website = $row["website"];
+                $mail = $row["mail"];
+                $portada = $row["portada"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -46,10 +51,10 @@ if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
 
     if($stmt2 = mysqli_prepare($link, $sql2)){
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt2, "i", $param_proyectoId);
+        mysqli_stmt_bind_param($stmt2, "i", $param_id);
 
         // Set parameters
-        $param_proyectoId = trim($_GET["proyectoId"]);
+        $param_id = trim($_GET["id"]);
 
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt2)){
@@ -79,7 +84,7 @@ if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
 <!DOCTYPE html>
 <html lang="en">
     <?php
-        $title = "Ver producto";
+        $title = "Ver Proyecto";
         include_once("../includes/head.php");
     ?>
 
@@ -89,24 +94,52 @@ if(isset($_GET["proyectoId"]) && !empty(trim($_GET["proyectoId"]))){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
-                        <a href="productos.php" class="d-flex align-center">
+                        <a href="proyectos.php" class="d-flex align-center">
                             <i class="icon left-arrow"></i>
                             <span>Volver</span>
                         </a>
                         <header class="d-flex flex-col align-center justify-center text-center">
-                            <h2>Ver Producto</h2>
+                            <h2>Ver Proyecto</h2>
                         </header>
                         <div class="input">
                             <label>Nombre</label>
                             <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" readonly>
                         </div>
                         <div class="input">
-                            <label>Stock</label>
-                            <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>" readonly>
+                            <label>Descripcion</label>
+                            <input type="text" name="descripcion" class="form-control" value="<?php echo $descripcion; ?>" readonly>
                         </div>
                         <div class="input">
-                            <label>Precio</label>
-                            <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>" readonly>
+                            <label>Servicios</label>
+                            <ul class="d-flex align-center flex-wrap">
+                                <?php 
+                                    foreach($servicios->servicios as $servicio => $value) {
+                                        echo '<li><span class="toast">' . $value->nombre . '</span></li>';
+                                    }
+                                ?>
+                            </ul>
+                        </div>
+                        <div class="input">
+                            <label>Instagram</label>
+                            <input type="text" name="instagram" class="form-control" value="<?php echo $instagram; ?>" readonly>
+                        </div>
+                        <div class="input">
+                            <label>Website</label>
+                            <input type="text" name="website" class="form-control" value="<?php echo $website; ?>" readonly>
+                        </div>
+                        <div class="input">
+                            <label>Facebook</label>
+                            <input type="text" name="facebook" class="form-control" value="<?php echo $facebook; ?>" readonly>
+                        </div>
+                        <div class="input">
+                            <label>Mail</label>
+                            <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" readonly>
+                        </div>
+                        <div class="input">
+                            <label>Portada</label>
+                            <figure>
+                                <img src="<?php echo $portada; ?>" alt=''>
+                            </figure>
                         </div>
                         <div class="d-flex flex-col imagenes">
                             <span>Imagenes</span>

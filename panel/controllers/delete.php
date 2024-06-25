@@ -5,7 +5,7 @@
         require_once "../config.php";
         
         // Prepare a delete statement
-        $sql_images = "DELETE FROM products_images WHERE productId = ?";
+        $sql_images = "DELETE FROM proyectos_images WHERE proyectoId = ?";
         $sql = "DELETE FROM $table WHERE $id = ?";
         
         if($isInProduct) {

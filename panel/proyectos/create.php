@@ -6,7 +6,8 @@ require_once "../config.php";
 // Define variables and initialize with empty values
 $nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = "";
 $nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = "";
-$portada = "EJEMPLO";
+$portada = "";
+$imagenes = [];
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -38,38 +39,66 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $mail = $input_mail;
 
     // // Validate imagen
-    // if($_FILES["portada"]["name"]) {
-    //     $filename = $_FILES["portada"]["name"]; //Obtenemos el nombre original del archivo
-    //     $source = $_FILES["portada"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+    if($_FILES["portada"]["name"]) {
+        $filename = $_FILES["portada"]["name"]; //Obtenemos el nombre original del archivo
+        $source = $_FILES["portada"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
         
-    //     $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+        $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
         
-    //     //Validamos si la ruta de destino existe, en caso de no existir la creamos
-    //     if(!file_exists($directorio)){
-    //         mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
-    //     }
+        //Validamos si la ruta de destino existe, en caso de no existir la creamos
+        if(!file_exists($directorio)){
+            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+        }
         
-    //     $dir=opendir($directorio); //Abrimos el directorio de destino
-    //     $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+        $dir=opendir($directorio); //Abrimos el directorio de destino
+        $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
         
-    //     //Movemos y validamos que el archivo se haya cargado correctamente
-    //     //El primer campo es el origen y el segundo el destino
-    //     if(move_uploaded_file($source, $target_path)) {	
-    //         echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
-    //         $portada = $target_path;
-    //     } else {	
-    //         header("location: error.php");
-    //         exit();
-    //     }
-    //     closedir($dir); //Cerramos el directorio de destino
-    // }
-    
+        //Movemos y validamos que el archivo se haya cargado correctamente
+        //El primer campo es el origen y el segundo el destino
+        if(move_uploaded_file($source, $target_path)) {	
+            echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+            $portada = $target_path;
+        } else {	
+            header("location: error.php");
+            exit();
+        }
+        closedir($dir); //Cerramos el directorio de destino
+    }
+
+    foreach($_FILES['imagenes']['tmp_name'] as $item => $tmp_name) {
+        if($_FILES["imagenes"]["name"][$item]) {
+			$filename2 = $_FILES["imagenes"]["name"][$item]; //Obtenemos el nombre original del archivo
+			$source2 = $_FILES["imagenes"]["tmp_name"][$item]; //Obtenemos un nombre temporal del archivo
+			
+			$directorio2 = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+			
+			//Validamos si la ruta de destino existe, en caso de no existir la creamos
+			if(!file_exists($directorio2)){
+				mkdir($directorio2, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+			}
+			
+			$dir2=opendir($directorio2); //Abrimos el directorio de destino
+			$target_path2 = $directorio2.'/'.$filename2; //Indicamos la ruta de destino, así como el nombre del archivo
+			
+			//Movemos y validamos que el archivo se haya cargado correctamente
+			//El primer campo es el origen y el segundo el destino
+			if(move_uploaded_file($source2, $target_path2)) {	
+				echo "El archivo $filename2 se ha almacenado en forma exitosa.<br>";
+                array_push($imagenes, $target_path2);
+            } else {	
+                header("location: error.php");
+                exit();
+			}
+			closedir($dir2); //Cerramos el directorio de destino
+		}
+    }
+
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($portada_err) && empty($servicios_err)){
 
         $sql_products = "INSERT INTO proyectos (nombre, descripcion, portada, servicios, instagram, website, facebook, mail) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
-        $sql_lastId = "SELECT LAST_INSERT_ID() as proyectoId";
+        $sql_lastId = "SELECT LAST_INSERT_ID() as id";
 
         if($stmt_products = mysqli_prepare($link, $sql_products)){
             // Bind variables to the prepared statement as parameters
@@ -96,28 +125,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Close statement
         mysqli_stmt_close($stmt_products);
     
+        $num_imagenes = count($imagenes);
         // Prepare an insert statement     
         if($stmt_lastId = mysqli_prepare($link, $sql_lastId)) {
             if(mysqli_stmt_execute($stmt_lastId)) {
                 $result = mysqli_stmt_get_result($stmt_lastId);
                 $row = mysqli_fetch_array($result);
-                $proyectoId = $row['proyectoId'];
+                $id = $row['id'];
 
-                if($stmt_images = mysqli_prepare($link, $sql_images)){
-                    // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($stmt_images, "ss", $param_proyectoId, $param_portada);
-                    
-                    // Set parameters
-                    $param_proyectoId = $proyectoId;
-                    $param_portada = $portada;
+                for($i = 0; $i < $num_imagenes; $i++) {
+                    if($stmt_images = mysqli_prepare($link, $sql_images)){
+                        // Bind variables to the prepared statement as parameters
+                        mysqli_stmt_bind_param($stmt_images, "ss", $param_proyectoId, $param_imagenes);
+                        
+                        // Set parameters
+                        $param_proyectoId = $id;
+                        $param_imagenes = $imagenes[$i];
 
-                    // Attempt to execute the prepared statement
-                    if(mysqli_stmt_execute($stmt_images)){
-                        // Records created successfully. Redirect to landing page
-                        echo "Agregado corretamente!";
-                    } else{
-                        header("location: error.php");
-                        exit();
+                        // Attempt to execute the prepared statement
+                        if(mysqli_stmt_execute($stmt_images)){
+                            // Records created successfully. Redirect to landing page
+                            echo "Agregado corretamente!";
+                        } else{
+                            header("location: error.php");
+                            exit();
+                        }
                     }
                 }
 
@@ -134,6 +166,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
+
+    $all_servicios = '';
+    $query = "SELECT * FROM servicios";
+    if($result = mysqli_query($link, $query)){
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_array($result)) {
+                $all_servicios .= '<option value=' . $row["id"] . ' data-nombre="' . $row["nombre"] . '">' . $row["nombre"] . '</option>';
+            }
+        }
+    }
+
 ?>
  
 <!DOCTYPE html>
@@ -168,9 +211,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <input type="text" name="descripcion" class="form-control" value="<?php echo $descripcion; ?>" required>
                                 <span class="help-block" ><?php echo $descripcion_err;?></span>
                             </div>
-                            <div class="input <?php echo (!empty($servicios_err)) ? 'has-error' : ''; ?>">
+                            <div class="input d-flex flex-col gap-1 <?php echo (!empty($servicios_err)) ? 'has-error' : ''; ?>">
                                 <label>Servicios</label>
-                                <input type="text" name="servicios" class="form-control" value="<?php echo $servicios; ?>" required>
+                                <input type="hidden" name="servicios" class="form-control" value="<?php echo $servicios; ?>" required>
+                                <div class="d-flex align-center justify-between gap-1">
+                                    <select name="all_servicios" id="all_servicios">
+                                        <option value="">Seleccione un servicio</option>
+                                        <?php 
+                                            echo $all_servicios;
+                                        ?>
+                                    </select>
+                                    <div class="btn">
+                                        <a href="#" id="btnServicios">Agregar</a>
+                                    </div>
+                                </div>
+                                <ul class="d-flex align-center gap-5" data-servicios></ul>
                                 <span class="help-block"><?php echo $servicios_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($instagram_err)) ? 'has-error' : ''; ?>">
@@ -195,8 +250,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <span>Portada</span>
                             <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="portada">
+                                    <input type="file" name="portada" id="portada" class="form-control" required>
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes o videos</span>
+                                </label>
+                            </div>
+                            <span>Imagenes</span>
+                            <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
-                                    <input type="file" name="portada" id="file" class="form-control" required>
+                                    <input type="file" name="imagenes[]" multiple id="file" class="form-control" required>
                                     <i class="icon upload"></i>
                                     <span>Subir imagenes o videos</span>
                                 </label>
@@ -255,6 +318,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 loader.classList.remove('disabled');
             }
         });
+
+        // ------------------------------------------------------------------------------
+
+        document.querySelectorAll('select#all_servicios').forEach(function(select) {
+            const servicios = {
+                servicios: []
+            };
+            const inputServicios = document.querySelector("input[name='servicios']");
+            
+            select.addEventListener('change', function(evt) {
+                const id = evt.target.value;
+
+                const option = select.querySelector(`option[value="${id}"]`);
+
+                if(!option) { return; }
+
+                const nombre = option.dataset.nombre;
+
+                servicios.servicios.push({nombre: nombre, id: id})
+            })
+
+            document.querySelectorAll('#btnServicios').forEach(function(btn) {
+                btn.addEventListener("click", function(evt) {
+                    inputServicios.value = JSON.stringify(servicios);
+
+                    for(const servicio of servicios.servicios) {
+                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                        })
+                    }
+                })
+
+                // console.log(document.querySelectorAll('[data-remove-servicio]'))
+                // document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
+                //     btn.addEventListener("click", function(evt) {
+                //         const id = btn.dataset.removeServicio;
+        
+                //         servicios.servicios = servicios.servicios.filter((row) => row.id != id);
+        
+                //         for(const servicio of servicios.servicios) {
+                //             document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                //                 ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                //             })
+                //         }
+                //     })
+                // })
+            })            
+        })
+        
 
     </script>
 </html>

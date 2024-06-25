@@ -40,6 +40,15 @@ img {
     object-fit: cover;
 }
 
+select {
+    width: 100%;
+    color: #000;
+    border: 1px solid #9F9F9F;
+    border-radius: .5em;
+    padding: 1.5em 1.75em;
+    outline: none;
+}
+
 .d-flex {
     display: flex;
 }
@@ -74,6 +83,10 @@ img {
 
 .text-white {
     color: #fff;
+}
+
+.gap-1 {
+    gap: 1em;
 }
 
 .btn {
@@ -112,6 +125,12 @@ img {
 .btn-primary:hover,
 .btn-default:hover {
     opacity: 1;
+}
+
+.toast {
+    padding: 0.5em;
+    background-color: #eee;
+    border-radius: 0.5em;
 }
 
 /* MENU - INICIO -------------------------------------------------------------------- */

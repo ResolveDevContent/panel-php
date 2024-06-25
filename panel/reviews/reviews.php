@@ -32,7 +32,7 @@
                             require_once "../config.php";
 
                             $tabla = "reviews";
-                            $columns = "reviewId, nombre, texto, estrellas";
+                            $columns = "id, nombre, texto, estrellas";
                             include_once("../controllers/tabla.php");
                         ?>
                     </div>

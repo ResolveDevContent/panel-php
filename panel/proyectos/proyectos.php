@@ -7,7 +7,7 @@
         include("../config.php");
         // require_once "../errors.php";
         
-        $title = "Productos";
+        $title = "Proyectos";
         include_once("../includes/head.php"); 
 
         $response = '<div class="loader-container d-flex justify-center">

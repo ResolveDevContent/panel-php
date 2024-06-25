@@ -4,87 +4,118 @@ require_once "../config.php";
 // require_once "../errors.php";
  
 // Define variables and initialize with empty values
-$nombre = $stock = $precio = "";
-$nombre_err = $stock_err = $precio_err = $imagenes_err = "";
+$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = "";
+$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = "";
+$portada = "";
 $imagenes = [];
  
 // Processing form data when form is submitted
-if(isset($_POST["productId"]) && !empty($_POST["productId"])){
+if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
-    $productId = $_POST["productId"];
+    $id = $_POST["id"];
     
     // Validate name
-    $input_name = trim($_POST["nombre"]);
-    if(empty($input_name)){
-        $nombre_err = "Por favor ingrese un nombre.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $nombre_err = "Por favor ingrese un nombre válido.";
+    $input_nombre = trim($_POST["nombre"]);
+    if(empty($input_nombre)){
+        $nombre_err = "Por favor ingrese el nombre.";
     } else{
-        $nombre = $input_name;
-    }
-    
-    // Validate address address
-    $input_stock = trim($_POST["stock"]);
-    if(empty($input_stock)){
-        $stock_err = "Por favor ingrese una dirección.";     
-    } else{
-        $stock = $input_stock;
+        $nombre = $input_nombre;
     }
     
     // Validate salary
-    $input_precio = trim($_POST["precio"]);
-    if(empty($input_precio)){
-        $precio_err = "Por favor ingrese el monto del salario del empleado.";     
-    } elseif(!ctype_digit($input_precio)){
-        $precio_err = "Por favor ingrese un valor positivo y válido.";
+    $input_servicios = trim($_POST["servicios"]);
+    if(empty($input_servicios)){
+        $servicios_err = "Por favor ingrese un servicio";
     } else{
-        $precio = $input_precio;
+        $servicios = $input_servicios;
     }
 
-    // Validate imagen
+    $input_descripcion = trim($_POST["descripcion"]);
+    $input_website = trim($_POST["website"]);
+    $input_instagram = trim($_POST["instagram"]);
+    $input_facebook = trim($_POST["facebook"]);
+    $input_mail = trim($_POST["mail"]);
+    $descripcion = $input_descripcion;
+    $website = $input_website;
+    $instagram = $input_instagram;
+    $facebook = $input_facebook;
+    $mail = $input_mail;
+
+    // // Validate imagen
+    if($_FILES["portada"]["name"]) {
+        $filename = $_FILES["portada"]["name"]; //Obtenemos el nombre original del archivo
+        $source = $_FILES["portada"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+        
+        $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+        
+        //Validamos si la ruta de destino existe, en caso de no existir la creamos
+        if(!file_exists($directorio)){
+            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+        }
+        
+        $dir=opendir($directorio); //Abrimos el directorio de destino
+        $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+        
+        //Movemos y validamos que el archivo se haya cargado correctamente
+        //El primer campo es el origen y el segundo el destino
+        if(move_uploaded_file($source, $target_path)) {	
+            echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+            $portada = $target_path;
+        } else {	
+            header("location: error.php");
+            exit();
+        }
+        closedir($dir); //Cerramos el directorio de destino
+    }
+
     foreach($_FILES['imagenes']['tmp_name'] as $item => $tmp_name) {
         if($_FILES["imagenes"]["name"][$item]) {
-            $filename = $_FILES["imagenes"]["name"][$item]; //Obtenemos el nombre original del archivo
-            $source = $_FILES["imagenes"]["tmp_name"][$item]; //Obtenemos un nombre temporal del archivo
-            
-            $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
-            
-            //Validamos si la ruta de destino existe, en caso de no existir la creamos
-            if(!file_exists($directorio)){
-                mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
-            }
-            
-            $dir=opendir($directorio); //Abrimos el directorio de destino
-            $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
-            
-            //Movemos y validamos que el archivo se haya cargado correctamente
-            //El primer campo es el origen y el segundo el destino
-            if(move_uploaded_file($source, $target_path)) {	
-                echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
-                array_push($imagenes, $target_path);
+			$filename2 = $_FILES["imagenes"]["name"][$item]; //Obtenemos el nombre original del archivo
+			$source2 = $_FILES["imagenes"]["tmp_name"][$item]; //Obtenemos un nombre temporal del archivo
+			
+			$directorio2 = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+			
+			//Validamos si la ruta de destino existe, en caso de no existir la creamos
+			if(!file_exists($directorio2)){
+				mkdir($directorio2, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+			}
+			
+			$dir2=opendir($directorio2); //Abrimos el directorio de destino
+			$target_path2 = $directorio2.'/'.$filename2; //Indicamos la ruta de destino, así como el nombre del archivo
+			
+			//Movemos y validamos que el archivo se haya cargado correctamente
+			//El primer campo es el origen y el segundo el destino
+			if(move_uploaded_file($source2, $target_path2)) {	
+				echo "El archivo $filename2 se ha almacenado en forma exitosa.<br>";
+                array_push($imagenes, $target_path2);
             } else {	
                 header("location: error.php");
                 exit();
-            }
-            closedir($dir); //Cerramos el directorio de destino
-        }
+			}
+			closedir($dir2); //Cerramos el directorio de destino
+		}
     }
     
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($stock_err) && empty($precio_err)){
         // Prepare an update statement
-        $sql = "UPDATE products SET nombre=?, stock=?, precio=? WHERE productId=?";
-        $sql_images = "INSERT INTO products_images (productId, imagen) VALUES (?, ?)";
-         
+        $sql = "UPDATE proyectos SET nombre=?, descripcion=?, portada=?, servicios=?, instagram=?, website=?, facebook=?, mail=? WHERE id=?";
+        $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
+
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssi", $param_nombre, $param_stock, $param_precio, $param_productId);
+            mysqli_stmt_bind_param($stmt, "ssssssssi", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_id);
             
             // Set parameters
             $param_nombre = $nombre;
-            $param_stock = $stock;
-            $param_precio = $precio;
-            $param_productId = $productId;
+            $param_descripcion = $descripcion;
+            $param_portada = $portada;
+            $param_servicios = $servicios;
+            $param_instagram = $instagram;
+            $param_facebook = $facebook;
+            $param_website = $website;
+            $param_mail = $mail;
+            $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -104,14 +135,14 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
     // Prepare an insert statement     
 
     echo $num_imagenes;
-    $productId = trim($_GET["productId"]);
+    $id = trim($_GET["id"]);
     for($i = 0; $i < $num_imagenes; $i++) {
         if($stmt_images = mysqli_prepare($link, $sql_images)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt_images, "ss", $param_productId, $param_imagenes);
+            mysqli_stmt_bind_param($stmt_images, "ss", $param_id, $param_imagenes);
                 
             // Set parameters
-            $param_productId = $productId;
+            $param_id = $id;
             $param_imagenes = $imagenes[$i];
 
             // Attempt to execute the prepared statement
@@ -125,7 +156,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
         }
     }
 
-    header("location: productos.php");
+    header("location: proyectos.php");
     // Close statement
     mysqli_stmt_close($stmt_images); 
     
@@ -133,20 +164,20 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
     mysqli_close($link);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["productId"]) && !empty(trim($_GET["productId"]))){
+    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         // Get URL parameter
-        $productId =  trim($_GET["productId"]);
+        $id =  trim($_GET["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM products WHERE productId = ?";
-        $sql2 = "SELECT * FROM products_images WHERE productId = ?";
+        $sql = "SELECT * FROM proyectos WHERE id = ?";
+        $sql2 = "SELECT * FROM proyectos_images WHERE proyectoId = ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_productId);
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
             
             // Set parameters
-            $param_productId = $productId;
+            $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -159,8 +190,13 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
                     
                     // Retrieve individual field value
                     $nombre = $row["nombre"];
-                    $stock = $row["stock"];
-                    $precio = $row["precio"];
+                    $descripcion = $row["descripcion"];
+                    $servicios = json_decode($row["servicios"]);
+                    $instagram = $row["instagram"];
+                    $facebook = $row["facebook"];
+                    $website = $row["website"];
+                    $mail = $row["mail"];
+                    $portada = $row["portada"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -175,10 +211,10 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
 
         if($stmt2 = mysqli_prepare($link, $sql2)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt2, "i", $param_productId);
+            mysqli_stmt_bind_param($stmt2, "i", $param_id);
     
             // Set parameters
-            $param_productId = trim($_GET["productId"]);
+            $param_id = trim($_GET["id"]);
     
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt2)){
@@ -207,7 +243,7 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
 <html lang="en">
 
     <?php 
-        $title = "Actualizar producto";
+        $title = "Actualizar proyecto";
         include_once("../includes/head.php"); 
     ?>
 
@@ -217,53 +253,69 @@ if(isset($_POST["productId"]) && !empty($_POST["productId"])){
             <article id="container">
                 <div class="wrapper">
                     <div class="form-container d-flex flex-col">
-                        <a href="productos.php" class="d-flex align-center">
+                        <a href="proyectos.php" class="d-flex align-center">
                             <i class="icon left-arrow"></i>
                             <span>Volver</span>
                         </a>
                         <header class="d-flex flex-col align-center justify-center text-center">
-                            <h2>Editar Producto</h2>
+                            <h2>Editar Proyecto</h2>
                             <p>Edite los valores de entrada y envíe para actualizar el registro.</p>
                         </header>
                         <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col">
-                            <div class="input <?php echo (!empty($nombre_err)) ? 'has-error' : ''; ?>">
+                            <div class="input">
                                 <label>Nombre</label>
-                                <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" required>
-                                <span class="help-block"><?php echo $nombre_err;?></span>
+                                <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
                             </div>
-                            <div class="input <?php echo (!empty($stock_err)) ? 'has-error' : ''; ?>">
-                                <label>Stock</label>
-                                <input type="number" name="stock" class="form-control" value="<?php echo $stock; ?>" required>
-                                <span class="help-block"><?php echo $stock_err;?></span>
+                            <div class="input">
+                                <label>Descripcion</label>
+                                <input type="text" name="descripcion" class="form-control" value="<?php echo $descripcion; ?>">
                             </div>
-                            <div class="input <?php echo (!empty($precio_err)) ? 'has-error' : ''; ?>">
-                                <label>Precio</label>
-                                <input type="text" name="precio" class="form-control" value="<?php echo $precio; ?>" required>
-                                <span class="help-block"><?php echo $precio_err;?></span>
-                            </div>
-                            <span>Imagenes</span>
-                            <div class="custom-file">
-                                <label class="custom-file-label d-flex align-center" for="file">
-                                    <input type="file" multiple name="imagenes[]" id="file" class="form-control" required>
-                                    <i class="icon upload"></i>
-                                    <span>Subir imagenes o videos</span>
-                                </label>
-                            </div>
-                            <ul id="fileList" class="file-list"></ul>
-                            <div class="d-flex flex-col imagenes">
-                                <span>Vista previa</span>
+                            <div class="input">
+                                <label>Servicios</label>
                                 <ul class="d-flex align-center flex-wrap">
-                                    <?php
-                                        while($row = mysqli_fetch_array($result2)){
-                                            echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt='' width='200px' height='200px'></figure><a href='deleteImagen.php?imagenId=". $row['imagenId'] ."&productId=". $row['productId'] ."' title='Borrar'><i class='icon borrar'></i></a></li>";
+                                    <?php 
+                                        foreach($servicios->servicios as $servicio => $value) {
+                                            echo '<li><span class="toast">' . $value->nombre . '</span></li>';
                                         }
                                     ?>
                                 </ul>
                             </div>
-                            <input type="hidden" name="productId" value="<?php echo $productId; ?>"/>
+                            <div class="input">
+                                <label>Instagram</label>
+                                <input type="text" name="instagram" class="form-control" value="<?php echo $instagram; ?>">
+                            </div>
+                            <div class="input">
+                                <label>Website</label>
+                                <input type="text" name="website" class="form-control" value="<?php echo $website; ?>">
+                            </div>
+                            <div class="input">
+                                <label>Facebook</label>
+                                <input type="text" name="facebook" class="form-control" value="<?php echo $facebook; ?>">
+                            </div>
+                            <div class="input">
+                                <label>Mail</label>
+                                <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>">
+                            </div>
+                            <div class="input">
+                                <label>Portada</label>
+                                <figure>
+                                    <img src="<?php echo $portada; ?>" alt=''>
+                                </figure>
+                            </div>
+                            <div class="d-flex flex-col imagenes">
+                                <span>Imagenes</span>
+                                <ul class="d-flex align-center flex-wrap">
+                                    <?php
+                                        while($row = mysqli_fetch_array($result2)){
+                                            echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt=''></figure></li>";
+                                        }
+                                    ?>
+                                </ul>
+                            </div>
+                            <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" value="Confirmar" data-btnSubmit>
-                                <a href="productos.php" class="btn btn-error">Cancelar</a>
+                                <a href="proyectos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
                     </div>
