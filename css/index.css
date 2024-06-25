@@ -89,7 +89,6 @@ h4 {
 /* SERVICIOS --------------------------------------------------------------------------*/
 
 #proyectos {
-    height: 80vh;
     position: relative;
 }
 
@@ -337,5 +336,9 @@ h4 {
 
     #servicios > header > span {
         display: none;
+    }
+
+    #proyectos {
+        height: 80vh;
     }
 }

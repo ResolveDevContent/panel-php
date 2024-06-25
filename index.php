@@ -64,16 +64,16 @@
 
     require_once "config.php";
 
-    // $arrayImg = [];
-    // $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
-    // if($result = mysqli_query($sql, $query)){
-    //     if(mysqli_num_rows($result) > 0) {
-    //         $arrayImg = $result;
-    //     }
-    // }
+    $arrayImg = [];
+    $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
+    if($result = mysqli_query($sql, $query)){
+        if(mysqli_num_rows($result) > 0) {
+            $arrayImg = $result;
+        }
+    }
     
-    // include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
-    // $proyectosImg = $imagenes;
+    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    $proyectosImg = $imagenes;
 ?>
 
 <!DOCTYPE html>
@@ -83,34 +83,34 @@
         $title = "Panel";
         include_once "includes/head.php";
 
-        // $servicios = '';
-        // $query = "SELECT * FROM servicios";
-        // if($result = mysqli_query($sql, $query)){
-        //     if(mysqli_num_rows($result) > 0){
-        //         $introduccion = '';
-        //         $servicios = '<div class="tabs-container">';
-        //             $servicios .= '<ul class="tabs">';
-        //             while($row = mysqli_fetch_array($result)) {
-        //                 $servicios .= '<li>';
-        //                     $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
-        //                 $servicios .= '</li>';
+        $servicios = '';
+        $query = "SELECT * FROM servicios";
+        if($result = mysqli_query($sql, $query)){
+            if(mysqli_num_rows($result) > 0){
+                $introduccion = '';
+                $servicios = '<div class="tabs-container">';
+                    $servicios .= '<ul class="tabs">';
+                    while($row = mysqli_fetch_array($result)) {
+                        $servicios .= '<li>';
+                            $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
+                        $servicios .= '</li>';
                         
-        //                 $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content text-center'>";
-        //                     $introduccion .= '<em>' .$row['nombre'] .'</em>';
-        //                     $introduccion .= '<span>' .$row['introduccion'] .'</span>';
-        //                     $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
-        //                     $introduccion .= '<div class="btn">';
-        //                         $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['servicioId'] ."'>Ver m&aacute;s</a>";
-        //                     $introduccion .= '</div>';
-        //                 $introduccion .= '</section>';
-        //             }
-        //             $servicios .= '</ul>';
-        //             $servicios .= '<div class="tab-content-wrapper">';
-        //             $servicios .= $introduccion;
-        //             $servicios .= '</div>';
-        //         $servicios .= '</div>';
-        //     }
-        // }
+                        $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content text-center'>";
+                            $introduccion .= '<em>' .$row['nombre'] .'</em>';
+                            $introduccion .= '<span>' .$row['introduccion'] .'</span>';
+                            $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
+                            $introduccion .= '<div class="btn">';
+                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['servicioId'] ."'>Ver m&aacute;s</a>";
+                            $introduccion .= '</div>';
+                        $introduccion .= '</section>';
+                    }
+                    $servicios .= '</ul>';
+                    $servicios .= '<div class="tab-content-wrapper">';
+                    $servicios .= $introduccion;
+                    $servicios .= '</div>';
+                $servicios .= '</div>';
+            }
+        }
     ?>
 
     <body class="is-loading">
@@ -175,13 +175,13 @@
             </section>
         </main>
 
-        <!-- <?php if($proyectosImg) : ?>
+        <?php if($proyectosImg) : ?>
             <section id="proyectos" data-scroll="auto">
                 <?php
                     echo $proyectosImg;
                 ?>
             </section>
-        <?php endif ?> -->
+        <?php endif ?>
 
         <main class="wrapper">
             <?php if($servicios) : ?>
@@ -198,7 +198,7 @@
                 </section>
             <?php endif ?>
 
-            <section id="metricas" class="d-flex flex-col align-center justify-center">
+            <!-- <section id="metricas" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col text-center">
                         <h4>Nuestras m&eacute;tricas</h4>
@@ -206,21 +206,21 @@
                     </div>
                 </header>
                 <?php 
-                    $query = "SELECT * FROM metricas";
-                    if($result = mysqli_query($sql, $query)){
-                        if(mysqli_num_rows($result) > 0) {
-                            echo '<ul class="d-flex align-center justify-start gap-1">';
-                                while($row = mysqli_fetch_assoc($result)) {
-                                        echo '<li>';
-                                            echo '<span class="loader"></span>';
-                                            echo '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
-                                        echo '</li>';
-                                    }
-                            echo '</ul>';
-                        }
-                    }
+                    // $query = "SELECT * FROM metricas";
+                    // if($result = mysqli_query($sql, $query)){
+                    //     if(mysqli_num_rows($result) > 0) {
+                    //         echo '<ul class="d-flex align-center justify-start gap-1">';
+                    //             while($row = mysqli_fetch_assoc($result)) {
+                    //                     echo '<li>';
+                    //                         echo '<span class="loader"></span>';
+                    //                         echo '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
+                    //                     echo '</li>';
+                    //                 }
+                    //         echo '</ul>';
+                    //     }
+                    // }
                 ?>
-            </section>
+            </section> -->
     
             <section id="reviews" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex align-center justify-center w-100">
@@ -240,26 +240,11 @@
                                 <em>Ejemplo usuario 1</em>
                                 <span>Ejemplo empresa</span>
                                 <div class="d-flex align-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <!-- <i class="icon star"></i>
                                     <i class="icon star"></i>
                                     <i class="icon star"></i>
                                     <i class="icon star"></i>
-                                    <i class="icon star"></i> -->
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
                                 </div>
                             </div>
                         </article>
@@ -274,22 +259,10 @@
                                 <em>Ejemplo usuario 2</em>
                                 <span>Ejemplo empresa</span>
                                 <div class="d-flex align-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <!-- <i class="icon star"></i>
                                     <i class="icon star"></i>
                                     <i class="icon star"></i>
-                                    <i class="icon star"></i> -->
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
                                 </div>
                             </div>
                         </article>
@@ -304,18 +277,9 @@
                                 <em>Ejemplo usuario 3</em>
                                 <span>Ejemplo empresa</span>
                                 <div class="d-flex align-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                        <path d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path>
-                                    </svg>
-                                    <!-- <i class="icon star"></i>
                                     <i class="icon star"></i>
-                                    <i class="icon star"></i> -->
+                                    <i class="icon star"></i>
+                                    <i class="icon star"></i>
                                 </div>
                             </div>
                         </article>

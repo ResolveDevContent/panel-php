@@ -266,6 +266,10 @@ textarea,
     height: 3.5em;
 }
 
+#proyectos {
+    height: 40vh;
+}
+
 #join em {
     font-size: 2em;
 }
@@ -622,5 +626,17 @@ span.highlight {
 }
 
 #floating-footer .whatsapp label:hover > .chat-box {
-    top: -24em;
+    top: -23em;
+}
+
+#floating-footer > ul > li > a svg,
+#floating-footer > ul > li > label svg {
+    width: 3.5em;
+    min-width: 3.5em;
+    height: 3.5em;
+    min-height: 3.5em;
+}
+
+#floating-footer > ul > li > a {
+    width: 5em;
 }

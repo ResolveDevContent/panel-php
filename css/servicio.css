@@ -16,27 +16,31 @@
     margin-top: 1em;
 }
 
-#servicio > article {
+.proyectosImg {
     margin-top: 4em;
 }
 
-#servicio > article strong {
+.proyectosImg strong {
     color: var(--color5);
     font-size: 1.5em;
 }
 
-#servicio .mockups {
+.proyectosImg .mockups {
     margin-top: 2em;
 }
 
-#servicio .tablet,
-#servicio .phone {
+.proyectosImg .tablet,
+.proyectosImg .phone {
     position: relative;
     height: 100%;
 }
 
-#servicio .phone > img,
-#servicio .tablet > img {
+.proyectosImg .phone .nav-arrows {
+    display: none;
+}
+
+.proyectosImg .phone > img,
+.proyectosImg .tablet > img {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -45,8 +49,8 @@
     z-index: 4;
 }
 
-#servicio .phone ul,
-#servicio .tablet ul {
+.proyectosImg .phone ul,
+.proyectosImg .tablet ul {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -55,22 +59,26 @@
     z-index: 1;
 }
 
-#servicio .phone > ul li img {
+.proyectosImg .phone > ul li img {
     transform: skewy(10deg);
 }
 
 
 @media screen and (min-width: 960px) {
-    #servicio .phone {
-        height: 30em;
-        min-height: 30em;
+    #servicio > aside {
+        margin: auto;
+    }
+
+    .proyectosImg .phone {
+        height: 26em;
+        min-height: 26em;
         width: 20em;
         min-width: 20em;
     }
 
-    #servicio .tablet {
-        width: 30em;
-        min-width: 30em;
+    .proyectosImg .tablet {
+        width: 38em;
+        min-width: 38em;
         height: 28em;
         min-height: 28em;
     }
@@ -81,25 +89,32 @@
         width: 100%;
     }
 
-    #servicio > article strong {
+    .proyectosImg strong {
         font-size: 2em;
     }
 
-    #servicio .mockups {
+    .proyectosImg .mockups {
         flex-direction: column;
     }
 
-    #servicio .tablet, 
-    #servicio .phone {
+    .proyectosImg .phone {
         width: 100%;
+        height: 40em;
+        min-height: 40em;
+    }
+    
+    .proyectosImg .tablet {
+        height: 20em;
+        min-height: 20em;
+        width: 95%;
     }
 
-    #servicio .mockups {
+    .proyectosImg .mockups {
         height: 100vh;
     }
 
-    #servicio .phone ul,
-    #servicio .tablet ul {
+    .proyectosImg .phone ul,
+    .proyectosImg .tablet ul {
         width: 95%;
         height: 98%;
         margin: auto;

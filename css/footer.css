@@ -27,23 +27,14 @@
     justify-content: space-between;
     cursor: pointer;
     padding: 0.5em;
-    width: 3.6em;
 
     transition: all .5s; 
 }
 
 #floating-footer .agendar a {
-    background-color: var(--color5);
-    border: 0.325em solid var(--color5);
+    background-color: var(--color3);
+    border: 0.325em solid var(--color3);
 }
-
-/* #floating-footer ul li a i {
-    width: 2em;
-    min-width: 2em;
-    height: 2em;
-    min-height: 2em;
-    background-color: white;
-} */
 
 #floating-footer > ul > li > a svg {
     width: 2em;
@@ -67,14 +58,9 @@
     opacity: 1;
 }
 
-/* #floating-footer > ul .whatsapp a:hover {
-    width: 20em;
-} */
-
 #floating-footer > ul .agendar a:hover {
     width: 17em;
 }
-
 
 #floating-footer > ul > li > a:hover span {
     width: auto;
@@ -195,13 +181,9 @@
     fill: rgb(179, 179, 179);
 }
 
-#footer > header > div > ul > li > a {
-    font-size: 2em;
-}
-
-/* #footer > header > div > ul > li > a i {
+#footer > header > div > ul > li > a i {
     background-color: #fff;
-} */
+}
 
 #footer > header > div > ul > li > a svg {
     fill: #fff;
@@ -383,5 +365,9 @@
 
     #floating-footer .whatsapp label:hover > .chat-box {
         top: -17.5em;
+    }
+
+    #floating-footer > ul > li > a {
+        width: 3.6em;
     }
 }

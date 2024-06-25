@@ -75,38 +75,39 @@
         <?php include_once("includes/navbar.php"); ?>
 
         <main class="wrapper">
-            <section id="servicio" class="d-flex flex-col align-center">
-                <aside class="d-flex flex-col text-center">
+            <section id="servicio" class="d-flex align-center">
+                <aside class="d-flex flex-col align-center justify-center text-center">
                     <?php
                         echo $servicio;
                     ?>
                 </aside>
-                <article class="d-flex flex-col align-center w-100">
-                    <strong>Nuestros trabajos</strong>
-                    <?php if($proyectosImg) : ?>
-                        <div class="mockups d-flex align-center justify-around w-100">
-                            <div class="phone" data-scroll="auto">
-                                <img src="images/phone-3D.png" alt="">
-                                <?php
-                                    echo $proyectosImg;
-                                ?>
-                            </div>
-                            <div class="tablet" data-scroll>
-                                <img src="images/mockup.png" alt="">
-                                <?php
-                                    echo $proyectosImg;
-                                ?>
-                            </div>
-                        </div>
-                    <?php else: ?>
-                        <div class="d-flex flex-col align-center justify-center gap-5 empty-state">
-                            <img src="gifs/empty-state.gif" alt="empty-state">
-                            <span>No hay proyectos disponibles para este servicio</span>
-                        </div>
-                    <?php endif ?>
-                </article>
             </section>
         </main>
+
+        <section class="proyectosImg d-flex flex-col align-center w-100">
+            <strong>Nuestros trabajos</strong>
+            <?php if($proyectosImg) : ?>
+                <div class="mockups d-flex align-center justify-around w-100">
+                    <div class="phone" data-scroll="auto">
+                        <img src="images/phone-3D.png" alt="">
+                        <?php
+                            echo $proyectosImg;
+                        ?>
+                    </div>
+                    <div class="tablet" data-scroll>
+                        <img src="images/mac.png" alt="">
+                        <?php
+                            echo $proyectosImg;
+                        ?>
+                    </div>
+                </div>
+            <?php else: ?>
+                <div class="d-flex flex-col align-center justify-center gap-5 empty-state">
+                    <img src="gifs/empty-state.gif" alt="empty-state">
+                    <span>No hay proyectos disponibles para este servicio</span>
+                </div>
+            <?php endif ?>
+        </section>
 
         <?php include_once("includes/footer.php"); ?>
 
