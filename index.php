@@ -115,7 +115,7 @@
 
     <body class="is-loading">
         <div id="preloader">
-            <img src="/images/resolvedevverde.png" alt="logo">
+            <img src="/images/Red limit PNG (2).png" alt="logo">
         </div>
         
         <?php include_once("includes/navbar.php"); ?>

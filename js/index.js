@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         setTimeout(function() {
           res();
-        }, 5000)
+        }, 3000)
       })
     }))
     .then(function() {
