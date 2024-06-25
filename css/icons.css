@@ -109,3 +109,11 @@
     width: 2em;
     height: 2em;
 }
+
+.mundo {
+    background-image: url("../icons/mundo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+}

@@ -7,7 +7,7 @@
         include("../config.php");
         // require_once "../errors.php";
         
-        $title = "Productos";
+        $title = "Metricas";
         include_once("../includes/head.php"); 
 
         $response = '<div class="loader-container d-flex justify-center">
@@ -22,8 +22,8 @@
             <article id="container">
                 <div class="wrapper d-flex flex-col">
                     <header class="d-flex justify-between align-center">
-                        <h2>Proyectos</h2>
-                        <a href="create.php" class="btn btn-primary">Agregar nuevo proyecto</a>
+                        <h2>Metricas</h2>
+                        <a href="create.php" class="btn btn-primary">Agregar nueva metrica</a>
                     </header>
                     <div class="table-wrapper">
                         <?php
@@ -31,8 +31,8 @@
                             // Include config file
                             require_once "../config.php";
 
-                            $tabla = "proyectos";
-                            $columns = "id, nombre, descripcion, website";
+                            $tabla = "metricas";
+                            $columns = "id, imagen";
                             include_once("../controllers/tabla.php");
                         ?>
                     </div>

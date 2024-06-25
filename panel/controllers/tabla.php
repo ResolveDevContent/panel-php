@@ -23,9 +23,9 @@
                             }
                             $response .= "<td>";
                                 $response .= "<ul class='d-flex align-center'>";
-                                    $response .= "<li><a href='read.php?proyectoId=". $row['proyectoId'] ."' title='Ver'><i class='icon ver'></i></a></li>";
-                                    $response .= "<li><a href='update.php?proyectoId=". $row['proyectoId'] ."' title='Actualizar'><i class='icon editar'></i></a></li>";
-                                    $response .= "<li><a href='delete.php?proyectoId=". $row['proyectoId'] ."' title='Borrar'><i class='icon borrar'></i></a></li>";
+                                    $response .= "<li><a href='read.php?id=". $row['id'] ."' title='Ver'><i class='icon ver'></i></a></li>";
+                                    $response .= "<li><a href='update.php?id=". $row['id'] ."' title='Actualizar'><i class='icon editar'></i></a></li>";
+                                    $response .= "<li><a href='delete.php?id=". $row['id'] ."' title='Borrar'><i class='icon borrar'></i></a></li>";
                                 $response .= "</ul>";
                             $response .= "</td>";
                         $response .= "</tr>";

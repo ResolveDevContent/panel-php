@@ -29,7 +29,12 @@
             </li>
             <li class='categoria'>
                 <a href="/panel-php/panel/reviews/reviews.php">
-                    <span>Reviews</span>
+                    <span>Testimonios</span>
+                </a>
+            </li>
+            <li class='categoria'>
+                <a href="/panel-php/panel/metricas/metricas.php">
+                    <span>Metricas</span>
                 </a>
             </li>
         </ul>

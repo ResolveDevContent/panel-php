@@ -83,34 +83,34 @@
         $title = "Panel";
         include_once "includes/head.php";
 
-        $servicios = '';
-        $query = "SELECT * FROM servicios";
-        if($result = mysqli_query($sql, $query)){
-            if(mysqli_num_rows($result) > 0){
-                $introduccion = '';
-                $servicios = '<div class="tabs-container">';
-                    $servicios .= '<ul class="tabs">';
-                    while($row = mysqli_fetch_array($result)) {
-                        $servicios .= '<li>';
-                            $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
-                        $servicios .= '</li>';
+        // $servicios = '';
+        // $query = "SELECT * FROM servicios";
+        // if($result = mysqli_query($sql, $query)){
+        //     if(mysqli_num_rows($result) > 0){
+        //         $introduccion = '';
+        //         $servicios = '<div class="tabs-container">';
+        //             $servicios .= '<ul class="tabs">';
+        //             while($row = mysqli_fetch_array($result)) {
+        //                 $servicios .= '<li>';
+        //                     $servicios .= "<a href='#". $row['nombre'] ."' id='". $row['nombre'] ."'>". $row['nombre'] ."</a>";
+        //                 $servicios .= '</li>';
                         
-                        $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content text-center'>";
-                            $introduccion .= '<em>' .$row['nombre'] .'</em>';
-                            $introduccion .= '<span>' .$row['introduccion'] .'</span>';
-                            $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
-                            $introduccion .= '<div class="btn">';
-                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['servicioId'] ."'>Ver m&aacute;s</a>";
-                            $introduccion .= '</div>';
-                        $introduccion .= '</section>';
-                    }
-                    $servicios .= '</ul>';
-                    $servicios .= '<div class="tab-content-wrapper">';
-                    $servicios .= $introduccion;
-                    $servicios .= '</div>';
-                $servicios .= '</div>';
-            }
-        }
+        //                 $introduccion .= "<section id='". $row['nombre'] ."' class='tab-content text-center'>";
+        //                     $introduccion .= '<em>' .$row['nombre'] .'</em>';
+        //                     $introduccion .= '<span>' .$row['introduccion'] .'</span>';
+        //                     $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
+        //                     $introduccion .= '<div class="btn">';
+        //                         $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['servicioId'] ."'>Ver m&aacute;s</a>";
+        //                     $introduccion .= '</div>';
+        //                 $introduccion .= '</section>';
+        //             }
+        //             $servicios .= '</ul>';
+        //             $servicios .= '<div class="tab-content-wrapper">';
+        //             $servicios .= $introduccion;
+        //             $servicios .= '</div>';
+        //         $servicios .= '</div>';
+        //     }
+        // }
     ?>
 
     <body class="is-loading">
