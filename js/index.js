@@ -2,6 +2,8 @@ import paises from '../paises.json' with { type: 'json' };
 
 // LOADER ----------------------------------------------------------------------
 
+ScrollReveal().reveal('.headline', { delay: 300 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const media = Array.from(document.querySelectorAll('img, video'));
   

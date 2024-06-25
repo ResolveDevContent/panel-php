@@ -208,7 +208,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="input <?php echo (!empty($descripcion_err)) ? 'has-error' : ''; ?>">
                                 <label>Descripcion</label>
-                                <input type="text" name="descripcion" class="form-control" value="<?php echo $descripcion; ?>" required>
+                                <input type="text" name="descripcion" class="form-control" value="<?php echo $descripcion; ?>" >
                                 <span class="help-block" ><?php echo $descripcion_err;?></span>
                             </div>
                             <div class="input d-flex flex-col gap-1 <?php echo (!empty($servicios_err)) ? 'has-error' : ''; ?>">
@@ -230,22 +230,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="input <?php echo (!empty($instagram_err)) ? 'has-error' : ''; ?>">
                                 <label>Instagram</label>
-                                <input type="text" name="instagram" class="form-control" value="<?php echo $instagram; ?>" required>
+                                <input type="text" name="instagram" class="form-control" value="<?php echo $instagram; ?>" >
                                 <span class="help-block"><?php echo $instagram_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($facebook_err)) ? 'has-error' : ''; ?>">
                                 <label>Facebook</label>
-                                <input type="text" name="facebook" class="form-control" value="<?php echo $facebook; ?>" required>
+                                <input type="text" name="facebook" class="form-control" value="<?php echo $facebook; ?>" >
                                 <span class="help-block"><?php echo $facebook_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($website_err)) ? 'has-error' : ''; ?>">
                                 <label>Website</label>
-                                <input type="text" name="website" class="form-control" value="<?php echo $website; ?>" required>
+                                <input type="text" name="website" class="form-control" value="<?php echo $website; ?>" >
                                 <span class="help-block"><?php echo $website_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($mail_err)) ? 'has-error' : ''; ?>">
                                 <label>Mail</label>
-                                <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" required>
+                                <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" >
                                 <span class="help-block"><?php echo $mail_err;?></span>
                             </div>
                             <span>Portada</span>
@@ -259,7 +259,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span>Imagenes</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
-                                    <input type="file" name="imagenes[]" multiple id="file" class="form-control" required>
+                                    <input type="file" name="imagenes[]" multiple id="file" class="form-control" >
                                     <i class="icon upload"></i>
                                     <span>Subir imagenes o videos</span>
                                 </label>

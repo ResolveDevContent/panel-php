@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($avatar_err) && empty($nombre_err) && empty($texto_err) && empty($estrellas_err)){
+    if(empty($nombre_err) && empty($texto_err) && empty($estrellas_err)){
 
         $sql_products = "INSERT INTO reviews (avatar, nombre, texto, empresa, estrellas) VALUES (?, ?, ?, ?, ?)";
 
@@ -131,8 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             </div>
                             <div class="input <?php echo (!empty($empresa_err)) ? 'has-error' : ''; ?>">
                                 <label>Empresa</label>
-                                <input type="text" name="empresa" class="form-control" value="<?php echo $empresa; ?>" required>
-                                <span class="help-block" ><?php echo $empresa_err;?></span>
+                                <input type="text" name="empresa" class="form-control" value="<?php echo $empresa; ?>">
                             </div>
                             <div class="input <?php echo (!empty($estrellas_err)) ? 'has-error' : ''; ?>">
                                 <label>Estrellas</label>
@@ -142,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span>Avatar</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
-                                    <input type="file" name="avatar" id="file" class="form-control" required>
+                                    <input type="file" name="avatar" id="file" class="form-control" >
                                     <i class="icon upload"></i>
                                     <span>Subir imagen</span>
                                 </label>

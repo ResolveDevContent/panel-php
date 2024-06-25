@@ -111,6 +111,53 @@
                 $servicios .= '</div>';
             }
         }
+
+        $metricas = "";
+        $query = "SELECT * FROM metricas";
+        if($result = mysqli_query($sql, $query)){
+            if(mysqli_num_rows($result) > 0) {
+                $metricas .=  '<ul class="d-flex align-center justify-start gap-1">';
+                    while($row = mysqli_fetch_assoc($result)) {
+                            $metricas .= '<li>';
+                            $metricas .=  '<span class="loader"></span>';
+                            $metricas .=  '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
+                            $metricas .= '</li>';
+                        }
+                $metricas .=  '</ul>';
+            }
+        }
+
+        $reviews = "";
+        $query = "SELECT * FROM reviews";
+        if($result = mysqli_query($sql, $query)){
+            if(mysqli_num_rows($result) > 0) {
+                $reviews .=  '<ul class="d-flex align-center justify-start gap-1">';
+                    while($row = mysqli_fetch_assoc($result)) {
+                        $reviews .= '<li class="d-flex flex-col justify-start">';
+                            $reviews .=  '<article class="d-flex align-center customer">';
+                                if($row["avatar"]) {
+                                    $reviews .=  '<img src="/panel-php/panel/reviews/' . $row["avatar"] . '" alt="">';
+                                } else {
+                                    $reviews .=  '<img src="/panel-php/images/user.png" alt="">';
+                                }
+                                $reviews .=  '<div class="d-flex flex-col">';
+                                    $reviews .=  '<em>'. $row["nombre"] .'</em>';
+                                    $reviews .=  '<span>'. $row["empresa"] .'</span>';
+                                    $reviews .=  '<div class="d-flex align-center">';
+                                        for($i= 0; $i < $row["estrellas"]; $i++) {
+                                            $reviews .=  '<i class="icon star"></i>'; 
+                                        }
+                                    $reviews .=  '</div>';
+                                $reviews .=  '</div>';
+                            $reviews .=  '</article>';
+                            $reviews .=  '<aside>';
+                                $reviews .=  '<span>'. $row["texto"] .'</span>';
+                            $reviews .=  '</aside>';
+                        $reviews .= '</li>';
+                    }
+                $reviews .=  '</ul>';
+            }
+        }
     ?>
 
     <body class="is-loading">
@@ -148,10 +195,10 @@
 
         <main class="wrapper">
             <section id="sobre-nosotros" class="d-flex align-center">
-                <aside class="d-flex align-center justify-center">
+                <aside class="d-flex align-center justify-center headline">
                     <img src="/panel-php/gifs/about.gif" alt="">
                 </aside>
-                <article>
+                <article class="headline">
                     <h4>Sobre nosotros</h4>
                     <span>¿Qui&eacute;nes somos?</span>
                     <div>
@@ -198,30 +245,21 @@
                 </section>
             <?php endif ?>
 
-            <!-- <section id="metricas" class="d-flex flex-col align-center justify-center">
+            <?php if($metricas) : ?>
+            <section id="metricas" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col text-center">
                         <h4>Nuestras m&eacute;tricas</h4>
                         <span>Aqu&iacute; estan los resultados de nuestros servicios</span>
                     </div>
                 </header>
-                <?php 
-                    // $query = "SELECT * FROM metricas";
-                    // if($result = mysqli_query($sql, $query)){
-                    //     if(mysqli_num_rows($result) > 0) {
-                    //         echo '<ul class="d-flex align-center justify-start gap-1">';
-                    //             while($row = mysqli_fetch_assoc($result)) {
-                    //                     echo '<li>';
-                    //                         echo '<span class="loader"></span>';
-                    //                         echo '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
-                    //                     echo '</li>';
-                    //                 }
-                    //         echo '</ul>';
-                    //     }
-                    // }
+                <?php
+                    echo $metricas;
                 ?>
-            </section> -->
+            </section>
+            <?php endif ?>
     
+            <?php if($reviews) : ?>
             <section id="reviews" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col">
@@ -232,68 +270,16 @@
                         <img src="/panel-php/gifs/reviews.gif" alt="">
                     </aside>
                 </header>
-                <ul class="d-flex align-center justify-start gap-1">
-                    <li class="d-flex flex-col justify-start">
-                        <article class="d-flex align-center customer">
-                            <img src="/panel-php/images/user.png" alt="">
-                            <div class="d-flex flex-col">
-                                <em>Ejemplo usuario 1</em>
-                                <span>Ejemplo empresa</span>
-                                <div class="d-flex align-center">
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                </div>
-                            </div>
-                        </article>
-                        <aside>
-                            <span>Ejemplo de reseña</span>
-                        </aside>
-                    </li>
-                    <li class="d-flex flex-col justify-start">
-                        <article class="d-flex align-center customer">
-                            <img src="/panel-php/images/user.png" alt="">
-                            <div class="d-flex flex-col">
-                                <em>Ejemplo usuario 2</em>
-                                <span>Ejemplo empresa</span>
-                                <div class="d-flex align-center">
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                </div>
-                            </div>
-                        </article>
-                        <aside>
-                            <span>Ejemplo de reseña</span>
-                        </aside>
-                    </li>
-                    <li class="d-flex flex-col justify-start">
-                        <article class="d-flex align-center customer">
-                            <img src="/panel-php/images/user.png" alt="">
-                            <div class="d-flex flex-col">
-                                <em>Ejemplo usuario 3</em>
-                                <span>Ejemplo empresa</span>
-                                <div class="d-flex align-center">
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                    <i class="icon star"></i>
-                                </div>
-                            </div>
-                        </article>
-                        <aside>
-                            <span>Ejemplo de reseña</span>
-                        </aside>
-                    </li>
-                </ul>
+                <?php
+                    echo $reviews;
+                ?>
                 <footer>
                     <div class="btn">
                         <a href="https://www.google.com.ar/maps/place/Red+Limit/@21.1116044,-90.5391244,9z/data=!4m8!3m7!1s0x8f56779fe812b0cf:0x4ed82e6e897ded86!8m2!3d21.014911!4d-89.621319!9m1!1b1!16s%2Fg%2F11y59b5mzg?entry=ttu" target="_blank">Agregar un comentario</a>
                     </div>
                 </footer>
             </section>
+            <?php endif ?>
     
             <section id="cotiza" class="d-flex flex-col align-center justify-center">
                 <header class="d-flex flex-col align-center justify-center">
