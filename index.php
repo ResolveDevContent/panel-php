@@ -166,6 +166,8 @@
             <img src="/images/Red limit PNG (2).png" alt="logo">
         </div>
         
+        <div id="cursor"></div>
+        
         <?php include_once("includes/navbar.php"); ?>
 
         <section id="inicio">

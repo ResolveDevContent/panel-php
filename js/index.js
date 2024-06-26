@@ -30,11 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// CURSOR ----------------------------------------------------------------------
+
+document
+    .querySelectorAll('#cursor')
+    .forEach(function(elm) {
+        document.addEventListener('mousemove', function(e) {
+            elm.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+            elm.style.display = "block";
+        });
+    });
+
 // SCROLL ----------------------------------------------------------------------
 
 document.querySelectorAll('[data-scroll]').forEach(function(root) {
-    console.log(root)
-
     const scrollable = root.querySelectorAll('[data-scrollable]');
     
     root
