@@ -20,10 +20,7 @@
 
     <div class="navbar-responsive">
         <label for="menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff; width:3em; height: 3em;">
-                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
-            </svg>
-            <!-- <i class="icon menu"></i> -->
+            <i class="icon menu"></i>
         </label>
         <input type="checkbox" name="menu-responsive" id="menu" />
         <article class="popup">
@@ -32,10 +29,7 @@
                 <li class="menu-close">
                     <em>Men&uacute;</em>
                     <label for="menu">
-                        <!-- <i class="icon close"></i> -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #fff; width:2em; height: 2em;">
-                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.207 12.793-1.414 1.414L12 13.414l-2.793 2.793-1.414-1.414L10.586 12 7.793 9.207l1.414-1.414L12 10.586l2.793-2.793 1.414 1.414L13.414 12l2.793 2.793z"></path>
-                        </svg>
+                        <i class="icon close"></i>
                     </label>
                 </li>
                 <li>
