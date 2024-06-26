@@ -2,8 +2,6 @@ import paises from '../paises.json' with { type: 'json' };
 
 // LOADER ----------------------------------------------------------------------
 
-ScrollReveal().reveal('.headline', { delay: 300 });
-
 document.addEventListener('DOMContentLoaded', function() {
     const media = Array.from(document.querySelectorAll('img, video'));
   
@@ -300,3 +298,25 @@ document
 
         shiftTabs(activeLink.id);
 });
+
+/* ANIMATIONS ---------------------------------------------------------------------------- */
+
+var slideUp = {
+    delay: 175,
+    duration: 1500,
+    distance: "50%",
+    origin: "bottom",
+};
+
+var slideUpDelay = {
+    delay: 1000,
+    duration: 1500,
+    distance: "50%",
+    origin: "bottom",
+}
+
+ScrollReveal().reveal('.slideUp', slideUp);
+ScrollReveal().reveal('.slideUpDelay', slideUpDelay);
+
+ScrollReveal().reveal('.card', {interval: 500, delay: 150});
+ScrollReveal().reveal('.reviews', {interval: 250, delay: 150});
