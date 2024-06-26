@@ -101,7 +101,7 @@
                             $introduccion .= '<span>' .$row['introduccion'] .'</span>';
                             $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
                             $introduccion .= '<div class="btn">';
-                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['servicioId'] ."'>Ver m&aacute;s</a>";
+                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['id'] ."'>Ver m&aacute;s</a>";
                             $introduccion .= '</div>';
                         $introduccion .= '</section>';
                     }
@@ -117,9 +117,9 @@
         $query = "SELECT * FROM metricas";
         if($result = mysqli_query($sql, $query)){
             if(mysqli_num_rows($result) > 0) {
-                $metricas .=  '<ul class="d-flex align-center justify-start gap-1">';
+                $metricas .=  '<ul class="d-flex align-center justify-start gap-1 list-metricas">';
                     while($row = mysqli_fetch_assoc($result)) {
-                            $metricas .= '<li>';
+                            $metricas .= '<li class="card">';
                             $metricas .=  '<span class="loader"></span>';
                             $metricas .=  '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
                             $metricas .= '</li>';
@@ -132,9 +132,9 @@
         $query = "SELECT * FROM reviews";
         if($result = mysqli_query($sql, $query)){
             if(mysqli_num_rows($result) > 0) {
-                $reviews .=  '<ul class="d-flex align-center justify-start gap-1">';
+                $reviews .=  '<ul class="d-flex align-center justify-start gap-1 list-reviews">';
                     while($row = mysqli_fetch_assoc($result)) {
-                        $reviews .= '<li class="d-flex flex-col justify-start">';
+                        $reviews .= '<li class="d-flex flex-col justify-start reviews">';
                             $reviews .=  '<article class="d-flex align-center customer">';
                                 if($row["avatar"]) {
                                     $reviews .=  '<img src="/panel-php/panel/reviews/' . $row["avatar"] . '" alt="">';
@@ -196,10 +196,10 @@
 
         <main class="wrapper">
             <section id="sobre-nosotros" class="d-flex align-center">
-                <aside class="d-flex align-center justify-center headline">
+                <aside class="d-flex align-center justify-center slideUp">
                     <img src="/panel-php/gifs/about.gif" alt="">
                 </aside>
-                <article class="headline">
+                <article class="slideUp">
                     <h4>Sobre nosotros</h4>
                     <span>¿Qui&eacute;nes somos?</span>
                     <div>
@@ -207,14 +207,14 @@
                             En <span class="highlight">Red Limit</span>, somos m&aacute;s que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interact&uacute;an con el mundo digital. Desde nuestra fundaci&oacute;n, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.
                         </span>
                         <br>
-                        <div class="d-flex align-center gap-1">
+                        <div class="d-flex align-center gap-1 slideUpDelay">
                             <span>Nos encontramos en</span>
                             <div class="d-flex align-center justifi-center gap-1">
                                 <i class="argentina"></i>
                                 <i class="mexico"></i>
                             </div>
                         </div>
-                        <div class="d-flex align-center btn gap-1">
+                        <div class="d-flex align-center btn gap-1 slideUpDelay">
                             <a href="/panel-php/nosotros.php">Conoce m&aacute;s</a>
                             <a href="/panel-php/unete.php">Trabaj&aacute; con nosotros</a>
                         </div>
@@ -224,7 +224,7 @@
         </main>
 
         <?php if($proyectosImg) : ?>
-            <section id="proyectos" data-scroll="auto">
+            <section id="proyectos" data-scroll="auto" class="slideUp">
                 <?php
                     echo $proyectosImg;
                 ?>
@@ -233,7 +233,7 @@
 
         <main class="wrapper">
             <?php if($servicios) : ?>
-                <section id="servicios" class="d-flex flex-col align-center text-center">
+                <section id="servicios" class="d-flex flex-col align-center text-center slideUp">
                     <header>
                         <h4>Servicios</h4>
                         <span>Desliz&aacute; para ver todos nuestros servicios</span>
@@ -247,7 +247,7 @@
             <?php endif ?>
 
             <?php if($metricas) : ?>
-            <section id="metricas" class="d-flex flex-col align-center justify-center">
+            <section id="metricas" class="d-flex flex-col align-center justify-center slideUp">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col text-center">
                         <h4>Nuestras m&eacute;tricas</h4>
@@ -261,7 +261,7 @@
             <?php endif ?>
     
             <?php if($reviews) : ?>
-            <section id="reviews" class="d-flex flex-col align-center justify-center">
+            <section id="reviews" class="d-flex flex-col align-center justify-center slideUp">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col">
                         <h4>Ellos nos recomiendan</h4>
@@ -282,7 +282,7 @@
             </section>
             <?php endif ?>
     
-            <section id="cotiza" class="d-flex flex-col align-center justify-center">
+            <section id="cotiza" class="d-flex flex-col align-center justify-center slideUp">
                 <header class="d-flex flex-col align-center justify-center">
                     <h4>Cotiza</h4>
                     <span>Completa el formulario y cotizaremos tu &eacute;xito</span>

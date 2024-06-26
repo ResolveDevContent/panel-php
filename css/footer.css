@@ -38,10 +38,10 @@
 
 #floating-footer > ul > li > a img,
 #floating-footer .whatsapp i {
-    width: 2.5em;
-    min-width: 2.5em;
-    height: 2.5em;
-    min-height: 2.5em;
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    min-height: 2em;
 }
 
 #floating-footer > ul > li > a span {
@@ -355,11 +355,11 @@
 @media screen and (min-width: 960px) {
     .chat-box { 
         width: 18em;
-        height: 17em;
+        height: 19em;
     }
 
     #floating-footer .whatsapp label:hover > .chat-box {
-        top: -17.5em;
+        top: -18em;
     }
 
     #floating-footer .agendar a {
