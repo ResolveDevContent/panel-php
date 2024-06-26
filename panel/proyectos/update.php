@@ -97,7 +97,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     }
     
     // Check input errors before inserting in database
-    if(empty($nombre_err) && empty($stock_err) && empty($precio_err)){
+    if(empty($nombre_err) && empty($portada_err) && empty($servicios_err)){
         // Prepare an update statement
         $sql = "UPDATE proyectos SET nombre=?, descripcion=?, portada=?, servicios=?, instagram=?, website=?, facebook=?, mail=? WHERE id=?";
         $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
@@ -227,6 +227,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         
         // Close statement
         mysqli_stmt_close($stmt);
+
+        $all_servicios = '';
+        $query = "SELECT * FROM servicios";
+        if($result = mysqli_query($link, $query)){
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_array($result)) {
+                    $all_servicios .= '<option value=' . $row["id"] . ' data-nombre="' . $row["nombre"] . '">' . $row["nombre"] . '</option>';
+                }
+            }
+        }
         
         // Close connection
         mysqli_close($link);
@@ -261,7 +271,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <h2>Editar Proyecto</h2>
                             <p>Edite los valores de entrada y envíe para actualizar el registro.</p>
                         </header>
-                        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col">
+                        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post" enctype="multipart/form-data" class="form d-flex flex-col" id="form-create">
                             <div class="input">
                                 <label>Nombre</label>
                                 <input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>">
@@ -270,15 +280,28 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <label>Descripcion</label>
                                 <input type="text" name="descripcion" class="form-control" value="<?php echo $descripcion; ?>">
                             </div>
-                            <div class="input">
+                            <div class="input d-flex flex-col gap-1 <?php echo (!empty($servicios_err)) ? 'has-error' : ''; ?>">
                                 <label>Servicios</label>
-                                <ul class="d-flex align-center flex-wrap">
+                                <input type="hidden" name="servicios" class="form-control" value="<?php echo json_encode($servicios); ?>" required>
+                                <div class="d-flex align-center justify-between gap-1">
+                                    <select name="all_servicios" id="all_servicios">
+                                        <option value="">Seleccione un servicio</option>
+                                        <?php 
+                                            echo $all_servicios;
+                                        ?>
+                                    </select>
+                                    <div class="btn">
+                                        <a href="#" id="btnServicios">Agregar</a>
+                                    </div>
+                                </div>
+                                <ul class="d-flex align-center gap-5" data-servicios>
                                     <?php 
                                         foreach($servicios->servicios as $servicio => $value) {
                                             echo '<li><span class="toast">' . $value->nombre . '</span></li>';
                                         }
                                     ?>
                                 </ul>
+                                <span class="help-block"><?php echo $servicios_err;?></span>
                             </div>
                             <div class="input">
                                 <label>Instagram</label>
@@ -296,14 +319,30 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <label>Mail</label>
                                 <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>">
                             </div>
-                            <div class="input">
-                                <label>Portada</label>
+                            <span>Portada</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="portada">
+                                    <input type="file" name="portada" id="portada" class="form-control">
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes o videos</span>
+                                </label>
+                            </div>
+                            <div class="input imagenes">
+                                <label>Vista previa portada</label>
                                 <figure>
                                     <img src="<?php echo $portada; ?>" alt=''>
                                 </figure>
                             </div>
+                            <span>Imagenes</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="file">
+                                    <input type="file" name="imagenes[]" multiple id="file" class="form-control" >
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes o videos</span>
+                                </label>
+                            </div>
                             <div class="d-flex flex-col imagenes">
-                                <span>Imagenes</span>
+                                <span>Vista previa imagenes</span>
                                 <ul class="d-flex align-center flex-wrap">
                                     <?php
                                         while($row = mysqli_fetch_array($result2)){
@@ -366,5 +405,53 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 loader.classList.remove('disabled');
             }
         });
+
+        // ------------------------------------------------------------------------------
+
+        document.querySelectorAll('select#all_servicios').forEach(function(select) {
+            const servicios = {
+                servicios: []
+            };
+            const inputServicios = document.querySelector("input[name='servicios']");
+            
+            select.addEventListener('change', function(evt) {
+                const id = evt.target.value;
+
+                const option = select.querySelector(`option[value="${id}"]`);
+
+                if(!option) { return; }
+
+                const nombre = option.dataset.nombre;
+
+                servicios.servicios.push({nombre: nombre, id: id})
+            })
+
+            document.querySelectorAll('#btnServicios').forEach(function(btn) {
+                btn.addEventListener("click", function(evt) {
+                    inputServicios.value = JSON.stringify(servicios);
+
+                    for(const servicio of servicios.servicios) {
+                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                        })
+                    }
+                })
+
+                // console.log(document.querySelectorAll('[data-remove-servicio]'))
+                // document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
+                //     btn.addEventListener("click", function(evt) {
+                //         const id = btn.dataset.removeServicio;
+        
+                //         servicios.servicios = servicios.servicios.filter((row) => row.id != id);
+        
+                //         for(const servicio of servicios.servicios) {
+                //             document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                //                 ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                //             })
+                //         }
+                //     })
+                // })
+            })            
+        })
     </script>
 </html>
