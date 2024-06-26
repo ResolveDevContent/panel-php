@@ -1,5 +1,11 @@
+.gradient-body {
+    position: relative;
+}
+
 #servicio {
     margin-top: 8em;
+    position: relative;
+    z-index: 1;
 }
 
 #servicio > aside {
@@ -27,7 +33,11 @@
 }
 
 .proyectosImg .mockups {
-    margin-top: 2em;
+    margin: 2em 0;
+    background-color: var(--color6);
+    border-radius: 1em;
+    padding: 2em 0;
+    width: 95%;
 }
 
 .proyectosImg .tablet,
@@ -78,8 +88,8 @@
     }
 
     .proyectosImg .tablet {
-        width: 38em;
-        min-width: 38em;
+        width: 37em;
+        min-width: 37em;
         height: 28em;
         min-height: 28em;
     }

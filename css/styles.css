@@ -441,7 +441,10 @@ body.is-loading {
     );
 }
 
-
+.gradient.modified {
+	background: linear-gradient(334deg, var(--color1), var(--color6), var(--color3));
+	background-size: 180% 180%;
+}
 
 /* KEYFRAMES ------------------------------------------------------------------------------- */
 
@@ -500,5 +503,10 @@ body.is-loading {
 @media screen and (min-width: 960px) {
     .gradient {
         height: 100vh;
+    }
+
+    .gradient.modified {
+        height: 100%;
+        margin-top: -8em;
     }
 }

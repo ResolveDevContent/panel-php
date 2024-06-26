@@ -4,6 +4,7 @@
     $nombre_err = $telefono_err = $empresa_err = $descripcion_err = $pais_err = $cotizacion_err = "";
     $respuestaMsg = "";
     $isSend = false;
+    $proyectosImg = '';
 
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){

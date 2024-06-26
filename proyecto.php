@@ -82,6 +82,7 @@
                 } else {
                     header("location: 404page.php");
                 }
+                mysqli_stmt_close($stmt);
             } else {
                 header("location: 404page.php");
             }
@@ -119,10 +120,11 @@
             //             }
             //         }
             //     }
+                    // mysqli_stmt_close($stmt);
             // }
 
             $proyectoImagenes .= '</ul>';
-
+            mysqli_close($sql);
         } else {
             header("location: 404page.php");
         }
