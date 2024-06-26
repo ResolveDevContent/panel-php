@@ -315,7 +315,15 @@ var slideUpDelay = {
     origin: "bottom",
 }
 
+var slideTop = {
+    delay: 1000,
+    duration: 1500,
+    distance: "50%",
+    origin: "top",
+}
+
 ScrollReveal().reveal('.slideUp', slideUp);
+ScrollReveal().reveal('.slideTop', slideTop);
 ScrollReveal().reveal('.slideUpDelay', slideUpDelay);
 
 ScrollReveal().reveal('.card', {interval: 500, delay: 150});

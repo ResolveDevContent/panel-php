@@ -409,6 +409,5 @@
         </main>
 
         <?php include_once("includes/footer.php"); ?>
-        <script type="module" src="js/index.js"></script>
     </body>
 </html>

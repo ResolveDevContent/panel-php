@@ -92,10 +92,10 @@
 
 <body>
     <?php include_once("includes/navbar.php"); ?>
+    <div class="gradient"></div>
     <main class="wrapper">
         <section id="unete" class="d-flex align-center flex-col">
-            <div class="gradient"></div>
-            <header class="d-flex align-center text-center gap-1">
+            <header class="d-flex align-center text-center gap-1 slideUp">
                 <div>
                     <h2>Trabajá con nosotros</h2>
                     <span>
@@ -106,24 +106,24 @@
                     <img src="/gifs/unete.gif" alt="">
                 </aside>
             </header>
-            <div class="beneficios d-flex flex-col align-center gap-1">
+            <div class="beneficios d-flex flex-col align-center gap-1 slideUp">
                 <strong>Beneficios</strong>
                 <ul class="d-flex align-center justify-center gap-1">
-                    <li class="d-flex align-center">
+                    <li class="d-flex align-center card">
                         <i class="icon user-voice"></i>
                         <span>Ambiente de trabajo dinámico</span>
                     </li>
-                    <li class="d-flex align-center">
+                    <li class="d-flex align-center card">
                         <i class="icon rocket"></i>
                         <span>Oportunidades de crecimiento</span>
                     </li>
-                    <li class="d-flex align-center">
+                    <li class="d-flex align-center card">
                         <i class="icon world"></i>
                         <span>Proyectos internacionales</span>
                     </li>
                 </ul>
             </div>
-            <article class="d-flex align-center justify-center flex-col">
+            <article class="d-flex align-center justify-center flex-col slideUp">
                 <form data-form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                     <ul class="ul-form">
                         <li>
@@ -244,7 +244,5 @@
     </main>
 
     <?php include_once("includes/footer.php"); ?>
-
-    <script type="module" src="js/index.js"></script>
 </body>
 </html>

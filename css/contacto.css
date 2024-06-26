@@ -1,19 +1,16 @@
 /* CONTACTO ---------------------------------------------------------------- */
-
-/* #contacto i {
-    background-color: var(--color4);
-} */
-
-#contacto svg {
-    fill: var(--color4);
-    width: 2em;
-    height: 2em;
+#contacto {
+    margin-top: 8em;
 }
 
-/* #contacto i.argentina,
+#contacto i {
+    background-color: var(--color4);
+}
+
+#contacto i.argentina,
 #contacto i.mexico {
     background-color: transparent;
-} */
+}
 
 #contacto > header {
     max-width: 40em;

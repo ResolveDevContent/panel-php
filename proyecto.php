@@ -133,7 +133,7 @@
     <body>
         <?php include_once("includes/navbar.php"); ?>
 
-        <section id="banner">
+        <section id="banner slideUp">
             <div class="d-flex align-center">
                 <aside class="d-flex align-center flex-col justify-around">
                     <?php 
@@ -148,7 +148,7 @@
             </div>
         </section>
 
-        <main class="wrapper">
+        <main class="wrapper slideUp">
             <section id="proyecto" class="d-flex flex-col align-center gap-1">
                 <?php
                     echo $proyecto;
@@ -157,7 +157,5 @@
         </main>
 
         <?php include_once("includes/footer.php"); ?>
-
-        <script type="module" src="js/index.js"></script>
     </body>
 </html>

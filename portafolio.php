@@ -85,7 +85,7 @@
         <?php include_once("includes/navbar.php"); ?>
 
         <main class="wrapper">
-            <section id="portafolio" class="d-flex flex-col align-center gap-1">
+            <section id="portafolio" class="d-flex flex-col align-center gap-1 slideUp">
                 <header class="d-flex flex-col align-center justify-center">
                     <h2>Protafolio</h2>
                 </header>

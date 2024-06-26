@@ -102,7 +102,7 @@
     <?php include_once("includes/navbar.php"); ?>
     <div class="gradient"></div>
     <main class="wrapper">
-        <section id="agendar">
+        <section id="agendar" class="slideUp">
             <header class="d-flex align-center flex-col text-center gap-5">
                 <h2>Agendá una reunión con nosotros</h2>
                 <span>
@@ -234,7 +234,5 @@
     </main>
 
     <?php include_once("includes/footer.php"); ?>
-
-    <script type="module" src="js/index.js"></script>
 </body>
 </html>

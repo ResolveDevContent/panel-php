@@ -167,4 +167,5 @@
     </div>
 </footer>
 
+<script type="module" src="js/index.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>

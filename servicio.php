@@ -78,7 +78,7 @@
 
         <main>
             <div class="gradient modified"></div>
-            <section id="servicio" class="wrapper d-flex align-center">
+            <section id="servicio" class="wrapper d-flex align-center slideUp">
                 <aside class="d-flex flex-col align-center justify-center text-center">
                     <?php
                         echo $servicio;
@@ -113,7 +113,5 @@
         </main>
 
         <?php include_once("includes/footer.php"); ?>
-
-        <script type="module" src="js/index.js"></script>
     </body>
 </html>

@@ -10,7 +10,7 @@
     <?php include_once("includes/navbar.php"); ?>
     
     <main class="wrapper d-flex flex-col">
-        <section id="sobre-nosotros" class="d-flex align-center nosotros">
+        <section id="sobre-nosotros" class="d-flex align-center nosotros slideUp">
             <article>
                 <h2>Sobre nosotros</h2>
                 <span>¿Qui&eacute;nes somos?</span>
@@ -36,7 +36,7 @@
 
         <section id="valores">
             <ul class="d-flex flex-col w-100">
-                <li class="d-flex align-center">
+                <li class="d-flex align-center slideUp">
                     <img src="/images/mision.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Misi&oacute;n</em>
@@ -45,7 +45,7 @@
                         </span>
                     </div>
                 </li>
-                <li class="d-flex align-center right">
+                <li class="d-flex align-center right slideUp">
                     <img src="/images/vision.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Visi&oacute;n</em>
@@ -54,7 +54,7 @@
                         </span>
                     </div>
                 </li>
-                <li class="d-flex align-center">
+                <li class="d-flex align-center slideUp">
                     <img src="/images/valores.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Valores</em>
@@ -90,14 +90,14 @@
             </ul>
         </section>
 
-        <section id="equipo" class="text-center">
+        <section id="equipo" class="text-center slideUp">
             <h2>Nuestro equipo</h2>
             <span>
                 Contamos con un equipo <span class="highlight">diverso y talentoso</span> de especialistas en marketing digital, publicidad, diseño gr&aacute;fico, desarrollo web y gesti&oacute;n de redes sociales. Cada miembro de Red Limit aporta una combinaci&oacute;n &uacute;nica de <span class="highlight">habilidades y experiencia</span>, trabajando juntos para ofrecer soluciones integrales que ayudan a nuestros clientes a alcanzar sus objetivos de negocio.
             </span>
         </section>
 
-        <section id="join" class="text-center d-flex flex-col">
+        <section id="join" class="text-center d-flex flex-col slideUp">
             <em>Trabaja con nosotros</em>
             <span>
                 Estamos en constante b&uacute;squeda de nuevos talentos para unirse a nuestro equipo. Si est&aacute;s interesado en formar parte de Red Limit, visita nuestra sección "Trabaja con Nosotros" y env&iacute;anos tu CV junto con una carta de presentaci&oacute;n.

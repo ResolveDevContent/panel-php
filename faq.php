@@ -9,8 +9,8 @@
 <body>
 
     <?php include_once("includes/navbar.php"); ?>
-    <section id="faq" class="d-flex flex-col align-center">
-        <div class="gradient"></div>
+    <div class="gradient"></div>
+    <section id="faq" class="d-flex flex-col align-center slideUp">
         <header class="d-flex align-center justify-center text-center">
             <div>
                 <h2>Preguntas más frecuentes</h2>
@@ -197,7 +197,5 @@
     </section>
 
     <?php include_once("includes/footer.php"); ?>
-    
-    <script type="module" src="js/index.js"></script>
 </body>
 </html>

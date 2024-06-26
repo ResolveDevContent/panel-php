@@ -58,14 +58,14 @@
 
     <body>
         <?php include_once("includes/navbar.php"); ?>
-        <section id="contacto" class="d-flex align-center flex-col wrapper">
+        <section id="contacto" class="d-flex align-center flex-col wrapper slideUp">
             <header class="d-flex align-center text-center flex-col gap-1">
                 <h2>Contáctate con nosotros</h2>
                 <p>
                     Para obtener más información sobre nuestros servicios. No dude en enviarnos un correo electrónico. Nuestro personal siempre estará ahí para ayudarle. ¡No lo dudes!
                 </p>
             </header>
-            <article class="d-flex align-start justify-between" data-scroll="auto">
+            <article class="d-flex align-start justify-between slideTop" data-scroll="auto">
                 <div class="phone">
                     <img src="/panel-php/images/phone-3d.png" alt="">
                     <ul data-scrollable class="d-flex align-center">
@@ -164,7 +164,5 @@
         <?php endif ?>
 
         <?php include_once("includes/footer.php"); ?>
-        
-        <script type="module" src="js/index.js"></script>
     </body>
 </html>
