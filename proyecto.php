@@ -87,7 +87,7 @@
                 header("location: 404page.php");
             }
 
-            // $query = "SELECT * FROM imagenesProyectos WHERE proyectoId = ?";
+            // $query = "SELECT * FROM proyectos_images WHERE proyectoId = ?";
 
             // if($stmt = mysqli_prepare($sql, $query)) {
             //     mysqli_stmt_bind_param($stmt, "i", $param);
@@ -114,7 +114,7 @@
             //                 while($row = mysqli_fetch_array($result)){
             //                     $proyectoImagenes .= '<li>';
             //                         $proyectoImagenes .= '<span class="loader"></span>';
-            //                         $proyectoImagenes .= "<img src='". $row['portada'] ."' alt=''>";
+            //                         $proyectoImagenes .= "<img src='". $row['imagen'] ."' alt=''>";
             //                     $proyectoImagenes .= '</li>';
             //                 }
             //             }
@@ -133,14 +133,14 @@
     <body>
         <?php include_once("includes/navbar.php"); ?>
 
-        <section id="banner slideUp">
+        <section id="banner">
             <div class="d-flex align-center">
                 <aside class="d-flex align-center flex-col justify-around">
                     <?php 
                         echo $redes;
                     ?>
                 </aside>
-                <article>
+                <article data-scroll="auto">
                     <?php
                         echo $proyectoImagenes;
                     ?>

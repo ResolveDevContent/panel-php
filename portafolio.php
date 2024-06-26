@@ -15,7 +15,7 @@
                 $proyectos = '<ul class="gap-1 w-100">';
                 while($row = mysqli_fetch_array($result)) {
                     $proyectos .= '<li>';
-                        $proyectos .= "<a href='/proyecto.php?proyecto=". $row['nombre'] ."-". $row['proyectoId'] ."'>";
+                        $proyectos .= "<a href='/proyecto.php?proyecto=". $row['nombre'] ."-". $row['proyectoId'] ."' class='proyectoLink'>";
                             $proyectos .= '<span class="loader"></span>';
                             $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
                             $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
@@ -34,7 +34,7 @@
                 while($aRow = mysqli_fetch_array($res)) {
                     $destacados .= '<li>';
                         $destacados .= '<article class="d-flex proyecto">';
-                            $destacados .= "<a href='/proyecto.php?proyecto=".$aRow['nombre'] ."-". $aRow['proyectoId'] ."'>";
+                            $destacados .= "<a href='/proyecto.php?proyecto=".$aRow['nombre'] ."-". $aRow['proyectoId'] ."' class='proyectoLink'>";
                                 $destacados .= "<span class='loader'></span>";
                                 $destacados .= "<img src='". $aRow['portada'] ."' alt=''>";
                             $destacados .= '</a>';

@@ -10,7 +10,7 @@
         $proyectosImg = '';
 
         if(isset($_GET["servicio"]) && !empty(trim($_GET["servicio"]))){
-            $query = "SELECT * FROM servicios WHERE servicioId = ?";
+            $query = "SELECT * FROM servicios WHERE id = ?";
     
             if($stmt = mysqli_prepare($sql, $query)) {
                 mysqli_stmt_bind_param($stmt, "i", $param);

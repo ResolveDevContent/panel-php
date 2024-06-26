@@ -32,11 +32,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document
     .querySelectorAll('#cursor')
-    .forEach(function(elm) {
+    .forEach(function(cursor) {
         document.addEventListener('mousemove', function(e) {
-            elm.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
-            elm.style.display = "block";
+            cursor.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+            cursor.style.display = "flex";
         });
+
+        document
+            .querySelectorAll(".btn > a, .btn > button, .btn > label")
+            .forEach(function(elm) {
+                elm.addEventListener('mouseover', function() {
+                    cursor.classList.add('available');     
+                    cursor.classList.add('click');     
+                });
+
+                elm.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('available');     
+                    cursor.classList.remove('click');
+                });
+            });
+
+        document
+            .querySelectorAll(".proyectoLink")
+            .forEach(function(elm) {
+                elm.addEventListener('mouseover', function() {
+                    cursor.classList.add('available');     
+                    cursor.classList.add('ver');     
+                });
+
+                elm.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('available');     
+                    cursor.classList.remove('ver');
+                });
+            });
     });
 
 // SCROLL ----------------------------------------------------------------------

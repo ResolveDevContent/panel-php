@@ -51,3 +51,8 @@
         </article>
     </div>
 </nav>
+
+<div id="cursor" class="align-center justify-center">
+    <span id="click">Click aqu&iacute;</span>
+    <span id="ver">Ver proyecto</span>
+</div>
