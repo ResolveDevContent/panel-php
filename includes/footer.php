@@ -71,7 +71,7 @@
     </svg>
     <ul class="d-flex align-start justify-around">
         <li class="d-flex flex-col align-start justifi-center">
-            <img src="/panel-php/images/Red limit PNG (2).png" alt="">
+            <img src="/panel-php/images/logo.png" alt="">
             <span>
                 Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. 
             </span>
@@ -179,3 +179,5 @@
         <span>Made by © ResolveDev</span>
     </div>
 </footer>
+
+<script src="https://unpkg.com/scrollreveal"></script>
