@@ -54,6 +54,13 @@
     color: #a1a1a1;
 }
 
+#agendar label img {
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    min-height: 2em;
+}
+
 #agendar  .background-popup {
     position: fixed;
     top: 0;
@@ -108,7 +115,7 @@
 }
 
 @media (min-width: 960px) {
-    #agendar  .popup div label i {
+    #agendar .popup div label i {
         width: 2em;
         min-width: 2em;
         height: 2em;

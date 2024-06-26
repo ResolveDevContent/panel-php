@@ -11,7 +11,10 @@
             <li class="navbar-items"><a href="/portafolio.php">Portafolio</a></li>
         </ul>
         <div class='buttons'>
-            <a href="/contacto.php">Contacto</a>
+            <a href="/contacto.php" class="d-flex align-center justify-center gap-5">
+                Contacto
+                <img src="../images/Pajaro.png" alt="">
+            </a>
         </div>
     </div>
 

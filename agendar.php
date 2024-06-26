@@ -182,7 +182,10 @@
                             <span>
                                 <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
                             </span>
-                            <label data-enviar>Enviar</label>
+                            <label class="d-flex align-center gap-5" data-enviar>
+                                Enviar
+                                <img src="/images/Pajaro.png" alt="">
+                            </label>
                         </div>
                     </footer>
     
@@ -207,7 +210,10 @@
                             <span>
                                 <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
                             </span>
-                            <button>Enviar</button>
+                            <button class="d-flex align-center gap-5">
+                                Enviar
+                                <img src="/images/Pajaro.png" alt="">
+                            </button>
                         </div>
                     </div>
     

@@ -85,6 +85,7 @@
         </main>
 
         <section class="proyectosImg d-flex flex-col align-center w-100">
+            <div class="gradient"></div>
             <strong>Nuestros trabajos</strong>
             <?php if($proyectosImg) : ?>
                 <div class="mockups d-flex align-center justify-around w-100">

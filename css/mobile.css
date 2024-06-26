@@ -629,14 +629,14 @@ span.highlight {
     top: -23em;
 }
 
-#floating-footer > ul > li > a svg,
-#floating-footer > ul > li > label svg {
+#floating-footer > ul > li > a img,
+#floating-footer .whatsapp i {
     width: 3.5em;
     min-width: 3.5em;
     height: 3.5em;
     min-height: 3.5em;
 }
 
-#floating-footer > ul > li > a {
-    width: 5em;
+#floating-footer .agendar a {
+    width: 5.1em;
 }
