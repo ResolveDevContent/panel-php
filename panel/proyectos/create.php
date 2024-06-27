@@ -349,34 +349,44 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 const nombre = option.dataset.nombre;
 
-                servicios.servicios.push({nombre: nombre, id: id})
+                const hasServicio = servicios.servicios.find((x) => x.id == id)
+
+                if(!hasServicio) {
+                    servicios.servicios.push({nombre: nombre, id: id})
+                }
             })
 
             document.querySelectorAll('#btnServicios').forEach(function(btn) {
                 btn.addEventListener("click", function(evt) {
+                    const list = document.querySelectorAll('[data-servicios]');
+
+                    list.forEach(function(ul) {
+                        ul.innerHTML = ""
+                    })
+
                     inputServicios.value = JSON.stringify(servicios);
 
                     for(const servicio of servicios.servicios) {
-                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
-                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                        list.forEach(function(ul) {
+                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" id="remove-servicio" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
                         })
                     }
                 })
 
-                // console.log(document.querySelectorAll('[data-remove-servicio]'))
-                // document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
-                //     btn.addEventListener("click", function(evt) {
-                //         const id = btn.dataset.removeServicio;
+                console.log(document.querySelectorAll('[data-remove-servicio]'))
+                document.getElementById('remove-servicio]').forEach(function(btn) {
+                    btn.addEventListener("click", function(evt) {
+                        const id = btn.dataset.removeServicio;
         
-                //         servicios.servicios = servicios.servicios.filter((row) => row.id != id);
+                        servicios.servicios = servicios.servicios.filter((row) => row.id != id);
         
-                //         for(const servicio of servicios.servicios) {
-                //             document.querySelectorAll('[data-servicios]').forEach(function(ul) {
-                //                 ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
-                //             })
-                //         }
-                //     })
-                // })
+                        for(const servicio of servicios.servicios) {
+                            document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                                ul.innerHTML = `<li><span class="toast">${servicio.nombre}</span><a href="#" id="remove-servicio" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                            })
+                        }
+                    })
+                })
             })            
         })
         

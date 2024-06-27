@@ -90,7 +90,11 @@ document.querySelectorAll('[data-scroll]').forEach(function(root) {
         console.log("HOLA")
 
     if (root.dataset.scroll == 'auto') {
-        const AUTO_DELAY = 5000;
+        let AUTO_DELAY = 5000;
+
+        if(root.dataset.delay) {
+            AUTO_DELAY = root.dataset.delay;
+        }
     
         var scroll_in_reverse = false;
     

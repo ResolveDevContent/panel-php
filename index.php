@@ -117,7 +117,7 @@
         $query = "SELECT * FROM metricas";
         if($result = mysqli_query($sql, $query)){
             if(mysqli_num_rows($result) > 0) {
-                $metricas .=  '<ul class="d-flex align-center justify-start gap-1 list-metricas">';
+                $metricas .=  '<ul class="d-flex align-center justify-start gap-1 list-metricas" data-scrollable>';
                     while($row = mysqli_fetch_assoc($result)) {
                             $metricas .= '<li class="card">';
                             $metricas .=  '<span class="loader"></span>';
@@ -132,7 +132,7 @@
         $query = "SELECT * FROM reviews";
         if($result = mysqli_query($sql, $query)){
             if(mysqli_num_rows($result) > 0) {
-                $reviews .=  '<ul class="d-flex align-center justify-start gap-1 list-reviews">';
+                $reviews .=  '<ul class="d-flex align-center justify-start gap-1 list-reviews" data-scrollable>';
                     while($row = mysqli_fetch_assoc($result)) {
                         $reviews .= '<li class="d-flex flex-col justify-start reviews">';
                             $reviews .=  '<article class="d-flex align-center customer">';
@@ -247,7 +247,7 @@
             <?php endif ?>
 
             <?php if($metricas) : ?>
-            <section id="metricas" class="d-flex flex-col align-center justify-center slideUp">
+            <section id="metricas" class="d-flex flex-col align-center justify-center slideUp" data-scroll="auto">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col text-center">
                         <h4>Nuestras m&eacute;tricas</h4>
@@ -261,7 +261,7 @@
             <?php endif ?>
     
             <?php if($reviews) : ?>
-            <section id="reviews" class="d-flex flex-col align-center justify-center slideUp">
+            <section id="reviews" class="d-flex flex-col align-center justify-center slideUp" data-scroll="auto" data-delay="2000">
                 <header class="d-flex align-center justify-center w-100">
                     <div class="d-flex align-center justify-center flex-col">
                         <h4>Ellos nos recomiendan</h4>

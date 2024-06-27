@@ -189,6 +189,7 @@ h4 {
     width: 100%;
     margin-top: 2em;
     overflow-y: auto;
+    scrollbar-width: none;
     scroll-snap-type: x mandatory;
 }
 
@@ -227,6 +228,7 @@ h4 {
     width: 100%;
     margin-top: 2em;
     overflow-y: auto;
+    scrollbar-width: none;
     scroll-snap-type: x mandatory;
 }
 
