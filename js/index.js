@@ -337,7 +337,7 @@ document.querySelectorAll('#navbar').forEach(function(navbar) {
     window.addEventListener('scroll',function(){
      //on every scroll this funtion will be called
       
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
       //This line will get the location on scroll
       
       if(scrollTop > lastScrollTop){ //if it will be greater than the previous
