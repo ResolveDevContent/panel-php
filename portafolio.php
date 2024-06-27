@@ -30,7 +30,7 @@
         $aQuery = "SELECT * FROM proyectos WHERE destacado = 1";
         if($res = mysqli_query($sql, $aQuery)) {
             if(mysqli_num_rows($res) > 0) { 
-                $destacados = '<ul class="w-100">';
+                $destacados = '<ul class="w-100 list-portafolio">';
                 while($aRow = mysqli_fetch_array($res)) {
                     $destacados .= '<li>';
                         $destacados .= '<article class="d-flex proyecto">';

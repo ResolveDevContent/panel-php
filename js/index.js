@@ -325,7 +325,55 @@ document
         activeLink.classList.toggle("active");
 
         shiftTabs(activeLink.id);
-});
+    });
+
+    
+document
+    .querySelectorAll("#metricas")
+    .forEach(function(root) {
+        root.querySelectorAll(".list-metricas").forEach(function(ul) {
+            const li = ul.querySelectorAll('li');
+
+            if(li.length <= 4) {
+                ul.classList.add("threeLi");
+                return;
+            }
+
+            ul.classList.remove("threeLi")
+        })
+    })
+
+document
+    .querySelectorAll("#reviews")
+    .forEach(function(root) {
+        root.querySelectorAll(".list-reviews").forEach(function(ul) {
+            const li = ul.querySelectorAll('li');
+
+            if(li.length <= 3) {
+                ul.classList.add("threeLi");
+                return;
+            }
+
+            ul.classList.remove("threeLi")
+        })
+    })
+
+// PORTAFOLIO ----------------------------------------------------------------------------
+
+document
+    .querySelectorAll("#portafolio")
+    .forEach(function(root) {
+        root.querySelectorAll(".list-portafolio").forEach(function(list) {
+            list.querySelectorAll('li:nth-child(even)').forEach(function(li) {
+                li.classList.add("slideLeft");
+            })
+
+            list.querySelectorAll('li:nth-child(odd)').forEach(function(li) {
+                li.classList.add("slideRight");
+            })
+
+        })
+    })
 
 /* ANIMATIONS ---------------------------------------------------------------------------- */
 
@@ -383,8 +431,24 @@ var slideTop = {
     origin: "top",
 }
 
+var slideLeft = {
+    delay: 1000,
+    duration: 1500,
+    distance: "50%",
+    origin: "left",
+}
+
+var slideRight = {
+    delay: 1000,
+    duration: 1500,
+    distance: "50%",
+    origin: "right",
+}
+
 ScrollReveal().reveal('.slideUp', slideUp);
 ScrollReveal().reveal('.slideTop', slideTop);
+ScrollReveal().reveal('.slideLeft', slideLeft);
+ScrollReveal().reveal('.slideRight', slideRight);
 ScrollReveal().reveal('.slideUpDelay', slideUpDelay);
 
 ScrollReveal().reveal('.card', {interval: 500, delay: 150});
