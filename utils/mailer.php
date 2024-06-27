@@ -10,52 +10,54 @@
 
     $msg = '';
     if($cotiza) {
-        $msg = "De: $nombre";
-        $msg .= "Asunto: Cotización";
-        $msg .= "Datos:";
-        $msg .= "Nombre y apellido: " . $nombre . "";
-        $msg .= "Teléfono: " . $telefono . "";
-        $msg .= "Empresa: " . $empresa . "";
-        $msg .= "Descripcion de empresa: " . $descripcion . "";
-        $msg .= "Pais: " . $pais . "";
-        $msg .= "Cotización: " . $cotizacion . "";
-        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
+        $msg = "De: $nombre <br>";
+        $msg .= "Asunto: Cotización <br>";
+        $msg .= "Datos: <br>";
+        $msg .= "Nombre y apellido: " . $nombre . "<br>";
+        $msg .= "Teléfono: " . $telefono . "<br>";
+        $msg .= "Empresa: " . $empresa . "<br>";
+        $msg .= "Descripcion de empresa: " . $descripcion . "<br>";
+        $msg .= "Pais: " . $pais . "<br>";
+        $msg .= "Cotización: " . $cotizacion . "<br><br>";
+        $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     } else if($contacto) {
-        $msg = "De: $nombre $email";
-        $msg .= "Asunto: $asunto";
-        $msg .= "Mensaje:";
-        $msg .= " . $mensaje . ";
-        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
+        $msg = "De: $nombre $email <br>";
+        $msg .= "Asunto: $asunto <br>";
+        $msg .= "Mensaje: <br>";
+        $msg .= " . $mensaje . <br>";
+        $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     } else if($agendar) {
-        $msg = "De: $nombre";
-        $msg .= "Asunto: Agendar reunion";
-        $msg .= "Datos:";
-        $msg .= "Nombre y apellido: " . $nombre . "";
-        $msg .= "Teléfono: " . $telefono . "";
-        $msg .= "Empresa: " . $empresa . "";
-        $msg .= "Descripcion de empresa: " . $descripcion . "";
-        $msg .= "Pais: " . $pais . "";
-        $msg .= "Cotización: " . $cotizacion . "";
-        $msg .= "Dia: " . $dia . "";
-        $msg .= "Horario: " . $horario . "";
-        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
+        $msg = "De: $nombre <br>";
+        $msg .= "Asunto: Agendar reunion <br>";
+        $msg .= "Datos: <br>";
+        $msg .= "Nombre y apellido: " . $nombre . "<br>";
+        $msg .= "Teléfono: " . $telefono . "<br>";
+        $msg .= "Empresa: " . $empresa . "<br>";
+        $msg .= "Descripcion de empresa: " . $descripcion . "<br>";
+        $msg .= "Pais: " . $pais . "<br>";
+        $msg .= "Cotización: " . $cotizacion . "<br>";
+        $msg .= "Dia: " . $dia . "<br>";
+        $msg .= "Horario: " . $horario . "<br><br>";
+        $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     } else if($unete){
-        $msg = "De: $nombre $email";
-        $msg .= "Asunto: Trabajá con nosotros";
-        $msg .= "Datos:";
-        $msg .= "Nombre y apellido: " . $nombre . "";
-        $msg .= "Correo electrónico: " . $email . "";
-        $msg .= "Teléfono: " . $telefono . "";
-        $msg .= "Pais: " . $pais . "";
-        $msg .= "Puesto: " . $puesto . "";
-        $msg .= "Este mensaje fue enviado a trav&eacute;s de un formulario de contacto.";
+        $msg = "De: $nombre $email <br>";
+        $msg .= "Asunto: Trabajá con nosotros <br>";
+        $msg .= "Datos: <br>";
+        $msg .= "Nombre y apellido: " . $nombre . " <br>";
+        $msg .= "Correo electrónico: " . $email . " <br>";
+        $msg .= "Teléfono: " . $telefono . " <br>";
+        $msg .= "Pais: " . $pais . " <br>";
+        $msg .= "Puesto: " . $puesto . " <br><br>";
+        $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     }
 
     $mail = new PHPMailer(true);
 
     try {
+        $mail->CharSet = "UTF-8";
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
+        $mail->isHTML(true);
         $mail->Host = "smtp.hostinger.com";
         $mail->Port = 587;
         $mail->SMTPAuth = true;

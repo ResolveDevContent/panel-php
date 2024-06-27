@@ -10,6 +10,7 @@ a {
     z-index: 32;
     padding: 1em 1.5em;
     background-color: #00000063;
+    transition: all 0.5s;
 }
 
 #navbar .logo a {
