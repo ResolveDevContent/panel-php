@@ -355,7 +355,7 @@ document.querySelectorAll('#navbar').forEach(function(navbar) {
     window.addEventListener("scrollend", function() {
         setTimeout(() => {
             navbar.style.top='0';
-        }, 2000)
+        }, 1000)
     })
 }); // Get The NavBar
 
