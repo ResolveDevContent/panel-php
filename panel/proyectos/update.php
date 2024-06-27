@@ -310,8 +310,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <div class="input d-flex flex-col gap-1 <?php echo (!empty($destacado_err)) ? 'has-error' : ''; ?>">
                                 <label>Destacado</label>
                                 <div class="d-flex align-center justify-between gap-1">
-                                    <select name="destacado" id="destacado">
-                                        <option value="0" selected>No</option>
+                                    <select name="destacado" id="destacado" data-value="<?php echo $destacado; ?>">
+                                        <option value="0">No</option>
                                         <option value="1">Si</option>
                                     </select>
                                 </div>
@@ -466,6 +466,14 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 //     })
                 // })
             })            
+        })
+
+        document.querySelectorAll('select[data-value]').forEach(function(select) {
+            const value = select.dataset.value;
+
+            if(value) {
+                select.value = value;
+            }
         })
     </script>
 </html>
