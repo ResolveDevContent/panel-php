@@ -4,8 +4,8 @@ require_once "../config.php";
 // require_once "../errors.php";
  
 // Define variables and initialize with empty values
-$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = "";
-$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = "";
+$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = $destacado = "";
+$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = $destacado_err = "";
 $portada = "";
 $imagenes = [];
 
@@ -32,11 +32,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_instagram = trim($_POST["instagram"]);
     $input_facebook = trim($_POST["facebook"]);
     $input_mail = trim($_POST["mail"]);
+    $input_destacado = trim($_POST["destacado"]);
     $descripcion = $input_descripcion;
     $website = $input_website;
     $instagram = $input_instagram;
     $facebook = $input_facebook;
     $mail = $input_mail;
+    $destacado = $input_destacado;
 
     // // Validate imagen
     if($_FILES["portada"]["name"]) {
@@ -96,13 +98,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($portada_err) && empty($servicios_err)){
 
-        $sql_products = "INSERT INTO proyectos (nombre, descripcion, portada, servicios, instagram, website, facebook, mail) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql_products = "INSERT INTO proyectos (nombre, descripcion, portada, servicios, instagram, website, facebook, mail, destacado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
         $sql_lastId = "SELECT LAST_INSERT_ID() as id";
 
         if($stmt_products = mysqli_prepare($link, $sql_products)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt_products, "ssssssss", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail);
+            mysqli_stmt_bind_param($stmt_products, "sssssssss", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_destacado);
             
             // Set parameters
             $param_nombre = $nombre;
@@ -113,6 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_facebook = $facebook;
             $param_website = $website;
             $param_mail = $mail;
+            $param_destacado = $destacado;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt_products)){
@@ -227,6 +230,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 </div>
                                 <ul class="d-flex align-center gap-5" data-servicios></ul>
                                 <span class="help-block"><?php echo $servicios_err;?></span>
+                            </div>
+                            <div class="input d-flex flex-col gap-1 <?php echo (!empty($destacado_err)) ? 'has-error' : ''; ?>">
+                                <label>Destacado</label>
+                                <div class="d-flex align-center justify-between gap-1">
+                                    <select name="destacado" id="destacado">
+                                        <option value="0" selected>No</option>
+                                        <option value="1">Si</option>
+                                    </select>
+                                </div>
+                                <span class="help-block"><?php echo $destacado_err;?></span>
                             </div>
                             <div class="input <?php echo (!empty($instagram_err)) ? 'has-error' : ''; ?>">
                                 <label>Instagram</label>

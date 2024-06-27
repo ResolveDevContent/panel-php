@@ -4,8 +4,8 @@ require_once "../config.php";
 // require_once "../errors.php";
  
 // Define variables and initialize with empty values
-$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = "";
-$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = "";
+$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = $destacado = "";
+$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = $destacado_err = "";
 $portada = "";
 $imagenes = [];
  
@@ -35,11 +35,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     $input_instagram = trim($_POST["instagram"]);
     $input_facebook = trim($_POST["facebook"]);
     $input_mail = trim($_POST["mail"]);
+    $input_destacado = trim($_POST["destacado"]);
     $descripcion = $input_descripcion;
     $website = $input_website;
     $instagram = $input_instagram;
     $facebook = $input_facebook;
     $mail = $input_mail;
+    $destacado = $input_destacado;
 
     // // Validate imagen
     if($_FILES["portada"]["name"]) {
@@ -99,12 +101,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($portada_err) && empty($servicios_err)){
         // Prepare an update statement
-        $sql = "UPDATE proyectos SET nombre=?, descripcion=?, portada=?, servicios=?, instagram=?, website=?, facebook=?, mail=? WHERE id=?";
+        $sql = "UPDATE proyectos SET nombre=?, descripcion=?, portada=?, servicios=?, instagram=?, website=?, facebook=?, mail=?, destacado=? WHERE id=?";
         $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssssssssi", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_id);
+            mysqli_stmt_bind_param($stmt, "sssssssssi", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_destacado, $param_id);
             
             // Set parameters
             $param_nombre = $nombre;
@@ -115,6 +117,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $param_facebook = $facebook;
             $param_website = $website;
             $param_mail = $mail;
+            $param_destacado = $destacado;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -196,6 +199,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $facebook = $row["facebook"];
                     $website = $row["website"];
                     $mail = $row["mail"];
+                    $destacado = $row["destacado"];
                     $portada = $row["portada"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
@@ -302,6 +306,16 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                     ?>
                                 </ul>
                                 <span class="help-block"><?php echo $servicios_err;?></span>
+                            </div>
+                            <div class="input d-flex flex-col gap-1 <?php echo (!empty($destacado_err)) ? 'has-error' : ''; ?>">
+                                <label>Destacado</label>
+                                <div class="d-flex align-center justify-between gap-1">
+                                    <select name="destacado" id="destacado">
+                                        <option value="0" selected>No</option>
+                                        <option value="1">Si</option>
+                                    </select>
+                                </div>
+                                <span class="help-block"><?php echo $destacado_err;?></span>
                             </div>
                             <div class="input">
                                 <label>Instagram</label>
