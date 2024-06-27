@@ -51,8 +51,8 @@
                                 $proyecto .= '</div>';
 
                             if($row['facebook'] || $row['instagram'] || $row['website']) {
-                                $redes = '<em class="vertical-text">Redes Sociales</em>';
-                                $redes .= '<ul class="d-flex aling-center flex-col gap-1">';
+                                $redes = '<em class="vertical-text slideUp">Redes Sociales</em>';
+                                $redes .= '<ul class="d-flex aling-center flex-col gap-1 slideUp">';
                                 if($row['facebook']) {
                                     $redes .= '<li>';
                                         $redes .= "<a href='". $row['facebook'] ."' class='d-flex align-center' target='_blank' title='Facebook'>";   
