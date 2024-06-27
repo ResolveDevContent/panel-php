@@ -193,24 +193,6 @@ document
             });
 });
 
-// AGENDAR ----------------------------------------------------------------------
-
-document
-    .querySelectorAll('#agendar')
-    .forEach(function(root) {
-        const btnEnviar = root.querySelectorAll('[data-enviar]');
-
-        btnEnviar.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                const input = root.querySelectorAll('#background-popup');
-
-                input.forEach(function(row) {
-                    row.checked = false;
-                });
-            });
-        });
-    });
-
 // FAQS ----------------------------------------------------------------------
 
 document
@@ -231,10 +213,8 @@ document
 
 document
     .querySelectorAll("#agendar")
-    .forEach(function() {
+    .forEach(function(root) {
         const   date         = document.querySelector("input#date"),
-                select       = document.querySelector(".ul-form select"),
-                labelSelect  = document.querySelector(".label-cotizacion"),
                 itemHorarios = document.querySelector(".item-horarios"),
                 horarios     = ["12:00", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"], 
                 ul           = document.querySelector(".horarios"),
@@ -268,7 +248,26 @@ document
         
             itemHorarios.classList.add("not-visible");
             ul.innerHTML = "";
-        })
+        });
+
+        const btnEnviar = root.querySelectorAll('[data-enviar]');
+
+        btnEnviar.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const invalids = document.querySelectorAll('input:required:invalid, select:required:invalid');
+                console.log(invalids);
+                if(Array.from(invalids).length > 0) {
+                    console.log("Complete todos los campos");
+                    return;
+                }
+
+                const input = root.querySelectorAll('#background-popup');
+
+                input.forEach(function(row) {
+                    row.checked = false;
+                });
+            });
+        });
 });
 
 // INDEX ---------------------------------------------------------------------------------
