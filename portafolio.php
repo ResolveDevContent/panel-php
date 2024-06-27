@@ -21,8 +21,13 @@
                             $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
                             $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
                             foreach($servicios['servicios'] as $servicio => $value) {
-                                $proyectos .= $value["nombre"] . '</span>';
+                                if($value["nombre"] == $servicios['servicios'][0]["nombre"]) {
+                                    $proyectos .= $value["nombre"];
+                                } else {
+                                    $proyectos .=  ", " .$value["nombre"];
+                                }
                             }
+                            $proyectos .= '</span>';
                         $proyectos .= '</a>';
                     $proyectos .= '</li>';
                 }
@@ -45,9 +50,15 @@
                             $destacados .= '<div class="d-flex flex-col align-start justify-between">';
                                 $destacados .= '<div class="d-flex flex-col align-start">';
                                     $destacados .= '<em>'. $aRow['nombre'] .'</em>';
+                                    $destacados .= '<span>';
                                     foreach($servicios['servicios'] as $servicio => $value) {
-                                        $destacados .= $value["nombre"] . '</span>';
+                                        if($value["nombre"] == $servicios['servicios'][0]["nombre"]) {
+                                            $destacados .= $value["nombre"];
+                                        } else {
+                                            $destacados .=  ", " .$value["nombre"];
+                                        }
                                     }
+                                    $destacados .= '<span>';
                                 $destacados .= '</div>';
                                 $destacados .= '<ul class="d-flex align-center gap-5">';
                                     if($aRow['facebook']) {

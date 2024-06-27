@@ -1,5 +1,6 @@
 #portafolio {
     margin-top: 8em;
+    overflow: hidden;
 }
 
 #portafolio .destacados {
