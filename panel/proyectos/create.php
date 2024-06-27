@@ -368,28 +368,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     for(const servicio of servicios.servicios) {
                         list.forEach(function(ul) {
-                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" id="remove-servicio" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
                         })
                     }
                 })
+            })      
 
-                console.log(document.querySelectorAll('[data-remove-servicio]'))
-                document.getElementById('remove-servicio]').forEach(function(btn) {
-                    btn.addEventListener("click", function(evt) {
-                        const id = btn.dataset.removeServicio;
-        
-                        servicios.servicios = servicios.servicios.filter((row) => row.id != id);
-        
-                        for(const servicio of servicios.servicios) {
-                            document.querySelectorAll('[data-servicios]').forEach(function(ul) {
-                                ul.innerHTML = `<li><span class="toast">${servicio.nombre}</span><a href="#" id="remove-servicio" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
-                            })
-                        }
-                    })
+            document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
+                btn.addEventListener("click", function(evt) {
+                    const id = btn.dataset.removeServicio;
+    
+                    servicios.servicios = servicios.servicios.filter((row) => row.id != id);
+    
+                    for(const servicio of servicios.servicios) {
+                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                            ul.innerHTML = `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                        })
+                    }
                 })
-            })            
+            })
+
         })
-        
 
     </script>
 </html>

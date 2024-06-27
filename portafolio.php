@@ -21,7 +21,7 @@
                             $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
                             $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
                             foreach($servicios['servicios'] as $servicio => $value) {
-                                $proyectos .= $value["nombre"] . '</span>';
+                                $proyectos .= '<span>' . $value["nombre"] . '</span>';
                             }
                         $proyectos .= '</a>';
                     $proyectos .= '</li>';
@@ -46,7 +46,7 @@
                                 $destacados .= '<div class="d-flex flex-col align-start">';
                                     $destacados .= '<em>'. $aRow['nombre'] .'</em>';
                                     foreach($servicios['servicios'] as $servicio => $value) {
-                                        $destacados .= $value["nombre"] . '</span>';
+                                        $destacados .= '<p>' . $value["nombre"] . '</p>';
                                     }
                                 $destacados .= '</div>';
                                 $destacados .= '<ul class="d-flex align-center gap-5">';
