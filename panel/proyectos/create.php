@@ -334,10 +334,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // ------------------------------------------------------------------------------
 
+        const servicios = {
+            servicios: []
+        };
+
         document.querySelectorAll('select#all_servicios').forEach(function(select) {
-            const servicios = {
-                servicios: []
-            };
             const inputServicios = document.querySelector("input[name='servicios']");
             
             select.addEventListener('change', function(evt) {
@@ -345,7 +346,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 const option = select.querySelector(`option[value="${id}"]`);
 
-                if(!option) { return; }
+                if(!option || !inputServicios) { return; }
 
                 const nombre = option.dataset.nombre;
 
@@ -371,24 +372,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
                         })
                     }
+
+                    refresh()
                 })
             })      
+        })
 
+        function refresh() {
             document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
                 btn.addEventListener("click", function(evt) {
                     const id = btn.dataset.removeServicio;
-    
-                    servicios.servicios = servicios.servicios.filter((row) => row.id != id);
+                    const inputServicios = document.querySelector("input[name='servicios']");
+
+                    if(!inputServicios) {
+                        return;
+                    }
+                    
+                    servicios.servicios = servicios.servicios.filter((row) => Number(row.id) != Number(id));
+                    
+                    console.log(id, servicios.servicios)
+                    inputServicios.value = JSON.stringify(servicios);
+
+                    if(servicios.servicios.length <= 1) {
+                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                            ul.innerHTML = ""
+                        })
+                    }
     
                     for(const servicio of servicios.servicios) {
                         document.querySelectorAll('[data-servicios]').forEach(function(ul) {
                             ul.innerHTML = `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
                         })
                     }
+
+                    refresh()
                 })
             })
-
-        })
+        }
 
     </script>
 </html>
