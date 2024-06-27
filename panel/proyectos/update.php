@@ -286,7 +286,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             </div>
                             <div class="input d-flex flex-col gap-1 <?php echo (!empty($servicios_err)) ? 'has-error' : ''; ?>">
                                 <label>Servicios</label>
-                                <input type="hidden" name="servicios" class="form-control" value="<?php echo json_encode($servicios); ?>" required>
+                                <input type="hidden" name="servicios" class="form-control" value=`<?php echo json_encode($servicios); ?>` required>
                                 <div class="d-flex align-center justify-between gap-1">
                                     <select name="all_servicios" id="all_servicios">
                                         <option value="">Seleccione un servicio</option>
