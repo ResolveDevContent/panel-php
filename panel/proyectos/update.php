@@ -286,7 +286,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             </div>
                             <div class="input d-flex flex-col gap-1 <?php echo (!empty($servicios_err)) ? 'has-error' : ''; ?>">
                                 <label>Servicios</label>
-                                <input type="hidden" name="servicios" class="form-control" value=`<?php echo json_encode($servicios); ?>` required>
+                                <input type="hidden" name="servicios" class="form-control" value='<?php echo json_encode($servicios); ?>' required>
                                 <div class="d-flex align-center justify-between gap-1">
                                     <select name="all_servicios" id="all_servicios">
                                         <option value="">Seleccione un servicio</option>
@@ -301,7 +301,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <ul class="d-flex align-center gap-5" data-servicios>
                                     <?php 
                                         foreach($servicios->servicios as $servicio => $value) {
-                                            echo '<li><span class="toast">' . $value->nombre . '</span></li>';
+                                            echo '<li><span class="toast">' . $value->nombre . '</span><a href="#" data-remove-servicio="' . $value->id . '" >Borrar</a></li>';
                                         }
                                     ?>
                                 </ul>
@@ -421,52 +421,87 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         });
 
         // ------------------------------------------------------------------------------
+        const inputServicios = document.querySelector("input[name='servicios']");
+
+        const servicios = {
+            servicios: []
+        };
+
+        if(inputServicios) {
+            servicios.servicios = JSON.parse(JSON.stringify(inputServicios.value))
+            servicios.servicios = JSON.parse(servicios.servicios).servicios
+        }
 
         document.querySelectorAll('select#all_servicios').forEach(function(select) {
-            const servicios = {
-                servicios: []
-            };
-            const inputServicios = document.querySelector("input[name='servicios']");
-            
             select.addEventListener('change', function(evt) {
                 const id = evt.target.value;
 
                 const option = select.querySelector(`option[value="${id}"]`);
 
-                if(!option) { return; }
+                if(!option || !inputServicios) { return; }
 
                 const nombre = option.dataset.nombre;
 
-                servicios.servicios.push({nombre: nombre, id: id})
+                const hasServicio = servicios.servicios.find((x) => x.id == id)
+
+                if(!hasServicio) {
+                    servicios.servicios.push({nombre: nombre, id: id})
+                }
             })
 
             document.querySelectorAll('#btnServicios').forEach(function(btn) {
                 btn.addEventListener("click", function(evt) {
+                    const list = document.querySelectorAll('[data-servicios]');
+
+                    list.forEach(function(ul) {
+                        ul.innerHTML = ""
+                    })
+
                     inputServicios.value = JSON.stringify(servicios);
 
                     for(const servicio of servicios.servicios) {
-                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                        list.forEach(function(ul) {
                             ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
                         })
                     }
-                })
 
-                // console.log(document.querySelectorAll('[data-remove-servicio]'))
-                // document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
-                //     btn.addEventListener("click", function(evt) {
-                //         const id = btn.dataset.removeServicio;
-        
-                //         servicios.servicios = servicios.servicios.filter((row) => row.id != id);
-        
-                //         for(const servicio of servicios.servicios) {
-                //             document.querySelectorAll('[data-servicios]').forEach(function(ul) {
-                //                 ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
-                //             })
-                //         }
-                //     })
-                // })
-            })            
+                    refresh()
+                })
+            })   
+            refresh()   
         })
+
+        function refresh() {
+            document.querySelectorAll('[data-remove-servicio]').forEach(function(btn) {
+                btn.addEventListener("click", function(evt) {
+                    const id = btn.dataset.removeServicio;
+                    const inputServicios = document.querySelector("input[name='servicios']");
+
+                    if(!inputServicios) {
+                        return;
+                    }
+                    
+                    servicios.servicios = servicios.servicios.filter((row) => Number(row.id) != Number(id));
+                    
+                    console.log(id, servicios.servicios)
+                    inputServicios.value = JSON.stringify(servicios);
+
+                    if(servicios.servicios.length <= 1) {
+                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                            ul.innerHTML = ""
+                        })
+                    }
+    
+                    for(const servicio of servicios.servicios) {
+                        document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                            ul.innerHTML = `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                        })
+                    }
+
+                    refresh()
+                })
+            })
+        }
 
         document.querySelectorAll('select[data-value]').forEach(function(select) {
             const value = select.dataset.value;

@@ -103,7 +103,7 @@
         <main class="wrapper">
             <section id="portafolio" class="d-flex flex-col align-center gap-1 slideUp">
                 <header class="d-flex flex-col align-center justify-center">
-                    <h2>Protafolio</h2>
+                    <h2>Portafolio</h2>
                 </header>
                 <div class="destacados d-flex flex-col align-center text-center w-100">
                     <em>Proyectos destacados</em>

@@ -1,6 +1,5 @@
 #portafolio {
     margin-top: 8em;
-    overflow: hidden;
 }
 
 #portafolio .destacados {
@@ -20,6 +19,8 @@
 
 #portafolio .destacados > ul {
     margin-top: 2em;
+    overflow: hidden;
+    padding: 1em;
 }
 
 #portafolio .destacados > ul > li {
