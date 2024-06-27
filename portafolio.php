@@ -14,15 +14,15 @@
             if(mysqli_num_rows($result) > 0) {
                 $proyectos = '<ul class="gap-1 w-100 s">';
                 while($row = mysqli_fetch_array($result)) {
-                    $servicios = json_decode($row['servicios']);
+                    $servicios = json_decode($row['servicios'], true);
                     $proyectos .= '<li class="card">';
                         $proyectos .= "<a href='/proyecto.php?proyecto=". $row['nombre'] ."-". $row['id'] ."' class='proyectoLink'>";
                             $proyectos .= '<span class="loader"></span>';
                             $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
                             $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
-                            // foreach($servicios->$servicios as $servicio => $value) {
-                            //     $proyectos .= $value->nombre . '</span>';
-                            // }
+                            foreach($servicios['servicios'] as $servicio => $value) {
+                                $proyectos .= $value["nombre"] . '</span>';
+                            }
                         $proyectos .= '</a>';
                     $proyectos .= '</li>';
                 }
@@ -35,6 +35,7 @@
             if(mysqli_num_rows($res) > 0) { 
                 $destacados = '<ul class="w-100 list-portafolio">';
                 while($aRow = mysqli_fetch_array($res)) {
+                    $servicios = json_decode($aRow['servicios'], true);
                     $destacados .= '<li>';
                         $destacados .= '<article class="d-flex proyecto">';
                             $destacados .= "<a href='/proyecto.php?proyecto=".$aRow['nombre'] ."-". $aRow['id'] ."' class='proyectoLink'>";
@@ -44,7 +45,9 @@
                             $destacados .= '<div class="d-flex flex-col align-start justify-between">';
                                 $destacados .= '<div class="d-flex flex-col align-start">';
                                     $destacados .= '<em>'. $aRow['nombre'] .'</em>';
-                                    // $destacados .= '<span>'. $aRow['servicio'] .'</span>';
+                                    foreach($servicios['servicios'] as $servicio => $value) {
+                                        $destacados .= $value["nombre"] . '</span>';
+                                    }
                                 $destacados .= '</div>';
                                 $destacados .= '<ul class="d-flex align-center gap-5">';
                                     if($aRow['facebook']) {
