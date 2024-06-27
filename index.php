@@ -175,19 +175,17 @@
                         <video autoplay loop muted poster="/panel-php/images/imgbanner.png">
                             <source src="videos/banner.MP4" type="video/mp4">
                         </video>
-                        <figcaption class="d-flex align-center justify-end">
-                            <article class="home-text">
-                                <span>subtitulo</span>
-                                <div>
-                                    <h1>titulo</h1>
-                                    <p>
-                                        descripcion
-                                    </p>
-                                </div>
-                                <footer>
-                                    <a href="#">BTN</a>
-                                </footer>
-                            </article>
+                        <figcaption>
+                            <div class="banner-btn slideUpDelay">
+                                <ul>
+                                    <li>
+                                        <a href="#">Cotiza!</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">No me acuerdo</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </figcaption>
                     </figure>
                 </li>

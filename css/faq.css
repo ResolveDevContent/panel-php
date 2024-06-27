@@ -14,6 +14,11 @@
 
 #faq > article {
     position: relative;
+
+    height: 100vh;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
 }
 
 #faq .item {
@@ -24,6 +29,8 @@
     padding: 1em;
     background-color: var(--color3);
     justify-content: start;
+
+    scroll-snap-align: center;
 }
 
 #faq .item:nth-child(2n) {

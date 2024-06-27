@@ -421,13 +421,6 @@ var slideUp = {
     origin: "bottom",
 };
 
-var slideUpDelay = {
-    delay: 1000,
-    duration: 1500,
-    distance: "50%",
-    origin: "bottom",
-}
-
 var slideTop = {
     delay: 1000,
     duration: 1500,
@@ -447,6 +440,13 @@ var slideRight = {
     duration: 1500,
     distance: "50%",
     origin: "right",
+}
+
+var slideUpDelay = {
+    delay: 1000,
+    duration: 1500,
+    distance: "50%",
+    origin: "bottom",
 }
 
 ScrollReveal().reveal('.slideUp', slideUp);

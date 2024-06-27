@@ -21,7 +21,7 @@
             </aside>
         </header>
         <article class="w-100">
-            <ul class="d-flex flex-col w-100">
+            <ul class="d-flex flex-col w-100" id="list-faqs">
                 <li class="item">
                     <div class="image">
                         <img src="/images/servicios.svg" alt="">
