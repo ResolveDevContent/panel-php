@@ -198,10 +198,6 @@ h4 {
     scroll-snap-type: x mandatory;
 }
 
-#metricas > ul.threeLi {
-    justify-content: center;
-}
-
 #metricas > ul > li {
     width: 16em;
     min-width: 16em;
@@ -235,10 +231,6 @@ h4 {
     overflow-y: auto;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
-}
-
-#reviews > ul.threeLi {
-    justify-content: center;
 }
 
 #reviews > ul > li {

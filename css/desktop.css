@@ -71,6 +71,14 @@
 	flex: 1;
 }
 
+#metricas > ul.threeLi {
+    justify-content: center;
+}
+
+#reviews > ul.threeLi {
+    justify-content: center;
+}
+
 /* CONTACTO ------------------------------------------------------------------- */
 
 #contacto > article > form {
