@@ -27,6 +27,10 @@
     position: relative;
 }
 
+.proyectosImg .empty-state {
+    width: 80%;
+}
+
 .proyectosImg strong {
     color: var(--color5);
     font-size: 1.5em;

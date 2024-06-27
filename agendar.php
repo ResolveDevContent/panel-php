@@ -102,15 +102,15 @@
     <?php include_once("includes/navbar.php"); ?>
     <div class="gradient"></div>
     <main class="wrapper">
-        <section id="agendar" class="slideUp">
-            <header class="d-flex align-center flex-col text-center gap-5">
+        <section id="agendar">
+            <header class="d-flex align-center flex-col text-center gap-5" class="slideUp">
                 <h2>Agendá una reunión con nosotros</h2>
                 <span>
                     En Red Limit, queremos que agendar una reunión con nosotros sea un proceso simple y conveniente. A    través del formulario a continuación, puedes seleccionar un día y una hora aproximados que te resulten cómodos para tener una reunión con nuestro equipo.
                     Una vez que hayas enviado tus preferencias, nos pondremos en contacto contigo para confirmar la reunión y ofrecerte un horario personalizado que se ajuste mejor a tus necesidades.
                 </span>
             </header>
-            <article class="d-flex align-start justify-between">
+            <article class="d-flex align-start justify-between" class="slideUp">
                 <form data-form class="d-flex flex-col align-center gap-1 w-100" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="d-flex align-start justify-between w-100 gap-1">
                         <ul class="ul-form d-flex flex-col gap-1">

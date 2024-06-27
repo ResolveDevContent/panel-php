@@ -53,6 +53,7 @@
 </nav>
 
 <div id="cursor" class="align-center justify-center">
+    <img src="../images/Pajaro.png" alt="">
     <span id="click">Click aqu&iacute;</span>
     <span id="ver">Ver proyecto</span>
 </div>

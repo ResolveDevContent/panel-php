@@ -178,8 +178,8 @@ video {
 
 #cursor {
     position: absolute;
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     box-sizing: border-box;
     transition: 0.1s;
     border-radius: 50%;
@@ -189,6 +189,11 @@ video {
     top: -2em;
     left: -2em;
     text-align: center;
+}
+
+#cursor img {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 #cursor span {
@@ -205,6 +210,10 @@ video {
     left: -5em;
     opacity: .7;
     background-color: var(--color3);
+}
+
+#cursor.available img {
+    display: none;
 }
 
 #cursor.available.click span#click,

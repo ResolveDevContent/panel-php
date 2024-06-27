@@ -46,7 +46,7 @@
 
             if($row) {
                 $arrayImg = [];
-                $query = "SELECT * FROM proyectos WHERE servicioId = ?";
+                // $query = "SELECT * FROM proyectos WHERE json_value(servicios,'$.servicio') = ?";
 
                 if($stmt = mysqli_prepare($sql, $query)) {
                     mysqli_stmt_bind_param($stmt, "i", $param);
