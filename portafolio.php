@@ -52,13 +52,8 @@
                                     $destacados .= '<em>'. $aRow['nombre'] .'</em>';
                                     $destacados .= '<span>';
                                     foreach($servicios['servicios'] as $servicio => $value) {
-                                        if($value["nombre"] == $servicios['servicios'][0]["nombre"]) {
-                                            $destacados .= $value["nombre"];
-                                        } else {
-                                            $destacados .=  ", " .$value["nombre"];
-                                        }
+                                        $destacados .= $value["nombre"] . '</span>';
                                     }
-                                    $destacados .= '<span>';
                                 $destacados .= '</div>';
                                 $destacados .= '<ul class="d-flex align-center gap-5">';
                                     if($aRow['facebook']) {
