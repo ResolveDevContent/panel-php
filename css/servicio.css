@@ -1,4 +1,4 @@
-.gradient-body {
+.gradient-main {
     position: relative;
 }
 
@@ -44,6 +44,15 @@
     width: 95%;
 }
 
+.proyectosImg .phone {
+    position: relative;
+
+    animation: bounce 1s; 
+    animation-direction: alternate; 
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+    animation-iteration-count: infinite; 
+}
+
 .proyectosImg .tablet,
 .proyectosImg .phone {
     position: relative;
@@ -62,10 +71,6 @@
     right: 0;
     left: 0;
     z-index: 4;
-}
-
-.proyectosImg .phone nav {
-    display: none;
 }
 
 .proyectosImg .phone ul,
@@ -126,6 +131,7 @@
         height: 20em;
         min-height: 20em;
         width: 95%;
+        margin-top: 5em;
     }
 
     .proyectosImg .mockups {

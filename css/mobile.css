@@ -33,6 +33,12 @@ textarea,
     height: 100vh;
 }
 
+/* CURSOR -------------------------------------------------------- */
+
+#cursor {
+    display: none;
+}
+
 /* NAVBAR -------------------------------------------------------- */
 
 #navbar {
@@ -621,8 +627,8 @@ span.highlight {
 }
 
 .chat-box {
-    width: 20em;
-    height: 22em;
+    width: max-content;
+    height: 24em;
 }
 
 #floating-footer .whatsapp label:hover > .chat-box {
@@ -630,7 +636,7 @@ span.highlight {
 }
 
 #floating-footer > ul > li > a img,
-#floating-footer .whatsapp i {
+#floating-footer .whatsapp > label > i {
     width: 3.5em;
     min-width: 3.5em;
     height: 3.5em;
@@ -639,4 +645,9 @@ span.highlight {
 
 #floating-footer .agendar a {
     width: 5.1em;
+}
+
+.chat-text a i {
+    width: 2.5em;
+    height: 2.5em;
 }

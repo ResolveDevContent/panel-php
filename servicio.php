@@ -11,7 +11,7 @@
 
         if(isset($_GET["servicio"]) && !empty(trim($_GET["servicio"]))){
             $query = "SELECT * FROM servicios WHERE id = ?";
-    
+
             if($stmt = mysqli_prepare($sql, $query)) {
                 mysqli_stmt_bind_param($stmt, "i", $param);
     
@@ -46,7 +46,7 @@
 
             if($row) {
                 $arrayImg = [];
-                // $query = "SELECT * FROM proyectos WHERE json_value(servicios,'$.servicio') = ?";
+                $query = "SELECT * FROM proyectos WHERE JSON_SEARCH(servicios, 'all', ?, NULL, '$.servicios[*].id') is not null";
 
                 if($stmt = mysqli_prepare($sql, $query)) {
                     mysqli_stmt_bind_param($stmt, "i", $param);
@@ -73,10 +73,10 @@
         }
     ?>
 
-    <body class="gradient-body">
+    <body>
         <?php include_once("includes/navbar.php"); ?>
 
-        <main>
+        <main class="gradient-main">
             <div class="gradient modified"></div>
             <section id="servicio" class="wrapper d-flex align-center slideUp">
                 <aside class="d-flex flex-col align-center justify-center text-center">
