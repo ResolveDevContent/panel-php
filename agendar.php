@@ -98,9 +98,9 @@
     include_once "includes/head.php";   
 ?>
 
-<body>
+<body style="position: relative;">
     <?php include_once("includes/navbar.php"); ?>
-    <div class="gradient"></div>
+    <div class="gradient modified"></div>
     <main class="wrapper">
         <section id="agendar">
             <header class="d-flex align-center flex-col text-center gap-5">
