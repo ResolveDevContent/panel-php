@@ -386,13 +386,15 @@ select {
     display: none;
 }
 
-ul.file-list{
+ul.file-list,
+ul.file-portada{
     font-family:arial;
     list-style: none;
     padding:0;
 }
 
-ul.file-list li{
+ul.file-list li,
+ul.file-portada li{
     padding: 0.5em;
     display: flex;
     align-items: center;

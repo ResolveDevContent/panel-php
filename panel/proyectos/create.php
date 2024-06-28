@@ -269,6 +269,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <span>Subir imagenes o videos</span>
                                 </label>
                             </div>
+                            <ul id="filePortada" class="file-portada"></ul>
                             <span>Imagenes</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
@@ -307,10 +308,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         const input = document.querySelector('#file');
         const output = document.querySelector('#fileList');
+        const inputPortada = document.querySelector('#portada');
+        const outputPortada = document.querySelector('#filePortada');
 
-        input.addEventListener("change", function(evt) {
-            updateList(input, output)
-        })
+        if(input && output) {
+            input.addEventListener("change", function(evt) {
+                updateList(input, output)
+            })
+        }
+
+        if(inputPortada && outputPortada) {
+            inputPortada.addEventListener("change", function(evt) {
+                updateList(inputPortada, outputPortada)
+            })
+        }
 
         const btnSubmit  = document.querySelector("[data-btnSubmit]");
         const formCreate = document.querySelector("#form-create");

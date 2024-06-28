@@ -135,7 +135,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                             <label>Mail</label>
                             <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" readonly>
                         </div>
-                        <div class="input">
+                        <div class="input imagenes">
                             <label>Portada</label>
                             <figure>
                                 <img src="<?php echo $portada; ?>" alt=''>

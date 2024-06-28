@@ -340,11 +340,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                     <span>Subir imagenes o videos</span>
                                 </label>
                             </div>
+                            <ul id="filePortada" class="file-portada"></ul>
                             <div class="input imagenes">
                                 <label>Vista previa portada</label>
-                                <figure>
+                                <input type="hidden" name="portada_value" value="<?php echo $portada; ?>"/>
+                                <figure data-portada>
                                     <img src="<?php echo $portada; ?>" alt=''>
-                                    <a href="#" data-borrar-img>Borrar</a>
+                                    <a href="#" data-borrar-img="<?php echo $portada; ?>">Borrar</a>
                                 </figure>
                             </div>
                             <span>Imagenes</span>
@@ -355,12 +357,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                     <span>Subir imagenes o videos</span>
                                 </label>
                             </div>
+                            <ul id="fileList" class="file-list"></ul>
                             <div class="d-flex flex-col imagenes">
                                 <span>Vista previa imagenes</span>
                                 <ul class="d-flex align-center flex-wrap">
                                     <?php
                                         while($row = mysqli_fetch_array($result2)){
-                                            echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt=''></figure><a href='#' data-borrar-img>Borrar</a></li>";
+                                            echo "<li class='d-flex flex-col align-center justify-center' data-imagen='{$row["imagen"]}'><figure><img src='{$row["imagen"]}' alt=''></figure><a href='deleteImagen.php?id={$row["id"]}&proyectoId={$id}'>Borrar</a></li>";
                                         }
                                     ?>
                                 </ul>
@@ -395,10 +398,20 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 
         const input = document.querySelector('#file');
         const output = document.querySelector('#fileList');
+        const inputPortada = document.querySelector('#portada');
+        const outputPortada = document.querySelector('#filePortada');
 
-        input.addEventListener("change", function(evt) {
-            updateList(input, output)
-        })
+        if(input && output) {
+            input.addEventListener("change", function(evt) {
+                updateList(input, output)
+            })
+        }
+
+        if(inputPortada && outputPortada) {
+            inputPortada.addEventListener("change", function(evt) {
+                updateList(inputPortada, outputPortada)
+            })
+        }
         
         const btnSubmit = document.querySelector("[data-btnSubmit]");
         const formCreate = document.querySelector("#form-create");
@@ -509,6 +522,28 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             if(value) {
                 select.value = value;
             }
+        })
+
+        document.querySelectorAll('[data-borrar-img]').forEach(function(btn) {
+            btn.addEventListener("click", function(evt) {
+                evt.preventDefault();
+
+                const value = btn.dataset.borrarImg;
+                const inputValuePortada = document.querySelector('input[name="portada_value"]');;
+                const inputPortada = document.querySelector('input[name="portada"]');
+console.log(value, inputValuePortada)
+                if(!inputPortada && !inputValuePortada) {
+                    return;
+                }
+
+                if(inputValuePortada.value == value) {
+                    inputPortada.value = "";
+                    document.querySelectorAll("[data-portada]").forEach(function(root) {
+                        root.innerHTML = "";
+                    })
+                }
+
+            })
         })
     </script>
 </html>
