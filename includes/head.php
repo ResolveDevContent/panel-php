@@ -42,3 +42,12 @@
     <link rel="icon" type="image/x-icon" href="/panel-php/images/favicon.ico">
     <title><?php echo $title; ?> - RedLimit</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZDME09989"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HZDME09989');
+</script>
