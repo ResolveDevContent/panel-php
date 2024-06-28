@@ -11,7 +11,7 @@
     $msg = '';
     if($cotiza) {
         $msg = "De: $nombre <br>";
-        $msg .= "Asunto: Cotización <br>";
+        $msg .= "Asunto: Cotización <br><br>";
         $msg .= "Datos: <br>";
         $msg .= "Nombre y apellido: " . $nombre . "<br>";
         $msg .= "Teléfono: " . $telefono . "<br>";
@@ -22,13 +22,13 @@
         $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     } else if($contacto) {
         $msg = "De: $nombre $email <br>";
-        $msg .= "Asunto: $asunto <br>";
+        $msg .= "Asunto: $asunto <br><br>";
         $msg .= "Mensaje: <br>";
         $msg .= " . $mensaje . <br>";
         $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     } else if($agendar) {
         $msg = "De: $nombre <br>";
-        $msg .= "Asunto: Agendar reunion <br>";
+        $msg .= "Asunto: Agendar reunion <br><br>";
         $msg .= "Datos: <br>";
         $msg .= "Nombre y apellido: " . $nombre . "<br>";
         $msg .= "Teléfono: " . $telefono . "<br>";
@@ -41,7 +41,7 @@
         $msg .= "Este mensaje fue enviado a traves de un formulario de contacto.";
     } else if($unete){
         $msg = "De: $nombre $email <br>";
-        $msg .= "Asunto: Trabajá con nosotros <br>";
+        $msg .= "Asunto: Trabajá con nosotros <br><br>";
         $msg .= "Datos: <br>";
         $msg .= "Nombre y apellido: " . $nombre . " <br>";
         $msg .= "Correo electrónico: " . $email . " <br>";
