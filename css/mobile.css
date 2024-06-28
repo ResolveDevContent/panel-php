@@ -243,6 +243,10 @@ textarea,
 
 /* INDEX ----------------------------------------------------------------------- */
 
+#inicio .desktop {
+    display: none;
+}
+
 .banner-btn > ul{
     flex-direction: column-reverse;
 }

@@ -67,6 +67,10 @@
 
 /* INDEX ------------------------------------------------------------------- */
 
+#inicio .mobile {
+    display: none;
+}
+
 .tab-content-wrapper {
 	flex: 1;
 }

@@ -172,10 +172,17 @@
 
         <section id="inicio">
             <ul>
-                <li>
+                <li class="desktop">
                     <figure>
                         <video autoplay loop muted poster="/panel-php/images/imgbanner.png">
                             <source src="videos/banner.MP4" type="video/mp4">
+                        </video>
+                    </figure>
+                </li>
+                <li class="mobile">
+                    <figure>
+                        <video autoplay loop muted poster="/panel-php/images/imgbanner.png">
+                            <source src="videos/mobile.MP4" type="video/mp4">
                         </video>
                     </figure>
                 </li>
@@ -195,7 +202,7 @@
 
         <?php if($proyectosImg) : ?>
             <section id="proyectos" data-scroll="auto" class="slideUp d-flex flex-col align-center justifi-center gap-1">
-                <header>
+                <header class="text-center">
                     <h4>Proyectos Destacados</h4>
                 </header>
                 <?php

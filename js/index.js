@@ -4,14 +4,19 @@ import paises from '../paises.json' with { type: 'json' };
 
 document.addEventListener('DOMContentLoaded', function() {
     const media = Array.from(document.querySelectorAll('img, video'));
-  
+
     Promise.all(media.map(function(m) {
       return new Promise(function(res, rej) {
         if(m.tagName == 'IMG') {
-          m.addEventListener('load', res);
+            m.addEventListener('load', () => {
+                console.log("img");
+                res();
+            });
         }
         if(m.tagName == 'VIDEO') {
-          m.addEventListener('loadeddata', res);
+            m.addEventListener('loadeddata',  () => {
+                res();
+            });
         }
         setTimeout(function() {
           res();
@@ -19,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     }))
     .then(function() {
+        console.log("termino")
       document
         .querySelectorAll('#preloader')
         .forEach(function(preloader) {
