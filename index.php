@@ -194,7 +194,10 @@
         </div>
 
         <?php if($proyectosImg) : ?>
-            <section id="proyectos" data-scroll="auto" class="slideUp">
+            <section id="proyectos" data-scroll="auto" class="slideUp d-flex flex-col align-center justifi-center gap-1">
+                <header>
+                    <h4>Proyectos Destacados</h4>
+                </header>
                 <?php
                     echo $proyectosImg;
                 ?>

@@ -49,7 +49,6 @@
     transform: scale(0.9);
 }
       
-#sobre-nosotros,
 #metricas,
 #reviews,
 #cotiza {
@@ -145,6 +144,7 @@ h4 {
 
 #proyectos {
     position: relative;
+    margin-top: 8em;
 }
 
 /* SERVICIOS --------------------------------------------------------------------------*/
