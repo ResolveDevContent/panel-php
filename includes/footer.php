@@ -1,3 +1,18 @@
+<?php
+$mensaje = "Hola, soy *[Tu Nombre]* y estoy interesado en los servicios de Red Limit. Me gustaría obtener más información sobre cómo su agencia puede ayudarme con:
+
+    - Gestión de Redes Sociales 📱
+    - Diseño Web 🌐
+    - Branding 🎨
+    - Publicidad Digital 📊
+    - Otros Servicios Específicos (por favor detallar) 📝
+    
+    Espero con ansias su respuesta para discutir cómo podemos colaborar. ¡Gracias!";
+
+$argentina = 'https://api.whatsapp.com/send?phone=5492616098855&text='. urldecode($mensaje);
+$mexico = 'https://api.whatsapp.com/send?phone=5219996080167&text='. urldecode($mensaje);
+?>
+
 <section id='floating-footer'>
     <ul>
         <li class="whatsapp">
@@ -6,11 +21,11 @@
                 <div class="chat-box">
                     <div class='chat-top'>Nuestros n&uacute;meros de WhatsApp</div>
                     <div class="chat-text">
-                        <a href="https://api.whatsapp.com/send?phone=5492616098855" class="left" target="_blank">
+                        <a href="<?php echo $argentina ?>" class="left" target="_blank">
                             <i class="argentina"></i>
                             +54 9 261 609 8855
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=5219996080167" class="right" target="_blank">
+                        <a href="<?php echo $mexico ?>" class="right" target="_blank">
                             <i class="mexico"></i>
                             <i class="mundo"></i>
                             +52 1 999 608 0167

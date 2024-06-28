@@ -25,6 +25,7 @@
                         <div class="d-flex align-center justifi-center gap-1">
                             <i class="argentina"></i>
                             <i class="mexico"></i>
+                            <i class="mundo"></i>
                         </div>
                     </div>
                 </div>

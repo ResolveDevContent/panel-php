@@ -81,7 +81,7 @@
 <html lang="en">
 
     <?php
-        $title = "Inicio";
+        $title = "Lleva tu Negocio al Siguiente Nivel - Agencia de Marketing";
         include_once "includes/head.php";
 
         $servicios = '';
@@ -193,6 +193,14 @@
             </ul>
         </div>
 
+        <?php if($proyectosImg) : ?>
+            <section id="proyectos" data-scroll="auto" class="slideUp">
+                <?php
+                    echo $proyectosImg;
+                ?>
+            </section>
+        <?php endif ?>
+
         <main class="wrapper">
             <section id="sobre-nosotros" class="d-flex align-center">
                 <aside class="d-flex align-center justify-center slideUp">
@@ -211,6 +219,7 @@
                             <div class="d-flex align-center justifi-center gap-1">
                                 <i class="argentina"></i>
                                 <i class="mexico"></i>
+                                <i class="mundo"></i>
                             </div>
                         </div>
                         <div class="d-flex align-center btn gap-1 slideUpDelay">
@@ -221,14 +230,6 @@
                 </article>
             </section>
         </main>
-
-        <?php if($proyectosImg) : ?>
-            <section id="proyectos" data-scroll="auto" class="slideUp">
-                <?php
-                    echo $proyectosImg;
-                ?>
-            </section>
-        <?php endif ?>
 
         <main class="wrapper">
             <?php if($servicios) : ?>
