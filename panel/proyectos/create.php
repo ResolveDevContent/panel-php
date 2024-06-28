@@ -221,7 +221,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <select name="all_servicios" id="all_servicios">
                                         <option value="">Seleccione un servicio</option>
                                         <?php 
-                                            echo $all_servicios;
+                                            echo utf8_encode($all_servicios);
                                         ?>
                                     </select>
                                     <div class="btn">
@@ -281,7 +281,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <ul id="fileList" class="file-list"></ul>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" data-btnSubmit value="Confirmar">
-                                <a href="productos.php" class="btn btn-error">Cancelar</a>
+                                <a href="proyectos.php" class="btn btn-error">Cancelar</a>
                             </footer>
                         </form>
                     </div>
@@ -398,10 +398,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     if(!inputServicios) {
                         return;
                     }
-                    
                     servicios.servicios = servicios.servicios.filter((row) => Number(row.id) != Number(id));
+                    console.log(servicios.servicios)
                     
-                    console.log(id, servicios.servicios)
                     inputServicios.value = JSON.stringify(servicios);
 
                     if(servicios.servicios.length <= 1) {
@@ -409,10 +408,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             ul.innerHTML = ""
                         })
                     }
+
+                    document.querySelectorAll('[data-servicios]').forEach(function(ul) {
+                        ul.innerHTML = ""
+                    })
     
                     for(const servicio of servicios.servicios) {
                         document.querySelectorAll('[data-servicios]').forEach(function(ul) {
-                            ul.innerHTML = `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
+                            ul.innerHTML += `<li><span class="toast">${servicio.nombre}</span><a href="#" data-remove-servicio="${servicio.id}" >Borrar</a></li>`
                         })
                     }
 

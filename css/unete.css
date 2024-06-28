@@ -37,13 +37,9 @@
     border-radius: 0.5em;
 }
 
-/* #unete .beneficios ul li i {
+#unete .beneficios ul li i {
     background-color: var(--color5);
-} */
-
-#unete .beneficios ul li svg {
-    fill: var(--color5);
-}
+} 
 
 #unete .beneficios ul li span {
     margin-left: .5em;

@@ -58,7 +58,7 @@
         
                         if($result) {
                             $arrayImg = $result; 
-                            include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+                            include_once "includes/carousel.php"; 
                             $proyectosImg = $imagenes;
                         }
                     }

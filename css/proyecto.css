@@ -35,17 +35,15 @@
     transform: rotate(270deg);
 }
 
-#banner div aside a i,
-#banner div aside a svg {
+#banner div aside a i {
     width: 1.75em;
     min-width: 1.75em;
     height: 1.75em;
     min-height: 1.75em;
-    fill: var(--color5);
+    background-color: var(--color5);
 }
 
-#banner div aside a:hover i,
-#banner div aside a:hover svg {
+#banner div aside a:hover i {
     opacity: .5;
 }
 
@@ -82,4 +80,8 @@
 
 #proyecto > div {
     margin-top: 1em;
+}
+
+#proyecto > div > div i {
+    background-color: #fff;
 }

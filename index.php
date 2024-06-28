@@ -73,7 +73,7 @@
         }
     }
     
-    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    include_once "includes/carousel.php"; 
     $proyectosImg = $imagenes;
 ?>
 
@@ -101,7 +101,7 @@
                             $introduccion .= '<span>' .$row['introduccion'] .'</span>';
                             $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
                             $introduccion .= '<div class="btn">';
-                                $introduccion .= "<a href='/servicio.php?servicio=". $row['slug'] . "-" . $row['id'] ."'>Ver m&aacute;s</a>";
+                                $introduccion .= "<a href='/panel-php/servicio.php?servicio=". $row['slug'] . "-" . $row['id'] ."'>Ver m&aacute;s</a>";
                             $introduccion .= '</div>';
                         $introduccion .= '</section>';
                     }
@@ -165,7 +165,7 @@
 
     <body class="is-loading">
         <div id="preloader">
-            <img src="/images/Red limit PNG (2).png" alt="logo">
+            <img src="/panel-php/images/logo.png" alt="logo">
         </div>
         
         <?php include_once("includes/navbar.php"); ?>
