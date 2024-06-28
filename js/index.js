@@ -463,3 +463,13 @@ ScrollReveal().reveal('.slideUpDelay', slideUpDelay);
 
 ScrollReveal().reveal('.card', {interval: 500, delay: 150});
 ScrollReveal().reveal('.reviews', {interval: 250, delay: 150});
+
+let toggle = true;
+window.addEventListener('scroll', () => {
+    if(window.scrollY == 0 && !toggle || window.scrollY > 0 && toggle) {
+        document.querySelectorAll("#navbar").forEach(function(navbar) {
+            navbar.classList.toggle('top');
+            toggle = !toggle;
+        })
+    }
+}, true);

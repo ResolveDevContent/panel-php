@@ -1,4 +1,4 @@
-<nav id="navbar" class="d-flex align-center justify-between">
+<nav id="navbar" class="d-flex align-center justify-between top">
     <div class="logo">
         <a href="/panel-php/index.php">
             <img src="/panel-php/images/logo.png" alt="">
