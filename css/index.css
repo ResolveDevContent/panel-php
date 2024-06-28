@@ -71,7 +71,7 @@ h4 {
 #inicio {
     position: relative;
     mask-image: linear-gradient(
-    #262626 40%,
+    #262626 80%,
     transparent
     );
 }
