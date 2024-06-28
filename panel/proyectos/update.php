@@ -246,9 +246,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         mysqli_close($link);
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
-        echo 'tira error aca7!?';
-        // header("location: error.php");
-        // exit();
+        header("location: error.php");
+        exit();
     }
 }
 ?>
@@ -345,6 +344,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <label>Vista previa portada</label>
                                 <figure>
                                     <img src="<?php echo $portada; ?>" alt=''>
+                                    <a href="#" data-borrar-img>Borrar</a>
                                 </figure>
                             </div>
                             <span>Imagenes</span>
@@ -360,7 +360,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <ul class="d-flex align-center flex-wrap">
                                     <?php
                                         while($row = mysqli_fetch_array($result2)){
-                                            echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt=''></figure></li>";
+                                            echo "<li class='d-flex flex-col align-center justify-center'><figure><img src='{$row["imagen"]}' alt=''></figure><a href='#' data-borrar-img>Borrar</a></li>";
                                         }
                                     ?>
                                 </ul>

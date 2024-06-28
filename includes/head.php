@@ -2,6 +2,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
+
+    <meta name="description" content="En Red Limit, somos más que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. Desde nuestra fundación, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos." >
+    <meta name="keywords" content="digital red limit, red limit, digital, agencia de marketing, marketing, agencias de marketing, desarrollo de paginas web, gestion de redes sociales, publicidad digital, seo y sem, branding y diseño grafico, email marketing, video marketing, desarrollo de aplicaciones moviles, creación de software a medida, logos en movimiento, red limit, agencia de marketing mexico, agencia de marketing argentina" >
+    <meta name="author" content="Digital Red Limit" >
+    <meta name="copyright" content="Digital Red Limit" >
+    <meta name="url" content="https://digitalredlimit.com/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Resolve Dev - Desarrollo web y soluciones tecnolígicas.">
+    <meta property="og:description" content="En Red Limit, somos más que una agencia de marketing digital. Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. Desde nuestra fundación, hemos estado creciendo y evolucionando, terciarizando servicios para ofrecer soluciones de marketing de alta calidad a precios competitivos.">
+    <meta property="og:url" content="https://digitalredlimit.com/">
+    <meta property="og:site_name" content="Digital Red Limit">
+
+    <!-- SEO -->
+
     <link rel="stylesheet" href="css/agendar.css">
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/faq.css">

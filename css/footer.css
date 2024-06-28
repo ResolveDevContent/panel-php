@@ -86,6 +86,10 @@
     right: -.5em;
 }
 
+#floating-footer .whatsapp label > i {
+    background-color: white;
+}
+
 /*===============================*/
 
 .chat-box{ 
