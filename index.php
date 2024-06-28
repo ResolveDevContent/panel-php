@@ -234,6 +234,28 @@
             </section>
         </main>
 
+        <?php if($reviews) : ?>
+        <section id="reviews" class="d-flex flex-col align-center justify-center slideUp" data-scroll="auto" data-delay="2000">
+            <header class="d-flex align-center justify-center w-100">
+                <div class="d-flex align-center justify-center flex-col">
+                    <h4>Ellos nos recomiendan</h4>
+                    <span>Nuestros clientes satisfechos nos califican</span>
+                </div>
+                <aside>
+                    <img src="/panel-php/gifs/reviews.gif" alt="">
+                </aside>
+            </header>
+            <?php
+                echo $reviews;
+            ?>
+            <footer>
+                <div class="btn">
+                    <a href="https://www.google.com.ar/maps/place/Red+Limit/@21.1116044,-90.5391244,9z/data=!4m8!3m7!1s0x8f56779fe812b0cf:0x4ed82e6e897ded86!8m2!3d21.014911!4d-89.621319!9m1!1b1!16s%2Fg%2F11y59b5mzg?entry=ttu" target="_blank">Agregar un comentario</a>
+                </div>
+            </footer>
+        </section>
+        <?php endif ?>
+
         <main class="wrapper">
             <?php if($servicios) : ?>
                 <section id="servicios" class="d-flex flex-col align-center text-center slideUp">
@@ -261,28 +283,6 @@
             <?php
                 echo $metricas;
             ?>
-        </section>
-        <?php endif ?>
-    
-        <?php if($reviews) : ?>
-        <section id="reviews" class="d-flex flex-col align-center justify-center slideUp" data-scroll="auto" data-delay="2000">
-            <header class="d-flex align-center justify-center w-100">
-                <div class="d-flex align-center justify-center flex-col">
-                    <h4>Ellos nos recomiendan</h4>
-                    <span>Nuestros clientes satisfechos nos califican</span>
-                </div>
-                <aside>
-                    <img src="/panel-php/gifs/reviews.gif" alt="">
-                </aside>
-            </header>
-            <?php
-                echo $reviews;
-            ?>
-            <footer>
-                <div class="btn">
-                    <a href="https://www.google.com.ar/maps/place/Red+Limit/@21.1116044,-90.5391244,9z/data=!4m8!3m7!1s0x8f56779fe812b0cf:0x4ed82e6e897ded86!8m2!3d21.014911!4d-89.621319!9m1!1b1!16s%2Fg%2F11y59b5mzg?entry=ttu" target="_blank">Agregar un comentario</a>
-                </div>
-            </footer>
         </section>
         <?php endif ?>
 
