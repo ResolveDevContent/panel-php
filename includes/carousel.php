@@ -17,7 +17,7 @@
         while($row = mysqli_fetch_array($result)) {
             $imagenes .= '<li>';
                 $imagenes .= '<span class="loader"></span>';
-                $imagenes .= "<img src='". $row['portada'] ."' alt=''>";
+                $imagenes .= "<img src='panel/proyectos/". $row['portada'] ."' alt=''>";
             $imagenes .= '</li>';
         }
 

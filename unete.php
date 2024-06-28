@@ -96,7 +96,7 @@
                     </span>
                 </div>
                 <aside>
-                    <img src="/gifs/unete.gif" alt="">
+                    <img src="/panel-php/gifs/unete.gif" alt="">
                 </aside>
             </header>
             <div class="beneficios d-flex flex-col align-center gap-1 slideUp">

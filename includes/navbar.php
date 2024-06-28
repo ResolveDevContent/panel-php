@@ -1,19 +1,19 @@
 <nav id="navbar" class="d-flex align-center justify-between">
     <div class="logo">
-        <a href="/index.php">
+        <a href="/panel-php/index.php">
             <img src="/panel-php/images/logo.png" alt="">
         </a>
     </div>
     <div class="d-flex align-center">
         <ul class="navbar-list d-flex align-center gap-1">
-            <li class="navbar-items"><a href="/nosotros.php">Sobre Nosotros</a></li>
-            <li class="navbar-items"><a href="/index.php#servicios">Servicios</a></li>
-            <li class="navbar-items"><a href="/portafolio.php">Portafolio</a></li>
+            <li class="navbar-items"><a href="/panel-php/nosotros.php">Sobre Nosotros</a></li>
+            <li class="navbar-items"><a href="/panel-php/index.php#servicios">Servicios</a></li>
+            <li class="navbar-items"><a href="/panel-php/portafolio.php">Portafolio</a></li>
         </ul>
         <div class='buttons'>
-            <a href="/contacto.php" class="d-flex align-center justify-center gap-5">
+            <a href="/panel-php/contacto.php" class="d-flex align-center justify-center gap-5">
                 Contacto
-                <img src="../images/Pajaro.png" alt="">
+                <img src="/panel-php/images/Pajaro.png" alt="">
             </a>
         </div>
     </div>
@@ -33,19 +33,19 @@
                     </label>
                 </li>
                 <li>
-                    <a href="/index.php">Inicio</a>
+                    <a href="/panel-php/index.php">Inicio</a>
                 </li>
                 <li>
-                    <a href="/nosotros.php">Sobre Nosotros</a>
+                    <a href="/panel-php/nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li>
-                    <a href="/index.php#servicios">Servicios</a>
+                    <a href="/panel-php/index.php#servicios">Servicios</a>
                 </li>
                 <li>
-                    <a href="/portafolio.php">Portafolio</a>
+                    <a href="/panel-php/portafolio.php">Portafolio</a>
                 </li>
                 <li>
-                    <a href="/contacto.php">Contacto</a>
+                    <a href="/panel-php/contacto.php">Contacto</a>
                 </li>
             </ul>
         </article>
@@ -53,7 +53,7 @@
 </nav>
 
 <div id="cursor" class="align-center justify-center">
-    <img src="../images/Pajaro.png" alt="">
+    <img src="/panel-php/images/Pajaro.png" alt="">
     <span id="click">Click aqu&iacute;</span>
     <span id="ver">Ver proyecto</span>
 </div>

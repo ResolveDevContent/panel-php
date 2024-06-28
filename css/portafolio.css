@@ -113,6 +113,10 @@
     justify-content: center;
 }
 
+#portafolio .destacados .proyecto > div > ul a > i {
+    background-color: #fff;
+}
+
 #portafolio .destacados ul li div span {
     margin-top: 1em;
 }

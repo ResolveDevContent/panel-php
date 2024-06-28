@@ -30,14 +30,14 @@
                 </div>
             </article>
             <aside class="d-flex align-center justify-center">
-                <img src="/gifs/nosotros.gif" alt="">
+                <img src="/panel-php/gifs/nosotros.gif" alt="">
             </aside>
         </section>
 
         <section id="valores">
             <ul class="d-flex flex-col w-100">
                 <li class="d-flex align-center slideUp">
-                    <img src="/images/mision.svg" alt="">
+                    <img src="/panel-php/images/mision.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Misi&oacute;n</em>
                         <span>
@@ -46,7 +46,7 @@
                     </div>
                 </li>
                 <li class="d-flex align-center right slideUp">
-                    <img src="/images/vision.svg" alt="">
+                    <img src="/panel-php/images/vision.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Visi&oacute;n</em>
                         <span>
@@ -55,7 +55,7 @@
                     </div>
                 </li>
                 <li class="d-flex align-center slideUp">
-                    <img src="/images/valores.svg" alt="">
+                    <img src="/panel-php/images/valores.svg" alt="">
                     <div class="d-flex flex-col">
                         <em>Valores</em>
                         <ul>
@@ -103,9 +103,9 @@
                 Estamos en constante b&uacute;squeda de nuevos talentos para unirse a nuestro equipo. Si est&aacute;s interesado en formar parte de Red Limit, visita nuestra sección "Trabaja con Nosotros" y env&iacute;anos tu CV junto con una carta de presentaci&oacute;n.
             </span>
             <div class="btn">
-                <a href="/unete.php" class="d-flex align-center justify-center gap-5">
+                <a href="/panel-php/unete.php" class="d-flex align-center justify-center gap-5">
                     Trabaja con Nosotros
-                    <img src="/images/Pajaro.png" alt="">
+                    <img src="/panel-php/images/Pajaro.png" alt="">
                 </a>
             </div>
         </section>

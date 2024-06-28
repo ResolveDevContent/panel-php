@@ -16,9 +16,9 @@
                 while($row = mysqli_fetch_array($result)) {
                     $servicios = json_decode($row['servicios'], true);
                     $proyectos .= '<li class="card">';
-                        $proyectos .= "<a href='/proyecto.php?proyecto=". $row['nombre'] ."-". $row['id'] ."' class='proyectoLink'>";
+                        $proyectos .= "<a href='/panel-php/proyecto.php?proyecto=". $row['nombre'] ."-". $row['id'] ."' class='proyectoLink'>";
                             $proyectos .= '<span class="loader"></span>';
-                            $proyectos .= "<img src='". $row['portada'] ."' alt=''>";
+                            $proyectos .= "<img src='panel/proyectos/". $row['portada'] ."' alt=''>";
                             $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
                             foreach($servicios['servicios'] as $servicio => $value) {
                                 if($value["nombre"] == $servicios['servicios'][0]["nombre"]) {
@@ -43,9 +43,9 @@
                     $servicios = json_decode($aRow['servicios'], true);
                     $destacados .= '<li>';
                         $destacados .= '<article class="d-flex proyecto">';
-                            $destacados .= "<a href='/proyecto.php?proyecto=".$aRow['nombre'] ."-". $aRow['id'] ."' class='proyectoLink'>";
+                            $destacados .= "<a href='/panel-php/proyecto.php?proyecto=".$aRow['nombre'] ."-". $aRow['id'] ."' class='proyectoLink'>";
                                 $destacados .= "<span class='loader'></span>";
-                                $destacados .= "<img src='". $aRow['portada'] ."' alt=''>";
+                                $destacados .= "<img src='panel/proyectos/". $aRow['portada'] ."' alt=''>";
                             $destacados .= '</a>';
                             $destacados .= '<div class="d-flex flex-col align-start justify-between">';
                                 $destacados .= '<div class="d-flex flex-col align-start">';

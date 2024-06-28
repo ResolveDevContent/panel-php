@@ -20,9 +20,9 @@
             </label>
         </li>
         <li class="agendar">
-            <a href="/agendar.php">
+            <a href="/panel-php/agendar.php">
                 <span>Agendá una reunión</span>
-                <img src="/images/Pajaro.png" alt="">
+                <img src="/panel-php/images/Pajaro.png" alt="">
             </a>
         </li>
     </ul>
@@ -80,19 +80,19 @@
             <em>Empresa</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/nosotros.php">Sobre Nosotros</a>
+                    <a href="/panel-php/nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li>
-                    <a href="/index.php#servicios">Servicios</a>
+                    <a href="/panel-php/index.php#servicios">Servicios</a>
                 </li>
                 <li>
-                    <a href="/portafolio.php">Portafolio</a>
+                    <a href="/panel-php/portafolio.php">Portafolio</a>
                 </li>
                 <li>
-                    <a href="/unete.php">Trabaja con Nosotros</a>
+                    <a href="/panel-php/unete.php">Trabaja con Nosotros</a>
                 </li>
                 <li>
-                    <a href="/contacto.php">Contacto</a>
+                    <a href="/panel-php/contacto.php">Contacto</a>
                 </li>
             </ul>
         </li>
@@ -100,10 +100,10 @@
             <em>Comencemos</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/index.php#cotiza">Cotiza</a>
+                    <a href="/panel-php/index.php#cotiza">Cotiza</a>
                 </li>
                 <li>
-                    <a href="/agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
+                    <a href="/panel-php/agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
                 </li>
             </ul>
         </li>
@@ -111,13 +111,13 @@
             <em>Ayuda</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/index.php#metricas">M&eacute;tricas</a>
+                    <a href="/panel-php/index.php#metricas">M&eacute;tricas</a>
                 </li>
                 <li>
-                    <a href="/index.php#reviews">Testimonios</a>
+                    <a href="/panel-php/index.php#reviews">Testimonios</a>
                 </li>
                 <li>
-                    <a href="/faq.php">Preguntas Frecuentes</a>
+                    <a href="/panel-php/faq.php">Preguntas Frecuentes</a>
                 </li>
             </ul>
         </li>

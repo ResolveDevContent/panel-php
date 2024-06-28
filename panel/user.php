@@ -68,7 +68,6 @@
             const inputs = document.querySelectorAll("input[type='password'], input[type='text']");
 
             inputs.forEach(function(row) {
-                console.log(row.type)
                 if(row.type == "password") {
                     row.type = "text";
                     btnShowPassword.textContent = "Ocultar contraseñas";

@@ -36,6 +36,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     $input_facebook = trim($_POST["facebook"]);
     $input_mail = trim($_POST["mail"]);
     $input_destacado = trim($_POST["destacado"]);
+    $input_portada = trim($_POST["portada_value"]);
+    $portada = $input_portada;
     $descripcion = $input_descripcion;
     $website = $input_website;
     $instagram = $input_instagram;
@@ -335,12 +337,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <span>Portada</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="portada">
-                                    <input type="file" name="portada" id="portada" class="form-control">
+                                    <input type="file" name="portada" id="portada" class="form-control" value="<?php echo $portada; ?>">
                                     <i class="icon upload"></i>
                                     <span>Subir imagenes o videos</span>
                                 </label>
                             </div>
                             <ul id="filePortada" class="file-portada"></ul>
+                            <?php if($portada) : ?>
                             <div class="input imagenes">
                                 <label>Vista previa portada</label>
                                 <input type="hidden" name="portada_value" value="<?php echo $portada; ?>"/>
@@ -349,6 +352,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                     <a href="#" data-borrar-img="<?php echo $portada; ?>">Borrar</a>
                                 </figure>
                             </div>
+                            <?php endif; ?>
+                            
                             <span>Imagenes</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
@@ -496,7 +501,6 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     
                     servicios.servicios = servicios.servicios.filter((row) => Number(row.id) != Number(id));
                     
-                    console.log(id, servicios.servicios)
                     inputServicios.value = JSON.stringify(servicios);
 
                     if(servicios.servicios.length <= 1) {
@@ -531,13 +535,14 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 const value = btn.dataset.borrarImg;
                 const inputValuePortada = document.querySelector('input[name="portada_value"]');;
                 const inputPortada = document.querySelector('input[name="portada"]');
-console.log(value, inputValuePortada)
+                
                 if(!inputPortada && !inputValuePortada) {
                     return;
                 }
 
                 if(inputValuePortada.value == value) {
                     inputPortada.value = "";
+                    inputValuePortada.value = "";
                     document.querySelectorAll("[data-portada]").forEach(function(root) {
                         root.innerHTML = "";
                     })

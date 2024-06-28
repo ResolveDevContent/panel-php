@@ -86,7 +86,7 @@
 
     mysqli_close($sql);
     
-    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    include_once "includes/carousel.php"; 
     $proyectosImg = $imagenes;
 ?>
 
@@ -185,7 +185,7 @@
                             <span class="mensaje-error"></span>
                             <label class="d-flex align-center gap-5" data-enviar>
                                 Enviar
-                                <img src="/images/Pajaro.png" alt="">
+                                <img src="/panel-php/images/Pajaro.png" alt="">
                             </label>
                         </div>
                     </footer>
@@ -213,7 +213,7 @@
                             </span>
                             <button class="d-flex align-center gap-5">
                                 Enviar
-                                <img src="/images/Pajaro.png" alt="">
+                                <img src="/panel-php/images/Pajaro.png" alt="">
                             </button>
                         </div>
                     </div>

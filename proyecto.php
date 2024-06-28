@@ -80,7 +80,7 @@
                             $proyectoImagenes = '<ul class="d-flex align-center" data-scrollable>';
                                 $proyectoImagenes .= '<li>';
                                     $proyectoImagenes .= '<span class="loader"></span>';
-                                    $proyectoImagenes .= "<img src='". $row['portada'] ."' alt=''>";
+                                    $proyectoImagenes .= "<img src='panel/proyectos/". $row['portada'] ."' alt=''>";
                                 $proyectoImagenes .= '</li>';
                         } else {
                             header("location: 404page.php");
@@ -88,7 +88,7 @@
                     } else {
                         header("location: 404page.php");
                     }
-                    mysqli_close($sql);
+
                 } else {
                     header("location: 404page.php");
                 }
@@ -124,7 +124,7 @@
                             while($row = mysqli_fetch_array($result)){
                                 $proyectoImagenes .= '<li>';
                                     $proyectoImagenes .= '<span class="loader"></span>';
-                                    $proyectoImagenes .= "<img src='". $row['imagen'] ."' alt=''>";
+                                    $proyectoImagenes .= "<img src='panel/proyectos/". $row['imagen'] ."' alt=''>";
                                 $proyectoImagenes .= '</li>';
                             }
                         }
