@@ -143,7 +143,7 @@ h4 {
 
 #proyectos {
     position: relative;
-    margin-top: 8em;
+    margin-top: 10em;
 }
 
 /* SERVICIOS --------------------------------------------------------------------------*/
@@ -241,6 +241,7 @@ h4 {
 
 #metricas {
     background-color: var(--color1);
+    padding: 3em;
 }
 
 #metricas > ul {
@@ -271,8 +272,9 @@ h4 {
 /* REVIEWS ----------------------------------------------------------------------------*/
 
 #reviews {
-    margin-top: 2em;
-    background-color: var(--color3);
+    margin-top: unset;
+    background-color: var(--color2);
+    padding: 0 2em 4em;
 }
 
 #reviews > header > aside {
