@@ -81,7 +81,7 @@
 <html lang="en">
 
     <?php
-        $title = "Panel";
+        $title = "Inicio";
         include_once "includes/head.php";
 
         $servicios = '';
