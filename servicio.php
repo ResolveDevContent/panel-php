@@ -79,7 +79,7 @@
             <section id="servicio" class="wrapper d-flex align-center slideUp">
                 <aside class="d-flex flex-col align-center justify-center text-center">
                     <?php
-                        echo $servicio;
+                        echo utf8_encode($servicio);
                     ?>
                 </aside>
             </section>

@@ -239,7 +239,7 @@
                     </header>
                     <article class="d-flex w-100">
                         <?php
-                            echo $servicios;
+                            echo utf8_encode($servicios);
                         ?>
                     </article>
                 </section>

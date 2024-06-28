@@ -4,7 +4,7 @@
         if(mysqli_num_rows($result) > 1) {
             $imagenes .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>
                             <a href="#" data-arrow="-1" class="d-flex">
-                                <i class="icon arrow-left"></i>
+                                <i class="icon arrow-right" style="transform: rotate(-180deg)"></i>
                             </a>
                             <a href="#" data-arrow="1" class="d-flex">
                                 <i class="icon arrow-right"></i>

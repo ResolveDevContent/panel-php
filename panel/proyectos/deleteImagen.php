@@ -1,10 +1,10 @@
 <?php
-    $proyectoId = trim($_GET["proyectoId"]);
+    // $proyectoId = trim($_GET["proyectoId"]);
     $table = "proyectos_images";
     $id = "id";
-    $location = "update.php?id=$proyectoId";
+    // $location = "update.php?id=$proyectoId";
     $isInProduct = false;
-    // $location = "proyectos.php";
+    $location = "proyectos.php";
     include_once("../controllers/delete.php")
 ?>
 <!DOCTYPE html>
