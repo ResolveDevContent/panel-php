@@ -292,7 +292,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                     <select name="all_servicios" id="all_servicios">
                                         <option value="">Seleccione un servicio</option>
                                         <?php 
-                                            echo $all_servicios;
+                                            echo utf8_encode($all_servicios);
                                         ?>
                                     </select>
                                     <div class="btn">
