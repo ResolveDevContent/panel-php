@@ -131,7 +131,7 @@
                     <?php else: ?>
                         <div class="d-flex flex-col align-center justify-center empty-state">
                             <img src="gifs/empty-state.gif" alt="empty-state">
-                            <span>No hay proyectos destacados por el momento</span>
+                            <span>No hay proyectos por el momento</span>
                         </div>
                     <?php endif ?>
                 </div>

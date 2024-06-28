@@ -405,6 +405,10 @@ span.highlight {
     min-height: 3em;
 }
 
+#agendar .popup .imagenes {
+    height: 50%;
+}
+
 /* CONTACTO --------------------------------------------------------------------- */
 
 #contacto {

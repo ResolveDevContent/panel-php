@@ -43,7 +43,7 @@ document
             });
     
             document
-                .querySelectorAll(".btn > a, .btn > button, .btn > label, .banner-btn > ul > li > a")
+                .querySelectorAll(".btn > a, .btn > button, .btn > label, .banner-btn > ul > li > a, .buttons > a")
                 .forEach(function(elm) {
                     elm.addEventListener('mouseover', function() {
                         cursor.classList.add('available');     
