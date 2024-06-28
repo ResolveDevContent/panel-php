@@ -67,7 +67,7 @@
             $cotiza = false;
             $unete = false;
             $contacto = false;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "utils/mailer.php"; 
             $respuestaMsg = $respuesta;
             $isSend = $send;
         }
@@ -185,7 +185,7 @@
                             <span class="mensaje-error"></span>
                             <label class="d-flex align-center gap-5" data-enviar>
                                 Enviar
-                                <img src="/panel-php/images/Pajaro.png" alt="">
+                                <img src="images/Pajaro.png" alt="">
                             </label>
                         </div>
                     </footer>
@@ -213,7 +213,7 @@
                             </span>
                             <button class="d-flex align-center gap-5">
                                 Enviar
-                                <img src="/panel-php/images/Pajaro.png" alt="">
+                                <img src="images/Pajaro.png" alt="">
                             </button>
                         </div>
                     </div>

@@ -39,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="/panel-php/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title><?php echo $title; ?> - RedLimit</title>
 </head>
 <!-- Google tag (gtag.js) -->

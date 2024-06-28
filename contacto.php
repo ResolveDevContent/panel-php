@@ -41,7 +41,7 @@
             $cotiza = false;
             $unete = false;
             $contacto = true;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "utils/mailer.php"; 
             $respuestaMsg = $respuesta;
             $isSend = $send;
         }
@@ -67,7 +67,7 @@
             </header>
             <article class="d-flex align-start justify-between slideTop" data-scroll="auto">
                 <div class="phone">
-                    <img src="/panel-php/images/phone-3d.png" alt="">
+                    <img src="images/phone-3d.png" alt="">
                     <ul data-scrollable class="d-flex align-center">
                         <li>
                             <div class="bg-gradient instagram">

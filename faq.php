@@ -17,14 +17,14 @@
                 <span>Aquí encontrarás respuestas a las consultas más comunes sobre nuestros servicios y políticas. Si no encuentras lo que buscas, no dudes en contactarnos. ¡Estamos aquí para ayudarte!</span>
             </div>
             <aside>
-                <img src="/panel-php/gifs/faq.gif" alt="">
+                <img src="gifs/faq.gif" alt="">
             </aside>
         </header>
         <article class="w-100">
             <ul class="d-flex flex-col w-100" id="list-faqs">
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/servicios.svg" alt="">
+                        <img src="images/servicios.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -89,7 +89,7 @@
                 </li>
                 <li class="item">
                     <div class="image" style="width: 30%;">
-                        <img src="/panel-php/images/presupuesto.svg" alt="">
+                        <img src="images/presupuesto.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -102,7 +102,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/mision.svg" alt="">
+                        <img src="images/mision.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -115,7 +115,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/tiempo.svg" alt="">
+                        <img src="images/tiempo.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -128,7 +128,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/payment.svg" alt="">
+                        <img src="images/payment.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -141,7 +141,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/marketing.svg" alt="">
+                        <img src="images/marketing.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -154,7 +154,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/agendar.svg" alt="">
+                        <img src="images/agendar.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -167,7 +167,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images//diferencia.svg" alt="">
+                        <img src="images//diferencia.svg" alt="">
                     </div>
                     <div class="text">
                         <em>
@@ -180,7 +180,7 @@
                 </li>
                 <li class="item">
                     <div class="image">
-                        <img src="/panel-php/images/diseño.svg" alt="">
+                        <img src="images/diseño.svg" alt="">
                     </div>
                     <div class="text" class="text">
                         <em>

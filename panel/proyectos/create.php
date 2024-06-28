@@ -221,7 +221,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     <select name="all_servicios" id="all_servicios">
                                         <option value="">Seleccione un servicio</option>
                                         <?php 
-                                            echo utf8_encode($all_servicios);
+                                            echo $all_servicios;
                                         ?>
                                     </select>
                                     <div class="btn">

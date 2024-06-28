@@ -57,7 +57,7 @@
             $cotiza = true;
             $unete = false;
             $contacto = false;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "utils/mailer.php"; 
             $respuestaMsg = $respuesta;
             $isSend = $send;
         }
@@ -101,7 +101,7 @@
                             $introduccion .= '<span>' .$row['introduccion'] .'</span>';
                             $introduccion .= '<img src="' .$row['imagen'] .'" alt="">';
                             $introduccion .= '<div class="btn">';
-                                $introduccion .= "<a href='/panel-php/servicio.php?servicio=". $row['slug'] . "-" . $row['id'] ."'>Ver m&aacute;s</a>";
+                                $introduccion .= "<a href='servicio.php?servicio=". $row['slug'] . "-" . $row['id'] ."'>Ver m&aacute;s</a>";
                             $introduccion .= '</div>';
                         $introduccion .= '</section>';
                     }
@@ -137,9 +137,9 @@
                         $reviews .= '<li class="d-flex flex-col justify-start reviews">';
                             $reviews .=  '<article class="d-flex align-center customer">';
                                 if($row["avatar"]) {
-                                    $reviews .=  '<img src="/panel-php/panel/reviews/' . $row["avatar"] . '" alt="">';
+                                    $reviews .=  '<img src="panel/reviews/' . $row["avatar"] . '" alt="">';
                                 } else {
-                                    $reviews .=  '<img src="/panel-php/images/user.png" alt="">';
+                                    $reviews .=  '<img src="images/user.png" alt="">';
                                 }
                                 $reviews .=  '<div class="d-flex flex-col">';
                                     $reviews .=  '<em>'. $row["nombre"] .'</em>';
@@ -165,7 +165,7 @@
 
     <body class="is-loading">
         <div id="preloader">
-            <img src="/panel-php/images/logo.png" alt="logo">
+            <img src="images/logo.png" alt="logo">
         </div>
         
         <?php include_once("includes/navbar.php"); ?>
@@ -174,14 +174,14 @@
             <ul>
                 <li class="desktop">
                     <figure>
-                        <video autoplay loop muted poster="/panel-php/images/imgbanner.png">
+                        <video autoplay loop muted poster="images/imgbanner.png">
                             <source src="videos/banner.MP4" type="video/mp4">
                         </video>
                     </figure>
                 </li>
                 <li class="mobile">
                     <figure>
-                        <video autoplay loop muted poster="/panel-php/images/imgbanner.png">
+                        <video autoplay loop muted poster="images/imgbanner.png">
                             <source src="videos/mobile.MP4" type="video/mp4">
                         </video>
                     </figure>
@@ -195,7 +195,7 @@
                     <a href="#cotiza"><span class="btn-text">Cotiza</span></a>
                 </li>
                 <li>
-                    <a href="/panel-php/portafolio.php"><span class="btn-text">Quiero Conocerlos!</span></a>
+                    <a href="portafolio.php"><span class="btn-text">Quiero Conocerlos!</span></a>
                 </li>
             </ul>
         </div>
@@ -214,7 +214,7 @@
         <main class="wrapper">
             <section id="sobre-nosotros" class="d-flex align-center">
                 <aside class="d-flex align-center justify-center slideUp">
-                    <img src="/panel-php/gifs/about.gif" alt="">
+                    <img src="gifs/about.gif" alt="">
                 </aside>
                 <article class="slideUp">
                     <h4>Sobre nosotros</h4>
@@ -233,8 +233,8 @@
                             </div>
                         </div>
                         <div class="d-flex align-center btn gap-1 slideUpDelay">
-                            <a href="/panel-php/nosotros.php">Conoce m&aacute;s</a>
-                            <a href="/panel-php/unete.php">Trabaj&aacute; con nosotros</a>
+                            <a href="nosotros.php">Conoce m&aacute;s</a>
+                            <a href="unete.php">Trabaj&aacute; con nosotros</a>
                         </div>
                     </div>
                 </article>
@@ -249,7 +249,7 @@
                     <span>Nuestros clientes satisfechos nos califican</span>
                 </div>
                 <aside>
-                    <img src="/panel-php/gifs/reviews.gif" alt="">
+                    <img src="gifs/reviews.gif" alt="">
                 </aside>
             </header>
             <?php
@@ -272,7 +272,7 @@
                     </header>
                     <article class="d-flex w-100">
                         <?php
-                            echo utf8_encode($servicios);
+                            echo $servicios;
                         ?>
                     </article>
                 </section>
@@ -404,7 +404,7 @@
                         </form>
                     </article>
                     <aside>
-                        <img src="/panel-php/gifs/contacto.gif" alt="">
+                        <img src="gifs/contacto.gif" alt="">
                     </aside>
                 </div>
             </section>

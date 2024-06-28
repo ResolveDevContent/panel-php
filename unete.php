@@ -68,7 +68,7 @@
             $cotiza = false;
             $unete = true;
             $contacto = false;
-            include_once "../panel-php/utils/mailer.php"; 
+            include_once "utils/mailer.php"; 
             $respuestaMsg = $respuesta;
             $isSend = $send;
         }
@@ -96,7 +96,7 @@
                     </span>
                 </div>
                 <aside>
-                    <img src="/panel-php/gifs/unete.gif" alt="">
+                    <img src="gifs/unete.gif" alt="">
                 </aside>
             </header>
             <div class="beneficios d-flex flex-col align-center gap-1 slideUp">

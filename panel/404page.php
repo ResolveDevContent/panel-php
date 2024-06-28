@@ -15,7 +15,7 @@
                 <span>La p&aacute;gina a la que deseas acceder no existe.</span>
             </div>
             <div class="btn bt-error">
-                <a href="/panel-php/panel/index.php">Volver</a>
+                <a href="panel/index.php">Volver</a>
             </div>
         </section>
     </body>

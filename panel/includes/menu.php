@@ -7,7 +7,7 @@
     </div>
     <header class='text-center'>
         <div class='d-flex align-center'>
-            <a href="/panel-php/panel/user.php" class="user d-flex align-center">
+            <a href="panel/user.php" class="user d-flex align-center">
                 <div class="user-img"></div>
                 <span>
                     <?php
@@ -15,7 +15,7 @@
                     ?>
                 </span>
             </a>
-            <a href="/panel-php/panel/logout.php">
+            <a href="panel/logout.php">
                 <i class="icon turn-off"></i>
             </a>
         </div>
@@ -23,17 +23,16 @@
     <div>
         <ul class="d-flex flex-col">
             <li class='categoria'>
-                <a href="/panel-php/panel/proyectos/proyectos.php">
+                <a href="panel/proyectos/proyectos.php">
                     <span>Proyectos</span>
                 </a>
             </li>
             <li class='categoria'>
-                <a href="/panel-php/panel/reviews/reviews.php">
+                <a href="panel/reviews/reviews.php">
                     <span>Testimonios</span>
                 </a>
             </li>
             <li class='categoria'>
-                <a href="/panel-php/panel/metricas/metricas.php">
                     <span>Metricas</span>
                 </a>
             </li>

@@ -35,9 +35,9 @@ $mexico = 'https://api.whatsapp.com/send?phone=5219996080167&text='. urldecode($
             </label>
         </li>
         <li class="agendar">
-            <a href="/panel-php/agendar.php">
+            <a href="agendar.php">
                 <span>Agendá una reunión</span>
-                <img src="/panel-php/images/Pajaro.png" alt="">
+                <img src="images/Pajaro.png" alt="">
             </a>
         </li>
     </ul>
@@ -86,7 +86,7 @@ $mexico = 'https://api.whatsapp.com/send?phone=5219996080167&text='. urldecode($
     </svg>
     <ul class="d-flex align-start justify-around">
         <li class="d-flex flex-col align-start justifi-center">
-            <img src="/panel-php/images/logo.png" alt="">
+            <img src="images/logo.png" alt="">
             <span>
                 Somos un equipo apasionado de profesionales dedicados a transformar la manera en que las empresas interactúan con el mundo digital. 
             </span>
@@ -95,19 +95,19 @@ $mexico = 'https://api.whatsapp.com/send?phone=5219996080167&text='. urldecode($
             <em>Empresa</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/panel-php/nosotros.php">Sobre Nosotros</a>
+                    <a href="nosotros.php">Sobre Nosotros</a>
                 </li>
                 <li>
-                    <a href="/panel-php/index.php#servicios">Servicios</a>
+                    <a href="index.php#servicios">Servicios</a>
                 </li>
                 <li>
-                    <a href="/panel-php/portafolio.php">Portafolio</a>
+                    <a href="portafolio.php">Portafolio</a>
                 </li>
                 <li>
-                    <a href="/panel-php/unete.php">Trabaja con Nosotros</a>
+                    <a href="unete.php">Trabaja con Nosotros</a>
                 </li>
                 <li>
-                    <a href="/panel-php/contacto.php">Contacto</a>
+                    <a href="contacto.php">Contacto</a>
                 </li>
             </ul>
         </li>
@@ -115,10 +115,10 @@ $mexico = 'https://api.whatsapp.com/send?phone=5219996080167&text='. urldecode($
             <em>Comencemos</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/panel-php/index.php#cotiza">Cotiza</a>
+                    <a href="index.php#cotiza">Cotiza</a>
                 </li>
                 <li>
-                    <a href="/panel-php/agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
+                    <a href="agendar.php">Agend&aacute; tu Reuni&oacute;n</a>
                 </li>
             </ul>
         </li>
@@ -126,13 +126,13 @@ $mexico = 'https://api.whatsapp.com/send?phone=5219996080167&text='. urldecode($
             <em>Ayuda</em>
             <ul class="d-flex flex-col align-start justify-center gap-5">
                 <li>
-                    <a href="/panel-php/index.php#metricas">M&eacute;tricas</a>
+                    <a href="index.php#metricas">M&eacute;tricas</a>
                 </li>
                 <li>
-                    <a href="/panel-php/index.php#reviews">Testimonios</a>
+                    <a href="index.php#reviews">Testimonios</a>
                 </li>
                 <li>
-                    <a href="/panel-php/faq.php">Preguntas Frecuentes</a>
+                    <a href="faq.php">Preguntas Frecuentes</a>
                 </li>
             </ul>
         </li>

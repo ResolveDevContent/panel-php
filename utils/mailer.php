@@ -4,9 +4,9 @@
     use PHPMailer\PHPMailer\Exception;
     use PHPMailer\PHPMailer\SMTP;
 
-    require "../panel-php/PHPMailer/src/PHPMailer.php";
-    require "../panel-php/PHPMailer/src/Exception.php";
-    require "../panel-php/PHPMailer/src/SMTP.php";
+    require "PHPMailer/src/PHPMailer.php";
+    require "PHPMailer/src/Exception.php";
+    require "PHPMailer/src/SMTP.php";
 
     $msg = '';
     if($cotiza) {
