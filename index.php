@@ -183,10 +183,10 @@
         <div class="banner-btn d-flex align-center justify-center slideUp">
             <ul class="d-flex align-center justify-center gap-1">
                 <li>
-                    <a href="#"><span class="btn-text">Cotiza</span></a>
+                    <a href="#cotiza"><span class="btn-text">Cotiza</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="btn-text">Quiero Conocerlos!</span></a>
+                    <a href="/panel-php/portafolio.php"><span class="btn-text">Quiero Conocerlos!</span></a>
                 </li>
             </ul>
         </div>
