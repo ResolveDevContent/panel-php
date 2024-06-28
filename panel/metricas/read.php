@@ -72,7 +72,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <header class="d-flex flex-col align-center justify-center text-center">
                             <h2>Ver Metrica</h2>
                         </header>
-                        <div class="input">
+                        <div class="input imagenes">
                             <label>Imagen</label>
                             <figure>
                                 <img src="<?php echo $imagen; ?>" alt=''>

@@ -35,6 +35,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $estrellas = $input_estrellas;
     }
 
+    $input_avatar = trim($_POST["avatar_value"]);
+    $avatar = $input_avatar;
+
+    $input_empresa = trim($_POST["empresa"]);
+    $empresa = $input_empresa;
+
     // Validate imagen
     if($_FILES["avatar"]["name"]) {
         $filename = $_FILES["avatar"]["name"]; //Obtenemos el nombre original del archivo
@@ -127,7 +133,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     // Retrieve individual field value
                     $nombre = $row["nombre"];
                     $texto = $row["texto"];
-                    $empresa = json_decode($row["empresa"]);
+                    $empresa = $row["empresa"];
                     $estrellas = $row["estrellas"];
                     $avatar = $row["avatar"];
                 } else{
@@ -197,17 +203,23 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <span>Avatar</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
-                                    <input type="file" name="avatar" id="file" class="form-control" required>
+                                    <input type="file" name="avatar" id="file" class="form-control" >
                                     <i class="icon upload"></i>
                                     <span>Subir imagen</span>
                                 </label>
                             </div>
-                            <div class="input">
+                            <ul id="fileList" class="file-list"></ul>
+                            <?php if($avatar) : ?>
+                            <div class="input imagenes">
                                 <label>Vista previa</label>
-                                <figure>
+                                <input type="hidden" name="avatar_value" value="<?php echo $avatar; ?>"/>
+                                <figure data-avatar>
                                     <img src="<?php echo $avatar; ?>" alt=''>
+                                    <a href="#" data-borrar-img="<?php echo $avatar; ?>">Borrar</a>
                                 </figure>
                             </div>
+                            <?php endif; ?>
+
                             <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" value="Confirmar" data-btnSubmit>
@@ -239,9 +251,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         const input = document.querySelector('#file');
         const output = document.querySelector('#fileList');
 
-        input.addEventListener("change", function(evt) {
-            updateList(input, output)
-        })
+        if(input && output) {
+            input.addEventListener("change", function(evt) {
+                updateList(input, output)
+            })
+        }
         
         const btnSubmit = document.querySelector("[data-btnSubmit]");
         const formCreate = document.querySelector("#form-create");
@@ -262,5 +276,28 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 loader.classList.remove('disabled');
             }
         });
+
+        document.querySelectorAll('[data-borrar-img]').forEach(function(btn) {
+            btn.addEventListener("click", function(evt) {
+                evt.preventDefault();
+
+                const value = btn.dataset.borrarImg;
+                const inputValuePortada = document.querySelector('input[name="avatar_value"]');;
+                const inputPortada = document.querySelector('input[name="avatar"]');
+                
+                if(!inputPortada && !inputValuePortada) {
+                    return;
+                }
+
+                if(inputValuePortada.value == value) {
+                    inputPortada.value = "";
+                    inputValuePortada.value = "";
+                    document.querySelectorAll("[data-avatar]").forEach(function(root) {
+                        root.innerHTML = "";
+                    })
+                }
+
+            })
+        })
     </script>
 </html>

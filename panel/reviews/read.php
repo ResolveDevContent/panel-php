@@ -92,12 +92,14 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                             <label>Estrellas</label>
                             <input type="number" name="estrellas" class="form-control" value="<?php echo $estrellas; ?>" readonly>
                         </div>
+                        <?php if($avatar) : ?>
                         <div class="input">
                             <label>Avatar</label>
                             <figure>
                                 <img src="<?php echo $avatar; ?>" alt=''>
                             </figure>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </article>

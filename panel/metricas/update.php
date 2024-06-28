@@ -155,12 +155,17 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                     <span>Subir imagen</span>
                                 </label>
                             </div>
-                            <div class="input">
+                            <ul id="fileList" class="file-list"></ul>
+                            <?php if($imagen) : ?>
+                            <div class="input imagenes">
                                 <label>Vista previa</label>
-                                <figure>
+                                <input type="hidden" name="imagen_value" value="<?php echo $imagen; ?>"/>
+                                <figure data-imagen>
                                     <img src="<?php echo $imagen; ?>" alt=''>
+                                    <a href="#" data-borrar-img="<?php echo $imagen; ?>">Borrar</a>
                                 </figure>
                             </div>
+                            <?php endif; ?>
                             <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                             <footer class="d-flex justify-end">
                                 <input type="submit" class="btn btn-success" value="Confirmar" data-btnSubmit>
@@ -215,5 +220,28 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                 loader.classList.remove('disabled');
             }
         });
+
+        document.querySelectorAll('[data-borrar-img]').forEach(function(btn) {
+            btn.addEventListener("click", function(evt) {
+                evt.preventDefault();
+
+                const value = btn.dataset.borrarImg;
+                const inputValuePortada = document.querySelector('input[name="imagen_value"]');;
+                const inputPortada = document.querySelector('input[name="imagen"]');
+                
+                if(!inputPortada && !inputValuePortada) {
+                    return;
+                }
+
+                if(inputValuePortada.value == value) {
+                    inputPortada.value = "";
+                    inputValuePortada.value = "";
+                    document.querySelectorAll("[data-imagen]").forEach(function(root) {
+                        root.innerHTML = "";
+                    })
+                }
+
+            })
+        })
     </script>
 </html>
