@@ -65,16 +65,16 @@
 
     require_once "config.php";
 
-    // $arrayImg = [];
-    // $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
-    // if($result = mysqli_query($sql, $query)){
-    //     if(mysqli_num_rows($result) > 0) {
-    //         $arrayImg = $result;
-    //     }
-    // }
+    $arrayImg = [];
+    $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
+    if($result = mysqli_query($sql, $query)){
+        if(mysqli_num_rows($result) > 0) {
+            $arrayImg = $result;
+        }
+    }
     
-    // include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
-    // $proyectosImg = $imagenes;
+    include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
+    $proyectosImg = $imagenes;
 ?>
 
 <!DOCTYPE html>
@@ -159,6 +159,8 @@
                 $reviews .=  '</ul>';
             }
         }
+
+        mysqli_close($sql);
     ?>
 
     <body class="is-loading">
@@ -290,7 +292,7 @@
                             <ul class="ul-form d-flex flex-col gap-1">
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="nombre" name="nombre" >
+                                        <input type="text" id="nombre" name="nombre" required>
                                         <label for="nombre">Nombre y apellido</label>
                                         <span><?php echo $nombre_err ?></span>
                                     </div>
@@ -310,21 +312,21 @@
                                         <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
                                     </div>
                                     <div class="input">
-                                        <input type="text" id="telefono" name="telefono" >
+                                        <input type="text" id="telefono" name="telefono" required>
                                         <label for="telefono">Número de telefono</label>
                                         <span><?php echo $telefono_err ?></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="empresa" name="empresa" >
+                                        <input type="text" id="empresa" name="empresa" required>
                                         <label for="empresa">Nombre de la empresa</label>
                                         <span><?php echo $empresa_err ?></span>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="input">
-                                        <input type="text" id="desEmpresa" name="descripcion" >
+                                        <input type="text" id="desEmpresa" name="descripcion" required>
                                         <label for="desEmpresa">Descipcion de la empresa (rubro y otros)</label>
                                         <span><?php echo $descripcion_err ?></span>
                                     </div>
@@ -377,9 +379,12 @@
                                     </ul>
                                     <span><?php echo $cotizacion_err ?></span>
                                 </li>
+                                <li class="d-flex justify-center">
+                                    <span class="mensaje-error"></span>
+                                </li>
                                 <li>
                                     <div class="btn d-flex justify-center">
-                                        <button>Cotiza</button>
+                                        <button data-enviar>Cotiza</button>
                                     </div>
                                 </li>
                             </ul>

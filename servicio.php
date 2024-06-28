@@ -14,10 +14,7 @@
 
             if($stmt = mysqli_prepare($sql, $query)) {
                 mysqli_stmt_bind_param($stmt, "i", $param);
-    
-                // $slice = explode("-", $_GET["servicio"]);
-                // $length = count($slice);
-                // $param = implode(array_slice($slice, 0, ($length - 1)));
+
                 $slice = explode("-", $_GET["servicio"]);
                 $length = count($slice);
                 $param = $slice[$length - 1];
@@ -37,6 +34,7 @@
                     } else {
                         header("location: 404page.php");
                     }
+                    mysqli_stmt_close($stmt);
                 } else {
                     header("location: 404page.php");
                 }
@@ -46,7 +44,7 @@
 
             if($row) {
                 $arrayImg = [];
-                $query = "SELECT * FROM proyectos WHERE JSON_SEARCH(servicios, 'all', ?, NULL, '$.servicios[*].id') is not null";
+                $query = "SELECT * FROM proyectos WHERE JSON_SEARCH(servicios, 'all', ?, NULL, '$.servicios[*].id') is not null LIMIT 10";
 
                 if($stmt = mysqli_prepare($sql, $query)) {
                     mysqli_stmt_bind_param($stmt, "i", $param);
@@ -66,11 +64,11 @@
                     }
                     mysqli_stmt_close($stmt);
                 }
-                mysqli_close($sql);
             }
         } else {
             header("location: 404page.php");
         }
+        mysqli_close($sql);
     ?>
 
     <body>

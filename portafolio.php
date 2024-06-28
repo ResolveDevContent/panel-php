@@ -9,7 +9,7 @@
         $destacados = '';
         $proyectos = '';
 
-        $query = "SELECT * FROM proyectos WHERE destacado = 1";
+        $query = "SELECT * FROM proyectos WHERE destacado = 0";
         if($result = mysqli_query($sql, $query)) {
             if(mysqli_num_rows($result) > 0) {
                 $proyectos = '<ul class="gap-1 w-100 s">';

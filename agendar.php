@@ -1,11 +1,9 @@
 <?php
-    // Define variables and initialize with empty values
     $nombre = $telefono = $empresa = $descripcion = $pais = $cotizacion = $dia = $horario = "";
     $nombre_err = $telefono_err = $empresa_err = $descripcion_err = $pais_err = $cotizacion_err = $dia_err = $horario_err = "";
     $respuestaMsg = "";
     $isSend = false;
 
-    // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $input_nombre = trim($_POST["nombre"]);
         if(empty($input_nombre)){
@@ -64,7 +62,6 @@
             $horario = $input_horario;
         }
 
-        // Check input errors before inserting in database
         if(empty($nombre_err) && empty($telefono_err) && empty($empresa_err) && empty($descripcion_err) && empty($pais_err) && empty($cotizacion_err) && empty($dia_err) && empty($horario_err)) {
             $agendar = true;
             $cotiza = false;
@@ -79,12 +76,15 @@
     require_once "config.php";
 
     $arrayImg = [];
-    $query = "SELECT * FROM proyectos";
+    $query = "SELECT * FROM proyectos WHERE destacado = 1 LIMIT 10";
     if($result = mysqli_query($sql, $query)){
         if(mysqli_num_rows($result) > 0) {
             $arrayImg = $result;
         }
+
     }
+
+    mysqli_close($sql);
     
     include_once "/xampp/htdocs/nuevoproyecto/includes/carousel.php"; 
     $proyectosImg = $imagenes;
@@ -103,14 +103,14 @@
     <div class="gradient"></div>
     <main class="wrapper">
         <section id="agendar">
-            <header class="d-flex align-center flex-col text-center gap-5 slideUp">
+            <header class="d-flex align-center flex-col text-center gap-5">
                 <h2>Agendá una reunión con nosotros</h2>
                 <span>
                     En Red Limit, queremos que agendar una reunión con nosotros sea un proceso simple y conveniente. A    través del formulario a continuación, puedes seleccionar un día y una hora aproximados que te resulten cómodos para tener una reunión con nuestro equipo.
                     Una vez que hayas enviado tus preferencias, nos pondremos en contacto contigo para confirmar la reunión y ofrecerte un horario personalizado que se ajuste mejor a tus necesidades.
                 </span>
             </header>
-            <article class="d-flex align-start justify-between slideUp">
+            <article class="d-flex align-start justify-between">
                 <form data-form class="d-flex flex-col align-center gap-1 w-100" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="d-flex align-start justify-between w-100 gap-1">
                         <ul class="ul-form d-flex flex-col gap-1">
@@ -182,6 +182,7 @@
                             <span>
                                 <span class="highlight">*Importante:</span> La selección de día y hora en este formulario es solo para ayudarnos a conocer tu disponibilidad. La reunión no estará confirmada hasta que nos contactemos contigo y confirmemos el horario exacto. Estamos comprometidos en brindarte la mejor atención y ajustarnos a tu disponibilidad.
                             </span>
+                            <span class="mensaje-error"></span>
                             <label class="d-flex align-center gap-5" data-enviar>
                                 Enviar
                                 <img src="/images/Pajaro.png" alt="">

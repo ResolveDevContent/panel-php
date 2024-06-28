@@ -1,11 +1,9 @@
 <?php
-    // Define variables and initialize with empty values
     $nombre = $email = $telefono = $pais = $cv = $puesto = "";
     $nombre_err = $email_err = $telefono_err = $pais_err = $cv_err = $puesto_err = "";
     $respuestaMsg = "";
     $isSend = false;
 
-    // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $input_nombre = trim($_POST["nombre"]);
         if(empty($input_nombre)){
@@ -36,40 +34,35 @@
             $pais = $input_pais;
         }
 
-        // Validate imagen
         if($_FILES["cv"]["name"]) {
-            $filename = $_FILES["cv"]["name"]; //Obtenemos el nombre original del archivo
-            $source = $_FILES["cv"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+            $filename = $_FILES["cv"]["name"];
+            $source = $_FILES["cv"]["tmp_name"];
             
-            $directorio = 'files/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+            $directorio = 'files/';
             
-            //Validamos si la ruta de destino existe, en caso de no existir la creamos
             if(!file_exists($directorio)){
                 mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
             }
             
-            $dir=opendir($directorio); //Abrimos el directorio de destino
-            $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+            $dir=opendir($directorio);
+            $target_path = $directorio.'/'.$filename;
             
-            //Movemos y validamos que el archivo se haya cargado correctamente
-            //El primer campo es el origen y el segundo el destino
             if(move_uploaded_file($source, $target_path)) {	
                 $cv = $target_path;
             } else {	
                 header("location: error.php");
                 exit();
             }
-            closedir($dir); //Cerramos el directorio de destino
+            closedir($dir);
         }
 
         $input_puesto = trim($_POST["puestos-laborales"]);
         if(empty($input_puesto)){
-            $puesto_err = "Por favor eliga un puesto.";     
+            $puesto_err = "Por favor elija un puesto.";     
         } else{
             $puesto = $input_puesto;
         }
 
-        // Check input errors before inserting in database
         if(empty($nombre_err) && empty($email_err) && empty($telefono_err) && empty($cv_err) && empty($puesto_err)) {
             $agendar = false;
             $cotiza = false;
@@ -128,13 +121,13 @@
                     <ul class="ul-form">
                         <li>
                             <div class="input">
-                                <input type="text" id="nombre" name="nombre">
+                                <input type="text" id="nombre" name="nombre" required>
                                 <label for="nombre">Nombre y apellido</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
-                                <input type="email" id="email" name="email">
+                                <input type="email" id="email" name="email" required>
                                 <label for="email">Correo electrónico</label>
                             </div>
                         </li>
@@ -149,17 +142,17 @@
                         </li>
                         <li class="d-flex gap-5">
                             <div class="input cod-pais">
-                                <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" >
+                                <input type="text" id="codigo-pais" name="cod-pais" readonly placeholder="Cod. Pais" required>
                             </div>
                             <div class="input">
-                                <input type="number" id="telefono" name="telefono">
+                                <input type="number" id="telefono" name="telefono" required>
                                 <label for="telefono">Número de telefono</label>
                             </div>
                         </li>
                         <li>
                             <div class="input">
                                 <span>Adjuntar CV</span>
-                                <input type="file" id="cv" name="cv">
+                                <input type="file" id="cv" name="cv" required>
                             </div>
                         </li>
                         <li class="puestos">
@@ -221,9 +214,12 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="d-flex justify-center">
+                            <span class="mensaje-error"></span>
+                        </li>
                         <li>
                             <div class="btn d-flex justify-center">
-                                <button>Enviar</button>
+                                <button data-enviar>Enviar</button>
                             </div>
                         </li>
                     </ul>

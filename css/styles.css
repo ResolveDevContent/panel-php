@@ -147,9 +147,10 @@ video {
 }
 
 .mensaje-error {
-    color: red;
+    color: var(--color5);
     margin-top: 1em;
-    font-size: 0.9em;
+    font-weight: 600;
+    height: 1em;
 }
 
 .mensaje-success {

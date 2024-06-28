@@ -33,38 +33,43 @@ document.addEventListener('DOMContentLoaded', function() {
 document
     .querySelectorAll('#cursor')
     .forEach(function(cursor) {
-        document.addEventListener('mousemove', function(e) {
-            cursor.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
-            cursor.style.display = "flex";
-        });
+        const body     = document.querySelector("body"),
+              viewport = body.getBoundingClientRect();
 
-        document
-            .querySelectorAll(".btn > a, .btn > button, .btn > label")
-            .forEach(function(elm) {
-                elm.addEventListener('mouseover', function() {
-                    cursor.classList.add('available');     
-                    cursor.classList.add('click');     
-                });
-
-                elm.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('available');     
-                    cursor.classList.remove('click');
-                });
+        if(viewport.width >= 960) {
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+                cursor.style.display = "flex";
             });
-
-        document
-            .querySelectorAll(".proyectoLink")
-            .forEach(function(elm) {
-                elm.addEventListener('mouseover', function() {
-                    cursor.classList.add('available');     
-                    cursor.classList.add('ver');     
+    
+            document
+                .querySelectorAll(".btn > a, .btn > button, .btn > label, .banner-btn > ul > li > a")
+                .forEach(function(elm) {
+                    elm.addEventListener('mouseover', function() {
+                        cursor.classList.add('available');     
+                        cursor.classList.add('click');     
+                    });
+    
+                    elm.addEventListener('mouseleave', function() {
+                        cursor.classList.remove('available');     
+                        cursor.classList.remove('click');
+                    });
                 });
-
-                elm.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('available');     
-                    cursor.classList.remove('ver');
+    
+            document
+                .querySelectorAll(".proyectoLink")
+                .forEach(function(elm) {
+                    elm.addEventListener('mouseover', function() {
+                        cursor.classList.add('available');     
+                        cursor.classList.add('ver');     
+                    });
+    
+                    elm.addEventListener('mouseleave', function() {
+                        cursor.classList.remove('available');     
+                        cursor.classList.remove('ver');
+                    });
                 });
-            });
+        }
     });
 
 // SCROLL ----------------------------------------------------------------------
@@ -87,7 +92,6 @@ document.querySelectorAll('[data-scroll]').forEach(function(root) {
                 });
             });
         });
-        console.log("HOLA")
 
     if (root.dataset.scroll == 'auto') {
         let AUTO_DELAY = 5000;
@@ -99,12 +103,7 @@ document.querySelectorAll('[data-scroll]').forEach(function(root) {
         var scroll_in_reverse = false;
     
         setInterval(function () {
-            // if (root.matches(':hover')) {
-            //     return;
-            // }
-    
             scrollable.forEach(function (_scrollable) {
-                console.log("HOLA")
                 const _child = _scrollable.querySelector(':first-child');
                 if (!_child) { return; }
 
@@ -173,7 +172,6 @@ document
             .querySelectorAll('#paises')
             .forEach(function(row) {
                 row.addEventListener('change', function() {
-                    console.log("entra", row)
                     root
                         .querySelectorAll('#codigo-pais')
                         .forEach(function(input) {
@@ -181,16 +179,44 @@ document
                     });
                     
                     root
-                    .querySelectorAll('#pais')
-                    .forEach(function(input) {
-                        const option = row.querySelector(`option[value="${row.value}"]`);
+                        .querySelectorAll('#pais')
+                        .forEach(function(input) {
+                            const option = row.querySelector(`option[value="${row.value}"]`);
 
-                        if(option) {
-                            input.value = option.dataset.pais;
-                        }
-                    })
+                            if(option) {
+                                input.value = option.dataset.pais;
+                            }
+                        });
                 });
             });
+
+        const btnEnviar = root.querySelectorAll('[data-enviar]');
+
+        btnEnviar.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const invalids = document.querySelectorAll('input:required:invalid, select:required:invalid');
+                if(Array.from(invalids).length > 0) {
+                    root.querySelectorAll(".mensaje-error")
+                        .forEach(function(span) {
+                            span.textContent = "Complete todos los campos";
+
+                            setTimeout(function() {
+                                span.textContent = "";
+                            }, 3000)
+                    });
+                    return;
+                }
+
+                if(root.id == "agendar") {
+                    const input = root.querySelectorAll('#background-popup');
+
+                    input.forEach(function(row) {
+                        row.checked = false;
+                    });
+                }
+            });
+        });
 });
 
 // FAQS ----------------------------------------------------------------------
@@ -248,25 +274,6 @@ document
         
             itemHorarios.classList.add("not-visible");
             ul.innerHTML = "";
-        });
-
-        const btnEnviar = root.querySelectorAll('[data-enviar]');
-
-        btnEnviar.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                const invalids = document.querySelectorAll('input:required:invalid, select:required:invalid');
-                console.log(invalids);
-                if(Array.from(invalids).length > 0) {
-                    console.log("Complete todos los campos");
-                    return;
-                }
-
-                const input = root.querySelectorAll('#background-popup');
-
-                input.forEach(function(row) {
-                    row.checked = false;
-                });
-            });
         });
 });
 
