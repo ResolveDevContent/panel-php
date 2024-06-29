@@ -103,7 +103,11 @@ textarea,
 }
 
 .navbar-responsive > label i {
-    font-size: 2em;
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.5em;
+    min-height: 2.5em;
+    background-color: white;
 }
 
 .navbar-responsive input:checked + article {
@@ -185,14 +189,6 @@ textarea,
     width: 100%;
     display: flex;
     justify-content: end;
-}
-
-.navbar-responsive .menu-close label svg {
-    fill: var(--muted-dark);
-}
-
-.navbar-responsive .popup ul li svg {
-    fill: var(--muted-dark);
 }
 
 .navbar-responsive .popup ul li a span{
