@@ -33,7 +33,10 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $facebook = $row["facebook"];
                 $website = $row["website"];
                 $mail = $row["mail"];
+                $orden = $row["orden"];
                 $portada = $row["portada"];
+                $portada_mobile = $row["portada_mobile"];
+                $portada_hover = $row["portada_hover"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -135,10 +138,26 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                             <label>Mail</label>
                             <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" readonly>
                         </div>
+                        <div class="input">
+                            <label>Orden</label>
+                            <input type="text" name="orden" class="form-control" value="<?php echo $orden; ?>" readonly>
+                        </div>
                         <div class="input imagenes">
                             <label>Portada</label>
                             <figure>
                                 <img src="<?php echo $portada; ?>" alt=''>
+                            </figure>
+                        </div>
+                        <div class="input imagenes">
+                            <label>Portada Mobile</label>
+                            <figure>
+                                <img src="<?php echo $portada_mobile; ?>" alt=''>
+                            </figure>
+                        </div>
+                        <div class="input imagenes">
+                            <label>Imagen Cursor</label>
+                            <figure>
+                                <img src="<?php echo $portada_hover; ?>" alt=''>
                             </figure>
                         </div>
                         <div class="d-flex flex-col imagenes">

@@ -1,0 +1,60 @@
+.icon {
+    width: 1.5em;
+    min-width: 1.5em;
+    height: 1.5em;
+    min-height: 1.5em;
+    display: block;
+    background-color: black;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.icon.mail {
+    mask-image: url("./icons/mail.svg");
+    -webkit-mask-image: url("./icons/mail.svg");
+}
+
+.icon.instagram {
+    mask-image: url("./icons/instagram.svg");
+    -webkit-mask-image: url("./icons/instagram.svg");
+}
+
+.icon.facebook {
+    mask-image: url("./icons/facebook.svg");
+    -webkit-mask-image: url("./icons/facebook.svg");
+}
+
+.icon.linkedin {
+    mask-image: url("./icons/linkedin.svg");
+    -webkit-mask-image: url("./icons/linkedin.svg");
+}
+
+.icon.world {
+    mask-image: url("./icons/world.svg");
+    -webkit-mask-image: url("./icons/world.svg");
+}
+
+
+.mexico {
+    background-image: url("./icons/mexico.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+}
+
+.argentina {
+    background-image: url("./icons/argentina.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+}
+
+.mundo {
+    background-image: url("./icons/mundo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2em;
+    height: 2em;
+}

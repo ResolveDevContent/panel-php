@@ -4,9 +4,11 @@ require_once "../config.php";
 // require_once "../errors.php";
  
 // Define variables and initialize with empty values
-$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = $destacado = "";
-$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = $destacado_err = "";
+$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = $destacado = $orden = "";
+$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = $destacado_err = $orden_err = $portada_mobile_err = $portada_hover_err = "";
 $portada = "";
+$portada_mobile = "";
+$portada_hover = "";
 $imagenes = [];
  
 // Processing form data when form is submitted
@@ -37,7 +39,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     $input_mail = trim($_POST["mail"]);
     $input_destacado = trim($_POST["destacado"]);
     $input_portada = trim($_POST["portada_value"]);
+    $input_portada_mobile = trim($_POST["portada_value_mobile"]);
+    $input_portada_hover = trim($_POST["portada_value_hover"]);
+    $input_orden = trim($_POST["orden"]);
     $portada = $input_portada;
+    $portada_mobile = $input_portada_mobile;
+    $portada_hover = $input_portada_hover;
     $descripcion = $input_descripcion;
     $website = $input_website;
     $instagram = $input_instagram;
@@ -65,6 +72,60 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         if(move_uploaded_file($source, $target_path)) {	
             echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
             $portada = $target_path;
+        } else {	
+            header("location: error.php");
+            exit();
+        }
+        closedir($dir); //Cerramos el directorio de destino
+    }
+
+    // // Validate imagen
+    if($_FILES["portada_mobile"]["name"]) {
+        $filename = $_FILES["portada_mobile"]["name"]; //Obtenemos el nombre original del archivo
+        $source = $_FILES["portada_mobile"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+        
+        $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+        
+        //Validamos si la ruta de destino existe, en caso de no existir la creamos
+        if(!file_exists($directorio)){
+            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+        }
+        
+        $dir=opendir($directorio); //Abrimos el directorio de destino
+        $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+        
+        //Movemos y validamos que el archivo se haya cargado correctamente
+        //El primer campo es el origen y el segundo el destino
+        if(move_uploaded_file($source, $target_path)) {	
+            echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+            $portada_mobile = $target_path;
+        } else {	
+            header("location: error.php");
+            exit();
+        }
+        closedir($dir); //Cerramos el directorio de destino
+    }
+
+    // // Validate imagen
+    if($_FILES["portada_hover"]["name"]) {
+        $filename = $_FILES["portada_hover"]["name"]; //Obtenemos el nombre original del archivo
+        $source = $_FILES["portada_hover"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+        
+        $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+        
+        //Validamos si la ruta de destino existe, en caso de no existir la creamos
+        if(!file_exists($directorio)){
+            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+        }
+        
+        $dir=opendir($directorio); //Abrimos el directorio de destino
+        $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+        
+        //Movemos y validamos que el archivo se haya cargado correctamente
+        //El primer campo es el origen y el segundo el destino
+        if(move_uploaded_file($source, $target_path)) {	
+            echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+            $portada_hover = $target_path;
         } else {	
             header("location: error.php");
             exit();
@@ -103,12 +164,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($portada_err) && empty($servicios_err)){
         // Prepare an update statement
-        $sql = "UPDATE proyectos SET nombre=?, descripcion=?, portada=?, servicios=?, instagram=?, website=?, facebook=?, mail=?, destacado=? WHERE id=?";
+        $sql = "UPDATE proyectos SET nombre=?, descripcion=?, portada=?, servicios=?, instagram=?, website=?, facebook=?, mail=?, destacado=?, orden=?, portada_mobile=?, portada_hover=? WHERE id=?";
         $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssssi", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_destacado, $param_id);
+            mysqli_stmt_bind_param($stmt, "ssssssssssssi", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_destacado, $param_orden, $param_portada_mobile, $param_portada_hover, $param_id);
             
             // Set parameters
             $param_nombre = $nombre;
@@ -120,6 +181,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             $param_website = $website;
             $param_mail = $mail;
             $param_destacado = $destacado;
+            $param_orden = intval($orden);
+            $param_portada_mobile = $portada_mobile;
+            $param_portada_hover = $portada_hover;
             $param_id = $id;
             
             // Attempt to execute the prepared statement
@@ -203,6 +267,9 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     $mail = $row["mail"];
                     $destacado = $row["destacado"];
                     $portada = $row["portada"];
+                    $portada_mobile = $row["portada_mobile"];
+                    $portada_hover = $row["portada_hover"];
+                    $orden = $row["orden"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -334,6 +401,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <label>Mail</label>
                                 <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>">
                             </div>
+                            <div class="input">
+                                <label>Orden</label>
+                                <input type="number" name="orden" class="form-control" value="<?php echo intval($orden); ?>">
+                            </div>
                             <span>Portada</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="portada">
@@ -350,6 +421,46 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                                 <figure data-portada>
                                     <img src="<?php echo $portada; ?>" alt=''>
                                     <a href="#" data-borrar-img="<?php echo $portada; ?>">Borrar</a>
+                                </figure>
+                            </div>
+                            <?php endif; ?>
+
+                            <span>Portada Mobile</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="portada_mobile">
+                                    <input type="file" name="portada_mobile" id="portada_mobile" class="form-control" value="<?php echo $portada_mobile; ?>">
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes</span>
+                                </label>
+                            </div>
+                            <ul id="filePortada_mobile" class="file-portada"></ul>
+                            <?php if($portada_mobile) : ?>
+                            <div class="input imagenes">
+                                <label>Vista previa portada</label>
+                                <input type="hidden" name="portada_value_mobile" value="<?php echo $portada_mobile; ?>"/>
+                                <figure data-portada-mobile>
+                                    <img src="<?php echo $portada_mobile; ?>" alt=''>
+                                    <a href="#" data-borrar-img-mobile="<?php echo $portada_mobile; ?>">Borrar</a>
+                                </figure>
+                            </div>
+                            <?php endif; ?>
+
+                            <span>Imagen Cursor</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="portada_hover">
+                                    <input type="file" name="portada_hover" id="portada_hover" class="form-control" value="<?php echo $portada_hover; ?>">
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes</span>
+                                </label>
+                            </div>
+                            <ul id="filePortada_hover" class="file-portada"></ul>
+                            <?php if($portada_hover) : ?>
+                            <div class="input imagenes">
+                                <label>Vista previa portada</label>
+                                <input type="hidden" name="portada_value_hover" value="<?php echo $portada_hover; ?>"/>
+                                <figure data-portada-hover>
+                                    <img src="<?php echo $portada_hover; ?>" alt=''>
+                                    <a href="#" data-borrar-img-hover="<?php echo $portada_hover; ?>">Borrar</a>
                                 </figure>
                             </div>
                             <?php endif; ?>
@@ -405,6 +516,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         const output = document.querySelector('#fileList');
         const inputPortada = document.querySelector('#portada');
         const outputPortada = document.querySelector('#filePortada');
+        const inputPortada_mobile = document.querySelector('#portada_mobile');
+        const outputPortada_mobile = document.querySelector('#filePortada_mobile');
+        const inputPortada_hover = document.querySelector('#portada_hover');
+        const outputPortada_hover = document.querySelector('#filePortada_hover');
 
         if(input && output) {
             input.addEventListener("change", function(evt) {
@@ -415,6 +530,18 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         if(inputPortada && outputPortada) {
             inputPortada.addEventListener("change", function(evt) {
                 updateList(inputPortada, outputPortada)
+            })
+        }
+
+        if(inputPortada_mobile && outputPortada_mobile) {
+            inputPortada_mobile.addEventListener("change", function(evt) {
+                updateList(inputPortada_mobile, outputPortada_mobile)
+            })
+        }
+
+        if(inputPortada_hover && outputPortada_hover) {
+            inputPortada_hover.addEventListener("change", function(evt) {
+                updateList(inputPortada_hover, outputPortada_hover)
             })
         }
         
@@ -544,6 +671,52 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     inputPortada.value = "";
                     inputValuePortada.value = "";
                     document.querySelectorAll("[data-portada]").forEach(function(root) {
+                        root.innerHTML = "";
+                    })
+                }
+
+            })
+        })
+
+        document.querySelectorAll('[data-borrar-img-mobile]').forEach(function(btn) {
+            btn.addEventListener("click", function(evt) {
+                evt.preventDefault();
+
+                const value = btn.dataset.borrarImgMobile;
+                const inputValuePortada = document.querySelector('input[name="portada_value_mobile"]');;
+                const inputPortada = document.querySelector('input[name="portada"]');
+                
+                if(!inputPortada && !inputValuePortada) {
+                    return;
+                }
+
+                if(inputValuePortada.value == value) {
+                    inputPortada.value = "";
+                    inputValuePortada.value = "";
+                    document.querySelectorAll("[data-portada-mobile]").forEach(function(root) {
+                        root.innerHTML = "";
+                    })
+                }
+
+            })
+        })
+
+        document.querySelectorAll('[data-borrar-img-hover]').forEach(function(btn) {
+            btn.addEventListener("click", function(evt) {
+                evt.preventDefault();
+
+                const value = btn.dataset.borrarImgHover;
+                const inputValuePortada = document.querySelector('input[name="portada_value_hover"]');;
+                const inputPortada = document.querySelector('input[name="portada"]');
+                
+                if(!inputPortada && !inputValuePortada) {
+                    return;
+                }
+
+                if(inputValuePortada.value == value) {
+                    inputPortada.value = "";
+                    inputValuePortada.value = "";
+                    document.querySelectorAll("[data-portada-hover]").forEach(function(root) {
                         root.innerHTML = "";
                     })
                 }

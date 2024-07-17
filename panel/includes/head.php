@@ -18,9 +18,8 @@ if($title != "Login") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="panel/css/panel.css">
-    <link rel="stylesheet" href="panel/css/icons.css">
-    <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="../css/panel.css">
+    <link rel="stylesheet" href="../css/icons.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 960px)">
     <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 959px)">

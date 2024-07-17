@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    color: white;
+    background-color: #262626;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    z-index: 8;
+    position: relative;
+}
+
+
+section > header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section > header > h1 {
+    font-weight: bolder;
+    font-size: 2em;
+    color: #e43d3d;
+}
+
+section > header > figure {
+    max-width: 10em;
+    background-color: #0000007d;
+    border-radius: 50%;
+    padding: 1.5em 0.5em;
+    border: 5px solid #ae1332;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    flex-direction: column;
+}
+
+.list > li {
+    display: flex;
+}
+
+.list > li > a {
+    min-width: 22em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 0.5em;
+    background-color: #262626;
+
+    transition: all 0.5s;
+}
+
+.list > li > a > span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    line-height: 1em;
+    height: max-content;
+}
+
+
+.list > li > a > i {
+    background-color: white;
+}
+
+.list > li > a > i.mexico,
+.list > li > a > i.argentina,
+.list > li > a > i.mundo {
+    background-color: transparent;
+}
+
+.list > li > a:hover {
+    background-color: #e43d3d;
+    box-shadow: 0px 8px 37px -7px #e43d3d;
+    color: #fff;
+    transform: translateY(-1px);
+    border-radius: 0.5em;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(334deg, #56c6d8, #9539ea, #262626);
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+    mask-image: linear-gradient(#262626 80%, transparent);
+    height: 100vh;
+    z-index: 1;
+}
+
+/* ANIMATIONS */
+
+@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media screen and (max-width: 960px) {
+    .list > li > a {
+        max-width: 15em;
+        min-width: 15em;
+    }
+}

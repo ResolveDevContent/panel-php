@@ -200,7 +200,7 @@ document
 
         btnEnviar.forEach(function(btn) {
             btn.addEventListener('click', function(e) {
-                e.preventDefault();
+                console.log("hiuzo click")
                 const invalids = document.querySelectorAll('input:required:invalid, select:required:invalid');
                 if(Array.from(invalids).length > 0) {
                     root.querySelectorAll(".mensaje-error")

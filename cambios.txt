@@ -1,3 +1,5 @@
+// YA ESTA HECHO----------------------------
+
 iconos navbar responsive
 .navbar-responsive > label i {
     width: 2.5em;
@@ -18,12 +20,20 @@ iconos navbar responsive
     flex-direction: column;
 }
 
+// ----------------------------
+
+// YA ESTA HECHO ---------------------
+
 REVIEWS
 #reviews {
     margin-top: unset;
     background-color: var(--color2);
     padding: 2em 2em 4em;
 }
+
+// ----------------------------
+
+// YA ESTA HECHO ---------------------
 
 ICONOS FOOTER
 #footer > header > div > ul > li > a i {
@@ -38,6 +48,9 @@ ICONOS FOOTER
     width: 2em;
     height: 2em;
 }
+
+// ----------------------------
+// YA ESTA HECHO ---------------------
 
 CONTACTO PHONE
 #contacto .phone {
@@ -58,6 +71,9 @@ CONTACTO PHONE
 #contacto .bg-gradient.mail .correo {
     font-size: 0.7em !important;
 }
+
+
+
 PASAR A DESKTOP
 #contacto .bg-gradient.mail > div > ul > li {
     font-size: 0.8em;
@@ -69,3 +85,5 @@ MOBILE
 #contacto .bg-gradient.mail > div > ul > li span {
     font-size: .9em!important;
 }
+
+// ----------------------------

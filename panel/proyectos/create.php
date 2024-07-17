@@ -4,9 +4,11 @@ require_once "../config.php";
 // require_once "../errors.php";
  
 // Define variables and initialize with empty values
-$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = $destacado = "";
-$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = $destacado_err = "";
+$nombre = $descripcion = $servicios = $instagram = $website = $facebook = $mail = $destacado = $orden = "";
+$nombre_err = $portada_err = $descripcion_err = $servicios_err = $instagram_err = $website_err = $facebook_err = $mail_err = $destacado_err = $orden_err = $portada_mobile_err = $portada_hover_err = "";
 $portada = "";
+$portada_mobile = "";
+$portada_hover = "";
 $imagenes = [];
 
 // Processing form data when form is submitted
@@ -33,12 +35,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_facebook = trim($_POST["facebook"]);
     $input_mail = trim($_POST["mail"]);
     $input_destacado = trim($_POST["destacado"]);
+    $input_orden = trim($_POST["orden"]);
     $descripcion = $input_descripcion;
     $website = $input_website;
     $instagram = $input_instagram;
     $facebook = $input_facebook;
     $mail = $input_mail;
     $destacado = $input_destacado;
+    $orden = $input_orden;
 
     // // Validate imagen
     if($_FILES["portada"]["name"]) {
@@ -60,6 +64,60 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(move_uploaded_file($source, $target_path)) {	
             echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
             $portada = $target_path;
+        } else {	
+            header("location: error.php");
+            exit();
+        }
+        closedir($dir); //Cerramos el directorio de destino
+    }
+
+    // // Validate imagen
+    if($_FILES["portada_mobile"]["name"]) {
+        $filename = $_FILES["portada_mobile"]["name"]; //Obtenemos el nombre original del archivo
+        $source = $_FILES["portada_mobile"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+        
+        $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+        
+        //Validamos si la ruta de destino existe, en caso de no existir la creamos
+        if(!file_exists($directorio)){
+            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+        }
+        
+        $dir=opendir($directorio); //Abrimos el directorio de destino
+        $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+        
+        //Movemos y validamos que el archivo se haya cargado correctamente
+        //El primer campo es el origen y el segundo el destino
+        if(move_uploaded_file($source, $target_path)) {	
+            echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+            $portada_mobile = $target_path;
+        } else {	
+            header("location: error.php");
+            exit();
+        }
+        closedir($dir); //Cerramos el directorio de destino
+    }
+
+    // // Validate imagen
+    if($_FILES["portada_hover"]["name"]) {
+        $filename = $_FILES["portada_hover"]["name"]; //Obtenemos el nombre original del archivo
+        $source = $_FILES["portada_hover"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+        
+        $directorio = 'imagenes/'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+        
+        //Validamos si la ruta de destino existe, en caso de no existir la creamos
+        if(!file_exists($directorio)){
+            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+        }
+        
+        $dir=opendir($directorio); //Abrimos el directorio de destino
+        $target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+        
+        //Movemos y validamos que el archivo se haya cargado correctamente
+        //El primer campo es el origen y el segundo el destino
+        if(move_uploaded_file($source, $target_path)) {	
+            echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
+            $portada_hover = $target_path;
         } else {	
             header("location: error.php");
             exit();
@@ -98,13 +156,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($nombre_err) && empty($portada_err) && empty($servicios_err)){
 
-        $sql_products = "INSERT INTO proyectos (nombre, descripcion, portada, servicios, instagram, website, facebook, mail, destacado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql_products = "INSERT INTO proyectos (nombre, descripcion, portada, servicios, instagram, website, facebook, mail, destacado, orden, portada_mobile, portada_hover) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $sql_images = "INSERT INTO proyectos_images (proyectoId, imagen) VALUES (?, ?)";
         $sql_lastId = "SELECT LAST_INSERT_ID() as id";
 
         if($stmt_products = mysqli_prepare($link, $sql_products)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt_products, "sssssssss", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_destacado);
+            mysqli_stmt_bind_param($stmt_products, "ssssssssssss", $param_nombre, $param_descripcion, $param_portada, $param_servicios, $param_instagram, $param_website, $param_facebook, $param_mail, $param_destacado, $param_orden, $param_portada_mobile, $param_portadA_hover);
             
             // Set parameters
             $param_nombre = $nombre;
@@ -116,6 +174,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_website = $website;
             $param_mail = $mail;
             $param_destacado = $destacado;
+            $param_orden = $orden;
+            $param_portada_mobile = $portada_mobile;
+            $param_portadA_hover = $portada_hover;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt_products)){
@@ -261,15 +322,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" >
                                 <span class="help-block"><?php echo $mail_err;?></span>
                             </div>
+                            <div class="input <?php echo (!empty($orden_err)) ? 'has-error' : ''; ?>">
+                                <label>Orden</label>
+                                <input type="number" name="orden" class="form-control" value="<?php echo $orden; ?>" >
+                                <span class="help-block"><?php echo $orden_err;?></span>
+                            </div>
                             <span>Portada</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="portada">
                                     <input type="file" name="portada" id="portada" class="form-control" required>
                                     <i class="icon upload"></i>
-                                    <span>Subir imagenes o videos</span>
+                                    <span>Subir imagenes</span>
                                 </label>
                             </div>
                             <ul id="filePortada" class="file-portada"></ul>
+                            <span>Portada Mobile</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="portada_mobile">
+                                    <input type="file" name="portada_mobile" id="portada_mobile" class="form-control" required>
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes</span>
+                                </label>
+                            </div>
+                            <ul id="filePortada_mobile" class="file-portada"></ul>
+                            <span>Imagen cursor</span>
+                            <div class="custom-file">
+                                <label class="custom-file-label d-flex align-center" for="portada_hover">
+                                    <input type="file" name="portada_hover" id="portada_hover" class="form-control" required>
+                                    <i class="icon upload"></i>
+                                    <span>Subir imagenes</span>
+                                </label>
+                            </div>
+                            <ul id="filePortada_hover" class="file-portada"></ul>
                             <span>Imagenes</span>
                             <div class="custom-file">
                                 <label class="custom-file-label d-flex align-center" for="file">
@@ -310,6 +394,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         const output = document.querySelector('#fileList');
         const inputPortada = document.querySelector('#portada');
         const outputPortada = document.querySelector('#filePortada');
+        const inputPortada_mobile = document.querySelector('#portada_mobile');
+        const outputPortada_mobile = document.querySelector('#filePortada_mobile');
+        const inputPortada_hover = document.querySelector('#portada_hover');
+        const outputPortada_hover = document.querySelector('#filePortada_hover');
 
         if(input && output) {
             input.addEventListener("change", function(evt) {
@@ -320,6 +408,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if(inputPortada && outputPortada) {
             inputPortada.addEventListener("change", function(evt) {
                 updateList(inputPortada, outputPortada)
+            })
+        }
+
+        if(inputPortada_mobile && outputPortada_mobile) {
+            inputPortada_mobile.addEventListener("change", function(evt) {
+                updateList(inputPortada_mobile, outputPortada_mobile)
+            })
+        }
+
+        if(inputPortada_hover && outputPortada_hover) {
+            inputPortada_hover.addEventListener("change", function(evt) {
+                updateList(inputPortada_hover, outputPortada_hover)
             })
         }
 
