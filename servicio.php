@@ -8,6 +8,7 @@
 
         $row = '';
         $proyectosImg = '';
+        $proyectosMobile =  '';
 
         if(isset($_GET["servicio"]) && !empty(trim($_GET["servicio"]))){
             $query = "SELECT * FROM servicios WHERE id = ?";
@@ -57,9 +58,34 @@
                         $result = mysqli_stmt_get_result($stmt);
         
                         if($result) {
-                            $arrayImg = $result; 
-                            include_once "includes/carousel.php"; 
-                            $proyectosImg = $imagenes;
+                            if(mysqli_num_rows($result) > 1) {
+                                $proyectosImg .= '<nav class="nav-arrows d-flex align-center justify-between" data-arrows>
+                                                <a href="#" data-arrow="-1" class="d-flex">
+                                                    <i class="icon arrow-right" style="transform: rotate(-180deg)"></i>
+                                                </a>
+                                                <a href="#" data-arrow="1" class="d-flex">
+                                                    <i class="icon arrow-right"></i>
+                                                </a>
+                                            </nav>';
+                            }
+                    
+                            $proyectosImg .= '<ul class="carousel d-flex align-center w-100" data-scrollable>';
+                            $proyectosMobile .= '<ul class="carousel d-flex align-center w-100" data-scrollable>';
+                            
+                            while($row = mysqli_fetch_array($result)) {
+                                $proyectosImg .= '<li>';
+                                    $proyectosImg .= '<span class="loader"></span>';
+                                    $proyectosImg .= "<img src='panel/proyectos/". $row['portada'] ."' alt=''>";
+                                $proyectosImg .= '</li>';
+
+                                $proyectosMobile .= '<li>';
+                                    $proyectosMobile .= '<span class="loader"></span>';
+                                    $proyectosMobile .= "<img src='panel/proyectos/". $row['portada_mobile'] ."' alt=''>";
+                                $proyectosMobile .= '</li>';
+                            }
+
+                            $proyectosMobile .= '</ul>';
+                            $proyectosImg .= '</ul>';
                         }
                     }
                     mysqli_stmt_close($stmt);
@@ -91,7 +117,7 @@
                         <div class="phone" data-scroll="auto">
                             <img src="images/phone-3d.png" alt="">
                             <?php
-                                echo $proyectosImg;
+                                echo $proyectosMobile;
                             ?>
                         </div>
                         <div class="tablet" data-scroll>
