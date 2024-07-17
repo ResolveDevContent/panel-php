@@ -228,7 +228,7 @@ body.is-loading {
     scroll-snap-align: center;
 }
 
-.carousel > li > img {
+.carousel > li img {
     position: relative;
     z-index: 2;
 }
