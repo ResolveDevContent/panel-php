@@ -63,12 +63,12 @@ document
                 });
     
             document
-                .querySelectorAll(".proyectoLink")
+                .querySelectorAll("#proyectos .carousel a, .proyectoLink")
                 .forEach(function(elm) {
                     elm.addEventListener('mouseover', function() {
                         cursor.classList.add('available');     
                         cursor.classList.add('ver');     
-                    });
+                    }); 
     
                     elm.addEventListener('mouseleave', function() {
                         cursor.classList.remove('available');     

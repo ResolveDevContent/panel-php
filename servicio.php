@@ -8,6 +8,7 @@
 
         $row = '';
         $proyectosImg = '';
+        $proyectosMobile = '';
 
         if(isset($_GET["servicio"]) && !empty(trim($_GET["servicio"]))){
             $query = "SELECT * FROM servicios WHERE id = ?";
@@ -60,6 +61,17 @@
                             $arrayImg = $result; 
                             include_once "includes/carousel.php"; 
                             $proyectosImg = $imagenes;
+
+                            $proyectosMobile .= '<ul class="carousel d-flex align-center w-100" data-scrollable>';
+
+                            while($row = mysqli_fetch_array($result)) {
+                                $proyectosMobile .= '<li>';
+                                    $proyectosMobile .= '<span class="loader"></span>';
+                                    $proyectosMobile .= "<img src='panel/proyectos/". $row['portada_mobile'] ."' alt=''>";
+                                $proyectosMobile .= '</li>';
+                            }
+
+                            $proyectosMobile .= '</ul>';
                         }
                     }
                     mysqli_stmt_close($stmt);
@@ -91,7 +103,7 @@
                         <div class="phone" data-scroll="auto">
                             <img src="images/phone-3d.png" alt="">
                             <?php
-                                echo $proyectosImg;
+                                echo $proyectosMobile;
                             ?>
                         </div>
                         <div class="tablet" data-scroll>

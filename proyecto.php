@@ -150,7 +150,7 @@
                     <?php 
                         echo $redes;
                     ?>
-                </aside>
+                </aside> 
                 <article data-scroll="auto">
                     <?php
                         echo $proyectoImagenes;

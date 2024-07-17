@@ -10,6 +10,12 @@
     flex-direction: column-reverse;
     padding: 4em 2em;
     background-color: #00000030;
+} 
+
+#banner div aside a {
+    cursor: none;
+    pointer-events: none;
+    user-select: none;
 }
 
 #banner .vertical-text {

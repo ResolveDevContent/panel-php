@@ -98,10 +98,16 @@
 
 #agendar .popup div label {
     cursor: pointer;
-}
+} 
 
 #agendar .popup .imagenes {
     position: relative;
+}
+
+#agendar .popup .imagenes a {
+    cursor: none;
+    pointer-events: none;
+    user-select: none;
 }
 
 #agendar .popup div label i {
