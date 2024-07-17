@@ -18,7 +18,8 @@
                     $proyectos .= '<li class="card">';
                         $proyectos .= "<a href='proyecto.php?proyecto=". $row['nombre'] ."-". $row['id'] ."' class='proyectoLink'>";
                             $proyectos .= '<span class="loader"></span>';
-                            $proyectos .= "<img src='panel/proyectos/". $row['portada'] ."' alt=''>";
+                            $proyectos .= "<img src='panel/proyectos/". $row['portada'] ."' alt='' class='without-hover'>";
+                            $proyectos .= "<img src='panel/proyectos/". $row['portada_hover'] ."' alt='' class='hover'>";
                             $proyectos .= '<span class="prod gap-5"><span>'. $row['nombre']. '</span>';
                             foreach($servicios['servicios'] as $servicio => $value) {
                                 if($value["nombre"] == $servicios['servicios'][0]["nombre"]) {

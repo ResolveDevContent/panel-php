@@ -176,6 +176,18 @@
     color: var(--color5);
 }
 
+.listado ul li .hover {
+    display: none;
+}
+
+.listado ul li:hover .without-hover {
+    display: none;
+}
+
+.listado ul li:hover .hover {
+    display: block;
+}
+
 .listado ul li:hover img {
     transform: scale(1.125);
     transition: all .3s;
