@@ -119,7 +119,7 @@
             if(mysqli_num_rows($result) > 0) {
                 $metricas .=  '<ul class="d-flex align-center justify-start gap-1 list-metricas" data-scrollable>';
                     while($row = mysqli_fetch_assoc($result)) {
-                            $metricas .= '<li class="card">';
+                            $metricas .= '<li>';
                             $metricas .=  '<span class="loader"></span>';
                             $metricas .=  '<img src=./panel/metricas/'. $row["imagen"] .' alt="">';
                             $metricas .= '</li>';
@@ -280,7 +280,7 @@
         </main>
 
         <?php if($metricas) : ?>
-        <section id="metricas" class="d-flex flex-col align-center justify-center slideUp" data-scroll="auto">
+        <section id="metricas" class="d-flex flex-col align-center justify-center" data-scroll="auto">
             <header class="d-flex align-center justify-center w-100">
                 <div class="d-flex align-center justify-center flex-col text-center">
                     <h4>Nuestras m&eacute;tricas</h4>

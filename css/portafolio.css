@@ -154,6 +154,10 @@
     border-radius: .25em;
 }
 
+.listado ul li .hover {
+    display: none;
+}
+
 .listado ul li .prod {
     position: absolute;
     right: 0;
@@ -174,6 +178,14 @@
 .listado ul li .prod span {
     font-size: 1.325em;
     color: var(--color5);
+}
+
+.listado ul li:hover .without-hover {
+    display: none;
+}
+
+.listado ul li:hover .hover {
+    display: block;
 }
 
 .listado ul li:hover img {
